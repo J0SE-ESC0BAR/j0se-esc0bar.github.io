@@ -9,6 +9,11 @@
       "name": "github",
       "url": "https://github.com/J0SE-ESC0BAR",
       "image": "images/social/github.svg"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://github.com/J0SE-ESC0BAR",
+      "image": "images/social/linkedin.svg"
     }
   ]
 }
