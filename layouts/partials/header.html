@@ -1,13 +1,16 @@
 <div class='header'>
-  <a class="header-logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-  <div class="menu-main">
-    <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-            <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
-                <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-            </li>
-        {{end}}
-    </ul>
-  </div>
+  <nav class="nav">
+    <a class="header-logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span class="material-symbols-outlined">
+      menu
+      </span></button>
+      <ul class="nav-menu">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+              <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+                  <a class="nav-menu-link nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+              </li>
+          {{end}}
+      </ul>
+    </nav>
 </div>

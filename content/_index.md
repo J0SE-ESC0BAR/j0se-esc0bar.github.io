@@ -1,3 +1,6 @@
-## Página principal
+### Página principal
 
-Este es mi blog personal
+#### Bienvenido/a
+* Este es mi blog personal con el mejor contedio del mundo.
+
+### Mira mi último post

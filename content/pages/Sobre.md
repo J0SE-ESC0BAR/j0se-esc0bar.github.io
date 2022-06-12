@@ -1,5 +1,5 @@
 ---
-title: 'Sobre'
+title: 'Sobre mi'
 menu:
   main:
     name: "Sobre"
