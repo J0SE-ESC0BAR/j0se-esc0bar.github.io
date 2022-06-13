@@ -167,7 +167,9 @@ h1, h2, h3 {
 
 a {
   color: var(--highlight-color);
-  text-decoration: none; }
+  text-decoration: none;
+  overflow-wrap: break-word;
+  }
   a:hover {
     text-decoration: underline; }
 
