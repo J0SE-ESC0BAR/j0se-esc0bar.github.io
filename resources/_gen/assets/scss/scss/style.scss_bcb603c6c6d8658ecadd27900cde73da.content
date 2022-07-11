@@ -26,13 +26,12 @@ h1, h2, h3 {
 
 .header {
   background-color: #0769e9;
-  height: 80px;
+  height: 64px;
   position: fixed;
   width:100%;
   top: 0;
   left: 0;
   font-family: sans-serif;
-  border-radius: 0 0 10px 10px;
   }
 /*barra de navegacion*/
   .nav {
@@ -59,7 +58,6 @@ h1, h2, h3 {
       display: flex;
       margin-right: 40px;
       list-style: none;
-      border-radius: 10px;
     }
     .nav-menu > li {
       font-size: 18px;
@@ -84,7 +82,7 @@ h1, h2, h3 {
   border: none;
   font-size: 30px;
   padding: 0 20px;
-  line-height: 60px;
+  line-height: 44px;
   cursor: pointer;
 
   display: none;
@@ -94,14 +92,14 @@ h1, h2, h3 {
     padding-top: 70px;
   }
   .header {
-    height: 60px;
+    height: 44px;
     }
     /*Logo*/
     .header-logo {
       font-size: 25px;
       font-weight: bold;
       padding: 0 20px;
-      line-height: 60px;
+      line-height: 44px;
       color: #fff;
       }
       /*barra de navegacion*/
@@ -111,14 +109,38 @@ h1, h2, h3 {
         margin: 0;
         background-color: #2c3e50;
         position: fixed;
-        top: 60px;
-        width: 100%;
+        top: 44px;
+        width: 20rem;
         padding: 20px 0;
-        height: calc(100% - 80px);
-        max-height: 180px;
+        height: 100%;
+        max-width: 80%;
         overflow-y: auto;
-        left: 100%;
         transition: left 0.3s;
+        box-shadow: none;
+        right: 0;
+        z-index: 10002;
+
+
+
+
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+        -moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease,
+          visibility 0.5s;
+        -webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease,
+          visibility 0.5s;
+        -ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+        transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+        box-shadow: none;
+        height: 100%;
+        max-width: 80%;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        width: 20em;
+        z-index: 10002;
       }
       .nav-menu > li {
         font-size: 25px;
@@ -139,6 +161,7 @@ h1, h2, h3 {
       }
 
       .nav-toggle {
+        line-height: 44px;
         display: block;
       }
     

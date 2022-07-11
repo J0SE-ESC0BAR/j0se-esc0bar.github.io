@@ -32,7 +32,6 @@ h1, h2, h3 {
   top: 0;
   left: 0;
   font-family: sans-serif;
-  border-radius: 0 0 10px 10px;
   }
 /*barra de navegacion*/
   .nav {
@@ -94,14 +93,14 @@ h1, h2, h3 {
     padding-top: 70px;
   }
   .header {
-    height: 60px;
+    height: 44px;
     }
     /*Logo*/
     .header-logo {
       font-size: 25px;
       font-weight: bold;
       padding: 0 20px;
-      line-height: 60px;
+      line-height: 44px;
       color: #fff;
       }
       /*barra de navegacion*/
@@ -139,6 +138,7 @@ h1, h2, h3 {
       }
 
       .nav-toggle {
+        line-height: 44px;
         display: block;
       }
     
