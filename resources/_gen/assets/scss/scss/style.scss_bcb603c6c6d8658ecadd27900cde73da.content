@@ -50,7 +50,7 @@ h1, h2, h3 {
     font-size: 30px;
     font-weight: bold;
     padding: 0 40px;
-    line-height: 80px;
+    line-height: 64px;
     color: #fff;
     }
     /*barra de navegacion*/
@@ -62,7 +62,7 @@ h1, h2, h3 {
     .nav-menu > li {
       font-size: 18px;
       margin: 0; 
-      line-height: 80px;
+      line-height: 64px;
       width: max-content;
       }
       .nav-menu-link {
@@ -147,7 +147,14 @@ h1, h2, h3 {
         outline: none;
       }
 }
-
+@media (max-width: 320px) {
+  .nav-menu {
+    width: 100%;
+  }
+  .nav-menu_visible {
+        left: 0;
+      }
+}
 .footer {
   margin-top: 30px; }
   @media (min-width: 767px) {
