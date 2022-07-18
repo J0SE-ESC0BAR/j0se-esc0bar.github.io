@@ -1,11 +1,11 @@
 ---
 title: "Halo CE"
 date: 2022-06-07T17:57:53-06:00
-description: 'Soluciones a los errores mas comunes en el juego'
+description: 'Soluciones a los errores mas comunes en el de halo ce, desde la instalacion hasta errores más concretos.'
 draft: false
 ---
 
-## Halo CE 2022 | Solución de errores 
+## Halo CE 2022 | Solución de errores
 
 ### Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE.
 

@@ -1,5 +1,5 @@
 ---
-title: "Mi aprendisaje en Launch X"
+title: "Mi aprendizaje en Launch X"
 date: 2022-04-20
 description: 'Lo que e aprendido Lauch-X de Innovaccion Virtual'
 ---
