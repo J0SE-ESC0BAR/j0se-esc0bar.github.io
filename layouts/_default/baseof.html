@@ -6,14 +6,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Favicon-->
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
-
-  {{ if .Site.IsServer }}
-  {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
-  <link rel="stylesheet" href="{{ ($style).RelPermalink }}">
-  {{ else }}
-  {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" false) }}
-  <link rel="stylesheet" href="{{ ($style | minify | fingerprint).RelPermalink }}">
+<!--CSS-->
+  {{ range .Site.Params.css }}
+  <link rel="stylesheet" href="{{ . | relURL }}">
   {{ end }}
 
   {{ block "meta_tags" . }}
@@ -41,7 +38,9 @@
     {{ partial "header.html" . }}
     {{ block "main" . }}
     {{ end }}
+    {{ block "footer" . }}
     {{ partial "footer.html" . }}
+    {{ end }}
   </div>
   {{ $scripts := resources.Get "js/scripts.js" }}
 

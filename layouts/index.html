@@ -2,29 +2,36 @@
 {{ define "body_classes" }}page-home{{ end }}
 
 {{ define "main" }}
-
   {{ if .Site.Params.showAuthorOnHomepage }}
-    {{ partial "author-large.html" . }}
-  {{ end }}
+  {{ partial "author-large.html" . }}
+{{ end }}
   
-
   <div class="intro">
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
     <div class="intro-content">{{ .Content }}</div>
     
   </div>
-
-  {{ if .Site.Params.showPostsOnHomepage }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-    {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
-    {{ end }}
-    {{ template "_internal/pagination.html" . }}
+  <h1>Post destacado</h1>
+  <hr>
+  <div class="summary">
+  
+    <div class="summary-date">Jul 14, 2022</div>
+  
+  <h2 class="summary-title"><a href="../posts/sql_basico/">SQL Basico</a></h2>
+  <p class="summary-description">SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos.</p>
+</div>
+  <h1>Último post</h1>
+  <hr>
+<!--Ojo pueden cambiar de pagina si modifican la URL ej: http://localhost:1313/JAEM/page/6/ -->
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+  {{ range ($paginator.Pages) }}
+  {{ .Render "summary" }}
+{{ end }}
   {{ end }}
 
-{{ end }}
-
+  
+{{ define "footer" }}
+este es un footer personalizado para  el inicio de la home
+{{end}}
 {{ define "footer_js" }}
 {{ end }}
-
-

@@ -1,24 +1,32 @@
-baseURL = "https://J0SE-ESC0BAR.github.io/My_blog/"
+baseURL = "https://J0SE-ESC0BAR.github.io/JAEM/"
 languageCode = 'es'
 title = "JAEM"
-theme = "hugo-winston-theme"
+theme = "hugo-jaem-theme"
 relativeURLs = true
 canonifyURLs = true
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
-paginate = 3
+paginate = 1
+
+[Author]
+  name= "José Alfonso Escobar Mejía"
 
 [params]
-  google_analytics_id = ""
-  # Hey Explorer aquí pon tu twitter 👇
-  twitter_handle = ""
-  showAuthorOnHomepage = true
-  showAuthorOnPosts = false
-  showPostsOnHomepage = false
-  addFrame = true
-  addDot = false
+google_analytics_id = ""
+# Hey Explorer aquí pon tu twitter 👇
+twitter_handle = "@JAEM_Developer"
+ showAuthorOnHomepage = true
+ showAuthorOnPosts = false
+ showPostsOnHomepage = true
+ addFrame = true
+ addDot = true
+ showFooterOnHomepage = true
+# agregar hojas de estilo css (array de hojas de estilo)
+CSS=["css/estilos.css"]
+
+
 # agregar mas entradas a la cabezera
 #[menu]
 #  [[menu.main]]
