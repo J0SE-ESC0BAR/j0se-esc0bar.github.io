@@ -4,10 +4,11 @@ date: 2022-07-14T09:44:25-06:00
 description: 'Repertorio de palabras que me cuesta pronunciar o se me ovidan que significan'
 draft: false
 ---
+
 ## Repertorio de palabras que me cuesta pronunciar o se me ovidan que significan
 ### Las palabras las orndenare alfabéticamente
 
-- Make -> Hacer
+- Make -> "Hacer" de tomar una desicion (diferente a do)
 
 - take -> tomar
 
@@ -61,3 +62,19 @@ draft: false
 - things -> Cosas
 
 - waiting -> esperando
+
+- Maybe -> Quizás / Tal vez
+
+- fix -> Reparar / fijar
+
+- fixable -> fijarble
+
+- bother  -> molestar
+
+- not worth it -> no vale la pena
+
+- inexpensive -> barato / barata
+
+- why -> por que
+
+- morning -> mañana o matutino | de temprano, adjetivo
