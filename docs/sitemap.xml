@@ -2,28 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/</loc>
-    <lastmod>2022-06-07T00:00:00+00:00</lastmod>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/</loc>
+    <lastmod>2022-07-14T09:44:25-06:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/ingles/</loc>
+    <lastmod>2022-07-14T09:44:25-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/sql_basico/</loc>
+    <lastmod>2022-07-14T09:20:48-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/halo_ce_errores/</loc>
+    <lastmod>2022-06-07T17:57:53-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/post_2/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/git_github_extendida/</loc>
     <lastmod>2022-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/post_1/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/mi_aprendizaje/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/intro/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/cultura_de_un_desarrollador/</loc>
     <lastmod>2022-02-21T18:16:21-06:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/pages/about/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/categories/</loc>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/categories/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/proyectos/</loc>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/pages/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/sobre/</loc>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/tags/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/JAEM/tags/</loc>
   </url>
 </urlset>

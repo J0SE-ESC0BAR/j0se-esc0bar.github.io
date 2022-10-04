@@ -1,3 +1,4 @@
-## Pagina principal
-
-Este es mi blog personal
+# Bienvenido/a
+Este es mi blog personal con el mejor contedio del mundo.
+El blog se encuentra en desarrollo todavía...
+(beta)

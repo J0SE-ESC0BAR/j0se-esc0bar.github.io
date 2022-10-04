@@ -2,54 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JAEM</title>
-    <link>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/</link>
+    <link>https://J0SE-ESC0BAR.github.io/JAEM/</link>
     <description>Recent content on JAEM</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jul 2022 09:44:25 -0600</lastBuildDate><atom:link href="https://J0SE-ESC0BAR.github.io/JAEM/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Git Hub</title>
-      <link>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/post_2/</link>
+      <title>Inglés</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/posts/ingles/</link>
+      <pubDate>Thu, 14 Jul 2022 09:44:25 -0600</pubDate>
+      
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/posts/ingles/</guid>
+      <description>Repertorio de palabras que me cuesta pronunciar o se me ovidan que significan Las palabras las orndenare alfabéticamente   Make -&amp;gt; Hacer
+  take -&amp;gt; tomar
+  each -&amp;gt; cada
+  that -&amp;gt; Ese/a / que / paraque
+  our -&amp;gt; nuestro/a
+  with -&amp;gt; con / de / al
+  great -&amp;gt; estupendo / gran / magnifico
+  pies -&amp;gt; empanadas</description>
+    </item>
+    
+    <item>
+      <title>SQL Basico</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/posts/sql_basico/</link>
+      <pubDate>Thu, 14 Jul 2022 09:20:48 -0600</pubDate>
+      
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/posts/sql_basico/</guid>
+      <description>&amp;ndash; Crea una nueva base de datos
+create database Blog;
+&amp;ndash; seleccionar base de datos
+&amp;ndash; crea una nueva tabla
+create table usuarios2 (
+Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma
+&amp;ndash; (identificador) (tipo) (si puede quedar vacio)
+ID int not null,Nombre varchar(20) not null,Apellido varchar(20) not null,Telefono varchar(12) not null );
+&amp;ndash; Insertar valores a una fila (insertar un registro)</description>
+    </item>
+    
+    <item>
+      <title>Halo CE</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/posts/halo_ce_errores/</link>
+      <pubDate>Tue, 07 Jun 2022 17:57:53 -0600</pubDate>
+      
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/posts/halo_ce_errores/</guid>
+      <description>Halo CE 2022 | Solución de errores Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE.   • Explicación de que es hac2 y chimera   • Componentes necesarios que necesita Halo CE   • Solución a errores   Explicación de que es hac2 y chimera ¿Qué es hac2? Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son:</description>
+    </item>
+    
+    <item>
+      <title>Quiero Git Hub</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/posts/git_github_extendida/</link>
       <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/post_2/</guid>
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/posts/git_github_extendida/</guid>
       <description>Porque quiero aprender mas sobre git
 Para programar mejor Al tener un sistema de verciones, me ayudara para llevar un control y control de los programas.
 Que espero aprender Quiero aprender mas sobre las breach, los pull request y como se trabaja en equipo con git y github.</description>
     </item>
     
     <item>
-      <title>Mi aprendisaje en Launch X</title>
-      <link>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/post_1/</link>
+      <title>Mi aprendizaje en Launch X</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/posts/mi_aprendizaje/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/post_1/</guid>
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/posts/mi_aprendizaje/</guid>
       <description>Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X
 Introducción  Python Logica de Programacion  Fron-end  HTML CSS JavaScript Vue(basico)  Back-end  Git GitHub GitHub Pages Hugo Markdown (basico) node.js  </description>
     </item>
     
     <item>
       <title>La Cultura de un desarrollador de Software</title>
-      <link>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/intro/</link>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/posts/cultura_de_un_desarrollador/</link>
       <pubDate>Mon, 21 Feb 2022 18:16:21 -0600</pubDate>
       
-      <guid>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/posts/intro/</guid>
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/posts/cultura_de_un_desarrollador/</guid>
       <description>Hola! 😊
 Para mi la cultura de un profecional del desarrollo de software se basa en lo siguiente:
  Respeto Confianza Honestidad Dedicación  Esto es muy importante para mi.</description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/pages/about/</link>
+      <title>Mis proyectos</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/proyectos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://J0SE-ESC0BAR.github.io/Fork-de-my_launchx_blog-/pages/about/</guid>
-      <description>Who am I Information about me.
- I am José Alfonso Escobar, I was born in Morelia, Michoacán, when I was a child I came with my family to El Salvador, I am studying systems engineering at the university.
- I really like programming and I want to learn more about web development.
-Social Networks:
- Twitter : https://twitter.com/J0SE_ESC0BAR LinkedIn : https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/ Facebook: https://www.facebook.com/JoseAlonsoEscobarMejia ✉ Email: josealfonsoescobarmejia@gmail.com  </description>
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/proyectos/</guid>
+      <description>La pagina Se encuentra en desarrollo todavía&amp;hellip; Proyectos que e realizado   Pagina web Parroquia Santa Catarina
+  Programa de tienda
+  Pagina web pasteleria
+  Juego en scratch
+  </description>
+    </item>
+    
+    <item>
+      <title>Sobre mi</title>
+      <link>https://J0SE-ESC0BAR.github.io/JAEM/sobre/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://J0SE-ESC0BAR.github.io/JAEM/sobre/</guid>
+      <description>Quién soy Información sobre mí.
+ Yo soy José Alfonso Escobar, estoy estudiando ingenieria en sistemas informaticos me gusta mucho la programacion, los problemas de logica, estrategia y quiero aprender más sobre desarrollo web.
+ Mis gustos:
+ Me gusta el futball, el ajederez La edicion de fotos, videos y crear objetos 3d Me gusta la musica country Y me encantan los gatos y el modo nocturno en todas las aplicaciones  Habilidades:</description>
     </item>
     
   </channel>
