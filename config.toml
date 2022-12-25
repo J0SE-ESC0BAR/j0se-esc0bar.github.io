@@ -1,7 +1,7 @@
 baseURL = "https://J0SE-ESC0BAR.github.io/JAEM/"
 languageCode = 'es'
 title = "JAEM"
-theme = "hugo-jaem-theme"
+theme = "hugo-winston-theme"
 relativeURLs = true
 canonifyURLs = true
 
@@ -15,7 +15,7 @@ paginate = 1
 
 [params]
 google_analytics_id = ""
-# Hey Explorer aquí pon tu twitter 👇
+# Hey aquí pon tu twitter 👇
 twitter_handle = "@JAEM_Developer"
  showAuthorOnHomepage = true
  showAuthorOnPosts = false
