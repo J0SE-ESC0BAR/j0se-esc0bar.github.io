@@ -1,6 +1,6 @@
 <div class="footer">
   {{ if .Site.Data.social.links }}
-  &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> {{ .Site.Author.name }}. {{ i18n "generator" | safeHTML }}
+  <div id="footer-info">Copyright &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> - Diseño Web realizado por {{ .Site.Author.name }}</div>
   <div class="footer-social">
     {{ range .Site.Data.social.links }}
       <span class="social-icon social-icon-{{ .name | urlize }}">

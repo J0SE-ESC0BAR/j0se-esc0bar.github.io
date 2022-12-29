@@ -2,37 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/</loc>
-    <lastmod>2022-07-14T09:44:25-06:00</lastmod>
+    <loc>https://J0SE-ESC0BAR.github.io/</loc>
+    <lastmod>2022-12-25T21:28:43-06:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/ingles/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/java/diferencia-entre-listas-y-arreglos/</loc>
+    <lastmod>2022-12-25T21:28:43-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/gpt3_es_malo_jugar/</loc>
+    <lastmod>2022-12-25T21:28:43-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/java/</loc>
+    <lastmod>2022-12-25T21:28:43-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/hugo_uso_basico/</loc>
+    <lastmod>2022-12-25T08:53:03-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/java/java_concurrencia_y_springboot/</loc>
+    <lastmod>2022-12-24T19:46:50-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/ingles/</loc>
     <lastmod>2022-07-14T09:44:25-06:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/sql_basico/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/ingles/claseingles/</loc>
+    <lastmod>2022-07-14T09:44:25-06:00</lastmod>
+  </url><url>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/sql_basico/</loc>
     <lastmod>2022-07-14T09:20:48-06:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/halo_ce_errores/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/halo_ce_errores/</loc>
     <lastmod>2022-06-07T17:57:53-06:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/git_github_extendida/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/git_github_extendida/</loc>
     <lastmod>2022-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/mi_aprendizaje/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/mi_aprendizaje/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/posts/cultura_de_un_desarrollador/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/posts/cultura_de_un_desarrollador/</loc>
     <lastmod>2022-02-21T18:16:21-06:00</lastmod>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/categories/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/categories/</loc>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/proyectos/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/proyectos/</loc>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/sobre/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/sobre/</loc>
   </url><url>
-    <loc>https://J0SE-ESC0BAR.github.io/JAEM/tags/</loc>
+    <loc>https://J0SE-ESC0BAR.github.io/tags/</loc>
   </url>
 </urlset>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Mi aprendizaje en Launch X</title>
+  <title>Hugo uso básico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://J0SE-ESC0BAR.github.io/favicon.png">
@@ -14,12 +14,12 @@
   
 
   
-    <meta name="description" content="Lo que e aprendido Lauch-X de Innovaccion Virtual"/>
-    <meta property="og:title" content="Mi aprendizaje en Launch X"/>
+    <meta name="description" content="Estos son los comandos basicos para que comiences a trabajar con hugo"/>
+    <meta property="og:title" content="Hugo uso básico"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://J0SE-ESC0BAR.github.io/posts/mi_aprendizaje/"/>
-    
-    <meta property="og:description" content="Lo que e aprendido Lauch-X de Innovaccion Virtual"/>
+    <meta property="og:url" content="https://J0SE-ESC0BAR.github.io/posts/hugo_uso_basico/"/>
+    <meta property="og:image" content="https://J0SE-ESC0BAR.github.io/images/cctv.jpeg"/>
+    <meta property="og:description" content="Estos son los comandos basicos para que comiences a trabajar con hugo"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@JAEM_Developer"/>
     <meta name="twitter:creator" content="@JAEM_Developer"/>
@@ -63,32 +63,37 @@
   <div class="blog">
     
     <div class="intro">
-      <h1>Mi aprendizaje en Launch X</h1>
+      <h1>Hugo uso básico</h1>
+      
+      <img src="../../images/cctv.jpeg" />
       
     </div>
     <div class="content">
-      <p>Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X</p>
-<h1 id="introducción">Introducción</h1>
-<ul>
-<li>Python</li>
-<li>Logica de Programacion</li>
-</ul>
-<h1 id="fron-end">Fron-end</h1>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>Vue(basico)</li>
-</ul>
-<h1 id="back-end">Back-end</h1>
-<ul>
-<li>Git</li>
-<li>GitHub</li>
-<li>GitHub Pages</li>
-<li>Hugo</li>
-<li>Markdown (basico)</li>
-<li>node.js</li>
-</ul>
+      <h2 id="crear-un-nuevo-post-en-hugo">Crear un nuevo post en hugo</h2>
+<p>Para crear un nuevo post, abrimos la terminal en la ubicacion del proyecto de hugo y digitamos el sigiente comando:</p>
+<pre><code>Hugo new posts/nombre_post.md
+</code></pre>
+<p>Con este comando estariamos creando un nuevo post dentro de la carpeta posts</p>
+<p><strong>¿Como puedo crear un post dentro de subcarpetas?</strong>
+Supongamos que tienes todos tus posts dentro de una carpeta llamada &ldquo;posts&rdquo; y dentro de ella tienes otra carpeta llamada <strong>&ldquo;Java&rdquo;,</strong> dentro de esta carpeta <strong>siempre</strong> debe haber un <strong>_idex.md</strong></p>
+<p>Para crear un nuevo post dento de la carpeta &ldquo;Java&rdquo; debes crear el post con el siguiente comando</p>
+<pre><code>Hugo new posts/Java/nombre_post.md
+</code></pre>
+<h2 id="como-ver-mi-sitio-de-hugo">¿Como ver mi sitio de hugo?</h2>
+<p>Con el comando <strong>hugo server</strong> inicia el servidor de hugo, lo inicia de forma local, por lo general se genera en: <strong>localhost:1313/</strong>(nombre_de_la_pagina_web)</p>
+<h2 id="compilar-archivos-de-hugo">Compilar archivos de hugo</h2>
+<p>Simplemente con lanzar el comando</p>
+<pre><code>hugo
+</code></pre>
+<p>desde la termnial, hugo genera los archivos nesesarios para la pagina web</p>
+<h2 id="si-no-quiero-que-se-guarde-en-public-quiero-que-se-guarde-en-una-carpeta-llamada-docs">Si no quiero que se guarde en public, quiero que se guarde en una carpeta llamada &ldquo;docs&rdquo;</h2>
+<p>Para cambiar la carpeta de destino de la página generada por Hugo, puedes modificar la opción &ldquo;publishDir&rdquo; en la configuración de tu proyecto de Hugo. Esta opción determina la ruta de la carpeta en la que se guardarán los archivos generados por Hugo.</p>
+<p>Por ejemplo, si quieres que tus páginas se guarden en una carpeta llamada &ldquo;docs&rdquo;, puedes agregar la siguiente línea a tu archivo de configuración <strong>&ldquo;config.toml&rdquo;</strong> o <strong>&ldquo;config.yaml&rdquo;</strong>:</p>
+<pre><code>publishDir = &quot;docs&quot;
+</code></pre>
+<p>Luego, cuando ejecutes el comando &ldquo;hugo&rdquo; para generar tu página, se guardará en la carpeta &ldquo;docs&rdquo; en lugar de en la carpeta &ldquo;public&rdquo;.</p>
+<p>Tambien puedes ejecutal el comando &ldquo;hugo&rdquo; mas <strong>-d</strong> para indicarle el directorio</p>
+<pre><code>hugo -d docs</code></pre>
 
     </div>
   </div>

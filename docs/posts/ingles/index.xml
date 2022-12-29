@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inglés on JAEM</title>
+    <link>https://J0SE-ESC0BAR.github.io/posts/ingles/</link>
+    <description>Recent content in Inglés on JAEM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 14 Jul 2022 09:44:25 -0600</lastBuildDate><atom:link href="https://J0SE-ESC0BAR.github.io/posts/ingles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inglés Clase</title>
+      <link>https://J0SE-ESC0BAR.github.io/posts/ingles/claseingles/</link>
+      <pubDate>Thu, 14 Jul 2022 09:44:25 -0600</pubDate>
+      
+      <guid>https://J0SE-ESC0BAR.github.io/posts/ingles/claseingles/</guid>
+      <description>Ejemplo </description>
+    </item>
+    
+  </channel>
+</rss>

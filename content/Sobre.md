@@ -5,8 +5,6 @@ menu:
     name: "Sobre"
 ---
 
-# Quién soy
----
 Información sobre mí.
 
 > Yo soy José Alfonso Escobar, estoy estudiando ingenieria en sistemas informaticos
@@ -31,6 +29,7 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 - HTML & CSS
 - Marckdown
 - ingles basico
+
 **Redes Sociales:**
 - `Twitter` : https://twitter.com/J0SE_ESC0BAR
 - `LinkedIn` : https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/

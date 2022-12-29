@@ -1,9 +1,13 @@
-baseURL = "https://J0SE-ESC0BAR.github.io/JAEM/"
+baseURL = "https://J0SE-ESC0BAR.github.io/"
 languageCode = 'es'
 title = "JAEM"
 theme = "hugo-winston-theme"
 relativeURLs = true
 canonifyURLs = true
+
+
+# Donde se guardara el contenido generado por Hugo
+publishDir = "docs"
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
@@ -11,7 +15,7 @@ pygmentsUseClasses = true
 paginate = 1
 
 [Author]
-  name= "José Alfonso Escobar Mejía"
+  name= "José Escobar"
 
 [params]
 google_analytics_id = ""
@@ -25,7 +29,6 @@ twitter_handle = "@JAEM_Developer"
  showFooterOnHomepage = true
 # agregar hojas de estilo css (array de hojas de estilo)
 CSS=["css/estilos.css"]
-
 
 # agregar mas entradas a la cabezera
 #[menu]

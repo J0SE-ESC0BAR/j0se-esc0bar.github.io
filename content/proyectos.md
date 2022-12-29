@@ -4,8 +4,7 @@ menu:
   main:
     name: "Proyectos"
 ---
-# La pagina Se encuentra en desarrollo todavía...
-## Proyectos que e realizado
+## Algunos de los proyectos que e realizado los tengo aquí.
 
 Pagina web Parroquia Santa Catarina - 2022
 
