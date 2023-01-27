@@ -27,8 +27,8 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 ### Otras abilidades
 - Git & Github
 - HTML & CSS
-- Marckdown
-- ingles basico
+- Markdown
+- Ingles basico
 
 **Redes Sociales:**
 - `Twitter` : https://twitter.com/J0SE_ESC0BAR
