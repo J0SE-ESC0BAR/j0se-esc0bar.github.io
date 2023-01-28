@@ -5,7 +5,7 @@ menu:
     name: "Sobre"
 ---
 
-Información sobre mí.
+Información sobre mí..
 
 > Yo soy José Alfonso Escobar, estoy estudiando ingenieria en sistemas informaticos
 me gusta mucho la programacion, los problemas de logica, estrategia y quiero aprender más sobre desarrollo web.
