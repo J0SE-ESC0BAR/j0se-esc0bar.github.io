@@ -14,9 +14,8 @@
       
       <guid>https://J0SE-ESC0BAR.github.io/posts/java/diferencia-entre-listas-y-arreglos/</guid>
       <description>Cual es la diferencia entre
-List cities = new ArrayList&amp;lt;&amp;gt;(); y
-String[] cities = {};
-La principal diferencia entre List cities = new ArrayList&amp;lt;&amp;gt;(); y String[] cities = {}; es el tipo de objeto que están creando.
+List&amp;lt;String&amp;gt; cities = new ArrayList&amp;lt;&amp;gt;(); y
+String[] cities = {};La principal diferencia entre List cities = new ArrayList&amp;lt;&amp;gt;(); y String[] cities = {}; es el tipo de objeto que están creando.
 List cities = new ArrayList&amp;lt;&amp;gt;(); crea una lista de cadenas utilizando la clase ArrayList de Java. La clase ArrayList es una clase de la biblioteca de Java que proporciona una implementación de la interfaz List.</description>
     </item>
     

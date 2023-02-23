@@ -68,210 +68,232 @@
     </div>
     <div class="content">
       <p>&ndash; Crea una nueva base de datos</p>
-<p>create database Blog;</p>
+<pre><code>create database Blog;
+</code></pre>
 <p>&ndash; seleccionar base de datos</p>
+<pre><code>use database Blog;
+</code></pre>
 <p>&ndash; crea una nueva tabla</p>
-<p>create table usuarios2
-(</p>
+<pre><code>create table usuarios2
+(
+</code></pre>
 <p>Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma</p>
-<p>&ndash; (identificador) (tipo) (si puede quedar vacio)</p>
-<pre><code>ID int not null,
-Nombre varchar(20) not null,
-Apellido varchar(20) not null,
-Telefono varchar(12) not null
+<pre><code>-- (identificador) (tipo) (si puede quedar vacio)
+	ID int not null,
+	Nombre varchar(20) not null,
+	Apellido varchar(20) not null,
+	Telefono varchar(12) not null
+);
 </code></pre>
-<p>);</p>
 <p>&ndash; Insertar valores a una fila (insertar un registro)</p>
-<p>INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+<pre><code>INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
 )
 VALUES (
-01,
-&lsquo;Pedro&rsquo;,
-&lsquo;Arias&rsquo;,
-&lsquo;809-123-1345&rsquo;
-);</p>
+	01,
+	'Pedro',
+	'Arias',
+	'809-123-1345'
+);
+</code></pre>
 <p>&ndash; Solicitar los datos de toda la tabla</p>
-<p>SELECT * FROM usuarios2;</p>
+<pre><code>SELECT * FROM usuarios2;
+</code></pre>
 <p>&ndash; Insertar varios valores a las columans (insertar varios registros)</p>
-<p>INSERT INTO usuarios2(</p>
-<pre><code>ID,
+<pre><code>INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	02,
+	'Óscar',
+	'Pérez',
+	'864-323-742'
+);
 
-Nombre,
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	03,
+	'Juan',
+	'Arias',
+	'604-423-942'
+);
 
-Apellido,
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	04,
+	'Valentina',
+	'Sánchez',
+	'464-349-2142'
+);
 
-Telefono
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	05,
+	'Óscar',
+	'León',
+	'984-632-8452'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	06,
+	'Efraín',
+	'Ríos',
+	'895-224-3612'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	07,
+	'Pedro',
+	'Sánchez',
+	'434-343-1742'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	08,
+	'Martín',
+	'Pérez',
+	'724-353-442'
+);
 </code></pre>
-<p>)</p>
-<p>VALUES (</p>
-<pre><code>02,
-
-'Óscar',
-
-'Pérez',
-
-'864-323-742'
-</code></pre>
-<p>);</p>
-<p>INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
-)
-VALUES (
-03,
-&lsquo;Juan&rsquo;,
-&lsquo;Arias&rsquo;,
-&lsquo;604-423-942&rsquo;
-);
-INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
-)
-VALUES (
-04,
-&lsquo;Valentina&rsquo;,
-&lsquo;Sánchez&rsquo;,
-&lsquo;464-349-2142&rsquo;
-);
-INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
-)
-VALUES (
-05,
-&lsquo;Óscar&rsquo;,
-&lsquo;León&rsquo;,
-&lsquo;984-632-8452&rsquo;
-);
-INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
-)
-VALUES (
-06,
-&lsquo;Efraín&rsquo;,
-&lsquo;Ríos&rsquo;,
-&lsquo;895-224-3612&rsquo;
-);
-INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
-)
-VALUES (
-07,
-&lsquo;Pedro&rsquo;,
-&lsquo;Sánchez&rsquo;,
-&lsquo;434-343-1742&rsquo;
-);
-INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
-)
-VALUES (
-08,
-&lsquo;Martín&rsquo;,
-&lsquo;Pérez&rsquo;,
-&lsquo;724-353-442&rsquo;
-);</p>
 <p>&ndash; Solicitar una columna de una tabla</p>
-<p>SELECT Nombre FROM usuarios2;</p>
-<p>&ndash; Solicitar dos columna de una tabla
-SELECT Nombre,Telefono FROM usuarios2;</p>
-<p>&ndash; Traer los registros unicos y eliminar los repetidos
-SELECT DISTINCT Nombre,ID
-FROM usuarios2;</p>
-<p>&ndash; Ordenar los resultados por los criterios que elijamos
-SELECT * FROM usuarios2
-Order BY Apellido;</p>
-<p>SELECT * FROM usuarios2
-Order BY Nombre,ID;</p>
-<p>&ndash; Extraer datos espesificos con operadores logicos (WHERE) donde
-SELECT * FROM usuarios2
-WHERE ID &gt; 4;</p>
-<p>&ndash; Operador BETWEEN (entre) junto con WHERE
-SELECT * FROM usuarios2
-WHERE ID BETWEEN 2 and 5;</p>
-<p>&ndash; Actualizar datos de la tabla
-UPDATE usuarios2
-SET Nombre=&lsquo;Marcos&rsquo;,Apellido=&lsquo;Vasquez&rsquo;
+<pre><code>SELECT Nombre FROM usuarios2;
+</code></pre>
+<p>&ndash; Solicitar dos columna de una tabla</p>
+<pre><code>SELECT Nombre,Telefono FROM usuarios2;
+</code></pre>
+<p>&ndash; Traer los registros unicos y eliminar los repetidos</p>
+<pre><code>SELECT DISTINCT Nombre,ID
+FROM usuarios2;
+</code></pre>
+<p>&ndash; Ordenar los resultados por los criterios que elijamos</p>
+<pre><code>SELECT * FROM usuarios2
+Order BY Apellido;
+</code></pre>
+<p>SELECT * FROM usuarios2</p>
+<pre><code>Order BY Nombre,ID;
+</code></pre>
+<p>&ndash; Extraer datos espesificos con operadores logicos (WHERE) donde</p>
+<pre><code>SELECT * FROM usuarios2
+WHERE ID &gt; 4;
+</code></pre>
+<p>&ndash; Operador BETWEEN (entre) junto con WHERE</p>
+<pre><code>SELECT * FROM usuarios2
+WHERE ID BETWEEN 2 and 5;
+</code></pre>
+<p>&ndash; Actualizar datos de la tabla</p>
+<pre><code>UPDATE usuarios2
+SET Nombre='Marcos',Apellido='Vasquez'
 WHERE ID=5;
-&ndash; tree solo una columna de la tabla
-SELECT * FROM usuarios2
-WHERE ID =5;</p>
+</code></pre>
+<p>&ndash; tree solo una columna de la tabla</p>
+<pre><code>SELECT * FROM usuarios2
+WHERE ID =5;
+</code></pre>
 <p>&ndash; Eliminar registros de la tabla</p>
 <p>&ndash; Nota: no olvidar colocar WHERE
 &ndash; para espesificar el registro que queremos eliminar,
 &ndash; de lo contrario eliminara toda la tabla</p>
-<p>&ndash; (tabla antes de borrar el registro)
-SELECT * FROM usuarios2;
+<pre><code>SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
+
 DELETE FROM usuarios2
 WHERE ID=8;
-&ndash; (tabla despues de borrar el registro)
-SELECT * FROM usuarios2;</p>
-<p>&ndash; Agregar una columna a nuestra tabla
-&ndash;    (nombre de la tabla) (identificador) (tipo que almacenara)
-ALTER TABLE usuarios2 ADD Dirección varchar(10);</p>
-<p>&ndash; Renombrar un a columna de una tabla
-SELECT * FROM usuarios2; &ndash; (tabla antes de Renombrar columna)
-exec sp_rename &lsquo;usuarios2.dirección&rsquo;,&lsquo;Domicilio&rsquo;,&lsquo;COLUMN&rsquo;;
-SELECT * FROM usuarios2; &ndash; (tabla despues de Renombrar columna)</p>
-<p>&ndash; Borrar una columna de una tabla
-SELECT * FROM usuarios2; &ndash; (tabla antes de borrar la columna)
-&ndash;   	(nombre de la tabla)	(identificador)
+-- (tabla despues de borrar el registro)
+SELECT * FROM usuarios2;
+</code></pre>
+<p>&ndash; Agregar una columna a nuestra tabla</p>
+<pre><code>--    (nombre de la tabla) (identificador) (tipo que almacenara)
+ALTER TABLE usuarios2 ADD Dirección varchar(10);
+</code></pre>
+<p>&ndash; Renombrar un a columna de una tabla</p>
+<pre><code>SELECT * FROM usuarios2; -- (tabla antes de Renombrar columna)
+exec sp_rename 'usuarios2.dirección','Domicilio','COLUMN';
+SELECT * FROM usuarios2; -- (tabla despues de Renombrar columna)
+</code></pre>
+<p>&ndash; Borrar una columna de una tabla</p>
+<pre><code>SELECT * FROM usuarios2; -- (tabla antes de borrar la columna)
+--   	(nombre de la tabla)	(identificador)
 ALTER TABLE usuarios2 DROP COLUMN Domicilio;
-SELECT * FROM usuarios2; &ndash; (tabla despues de borrar la columna)</p>
-<p>&ndash; Cambiar el nombre a una tabla o renombrar una tabla
-&ndash; (nombre actual de la tabla) (nuevo nombre de la tabla)
-exec sp_rename &lsquo;usuarios2&rsquo;, &lsquo;usuarios&rsquo;;</p>
-<p>&ndash; BORRAR UNA TABLA
-&ndash; DROP TABLE usuarios;</p>
+SELECT * FROM usuarios2; -- (tabla despues de borrar la columna)
+</code></pre>
+<p>&ndash; Cambiar el nombre a una tabla o renombrar una tabla</p>
+<p>&ndash; (nombre actual de la tabla) (nuevo nombre de la tabla)</p>
+<pre><code>exec sp_rename 'usuarios2', 'usuarios';
+</code></pre>
+<p>&ndash; BORRAR UNA TABLA</p>
+<pre><code>DROP TABLE usuarios;
+</code></pre>
 
     </div>
   </div>
 
     
-    <div class="footer">
-  
-  <div id="footer-info">Copyright &copy; <time datetime="2022-12-29 08:10:36.2304499 -0600 CST m=&#43;0.512929801">2022</time> - Diseño Web realizado por José Escobar</div>
-  <div class="footer-social">
     
-      <span class="social-icon social-icon-twitter">
-        <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener">
-          <img src="../../images/social/twitter.svg" width="24" height="24" alt="twitter"/>
-        </a>
-      </span>
-    
-      <span class="social-icon social-icon-github">
-        <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener">
-          <img src="../../images/social/github.svg" width="24" height="24" alt="github"/>
-        </a>
-      </span>
-    
-      <span class="social-icon social-icon-linkedin">
-        <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener">
-          <img src="../../images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
-        </a>
-      </span>
-    
-  </div>
-  
-</div>
+
+<footer class="clearfix">
+      
+      <div id="footer-info">Copyright &copy; <time datetime="2023-02-23 13:23:47.3149994 -0600 CST m=&#43;0.269629001">2023</time> - Diseño Web realizado por José Escobar</div>
+      <div class="footer-social">
+        
+          <span class="social-icon social-icon-twitter">
+            <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener">
+              <img src="../../images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+            </a>
+          </span>
+        
+          <span class="social-icon social-icon-github">
+            <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener">
+              <img src="../../images/social/github.svg" width="24" height="24" alt="github"/>
+            </a>
+          </span>
+        
+          <span class="social-icon social-icon-linkedin">
+            <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener">
+              <img src="../../images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+            </a>
+          </span>
+        
+      </div>
+      
+</footer>
     
   </div>
   

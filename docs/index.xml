@@ -6,7 +6,17 @@
     <description>Recent content on JAEM</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 25 Dec 2022 21:28:43 -0600</lastBuildDate><atom:link href="https://J0SE-ESC0BAR.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 21:28:43 -0600</lastBuildDate><atom:link href="https://J0SE-ESC0BAR.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT3 Responde: ¿Es malo jugar?</title>
+      <link>https://J0SE-ESC0BAR.github.io/posts/gpt3_es_malo_jugar/</link>
+      <pubDate>Mon, 26 Dec 2022 21:28:43 -0600</pubDate>
+      
+      <guid>https://J0SE-ESC0BAR.github.io/posts/gpt3_es_malo_jugar/</guid>
+      <description>¿Jugar videojuego es malo?
+No hay una respuesta simple a esta pregunta, ya que depende de cómo se use el juego y de la persona que lo está jugando. Algunos estudios han demostrado que jugar videojuegos puede tener efectos positivos en el cerebro, como mejorar la habilidad de resolución de problemas y la coordinación mano-ojo. Sin embargo, como con cualquier actividad, es importante moderar el tiempo que se dedica a jugar videojuegos y asegurarse de tener un equilibrio adecuado en la vida.</description>
+    </item>
+    
     <item>
       <title>Diferencia entre listas y arreglos</title>
       <link>https://J0SE-ESC0BAR.github.io/posts/java/diferencia-entre-listas-y-arreglos/</link>
@@ -14,20 +24,9 @@
       
       <guid>https://J0SE-ESC0BAR.github.io/posts/java/diferencia-entre-listas-y-arreglos/</guid>
       <description>Cual es la diferencia entre
-List cities = new ArrayList&amp;lt;&amp;gt;(); y
-String[] cities = {};
-La principal diferencia entre List cities = new ArrayList&amp;lt;&amp;gt;(); y String[] cities = {}; es el tipo de objeto que están creando.
+List&amp;lt;String&amp;gt; cities = new ArrayList&amp;lt;&amp;gt;(); y
+String[] cities = {};La principal diferencia entre List cities = new ArrayList&amp;lt;&amp;gt;(); y String[] cities = {}; es el tipo de objeto que están creando.
 List cities = new ArrayList&amp;lt;&amp;gt;(); crea una lista de cadenas utilizando la clase ArrayList de Java. La clase ArrayList es una clase de la biblioteca de Java que proporciona una implementación de la interfaz List.</description>
-    </item>
-    
-    <item>
-      <title>GPT3 Responde: ¿Es malo jugar?</title>
-      <link>https://J0SE-ESC0BAR.github.io/posts/gpt3_es_malo_jugar/</link>
-      <pubDate>Sun, 25 Dec 2022 21:28:43 -0600</pubDate>
-      
-      <guid>https://J0SE-ESC0BAR.github.io/posts/gpt3_es_malo_jugar/</guid>
-      <description>¿Jugar videojuego es malo?
-No hay una respuesta simple a esta pregunta, ya que depende de cómo se use el juego y de la persona que lo está jugando. Algunos estudios han demostrado que jugar videojuegos puede tener efectos positivos en el cerebro, como mejorar la habilidad de resolución de problemas y la coordinación mano-ojo. Sin embargo, como con cualquier actividad, es importante moderar el tiempo que se dedica a jugar videojuegos y asegurarse de tener un equilibrio adecuado en la vida.</description>
     </item>
     
     <item>
@@ -54,29 +53,16 @@ public class Main {public static void main(String[] args) {List&amp;lt;String&
     </item>
     
     <item>
-      <title>Inglés Clase</title>
-      <link>https://J0SE-ESC0BAR.github.io/posts/ingles/claseingles/</link>
-      <pubDate>Thu, 14 Jul 2022 09:44:25 -0600</pubDate>
-      
-      <guid>https://J0SE-ESC0BAR.github.io/posts/ingles/claseingles/</guid>
-      <description>Ejemplo </description>
-    </item>
-    
-    <item>
       <title>SQL Basico</title>
       <link>https://J0SE-ESC0BAR.github.io/posts/sql_basico/</link>
       <pubDate>Thu, 14 Jul 2022 09:20:48 -0600</pubDate>
       
       <guid>https://J0SE-ESC0BAR.github.io/posts/sql_basico/</guid>
       <description>&amp;ndash; Crea una nueva base de datos
-create database Blog;
-&amp;ndash; seleccionar base de datos
-&amp;ndash; crea una nueva tabla
-create table usuarios2 (
-Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma
-&amp;ndash; (identificador) (tipo) (si puede quedar vacio)
-ID int not null,Nombre varchar(20) not null,Apellido varchar(20) not null,Telefono varchar(12) not null);
-&amp;ndash; Insertar valores a una fila (insertar un registro)</description>
+create database Blog;&amp;ndash; seleccionar base de datos
+use database Blog;&amp;ndash; crea una nueva tabla
+create table usuarios2(Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma
+-- (identificador) (tipo) (si puede quedar vacio)ID int not null,Nombre varchar(20) not null,Apellido varchar(20) not null,Telefono varchar(12) not null);&amp;ndash; Insertar valores a una fila (insertar un registro)</description>
     </item>
     
     <item>
@@ -87,17 +73,6 @@ ID int not null,Nombre varchar(20) not null,Apellido varchar(20) not null,Tel
       <guid>https://J0SE-ESC0BAR.github.io/posts/halo_ce_errores/</guid>
       <description>Halo CE 2022 | Solución de errores Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE. • Explicación de que es hac2 y chimera • Componentes necesarios que necesita Halo CE • Solución a errores Explicación de que es hac2 y chimera ¿Qué es hac2? Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son:
 •	Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.</description>
-    </item>
-    
-    <item>
-      <title>Quiero Git Hub</title>
-      <link>https://J0SE-ESC0BAR.github.io/posts/git_github_extendida/</link>
-      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://J0SE-ESC0BAR.github.io/posts/git_github_extendida/</guid>
-      <description>Porque quiero aprender mas sobre git
-Para programar mejor Al tener un sistema de verciones, me ayudara para llevar un control y control de los programas.
-Que espero aprender Quiero aprender mas sobre las breach, los pull request y como se trabaja en equipo con git y github.</description>
     </item>
     
     <item>
@@ -142,9 +117,9 @@ https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAE
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://J0SE-ESC0BAR.github.io/sobre/</guid>
-      <description>Información sobre mí.
+      <description>Información sobre mí..
 Yo soy José Alfonso Escobar, estoy estudiando ingenieria en sistemas informaticos me gusta mucho la programacion, los problemas de logica, estrategia y quiero aprender más sobre desarrollo web.
-Mis gustos: Me gusta el futball, el ajederez La edicion de fotos, videos y crear objetos 3d Me gusta la musica country Y me encantan los gatos y el modo nocturno en todas las aplicaciones Habilidades: lenguajes de programacion Java nivel medio C# nivel medio Python nivel basico JavaScript nivel basico SQL nivel medio Otras abilidades Git &amp;amp; Github HTML &amp;amp; CSS Marckdown ingles basico Redes Sociales:</description>
+Mis gustos: Me gusta el futball, el ajederez La edicion de fotos, videos y crear objetos 3d Me gusta la musica country Y me encantan los gatos y el modo nocturno en todas las aplicaciones Habilidades: lenguajes de programacion Java nivel medio C# nivel medio Python nivel basico JavaScript nivel basico SQL nivel medio Otras abilidades Git &amp;amp; Github HTML &amp;amp; CSS Markdown Ingles basico Redes Sociales:</description>
     </item>
     
   </channel>
