@@ -14,7 +14,7 @@ Para crear un nuevo post, abrimos la terminal en la ubicacion del proyecto de hu
 Con este comando estariamos creando un nuevo post dentro de la carpeta posts
 
 **¿Como puedo crear un post dentro de subcarpetas?**
-Supongamos que tienes todos tus posts dentro de una carpeta llamada "posts" y dentro de ella tienes otra carpeta llamada **"Java",** dentro de esta carpeta **siempre** debe haber un **_idex.md**
+Supongamos que tienes todos tus posts dentro de una carpeta llamada "posts" y dentro de ella tienes otra carpeta llamada **"Java",** dentro de esta carpeta **siempre** debe haber un **_index.md**
 
 Para crear un nuevo post dento de la carpeta "Java" debes crear el post con el siguiente comando
 
