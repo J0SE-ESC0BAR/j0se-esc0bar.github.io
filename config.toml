@@ -1,4 +1,4 @@
-baseURL = "https://J0SE-ESC0BAR.github.io/"
+baseURL = "https://jaem.tk"
 languageCode = 'es'
 title = "JAEM"
 theme = "hugo-winston-theme"
@@ -21,14 +21,21 @@ paginate = 1
 google_analytics_id = ""
 # Hey aquí pon tu twitter 👇
 twitter_handle = "@JAEM_Developer"
- showAuthorOnHomepage = true
- showAuthorOnPosts = false
- showPostsOnHomepage = true
- addFrame = true
- addDot = true
- showFooterOnHomepage = true
+#Ver autor en pagina inicial
+showAuthorOnHomepage = true
+
+#Ver autor en posts
+showAuthorOnPosts = false
+
+#ver publicaciones en pagina de inicio
+showPostsOnHomepage = true
+
+addFrame = true
+addDot = false
+showFooterOnHomepage = true
 # agregar hojas de estilo css (array de hojas de estilo)
-CSS=["css/estilos.css"]
+#Contiene bootstrap
+css = ["/css/bootstrap.min.css", "/css/estiloscopy.css"]
 
 # agregar mas entradas a la cabezera
 #[menu]

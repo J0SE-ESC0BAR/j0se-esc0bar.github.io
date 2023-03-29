@@ -13,6 +13,7 @@ body, html {
   padding: 84px 20px 0;
 }
 
+
 ol, ul {
   margin: 0;
   padding: 0;
@@ -25,13 +26,14 @@ h1, h2, h3 {
   margin-bottom: 20px; }
 
 .header {
-  background-color: #004eb5;
+  background-color: #006aff;
   height: 64px;
   position: fixed;
   width:100%;
   top: 0;
   left: 0;
   font-family: sans-serif;
+  z-index: 1000; /* Agregar z-index */
   }
 /*barra de navegacion*/
   .nav {
@@ -754,11 +756,14 @@ body {
   color: var(--text-color);
   margin: 0;
   overflow-x: hidden; }
-  @media (min-width: 767px) {
+  /*@media (min-width: 767px) {
     body {
       padding: 50px; } }
   body.frame {
     min-height: 100vh; }
+    
+    ##############Produce desbordamiento###############
+    */
 
 .wrapper {
   max-width: 1000px;

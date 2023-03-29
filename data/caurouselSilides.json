@@ -1,0 +1,13 @@
+{
+    "firstSlide": "images/Dino.jpg",
+    "firstLabel": "El dino es la leche",
+    "firstDescription": "Dinosaurio generado por IA",
+
+    "secondtSlide": "images/JAEM.png",
+    "secondtLabel": "Segundo titulo",
+    "secondDescription": "second Description",
+
+    "thirdSlide": "images/Terraria_OtherWold.png",
+    "thirdLabel": "Tercer titulo",
+    "thirdDescription": "third Description" 
+}

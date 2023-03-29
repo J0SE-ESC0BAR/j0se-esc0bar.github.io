@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JAVA on JAEM</title>
+    <link>https://jaem.tk/posts/java/</link>
+    <description>Recent content in JAVA on JAEM</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 25 Dec 2022 21:28:43 -0600</lastBuildDate><atom:link href="https://jaem.tk/posts/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diferencia entre listas y arreglos</title>
+      <link>https://jaem.tk/posts/java/diferencia-entre-listas-y-arreglos/</link>
+      <pubDate>Sun, 25 Dec 2022 21:28:43 -0600</pubDate>
+      
+      <guid>https://jaem.tk/posts/java/diferencia-entre-listas-y-arreglos/</guid>
+      <description>Cual es la diferencia entre
+List&amp;lt;String&amp;gt; cities = new ArrayList&amp;lt;&amp;gt;(); y
+String[] cities = {};La principal diferencia entre List cities = new ArrayList&amp;lt;&amp;gt;(); y String[] cities = {}; es el tipo de objeto que están creando.
+List cities = new ArrayList&amp;lt;&amp;gt;(); crea una lista de cadenas utilizando la clase ArrayList de Java. La clase ArrayList es una clase de la biblioteca de Java que proporciona una implementación de la interfaz List.</description>
+    </item>
+    
+    <item>
+      <title>Java Concurrencia y Springboot</title>
+      <link>https://jaem.tk/posts/java/java_concurrencia_y_springboot/</link>
+      <pubDate>Sat, 24 Dec 2022 19:46:50 -0600</pubDate>
+      
+      <guid>https://jaem.tk/posts/java/java_concurrencia_y_springboot/</guid>
+      <description>Indice Requisitos funciones Stream Web Scraper Variables atomicas Concurrencia Requisitos del sistema IDE JDK 11 o posterior
+Stream Librerias a utilizar
+import java.util.ArrayList;import java.util.List;import java.util.stream.Collectors;Clase principal
+public class Main {public static void main(String[] args) {List&amp;lt;String&amp;gt; cities = new ArrayList&amp;lt;&amp;gt;();cities.add(&amp;quot;London&amp;quot;);cities.add(&amp;quot;New York&amp;quot;);cities.add(&amp;quot;Tokyo&amp;quot;);cities.add(&amp;quot;Barcelona&amp;quot;);cities.add(&amp;quot;Buenos Aires&amp;quot;);cities.add(&amp;quot;Bogota&amp;quot;);cities.add(&amp;quot;Ciudad de Mexico&amp;quot;);cities.add(&amp;quot;Lima&amp;quot;);//Recorrer una lista de forma tradicionalfor (int i = 0; i &amp;lt; cities.size(); i++) {System.</description>
+    </item>
+    
+  </channel>
+</rss>

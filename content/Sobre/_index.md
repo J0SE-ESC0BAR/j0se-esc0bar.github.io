@@ -2,7 +2,7 @@
 title: 'Sobre mi'
 menu:
   main:
-    name: "Sobre"
+    name: "Sobre mi"
 ---
 
 Información sobre mí..
@@ -36,4 +36,6 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 - `Facebook`:  https://www.facebook.com/JoseAlonsoEscobarMejia
 - ✉ `Email`:  <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a>
 
+**Curriculum Vitae:**
+- `CV_José_Escobar.pdf`
 

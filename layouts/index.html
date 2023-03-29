@@ -4,22 +4,21 @@
 {{ define "main" }}
 
   {{ if .Site.Params.showAuthorOnHomepage }}
-    {{ partial "author-large.html" . }}
+  {{ partial "author-large.html" . }}
   {{ end }}
-
-  <div class="intro">
+<div class="contenido">
+  <!-- Introduccion desactivada
+    <div class="intro">
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
     <div class="intro-content">{{ .Content }}</div>
-    
-  </div>
+  </div>-->
   <h1>Post destacado</h1>
   <hr>
   <div class="summary">
-  
-    <div class="summary-date">Jul 14, 2022</div>
-  
-  <h2 class="summary-title"><a href="../JAEM/posts/sql_basico/">SQL Basico</a></h2>
-  <p class="summary-description">SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos.</p>
+    <img class="summary-image" src="../images/hugo-logo.png">
+  <h2 class="summary-title"><a href="../posts/hugo_uso_basico/">Hugo uso básico</a></h2>
+    <div class="summary-date">Dec 25, 2022</div>
+  <p class="summary-description">Estos son los comandos basicos para que comiences a trabajar con hugo</p>
 </div>
   <h1>Último post</h1>
   <hr>
@@ -30,7 +29,7 @@
       {{ .Render "summary" }}
     {{ end }}
   {{end}}
+</div>
   {{ end }}
-
 {{ define "footer_js" }}
 {{ end }}

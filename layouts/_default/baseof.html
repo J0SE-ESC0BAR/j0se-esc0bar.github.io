@@ -8,7 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--Favicon-->
   <link rel="icon" href="{{ .Site.BaseURL }}favicon.png">
-<!--CSS-->
+  <!--Bootstrap icons-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <!-- Agregar Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!--CSS-->
   {{ range .Site.Params.css }}
   <link rel="stylesheet" href="{{ . | relURL }}">
   {{ end }}
@@ -34,14 +38,14 @@
 
 <body class='page{{ delimit $themeStyle " " }} {{ block "body_classes" . }}{{ end }}'>
   <!--- Page post's -->
-  <div id="wrapper" class="wrapper">
+  <!--<div id="wrapper" class="wrapper">-->
     {{ partial "header.html" . }}
     {{ block "main" . }}
     {{ end }}
     {{ block "footer" . }}
     {{ partial "footer.html" . }}
     {{ end }}
-  </div>
+  <!--</div>-->
   {{ $scripts := resources.Get "js/scripts.js" }}
 
   {{ $js := slice $scripts | resources.Concat "js/bundle.js" }}
@@ -54,6 +58,10 @@
 
   {{ block "footer_js" . }}
   {{ end }}
+<!-- Agregar Bootstrap JS, Popper.js y, opcionalmente, el complemento de iconos de Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

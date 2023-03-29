@@ -2,7 +2,7 @@
 title: "GPT3 Responde: ¿Es malo jugar?"
 date: 2022-12-26T21:28:43-06:00
 description: 'Una respuesta de parte de la inteligencia artificial GPT3, muy conosida por su gran potencial, con una gran capasidad de responder preguntas'
-image: images/cctv.jpeg
+image: images/Gamer.png
 draft: false
 ---
 **¿Jugar videojuego es malo?**

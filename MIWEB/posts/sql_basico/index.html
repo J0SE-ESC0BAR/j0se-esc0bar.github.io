@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SQL Basico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://jaem.tkfavicon.png">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  
+  <link rel="stylesheet" href="../../css/estilos.css">
+  
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  
+
+  
+    <meta name="description" content="SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos."/>
+    <meta property="og:title" content="SQL Basico"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://jaem.tk/posts/sql_basico/"/>
+    
+    <meta property="og:description" content="SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos."/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@JAEM_Developer"/>
+    <meta name="twitter:creator" content="@JAEM_Developer"/>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+<body class='page frame page-blog-single'>
+  
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <nav class="nav">
+    <a class="header-logo" href="https://jaem.tk">JAEM</a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span class="material-symbols-outlined">
+      menu
+      </span></button>
+      <ul class="nav-menu">
+          
+          
+              <li class="menu-item-post&#39;s">
+                  <a class="nav-menu-link nav-link" href="../../posts/">Post&#39;s</a>
+              </li>
+          
+              <li class="menu-item-proyectos">
+                  <a class="nav-menu-link nav-link" href="../../proyectos/">Proyectos</a>
+              </li>
+          
+              <li class="menu-item-sobre mi">
+                  <a class="nav-menu-link nav-link" href="../../sobre/">Sobre mi</a>
+              </li>
+          
+      </ul>
+    </nav>
+</div>
+    
+  <div class="blog">
+    
+    <div class="intro">
+      <h1>SQL Basico</h1>
+      
+    </div>
+    <div class="content">
+      <p>&ndash; Crea una nueva base de datos</p>
+<pre><code>create database Blog;
+</code></pre>
+<p>&ndash; seleccionar base de datos</p>
+<pre><code>use database Blog;
+</code></pre>
+<p>&ndash; crea una nueva tabla</p>
+<pre><code>create table usuarios2
+(
+</code></pre>
+<p>Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma</p>
+<pre><code>-- (identificador) (tipo) (si puede quedar vacio)
+	ID int not null,
+	Nombre varchar(20) not null,
+	Apellido varchar(20) not null,
+	Telefono varchar(12) not null
+);
+</code></pre>
+<p>&ndash; Insertar valores a una fila (insertar un registro)</p>
+<pre><code>INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	01,
+	'Pedro',
+	'Arias',
+	'809-123-1345'
+);
+</code></pre>
+<p>&ndash; Solicitar los datos de toda la tabla</p>
+<pre><code>SELECT * FROM usuarios2;
+</code></pre>
+<p>&ndash; Insertar varios valores a las columans (insertar varios registros)</p>
+<pre><code>INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	02,
+	'Óscar',
+	'Pérez',
+	'864-323-742'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	03,
+	'Juan',
+	'Arias',
+	'604-423-942'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	04,
+	'Valentina',
+	'Sánchez',
+	'464-349-2142'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	05,
+	'Óscar',
+	'León',
+	'984-632-8452'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	06,
+	'Efraín',
+	'Ríos',
+	'895-224-3612'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	07,
+	'Pedro',
+	'Sánchez',
+	'434-343-1742'
+);
+
+INSERT INTO usuarios2(
+	ID,
+	Nombre,
+	Apellido,
+	Telefono
+)
+VALUES (
+	08,
+	'Martín',
+	'Pérez',
+	'724-353-442'
+);
+</code></pre>
+<p>&ndash; Solicitar una columna de una tabla</p>
+<pre><code>SELECT Nombre FROM usuarios2;
+</code></pre>
+<p>&ndash; Solicitar dos columna de una tabla</p>
+<pre><code>SELECT Nombre,Telefono FROM usuarios2;
+</code></pre>
+<p>&ndash; Traer los registros unicos y eliminar los repetidos</p>
+<pre><code>SELECT DISTINCT Nombre,ID
+FROM usuarios2;
+</code></pre>
+<p>&ndash; Ordenar los resultados por los criterios que elijamos</p>
+<pre><code>SELECT * FROM usuarios2
+Order BY Apellido;
+</code></pre>
+<p>SELECT * FROM usuarios2</p>
+<pre><code>Order BY Nombre,ID;
+</code></pre>
+<p>&ndash; Extraer datos espesificos con operadores logicos (WHERE) donde</p>
+<pre><code>SELECT * FROM usuarios2
+WHERE ID &gt; 4;
+</code></pre>
+<p>&ndash; Operador BETWEEN (entre) junto con WHERE</p>
+<pre><code>SELECT * FROM usuarios2
+WHERE ID BETWEEN 2 and 5;
+</code></pre>
+<p>&ndash; Actualizar datos de la tabla</p>
+<pre><code>UPDATE usuarios2
+SET Nombre='Marcos',Apellido='Vasquez'
+WHERE ID=5;
+</code></pre>
+<p>&ndash; tree solo una columna de la tabla</p>
+<pre><code>SELECT * FROM usuarios2
+WHERE ID =5;
+</code></pre>
+<p>&ndash; Eliminar registros de la tabla</p>
+<p>&ndash; Nota: no olvidar colocar WHERE
+&ndash; para espesificar el registro que queremos eliminar,
+&ndash; de lo contrario eliminara toda la tabla</p>
+<pre><code>SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
+
+DELETE FROM usuarios2
+WHERE ID=8;
+-- (tabla despues de borrar el registro)
+SELECT * FROM usuarios2;
+</code></pre>
+<p>&ndash; Agregar una columna a nuestra tabla</p>
+<pre><code>--    (nombre de la tabla) (identificador) (tipo que almacenara)
+ALTER TABLE usuarios2 ADD Dirección varchar(10);
+</code></pre>
+<p>&ndash; Renombrar un a columna de una tabla</p>
+<pre><code>SELECT * FROM usuarios2; -- (tabla antes de Renombrar columna)
+exec sp_rename 'usuarios2.dirección','Domicilio','COLUMN';
+SELECT * FROM usuarios2; -- (tabla despues de Renombrar columna)
+</code></pre>
+<p>&ndash; Borrar una columna de una tabla</p>
+<pre><code>SELECT * FROM usuarios2; -- (tabla antes de borrar la columna)
+--   	(nombre de la tabla)	(identificador)
+ALTER TABLE usuarios2 DROP COLUMN Domicilio;
+SELECT * FROM usuarios2; -- (tabla despues de borrar la columna)
+</code></pre>
+<p>&ndash; Cambiar el nombre a una tabla o renombrar una tabla</p>
+<p>&ndash; (nombre actual de la tabla) (nuevo nombre de la tabla)</p>
+<pre><code>exec sp_rename 'usuarios2', 'usuarios';
+</code></pre>
+<p>&ndash; BORRAR UNA TABLA</p>
+<pre><code>DROP TABLE usuarios;
+</code></pre>
+
+    </div>
+  </div>
+
+    
+    
+
+<footer class="clearfix">
+      
+      <div id="footer-info">Copyright &copy; <time datetime="2023-03-26 14:58:42.4441915 -0600 CST m=&#43;0.285576001">2023</time> - Diseño Web realizado por José Escobar</div>
+      <div class="footer-social">
+        
+          <span class="social-icon social-icon-twitter">
+            <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener">
+              <img src="../../images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+            </a>
+          </span>
+        
+          <span class="social-icon social-icon-github">
+            <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener">
+              <img src="../../images/social/github.svg" width="24" height="24" alt="github"/>
+            </a>
+          </span>
+        
+          <span class="social-icon social-icon-linkedin">
+            <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener">
+              <img src="../../images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+            </a>
+          </span>
+        
+      </div>
+      
+</footer>
+    
+  </div>
+  
+
+  
+
+  
+  <script type="text/javascript" src="../../js/bundle.min.d996c3e3eab74017879828a068abbff91d5611e31547e837391128ed0f9e397d.js"></script>
+  
+
+  
+  
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

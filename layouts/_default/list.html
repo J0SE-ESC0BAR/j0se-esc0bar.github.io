@@ -1,6 +1,7 @@
 {{ define "body_classes" }}page-default-list{{ end }}
 
 {{ define "main" }}
+<div class="contenido">
   <div class="intro">
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
     {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
@@ -9,5 +10,5 @@
   {{ range.Pages }}
     {{ .Render "summary" }}
   {{ end }}
-
-{{ end }}
+</div>
+  {{ end }}

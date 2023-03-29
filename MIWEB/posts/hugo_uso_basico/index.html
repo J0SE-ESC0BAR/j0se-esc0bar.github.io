@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Hugo uso básico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://jaem.tkfavicon.png">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  
+  <link rel="stylesheet" href="../../css/estilos.css">
+  
+  <link rel="stylesheet" href="../../assets/css/custom.css">
+  
+
+  
+    <meta name="description" content="Estos son los comandos basicos para que comiences a trabajar con hugo"/>
+    <meta property="og:title" content="Hugo uso básico"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://jaem.tk/posts/hugo_uso_basico/"/>
+    <meta property="og:image" content="https://jaem.tk/images/cctv.jpeg"/>
+    <meta property="og:description" content="Estos son los comandos basicos para que comiences a trabajar con hugo"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@JAEM_Developer"/>
+    <meta name="twitter:creator" content="@JAEM_Developer"/>
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+<body class='page frame page-blog-single'>
+  
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <nav class="nav">
+    <a class="header-logo" href="https://jaem.tk">JAEM</a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span class="material-symbols-outlined">
+      menu
+      </span></button>
+      <ul class="nav-menu">
+          
+          
+              <li class="menu-item-post&#39;s">
+                  <a class="nav-menu-link nav-link" href="../../posts/">Post&#39;s</a>
+              </li>
+          
+              <li class="menu-item-proyectos">
+                  <a class="nav-menu-link nav-link" href="../../proyectos/">Proyectos</a>
+              </li>
+          
+              <li class="menu-item-sobre mi">
+                  <a class="nav-menu-link nav-link" href="../../sobre/">Sobre mi</a>
+              </li>
+          
+      </ul>
+    </nav>
+</div>
+    
+  <div class="blog">
+    
+    <div class="intro">
+      <h1>Hugo uso básico</h1>
+      
+      <img src="../../images/cctv.jpeg" />
+      
+    </div>
+    <div class="content">
+      <h2 id="crear-un-nuevo-post-en-hugo">Crear un nuevo post en hugo</h2>
+<p>Para crear un nuevo post, abrimos la terminal en la ubicacion del proyecto de hugo y digitamos el sigiente comando:</p>
+<pre><code>Hugo new posts/nombre_post.md
+</code></pre>
+<p>Con este comando estariamos creando un nuevo post dentro de la carpeta posts</p>
+<p><strong>¿Como puedo crear un post dentro de subcarpetas?</strong>
+Supongamos que tienes todos tus posts dentro de una carpeta llamada &ldquo;posts&rdquo; y dentro de ella tienes otra carpeta llamada <strong>&ldquo;Java&rdquo;,</strong> dentro de esta carpeta <strong>siempre</strong> debe haber un <strong>_idex.md</strong></p>
+<p>Para crear un nuevo post dento de la carpeta &ldquo;Java&rdquo; debes crear el post con el siguiente comando</p>
+<pre><code>Hugo new posts/Java/nombre_post.md
+</code></pre>
+<h2 id="como-ver-mi-sitio-de-hugo">¿Como ver mi sitio de hugo?</h2>
+<p>Con el comando <strong>hugo server</strong> inicia el servidor de hugo, lo inicia de forma local, por lo general se genera en: <strong>localhost:1313/</strong>(nombre_de_la_pagina_web)</p>
+<h2 id="compilar-archivos-de-hugo">Compilar archivos de hugo</h2>
+<p>Simplemente con lanzar el comando</p>
+<pre><code>hugo
+</code></pre>
+<p>desde la termnial, hugo genera los archivos nesesarios para la pagina web</p>
+<h2 id="si-no-quiero-que-se-guarde-en-public-quiero-que-se-guarde-en-una-carpeta-llamada-docs">Si no quiero que se guarde en public, quiero que se guarde en una carpeta llamada &ldquo;docs&rdquo;</h2>
+<p>Para cambiar la carpeta de destino de la página generada por Hugo, puedes modificar la opción &ldquo;publishDir&rdquo; en la configuración de tu proyecto de Hugo. Esta opción determina la ruta de la carpeta en la que se guardarán los archivos generados por Hugo.</p>
+<p>Por ejemplo, si quieres que tus páginas se guarden en una carpeta llamada &ldquo;docs&rdquo;, puedes agregar la siguiente línea a tu archivo de configuración <strong>&ldquo;config.toml&rdquo;</strong> o <strong>&ldquo;config.yaml&rdquo;</strong>:</p>
+<pre><code>publishDir = &quot;docs&quot;
+</code></pre>
+<p>Luego, cuando ejecutes el comando &ldquo;hugo&rdquo; para generar tu página, se guardará en la carpeta &ldquo;docs&rdquo; en lugar de en la carpeta &ldquo;public&rdquo;.</p>
+<p>Tambien puedes ejecutal el comando &ldquo;hugo&rdquo; mas <strong>-d</strong> para indicarle el directorio</p>
+<pre><code>hugo -d docs</code></pre>
+
+    </div>
+  </div>
+
+    
+    
+
+<footer class="clearfix">
+      
+      <div id="footer-info">Copyright &copy; <time datetime="2023-03-26 14:58:42.4426822 -0600 CST m=&#43;0.284066701">2023</time> - Diseño Web realizado por José Escobar</div>
+      <div class="footer-social">
+        
+          <span class="social-icon social-icon-twitter">
+            <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener">
+              <img src="../../images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+            </a>
+          </span>
+        
+          <span class="social-icon social-icon-github">
+            <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener">
+              <img src="../../images/social/github.svg" width="24" height="24" alt="github"/>
+            </a>
+          </span>
+        
+          <span class="social-icon social-icon-linkedin">
+            <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener">
+              <img src="../../images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+            </a>
+          </span>
+        
+      </div>
+      
+</footer>
+    
+  </div>
+  
+
+  
+
+  
+  <script type="text/javascript" src="../../js/bundle.min.d996c3e3eab74017879828a068abbff91d5611e31547e837391128ed0f9e397d.js"></script>
+  
+
+  
+  
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

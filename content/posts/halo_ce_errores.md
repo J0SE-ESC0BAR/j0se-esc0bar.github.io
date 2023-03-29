@@ -2,6 +2,7 @@
 title: "Halo CE"
 date: 2022-06-07T17:57:53-06:00
 description: 'Soluciones a los errores mas comunes en el de halo ce, desde la instalacion hasta errores más concretos.'
+image: images/Halo Combat Evolved.jpg
 draft: false
 ---
 

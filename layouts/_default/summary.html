@@ -1,9 +1,13 @@
 <div class="summary">
+  <!--Imagen-->
+  {{ if .Params.image }}
+    <img class="summary-image img-fluid" src="{{ .Params.image | relURL }}" />
+  {{ end }}
+  <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   {{ if .Site.Params.showAuthorOnPosts }}
     {{ partial "author.html" . }}
   {{ else }}
-    <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
+  <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
   {{ end }}
-  <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-  <p class="summary-description">{{ .Params.description }}</p>
+  <p class="summary-description">Descripción: {{ .Params.description }}</p>
 </div>
