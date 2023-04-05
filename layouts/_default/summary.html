@@ -1,8 +1,9 @@
 <div class="summary">
   <!--Imagen-->
   {{ if .Params.image }}
-    <img class="summary-image img-fluid" src="{{ .Params.image | relURL }}" />
+    <img class="summary-image" src="{{ .Params.image | relURL }}" />
   {{ end }}
+  <div class="summary-content">
   <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
   {{ if .Site.Params.showAuthorOnPosts }}
     {{ partial "author.html" . }}
@@ -10,4 +11,5 @@
   <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
   {{ end }}
   <p class="summary-description">Descripción: {{ .Params.description }}</p>
+</div>
 </div>
