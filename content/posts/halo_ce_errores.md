@@ -10,9 +10,9 @@ draft: false
 
 ### Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE.
 
-- #### • Explicación de que es hac2 y chimera
-- #### • Componentes necesarios que necesita Halo CE
-- #### • Solución a errores
+- ####  Explicación de que es hac2 y chimera
+- ####  Componentes necesarios que necesita Halo CE
+- ####  Solución a errores
 
 #### Explicación de que es hac2 y chimera
 
@@ -20,12 +20,12 @@ draft: false
 
 Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son: 
 
-- •	Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.
-- •	Se puede cambiar el color de hud (barra de vida, indicador de arma, granadas y munición) (f8).
-- •	Se pueden descargar muchos mapas de forma automática, cuando no tienes un mapa hac2 lo descarga.
-- •	Se puede cambiar el campo de visión (f6).
-- •	Se puede espectar a otros jugadores(f7).
-- •	Se pueden instalar medallas.
+- 	Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.
+- 	Se puede cambiar el color de hud (barra de vida, indicador de arma, granadas y munición) (f8).
+- 	Se pueden descargar muchos mapas de forma automática, cuando no tienes un mapa hac2 lo descarga.
+- 	Se puede cambiar el campo de visión (f6).
+- 	Se puede espectar a otros jugadores(f7).
+- 	Se pueden instalar medallas.
 
 Su instalación es colocar un archivo en la carpeta controls del juego.
 
@@ -38,14 +38,14 @@ Chimera es al igual que hac2 es un modificador del juego, pero en lo personal m�
 De este existen muchas versiones, pero las mas significativas son las versiones antes de la versión 1 y las versiones después de la versión 1
 Chimera tiene muchas características como para dedicarle un video solo a este, solo mencionar las más importantes, estas son:
 
-- •	Desbloquea las animaciones de armas de 30 fps a 60 fps, no sé si se pueda más.
-- •	Limitar fps
-- •	Ver fps
-- •	Se pueden descargar muchos mapas de forma automática, cuando no tienes un mapa chimera lo descarga.
-- •	Permite agregar archivos modificadores (lua scripts).
-- •	Se puede modificar el fov (campo de visión).
-- •	Y tiene muchos otros modificadores que dan para otro video.
-- •	Se pueden instalar medallas.
+- 	Desbloquea las animaciones de armas de 30 fps a 60 fps, no sé si se pueda más.
+- 	Limitar fps
+- 	Ver fps
+-	Se pueden descargar muchos mapas de forma automática, cuando no tienes un mapa chimera lo descarga.
+-	Permite agregar archivos modificadores (lua scripts).
+-	Se puede modificar el fov (campo de visión).
+-	Y tiene muchos otros modificadores que dan para otro video.
+-	Se pueden instalar medallas.
 
 La instalación de chimera v1 es colocar dos archivos en la carpeta del juego, la instalación de chimera antes de la versión 1 se instala colocando un archivo en la carpeta controls dentro del juego.
 Requisitos de chimera:
@@ -56,10 +56,10 @@ Requisitos de chimera:
 Existe otro modificador, es **open sauce**, la mayoría lo instala para poder ejecutar mapas. yelo  
 Este dentro tiene varias características como:
 
-- •	Cambiar posición de las armas.
-- •	Cambiar fov.
-- •	Muchas opciones graficas avanzadas, aunque tiene un impacto en el rendimiento.
-- •	Y muchas otras opciones.
+- Cambiar posición de las armas.
+- Cambiar fov.
+- Muchas opciones graficas avanzadas, aunque tiene un impacto en el rendimiento.
+- Y muchas otras opciones.
 
 Su compartivilidad con chimera y hac2 la desconosco.
 
