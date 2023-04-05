@@ -2,7 +2,7 @@
 title: "Hugo uso básico"
 date: 2022-12-25T08:53:03-06:00
 description: 'Estos son los comandos basicos para que comiences a trabajar con hugo'
-image: images/hugo-logo.png
+image: images/Hugo_logo.png
 draft: false
 ---
 

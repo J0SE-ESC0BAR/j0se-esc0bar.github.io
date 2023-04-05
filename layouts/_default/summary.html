@@ -1,15 +1,19 @@
 <div class="summary">
-  <!--Imagen-->
+  <!--Imagen con enlace dentro de un div-->
   {{ if .Params.image }}
-    <img class="summary-image" src="{{ .Params.image | relURL }}" />
+    <div class="summary-image">
+      <a href="{{ .RelPermalink }}">
+        <img src="{{ .Params.image | relURL }}" />
+      </a>
+    </div>
   {{ end }}
   <div class="summary-content">
-  <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-  {{ if .Site.Params.showAuthorOnPosts }}
-    {{ partial "author.html" . }}
-  {{ else }}
-  <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
-  {{ end }}
-  <p class="summary-description">Descripción: {{ .Params.description }}</p>
-</div>
+    <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ if .Site.Params.showAuthorOnPosts }}
+      {{ partial "author.html" . }}
+    {{ else }}
+      <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
+    {{ end }}
+    <p class="summary-description">Descripción: {{ .Params.description }}</p>
+  </div>
 </div>
