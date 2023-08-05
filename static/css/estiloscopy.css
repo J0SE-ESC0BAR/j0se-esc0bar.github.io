@@ -187,7 +187,14 @@ a {
   overflow-wrap: break-word;
   text-decoration: none;
 }
-
+ul.pagination.pagination-default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#carouselExampleCaptions{
+  margin-top: 4rem;
+}
 
 /* Estilos para el menú móvil */
 @media (max-width: 768px) {
