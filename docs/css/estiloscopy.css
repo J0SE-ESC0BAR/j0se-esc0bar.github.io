@@ -86,15 +86,17 @@
   width: 100%;
   object-fit: cover;
 }
-
-.intro {
-}
-.contenido {
+.contenido{
   max-width: 992px;
   padding: 0 10px;
-  margin: 100px auto; /* Ajusta el margen superior a 100px y el margen izquierdo y derecho a 'auto' */
+  margin: 1rem auto;
 }
-
+.page-blog-single > .contenido {
+  margin: 5rem auto; /* Ajusta el margen superior a 100px y el margen izquierdo y derecho a 'auto' */
+}
+.page-default-list > .contenido > .intro{
+  padding-top: 5rem;
+}
 /*Elemento de miniatura de los post en la lista de post y inicio*/
 .summary {
   display: flex;
