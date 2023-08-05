@@ -7,26 +7,30 @@
   <title>Hugo uso básico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="https://J0SE-ESC0BAR.github.io/favicon.png">
-
+  <link rel="icon" href="https://jaem.tkfavicon.png">
   
-  <link rel="stylesheet" href="../../css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+  
+  
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="../../css/estiloscopy.css">
   
 
   
     <meta name="description" content="Estos son los comandos basicos para que comiences a trabajar con hugo"/>
     <meta property="og:title" content="Hugo uso básico"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://J0SE-ESC0BAR.github.io/posts/hugo_uso_basico/"/>
-    <meta property="og:image" content="https://J0SE-ESC0BAR.github.io/images/cctv.jpeg"/>
+    <meta property="og:url" content="https://jaem.tk/posts/hugo_uso_basico/"/>
+    <meta property="og:image" content="https://jaem.tk/images/Hugo_logo.png"/>
     <meta property="og:description" content="Estos son los comandos basicos para que comiences a trabajar con hugo"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@JAEM_Developer"/>
     <meta name="twitter:creator" content="@JAEM_Developer"/>
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -34,38 +38,36 @@
 
 <body class='page frame page-blog-single'>
   
-  <div id="wrapper" class="wrapper">
+  
     <div class='header'>
   <nav class="nav">
-    <a class="header-logo" href="https://J0SE-ESC0BAR.github.io/">JAEM</a>
-    <button class="nav-toggle" aria-label="Abrir menú"><span class="material-symbols-outlined">
-      menu
-      </span></button>
+    <a class="header-logo" href="https://jaem.tk">JAEM</a>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
       <ul class="nav-menu">
           
           
-              <li class="menu-item-post&#39;s">
-                  <a class="nav-menu-link nav-link" href="../../posts/">Post&#39;s</a>
+              <li class="menu-item-posts">
+                  <a class="nav-menu-link nav-link" href="../../posts/">Posts</a>
               </li>
           
-              <li class="menu-item-proyectos">
-                  <a class="nav-menu-link nav-link" href="../../proyectos/">Proyectos</a>
-              </li>
-          
-              <li class="menu-item-sobre">
-                  <a class="nav-menu-link nav-link" href="../../sobre/">Sobre</a>
+              <li class="menu-item-sobre mi">
+                  <a class="nav-menu-link nav-link" href="../../sobre/">Sobre mi</a>
               </li>
           
       </ul>
     </nav>
-</div>
     
-  <div class="blog">
+  </div>
+
+    
+  <div class="contenido">
     
     <div class="intro">
       <h1>Hugo uso básico</h1>
       
-      <img src="../../images/cctv.jpeg" />
+      <img class="img-fluid mx-auto rounded" src="../../images/Hugo_logo.png" />
       
     </div>
     <div class="content">
@@ -75,7 +77,7 @@
 </code></pre>
 <p>Con este comando estariamos creando un nuevo post dentro de la carpeta posts</p>
 <p><strong>¿Como puedo crear un post dentro de subcarpetas?</strong>
-Supongamos que tienes todos tus posts dentro de una carpeta llamada &ldquo;posts&rdquo; y dentro de ella tienes otra carpeta llamada <strong>&ldquo;Java&rdquo;,</strong> dentro de esta carpeta <strong>siempre</strong> debe haber un <strong>_idex.md</strong></p>
+Supongamos que tienes todos tus posts dentro de una carpeta llamada &ldquo;posts&rdquo; y dentro de ella tienes otra carpeta llamada <strong>&ldquo;Java&rdquo;,</strong> dentro de esta carpeta <strong>siempre</strong> debe haber un <strong>_index.md</strong></p>
 <p>Para crear un nuevo post dento de la carpeta &ldquo;Java&rdquo; debes crear el post con el siguiente comando</p>
 <pre><code>Hugo new posts/Java/nombre_post.md
 </code></pre>
@@ -93,52 +95,195 @@ Supongamos que tienes todos tus posts dentro de una carpeta llamada &ldquo;posts
 </code></pre>
 <p>Luego, cuando ejecutes el comando &ldquo;hugo&rdquo; para generar tu página, se guardará en la carpeta &ldquo;docs&rdquo; en lugar de en la carpeta &ldquo;public&rdquo;.</p>
 <p>Tambien puedes ejecutal el comando &ldquo;hugo&rdquo; mas <strong>-d</strong> para indicarle el directorio</p>
-<pre><code>hugo -d docs</code></pre>
+<pre><code>hugo -d docs
+</code></pre>
+<h2 id="como-puedo-insertar-enlaces-en-markdown-para-hugo">¿Como puedo insertar enlaces en markdown para Hugo?</h2>
+<p>Para insertar enlaces en markdown para hugo, debes usar la siguiente sintaxis:</p>
+<pre><code>[Texto del enlace](/ruta_del_enlace)
+</code></pre>
+<p>Ejemplo:</p>
+<p>[Youtube](https://www.youtube.com)<br>
+<a href="https://www.youtube.com">Youtube</a></p>
+<p>[CV_José_Escobar.pdf](../../../static/CV_José_Escobar.pdf)<br>
+<a href="../../../static/CV_Jos%C3%A9_Escobar.pdf">CV_José_Escobar.pdf</a></p>
+<p>[Youtube](https://www.youtube.com &ldquo;Visita YouTube&rdquo;)<br>
+<a href="https://www.youtube.com" title="Visita YouTube">Youtube</a><br>
+(Cuando coloques el cursor sobre el enlace, verás el mensaje &ldquo;Visita YouTube&rdquo;.)</p>
+<p>[CV_José_Escobar.pdf](/CV_José_Escobar.pdf)<br>
+<a href="../../CV_Jos%C3%A9_Escobar.pdf">CV_José_Escobar.pdf</a></p>
+<h2 id="como-puedo-insertar-imagenes-en-markdown-para-hugo">¿Como puedo insertar imagenes en markdown para Hugo?</h2>
+<p>Para insertar imagenes en markdown para hugo, debes usar la siguiente sintaxis:</p>
+<pre><code>![Texto de la imagen](/ruta_de_la_imagen)
+</code></pre>
+<p>Ejemplo:</p>
+<p>![Texto de la imagen](/ruta_de_la_imagen)</p>
+<h2 id="como-puedo-insertar-videos-en-markdown-para-hugo">¿Como puedo insertar videos en markdown para Hugo?</h2>
+<p>Para insertar videos en markdown para hugo, debes usar la siguiente sintaxis:</p>
+<pre><code>{{&lt; youtube id_del_video &gt;}}
+</code></pre>
+<p>Ejemplo:</p>
+<p>{{&lt; youtube XRLP4K_qON8 &gt;}}</p>
+<h2 id="como-hacer-que-hugo-ignore---como-comando">¿Como hacer que Hugo ignore {{&lt; &gt;}} como comando?</h2>
+<p>Para que Hugo ignore {{&lt;  &gt;}} como comando, debes usar la siguiente sintaxis:</p>
+<p>se utiliza el caracter de escape /* antes de {{ y */ despues de }}</p>
+<pre><code>{{&lt;/*  (TEXTO)  */&gt;}}
+</code></pre>
+<p>Ejemplo:</p>
+<pre><code>{{&lt; youtube id_del_video &gt;}}
+</code></pre>
+<h2 id="como-hacer-que-hugo-ignore--como-comando">¿Como hacer que Hugo ignore ![] como comando?</h2>
+<p>Para que Hugo ignore ![Texto](Texto) como comando, debes usar la siguiente sintaxis:
+se utiliza el caracter de escape \ antes de ! y [</p>
+<p>![Texto de la imagen](/ruta_de_la_imagen)</p>
+<p>Ejemplo:</p>
+<pre><code>\!\[Texto de la imagen](/ruta_de_la_imagen)
+</code></pre>
+<h2 id="como-hacer-que-hugo-ignore--como-comando-1">Como hacer que Hugo ignore [] como comando?</h2>
+<p>Para que Hugo ignore [Texto](Texto) como comando, debes usar la siguiente sintaxis:<!-- raw HTML omitted -->se utiliza el caracter de escape \ antes de [</p>
+<p>[Texto del enlace](/ruta_del_enlace)</p>
+<p>Ejemplo:</p>
+<pre><code>\[Texto del enlace](/ruta_del_enlace)
+</code></pre>
+<h2 id="como-puedo-hacer-un-salto-de-linea-en-markdown-para-hugo">¿Como puedo hacer un salto de linea en markdown para Hugo?</h2>
+<p>Doble retorno de carro: Después de tu texto, presiona la tecla de retorno dos veces para comenzar una nueva línea.<br>
+Ejemplo:</p>
+<pre><code>Esta es otra primera línea.
+
+Esta es otra segunda línea.
+</code></pre>
+<p>Esta es otra primera línea.</p>
+<p>Esta es otra segunda línea.</p>
+<p>Para hacer un salto de linea simple solo debes colocar dos espacios al final de la linea de texto<br>
+Ejemplo:</p>
+<pre><code>Esta es la primera línea.--(dos espacios aquí)
+Esta es la segunda línea.
+</code></pre>
+<p>Esta es la primera línea.<br>
+Esta es la segunda línea.</p>
 
     </div>
   </div>
+  
 
     
     
 
-<footer class="clearfix">
+
+
+
+
+
+<footer class="text-center text-lg-start bg-dark text-light">
+  
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    
+    <div class="me-5 d-sm-block d-lg-block">
+      <span>Sigeme en mis redes sociales:</span>
+    </div>
+    
+    
+
+    
+    <div class="footer-social">
       
-      <div id="footer-info">Copyright &copy; <time datetime="2023-02-23 13:23:47.3585257 -0600 CST m=&#43;0.313155301">2023</time> - Diseño Web realizado por José Escobar</div>
-      <div class="footer-social">
+      <span class="social-icon">
+        <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="me-4 text-light">
+          <i class="bi-twitter" aria-hidden="true"></i>
+        </a>
+      </span>
+      
+      <span class="social-icon">
+        <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="me-4 text-light">
+          <i class="bi-github" aria-hidden="true"></i>
+        </a>
+      </span>
+      
+      <span class="social-icon">
+        <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="me-4 text-light">
+          <i class="bi-linkedin" aria-hidden="true"></i>
+        </a>
+      </span>
+      
+    </div>
+    
+    
+  </section>
+  
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
         
-          <span class="social-icon social-icon-twitter">
-            <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener">
-              <img src="../../images/social/twitter.svg" width="24" height="24" alt="twitter"/>
-            </a>
-          </span>
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
         
-          <span class="social-icon social-icon-github">
-            <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener">
-              <img src="../../images/social/github.svg" width="24" height="24" alt="github"/>
-            </a>
-          </span>
+
         
-          <span class="social-icon social-icon-linkedin">
-            <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener">
-              <img src="../../images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
-            </a>
-          </span>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p><i class="fas fa-envelope me-3 text-light"></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
         
       </div>
       
-</footer>
-    
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2023-08-04 18:33:48.3694226 -0600 CST m=&#43;0.118530701">2023</time> - Diseño Web realizado por José Escobar
   </div>
   
+</footer>
+
+
+    
+  
+  
 
   
 
   
-  <script type="text/javascript" src="../../js/bundle.min.d996c3e3eab74017879828a068abbff91d5611e31547e837391128ed0f9e397d.js"></script>
+  <script type="text/javascript" src="../../js/bundle.min.9e8bf37b167b2ebca52063449d123c34b9cc4f9d835de2b76982c9089a5a49cc.js"></script>
   
 
   
   
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

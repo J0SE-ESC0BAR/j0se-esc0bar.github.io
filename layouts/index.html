@@ -2,27 +2,26 @@
 {{ define "body_classes" }}page-home{{ end }}
 
 {{ define "main" }}
-
   {{ if .Site.Params.showAuthorOnHomepage }}
   {{ partial "author-large.html" . }}
   {{ end }}
 <div class="contenido">
-  <!-- Introduccion desactivada
+  <!-- Introduccion desactivada-->
     <div class="intro">
-    <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
+    <h3>{{ .Title }}</h3>
+    <hr>
+    <div class="intro-image">
+      <p>{{.Description}}</p>
+    </div>
     <div class="intro-content">{{ .Content }}</div>
-  </div>-->
+  </div>
   <h1>Post destacado</h1>
-  <hr>
   <div class="summary">
-  
-  
     <div class="summary-image">
       <a href="../posts/hugo_uso_basico/">
         <img src="../images/Hugo_logo.png">
       </a>
     </div>
-  
   <div class="summary-content">
     <h2 class="summary-title"><a href="../posts/hugo_uso_basico/">Hugo uso básico</a></h2>
     
@@ -34,13 +33,15 @@
   <h1>Último post</h1>
   <hr>
 <!--Ojo pueden cambiar de pagina si modifican la URL ej: http://localhost:1313/JAEM/page/6/ -->
-  {{ if .Site.Params.showPostsOnHomepage }}
+{{ if .Site.Params.showPostsOnHomepage }}
   {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-    {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
-    {{ end }}
-  {{end}}
-</div>
+  {{ range (first 1 $paginator.Pages) }}
+    {{ .Render "summary" }}
   {{ end }}
+{{ end }}
+</div>
+{{ end }}
 {{ define "footer_js" }}
 {{ end }}
+
+

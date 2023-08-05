@@ -7,26 +7,30 @@
   <title>SQL Basico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="https://J0SE-ESC0BAR.github.io/favicon.png">
-
+  <link rel="icon" href="https://jaem.tkfavicon.png">
   
-  <link rel="stylesheet" href="../../css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+  
+  
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="../../css/estiloscopy.css">
   
 
   
     <meta name="description" content="SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos."/>
     <meta property="og:title" content="SQL Basico"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://J0SE-ESC0BAR.github.io/posts/sql_basico/"/>
-    
+    <meta property="og:url" content="https://jaem.tk/posts/sql_basico/"/>
+    <meta property="og:image" content="https://jaem.tk/images/Server.jpeg"/>
     <meta property="og:description" content="SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos."/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@JAEM_Developer"/>
     <meta name="twitter:creator" content="@JAEM_Developer"/>
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 
@@ -34,59 +38,110 @@
 
 <body class='page frame page-blog-single'>
   
-  <div id="wrapper" class="wrapper">
+  
     <div class='header'>
   <nav class="nav">
-    <a class="header-logo" href="https://J0SE-ESC0BAR.github.io/">JAEM</a>
-    <button class="nav-toggle" aria-label="Abrir menú"><span class="material-symbols-outlined">
-      menu
-      </span></button>
+    <a class="header-logo" href="https://jaem.tk">JAEM</a>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
       <ul class="nav-menu">
           
           
-              <li class="menu-item-post&#39;s">
-                  <a class="nav-menu-link nav-link" href="../../posts/">Post&#39;s</a>
+              <li class="menu-item-posts">
+                  <a class="nav-menu-link nav-link" href="../../posts/">Posts</a>
               </li>
           
-              <li class="menu-item-proyectos">
-                  <a class="nav-menu-link nav-link" href="../../proyectos/">Proyectos</a>
-              </li>
-          
-              <li class="menu-item-sobre">
-                  <a class="nav-menu-link nav-link" href="../../sobre/">Sobre</a>
+              <li class="menu-item-sobre mi">
+                  <a class="nav-menu-link nav-link" href="../../sobre/">Sobre mi</a>
               </li>
           
       </ul>
     </nav>
-</div>
     
-  <div class="blog">
+  </div>
+
+    
+  <div class="contenido">
     
     <div class="intro">
       <h1>SQL Basico</h1>
       
+      <img class="img-fluid mx-auto rounded" src="../../images/Server.jpeg" />
+      
     </div>
     <div class="content">
-      <p>&ndash; Crea una nueva base de datos</p>
-<pre><code>create database Blog;
+      <p>En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.</p>
+<h3 id="comandos-basicos">Comandos basicos</h3>
+<p>&ndash; Crea una nueva base de datos
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+create database Blog;
 </code></pre>
-<p>&ndash; seleccionar base de datos</p>
-<pre><code>use database Blog;
+</div></p>
+<p>&ndash; seleccionar base de datos
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+use database Blog;
 </code></pre>
-<p>&ndash; crea una nueva tabla</p>
-<pre><code>create table usuarios2
-(
-</code></pre>
+</div></p>
 <p>Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma</p>
-<pre><code>-- (identificador) (tipo) (si puede quedar vacio)
+<p>(identificador) (tipo) (si puede quedar vacio)
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+-- crea una nueva tabla
+	create table usuarios2(
 	ID int not null,
 	Nombre varchar(20) not null,
 	Apellido varchar(20) not null,
 	Telefono varchar(12) not null
 );
 </code></pre>
-<p>&ndash; Insertar valores a una fila (insertar un registro)</p>
-<pre><code>INSERT INTO usuarios2(
+</div>
+&ndash; Insertar valores a una fila (insertar un registro)
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+INSERT INTO usuarios2(
 	ID,
 	Nombre,
 	Apellido,
@@ -99,11 +154,37 @@ VALUES (
 	'809-123-1345'
 );
 </code></pre>
-<p>&ndash; Solicitar los datos de toda la tabla</p>
-<pre><code>SELECT * FROM usuarios2;
+</div>
+&ndash; Solicitar los datos de toda la tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2;
 </code></pre>
-<p>&ndash; Insertar varios valores a las columans (insertar varios registros)</p>
-<pre><code>INSERT INTO usuarios2(
+</div></p>
+<p>&ndash; Insertar varios valores a las columans (insertar varios registros)
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+INSERT INTO usuarios2(
 	ID,
 	Nombre,
 	Apellido,
@@ -194,118 +275,382 @@ VALUES (
 	'724-353-442'
 );
 </code></pre>
-<p>&ndash; Solicitar una columna de una tabla</p>
-<pre><code>SELECT Nombre FROM usuarios2;
+</div></p>
+<p>&ndash; Solicitar una columna de una tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT Nombre FROM usuarios2;
 </code></pre>
-<p>&ndash; Solicitar dos columna de una tabla</p>
-<pre><code>SELECT Nombre,Telefono FROM usuarios2;
+</div>
+&ndash; Solicitar dos columna de una tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT Nombre,Telefono FROM usuarios2;
 </code></pre>
-<p>&ndash; Traer los registros unicos y eliminar los repetidos</p>
-<pre><code>SELECT DISTINCT Nombre,ID
+</div>
+&ndash; Traer los registros unicos y eliminar los repetidos
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT DISTINCT Nombre,ID
 FROM usuarios2;
 </code></pre>
-<p>&ndash; Ordenar los resultados por los criterios que elijamos</p>
-<pre><code>SELECT * FROM usuarios2
+</div></p>
+<p>&ndash; Ordenar los resultados por los criterios que elijamos
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2
 Order BY Apellido;
+
+SELECT * FROM usuarios2
+Order BY Nombre,ID;
 </code></pre>
-<p>SELECT * FROM usuarios2</p>
-<pre><code>Order BY Nombre,ID;
+</div></p>
+<p>&ndash; Extraer datos espesificos con operadores logicos &ldquo;WHERE&rdquo; (DONDE)
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2
+WHERE ID > 4;
 </code></pre>
-<p>&ndash; Extraer datos espesificos con operadores logicos (WHERE) donde</p>
-<pre><code>SELECT * FROM usuarios2
-WHERE ID &gt; 4;
-</code></pre>
-<p>&ndash; Operador BETWEEN (entre) junto con WHERE</p>
-<pre><code>SELECT * FROM usuarios2
+</div></p>
+<p>&ndash; Operador &ldquo;BETWEEN&rdquo; (ENTRE) junto con WHERE
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2
 WHERE ID BETWEEN 2 and 5;
 </code></pre>
-<p>&ndash; Actualizar datos de la tabla</p>
-<pre><code>UPDATE usuarios2
+</div>
+&ndash; Actualizar datos de la tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+UPDATE usuarios2
 SET Nombre='Marcos',Apellido='Vasquez'
 WHERE ID=5;
 </code></pre>
-<p>&ndash; tree solo una columna de la tabla</p>
-<pre><code>SELECT * FROM usuarios2
+</div></p>
+<p>&ndash; tree solo una columna de la tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2
 WHERE ID =5;
 </code></pre>
+</div></p>
 <p>&ndash; Eliminar registros de la tabla</p>
 <p>&ndash; Nota: no olvidar colocar WHERE
 &ndash; para espesificar el registro que queremos eliminar,
-&ndash; de lo contrario eliminara toda la tabla</p>
-<pre><code>SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
+&ndash; de lo contrario eliminara toda la tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
 
 DELETE FROM usuarios2
 WHERE ID=8;
 -- (tabla despues de borrar el registro)
 SELECT * FROM usuarios2;
 </code></pre>
-<p>&ndash; Agregar una columna a nuestra tabla</p>
-<pre><code>--    (nombre de la tabla) (identificador) (tipo que almacenara)
+</div></p>
+<p>&ndash; Agregar una columna a nuestra tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+--(nombre de la tabla) (identificador) (tipo que almacenara)
 ALTER TABLE usuarios2 ADD Dirección varchar(10);
 </code></pre>
-<p>&ndash; Renombrar un a columna de una tabla</p>
-<pre><code>SELECT * FROM usuarios2; -- (tabla antes de Renombrar columna)
+</div></p>
+<p>&ndash; Renombrar un a columna de una tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2; -- (tabla antes de Renombrar columna)
 exec sp_rename 'usuarios2.dirección','Domicilio','COLUMN';
 SELECT * FROM usuarios2; -- (tabla despues de Renombrar columna)
 </code></pre>
-<p>&ndash; Borrar una columna de una tabla</p>
-<pre><code>SELECT * FROM usuarios2; -- (tabla antes de borrar la columna)
---   	(nombre de la tabla)	(identificador)
+</div></p>
+<p>&ndash; Borrar una columna de una tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+SELECT * FROM usuarios2; -- (tabla antes de borrar la columna)
+
+--ALTER TABLE (nombre de la tabla) DROP COLUMN	(identificador)
 ALTER TABLE usuarios2 DROP COLUMN Domicilio;
+
 SELECT * FROM usuarios2; -- (tabla despues de borrar la columna)
 </code></pre>
-<p>&ndash; Cambiar el nombre a una tabla o renombrar una tabla</p>
-<p>&ndash; (nombre actual de la tabla) (nuevo nombre de la tabla)</p>
-<pre><code>exec sp_rename 'usuarios2', 'usuarios';
+</div></p>
+<p>&ndash; Cambiar el nombre a una tabla o renombrar una tabla
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+-- (nombre actual de la tabla) (nuevo nombre de la tabla)
+exec sp_rename 'usuarios2', 'usuarios';
 </code></pre>
-<p>&ndash; BORRAR UNA TABLA</p>
-<pre><code>DROP TABLE usuarios;
+</div></p>
+<p>&ndash; BORRAR UNA TABLA
+<div class="card bg-dark text-light mb-4">
+    <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
+        <span class="unselectable">SQL</span>
+        <button class="gap-2 btn btn-link btn-sm d-flex align-items-center text-decoration-none text-light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            Copy code
+        </button>
+    </div>
+        <pre class="card-body p-4 overflow-auto"><code>
+DROP TABLE usuarios;
 </code></pre>
+</div></p>
 
     </div>
   </div>
+  
 
     
     
 
-<footer class="clearfix">
+
+
+
+
+
+<footer class="text-center text-lg-start bg-dark text-light">
+  
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    
+    <div class="me-5 d-sm-block d-lg-block">
+      <span>Sigeme en mis redes sociales:</span>
+    </div>
+    
+    
+
+    
+    <div class="footer-social">
       
-      <div id="footer-info">Copyright &copy; <time datetime="2023-02-23 13:23:47.3149994 -0600 CST m=&#43;0.269629001">2023</time> - Diseño Web realizado por José Escobar</div>
-      <div class="footer-social">
+      <span class="social-icon">
+        <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="me-4 text-light">
+          <i class="bi-twitter" aria-hidden="true"></i>
+        </a>
+      </span>
+      
+      <span class="social-icon">
+        <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="me-4 text-light">
+          <i class="bi-github" aria-hidden="true"></i>
+        </a>
+      </span>
+      
+      <span class="social-icon">
+        <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="me-4 text-light">
+          <i class="bi-linkedin" aria-hidden="true"></i>
+        </a>
+      </span>
+      
+    </div>
+    
+    
+  </section>
+  
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
         
-          <span class="social-icon social-icon-twitter">
-            <a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener">
-              <img src="../../images/social/twitter.svg" width="24" height="24" alt="twitter"/>
-            </a>
-          </span>
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
         
-          <span class="social-icon social-icon-github">
-            <a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener">
-              <img src="../../images/social/github.svg" width="24" height="24" alt="github"/>
-            </a>
-          </span>
+
         
-          <span class="social-icon social-icon-linkedin">
-            <a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener">
-              <img src="../../images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
-            </a>
-          </span>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p><i class="fas fa-envelope me-3 text-light"></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
         
       </div>
       
-</footer>
-    
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2023-08-04 18:33:48.3719574 -0600 CST m=&#43;0.121065501">2023</time> - Diseño Web realizado por José Escobar
   </div>
   
+</footer>
+
+
+    
+  
+  
 
   
 
   
-  <script type="text/javascript" src="../../js/bundle.min.d996c3e3eab74017879828a068abbff91d5611e31547e837391128ed0f9e397d.js"></script>
+  <script type="text/javascript" src="../../js/bundle.min.9e8bf37b167b2ebca52063449d123c34b9cc4f9d835de2b76982c9089a5a49cc.js"></script>
   
 
   
   
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

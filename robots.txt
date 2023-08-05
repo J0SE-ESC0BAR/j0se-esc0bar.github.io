@@ -1,0 +1,28 @@
+//Genera un robots para la paguna
+function generaRobot(){
+    var robot = document.createElement("img");
+    robot.setAttribute("src", "img/robot.png");
+    robot.setAttribute("id", "robot");
+    robot.setAttribute("class", "robot");
+    robot.setAttribute("onclick", "moverRobot()");
+    document.getElementById("contenedor").appendChild(robot);
+}
+
+//Mueve el robot a una posicion aleatoria
+function moverRobot(){
+    var robot = document.getElementById("robot");
+    var x = Math.floor(Math.random() * 1000);
+    var y = Math.floor(Math.random() * 500);
+    robot.style.left = x + "px";
+    robot.style.top = y + "px";
+}
+
+//Genera un robot cada 5 segundos
+function generaRobotCada5Segundos(){
+    setInterval(generaRobot, 5000);
+}
+
+//Genera un robot cada 5 segundos
+function generaRobotCada5Segundos(){
+    setInterval(generaRobot, 5000);
+}

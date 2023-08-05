@@ -1,13 +1,13 @@
 {
     "firstSlide": "images/Dino.jpg",
-    "firstLabel": "El dino es la leche",
+    "firstLabel": "El potencial de la IA",
     "firstDescription": "Dinosaurio generado por IA",
 
     "secondtSlide": "images/JAEM.png",
-    "secondtLabel": "Segundo titulo",
-    "secondDescription": "second Description",
+    "secondtLabel": "JAEM: Conectando con el Futuro",
+    "secondDescription": "Tecnología, soluciones y tutoriales en un solo lugar.",
 
-    "thirdSlide": "images/Terraria_OtherWold.png",
-    "thirdLabel": "Tercer titulo",
-    "thirdDescription": "third Description" 
+    "thirdSlide": "images/code1.jpg",
+    "thirdLabel": "Código de Sueños",
+    "thirdDescription": "Programa con pasión y esfuerzo, pues cada línea de código es una puerta abierta hacia la realización de tus sueños tecnológicos." 
 }

@@ -1,5 +1,6 @@
 ---
 title: 'Mis proyectos'
+type: "posts"
 ---
 ## Algunos de los proyectos que e realizado los tengo aquí.
 

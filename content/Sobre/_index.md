@@ -3,6 +3,7 @@ title: 'Sobre mi'
 menu:
   main:
     name: "Sobre mi"
+type: "posts"
 ---
 
 Información sobre mí..
@@ -31,11 +32,13 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 - Ingles basico
 
 **Redes Sociales:**
-- `Twitter` : https://twitter.com/J0SE_ESC0BAR
-- `LinkedIn` : https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/
-- `Facebook`:  https://www.facebook.com/JoseAlonsoEscobarMejia
-- ✉ `Email`:  <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a>
+- ###### Twitter: https://twitter.com/J0SE_ESC0BAR
+
+- ###### LinkedIn: https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/
+
+- ###### Facebook:  https://www.facebook.com/JoseAlonsoEscobarMejia
+
+- ###### Email: <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a>
 
 **Curriculum Vitae:**
-- `CV_José_Escobar.pdf`
-
+- [CV_José_Escobar.pdf](/static/CV_José_Escobar.pdf)
