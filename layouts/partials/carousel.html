@@ -7,23 +7,24 @@
   <div class="carousel-inner" data-bs-interval="2000">
     <div class="carousel-item active">
       <img class="d-block w-100" src="{{ .Site.Data.caurouselSilides.firstSlide | relURL }}" alt="First slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ .Site.Data.caurouselSilides.firstLabel }}</h5>
-        <p>{{ .Site.Data.caurouselSilides.firstDescription }}</p>
-      </div>
+      <div class="carousel-caption">
+        <h5 class="lh-1 text-border">{{ .Site.Data.caurouselSilides.firstLabel }}</h5>
+        <p class="lh-1 text-border">{{ .Site.Data.caurouselSilides.firstDescription }}</p>
+    </div>
+    
     </div>
     <div class="carousel-item" data-bs-interval="4000">
       <img class="d-block w-100" src="{{ .Site.Data.caurouselSilides.secondtSlide | relURL }}" alt="Second slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ .Site.Data.caurouselSilides.secondtLabel }}</h5>
-        <p>{{ .Site.Data.caurouselSilides.secondDescription }}</p>
+      <div class="carousel-caption  d-md-block">
+        <h5 class="lh-1 text-border">{{ .Site.Data.caurouselSilides.secondtLabel }}</h5>
+        <p class="lh-1 text-border">{{ .Site.Data.caurouselSilides.secondDescription }}</p>
       </div>
     </div>
     <div class="carousel-item" data-bs-interval="5000">
       <img class="d-block w-100" src="{{ .Site.Data.caurouselSilides.thirdSlide | relURL }}" alt="Third slide">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{ .Site.Data.caurouselSilides.thirdLabel }}</h5>
-        <p>{{ .Site.Data.caurouselSilides.thirdDescription }}</p>
+      <div class="carousel-caption d-md-block">
+        <h5 class="lh-1 text-border">{{ .Site.Data.caurouselSilides.thirdLabel }}</h5>
+        <p class="lh-1 text-border">{{ .Site.Data.caurouselSilides.thirdDescription }}</p>
       </div>
     </div>
   </div>
@@ -35,4 +36,5 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+  
 </div>

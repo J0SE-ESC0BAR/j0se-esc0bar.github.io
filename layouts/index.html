@@ -3,19 +3,16 @@
 
 {{ define "main" }}
   {{ if .Site.Params.showAuthorOnHomepage }}
-  {{ partial "author-large.html" . }}
+  {{ partial "carousel.html" . }}
   {{ end }}
-<div class="contenido">
   <!-- Introduccion desactivada-->
-    <div class="intro">
-    <h3>{{ .Title }}</h3>
+  <div class="intro">
+    <h2>{{ .Title }}</h2>
     <hr>
-    <div class="intro-image">
       <p>{{.Description}}</p>
-    </div>
-    <div class="intro-content">{{ .Content }}</div>
   </div>
-  <h1>Post destacado</h1>
+<div class="content">
+  <h2>Post destacado</h2>
   <div class="summary">
     <div class="summary-image">
       <a href="../posts/hugo_uso_basico/">
@@ -30,7 +27,7 @@
     <p class="summary-description">Descripción: Estos son los comandos basicos para que comiences a trabajar con hugo</p>
   </div>
 </div>
-  <h1>Último post</h1>
+  <h2>Último post</h2>
   <hr>
 <!--Ojo pueden cambiar de pagina si modifican la URL ej: http://localhost:1313/JAEM/page/6/ -->
 {{ if .Site.Params.showPostsOnHomepage }}

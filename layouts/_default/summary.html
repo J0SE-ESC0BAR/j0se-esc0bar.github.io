@@ -8,12 +8,8 @@
     </div>
   {{ end }}
   <div class="summary-content">
-    <h2 class="summary-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{ if .Site.Params.showAuthorOnPosts }}
-      {{ partial "author.html" . }}
-    {{ else }}
+    <h2 class="summary-title lh-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
-    {{ end }}
-    <p class="summary-description">Descripción: {{ .Params.description }}</p>
+    <p class="summary-description lh-sm">Descripción: {{ .Params.description }}</p>
   </div>
 </div>

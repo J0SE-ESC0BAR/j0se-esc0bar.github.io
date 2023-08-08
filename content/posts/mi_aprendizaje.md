@@ -2,8 +2,9 @@
 title: "Mi aprendizaje en Launch X"
 date: 2022-04-20
 description: 'Lo que e aprendido Lauch-X de Innovaccion Virtual'
-image: images/Open_Qr.png
-draft: True
+image: images/no img.png
+draft: false
+type: posts
 ---
 Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X
 # Introducción

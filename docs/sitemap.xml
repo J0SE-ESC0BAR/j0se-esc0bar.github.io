@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jaem.tk/posts/gpt3_es_malo_jugar/</loc>
+    <lastmod>2022-12-26T21:28:43-06:00</lastmod>
+  </url><url>
     <loc>https://jaem.tk/</loc>
     <lastmod>2022-12-26T21:28:43-06:00</lastmod>
   </url><url>
-    <loc>https://jaem.tk/posts/gpt3_es_malo_jugar/</loc>
-    <lastmod>2022-12-26T21:28:43-06:00</lastmod>
+    <loc>https://jaem.tk/posts/que_es_el_back-end/</loc>
+    <lastmod>2022-12-26T12:03:56-06:00</lastmod>
   </url><url>
     <loc>https://jaem.tk/posts/java/diferencia-entre-listas-y-arreglos/</loc>
     <lastmod>2022-12-25T21:28:43-06:00</lastmod>
@@ -32,11 +35,14 @@
     <loc>https://jaem.tk/posts/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://jaem.tk/posts/mi_aprendizaje/</loc>
+    <lastmod>2022-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jaem.tk/sobre/</loc>
+  </url><url>
     <loc>https://jaem.tk/categories/</loc>
   </url><url>
     <loc>https://jaem.tk/sobre/proyectos/</loc>
-  </url><url>
-    <loc>https://jaem.tk/sobre/</loc>
   </url><url>
     <loc>https://jaem.tk/tags/</loc>
   </url>

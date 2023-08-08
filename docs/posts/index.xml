@@ -17,6 +17,16 @@
     </item>
     
     <item>
+      <title>¿Que es el Back End?</title>
+      <link>https://jaem.tk/posts/que_es_el_back-end/</link>
+      <pubDate>Mon, 26 Dec 2022 12:03:56 -0600</pubDate>
+      
+      <guid>https://jaem.tk/posts/que_es_el_back-end/</guid>
+      <description>¿Que es el Back End?
+El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.</description>
+    </item>
+    
+    <item>
       <title>Hugo uso básico</title>
       <link>https://jaem.tk/posts/hugo_uso_basico/</link>
       <pubDate>Sun, 25 Dec 2022 08:53:03 -0600</pubDate>
@@ -45,6 +55,16 @@ Comandos basicos &amp;ndash; Crea una nueva base de datos SQLCopy codecreate d
       <guid>https://jaem.tk/posts/halo_ce_errores/</guid>
       <description>Halo CE 2022 | Solución de errores Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE. Explicación de que es hac2 y chimera Componentes necesarios que necesita Halo CE Solución a errores Explicación de que es hac2 y chimera ¿Qué es hac2? Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son:
 Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.</description>
+    </item>
+    
+    <item>
+      <title>Mi aprendizaje en Launch X</title>
+      <link>https://jaem.tk/posts/mi_aprendizaje/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaem.tk/posts/mi_aprendizaje/</guid>
+      <description>Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X
+Introducción Python Logica de Programacion Fron-end HTML CSS JavaScript Vue(basico) Back-end Git GitHub GitHub Pages Hugo Markdown (basico) node.js </description>
     </item>
     
   </channel>

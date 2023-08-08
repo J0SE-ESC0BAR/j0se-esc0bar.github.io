@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>¡Bienvenido a mi blog! 🤗 on JAEM</title>
+    <title>JAEM</title>
     <link>https://jaem.tk/</link>
-    <description>Recent content in ¡Bienvenido a mi blog! 🤗 on JAEM</description>
+    <description>Recent content on JAEM</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Mon, 26 Dec 2022 21:28:43 -0600</lastBuildDate><atom:link href="https://jaem.tk/index.xml" rel="self" type="application/rss+xml" />
@@ -14,6 +14,16 @@
       
       <guid>https://jaem.tk/posts/gpt3_es_malo_jugar/</guid>
       <description>No hay una respuesta simple a esta pregunta, ya que depende de cómo se use el juego y de la persona que lo está jugando. Algunos estudios han demostrado que jugar videojuegos puede tener efectos positivos en el cerebro, como mejorar la habilidad de resolución de problemas y la coordinación mano-ojo. Sin embargo, como con cualquier actividad, es importante moderar el tiempo que se dedica a jugar videojuegos y asegurarse de tener un equilibrio adecuado en la vida.</description>
+    </item>
+    
+    <item>
+      <title>¿Que es el Back End?</title>
+      <link>https://jaem.tk/posts/que_es_el_back-end/</link>
+      <pubDate>Mon, 26 Dec 2022 12:03:56 -0600</pubDate>
+      
+      <guid>https://jaem.tk/posts/que_es_el_back-end/</guid>
+      <description>¿Que es el Back End?
+El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.</description>
     </item>
     
     <item>
@@ -69,6 +79,16 @@ Comandos basicos &amp;ndash; Crea una nueva base de datos SQLCopy codecreate d
       <guid>https://jaem.tk/posts/halo_ce_errores/</guid>
       <description>Halo CE 2022 | Solución de errores Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE. Explicación de que es hac2 y chimera Componentes necesarios que necesita Halo CE Solución a errores Explicación de que es hac2 y chimera ¿Qué es hac2? Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son:
 Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.</description>
+    </item>
+    
+    <item>
+      <title>Mi aprendizaje en Launch X</title>
+      <link>https://jaem.tk/posts/mi_aprendizaje/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jaem.tk/posts/mi_aprendizaje/</guid>
+      <description>Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X
+Introducción Python Logica de Programacion Fron-end HTML CSS JavaScript Vue(basico) Back-end Git GitHub GitHub Pages Hugo Markdown (basico) node.js </description>
     </item>
     
   </channel>

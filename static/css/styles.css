@@ -206,14 +206,20 @@ a {
   object-fit: cover;
 }
 .intro{
+  padding: 0 1.5rem;
+  max-width: 90rem;
+  margin: 0 auto;
   margin-top: 4rem;
+
 }
 .intro > h1{
-  padding: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   max-width: 100rem;
   max-width: 100rem;
   margin: 0 auto;
 }
+
 /* Estilos para el menú móvil */
 @media (max-width: 768px) {
   .intro{

@@ -6,7 +6,7 @@
     </button>
       <ul class="nav-menu">
           {{ $currentPage := . }}
-          {{ range .Site.Menus.main }}
+          {{ range .Site.Menus.main.ByWeight.Reverse }}
               <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
                   <a class="nav-menu-link nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
               </li>
