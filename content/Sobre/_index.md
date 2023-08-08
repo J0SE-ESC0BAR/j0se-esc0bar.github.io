@@ -40,4 +40,4 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 - ###### Email: <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a>
 
 **Curriculum Vitae:**
-- [CV_José_Escobar.pdf](/static/CV_José_Escobar.pdf)
+- [CV_José_Escobar.pdf](/CV_José_Escobar.pdf)
