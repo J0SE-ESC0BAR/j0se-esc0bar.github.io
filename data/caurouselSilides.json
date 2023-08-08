@@ -1,0 +1,13 @@
+{
+    "firstSlide": "images/Dino.jpg",
+    "firstLabel": "El potencial de la IA",
+    "firstDescription": "Dinosaurio generado por IA",
+
+    "secondtSlide": "images/JAEM.png",
+    "secondtLabel": "Conectando con el Futuro",
+    "secondDescription": "Tecnología, soluciones y tutoriales en un solo lugar.",
+
+    "thirdSlide": "images/code1.jpg",
+    "thirdLabel": "Código de Sueños",
+    "thirdDescription": "Programa con pasión y esfuerzo, pues cada línea de código es una puerta abierta hacia la realización de tus sueños tecnológicos." 
+}

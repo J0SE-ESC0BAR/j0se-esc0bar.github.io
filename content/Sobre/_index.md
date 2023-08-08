@@ -1,8 +1,9 @@
 ---
-title: 'Sobre mi'
+title: 'Acerca'
 menu:
   main:
-    name: "Sobre"
+    name: "Acerca"
+type: "posts"
 ---
 
 Información sobre mí..
@@ -19,21 +20,24 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 
 ## Habilidades:
 ### lenguajes de programacion
-- Java nivel medio
-- C# nivel medio
-- Python nivel basico
-- JavaScript nivel basico
-- SQL nivel medio
+- Java
+- C#
+- Python
+- JavaScript
+- SQL
 ### Otras abilidades
 - Git & Github
 - HTML & CSS
 - Markdown
-- Ingles basico
 
 **Redes Sociales:**
-- `Twitter` : https://twitter.com/J0SE_ESC0BAR
-- `LinkedIn` : https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/
-- `Facebook`:  https://www.facebook.com/JoseAlonsoEscobarMejia
-- ✉ `Email`:  <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a>
+- ###### Twitter: https://twitter.com/J0SE_ESC0BAR
 
+- ###### LinkedIn: https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/
 
+- ###### Facebook:  https://www.facebook.com/JoseAlonsoEscobarMejia
+
+- ###### Email: <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a>
+
+**Curriculum Vitae:**
+- [CV_José_Escobar.pdf](/static/CV_José_Escobar.pdf)

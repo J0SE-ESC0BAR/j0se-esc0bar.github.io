@@ -1,0 +1,16 @@
+{{ $paginator := .Paginate .Data.Pages }}
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item{{ if not $paginator.HasPrev }} disabled{{ end }}">
+      <a class="page-link" href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ else }}#{{ end }}">Previous</a>
+    </li>
+    {{ range $paginator.Pagers }}
+      <li class="page-item{{ if eq . $paginator }} active{{ end }}" aria-current="page">
+        <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
+      </li>
+    {{ end }}
+    <li class="page-item{{ if not $paginator.HasNext }} disabled{{ end }}">
+      <a class="page-link" href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ else }}#{{ end }}">Next</a>
+    </li>
+  </ul>
+</nav>

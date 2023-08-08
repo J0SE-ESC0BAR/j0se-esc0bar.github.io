@@ -2,35 +2,43 @@
 {{ define "body_classes" }}page-home{{ end }}
 
 {{ define "main" }}
-
   {{ if .Site.Params.showAuthorOnHomepage }}
-    {{ partial "author-large.html" . }}
+  {{ partial "carousel.html" . }}
   {{ end }}
-
+  <!-- Introduccion desactivada-->
   <div class="intro">
-    <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
-    <div class="intro-content">{{ .Content }}</div>
-    
+    <h2>{{ .Title }}</h2>
+    <hr>
+      <p>{{.Description}}</p>
   </div>
-  <h1>Post destacado</h1>
-  <hr>
+<div class="content">
+  <h2>Post destacado</h2>
   <div class="summary">
-  
-    <div class="summary-date">Jul 14, 2022</div>
-  
-  <h2 class="summary-title"><a href="../JAEM/posts/sql_basico/">SQL Basico</a></h2>
-  <p class="summary-description">SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos.</p>
+    <div class="summary-image">
+      <a href="../posts/hugo_uso_basico/">
+        <img src="../images/Hugo_logo.png">
+      </a>
+    </div>
+  <div class="summary-content">
+    <h2 class="summary-title"><a href="../posts/hugo_uso_basico/">Hugo uso básico</a></h2>
+    
+      <div class="summary-date">Dec 25, 2022</div>
+    
+    <p class="summary-description">Descripción: Estos son los comandos basicos para que comiences a trabajar con hugo</p>
+  </div>
 </div>
-  <h1>Último post</h1>
+  <h2>Último post</h2>
   <hr>
 <!--Ojo pueden cambiar de pagina si modifican la URL ej: http://localhost:1313/JAEM/page/6/ -->
-  {{ if .Site.Params.showPostsOnHomepage }}
+{{ if .Site.Params.showPostsOnHomepage }}
   {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-    {{ range $paginator.Pages }}
-      {{ .Render "summary" }}
-    {{ end }}
-  {{end}}
+  {{ range (first 1 $paginator.Pages) }}
+    {{ .Render "summary" }}
   {{ end }}
-
+{{ end }}
+</div>
+{{ end }}
 {{ define "footer_js" }}
 {{ end }}
+
+

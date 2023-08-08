@@ -1,7 +1,8 @@
 ---
-title: 'Mis Posts'
+title: 'Posts'
 date: 2022-06-07
 menu:
   main:
-    name: "Post's"
+    name: "Posts"
+type: "list"
 ---

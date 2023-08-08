@@ -1,46 +1,78 @@
-<!-- Old footer <footer class="clearfix">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h3>Contact Us</h3>
-        <p>Phone: 123-456-7890</p>
-        <p>Email: info@company.com</p>
-        <p>Address: 123 Main Street, Anytown USA</p>
-      </div>
-      <div class="col-md-4">
-        <h3>Follow Us</h3>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h3>Sign Up for Our Newsletter</h3>
-        <form>
-          <input type="email" placeholder="Enter your email">
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="copyright">
-    <p>Copyright &copy; 2020 Company. All rights reserved.</p>
-  </div>
-</footer>-->
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  <!-- Section: Social media -->
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+<!-- Left -->
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+<!-- Left -->
+<!-- Right -->
+<div class="box-icons">
+  {{ range .Site.Data.social.links }}
+<a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="{{ .icon }}" aria-hidden="true"></i>
+</a>
+{{ end }}
+</div>
+<!-- Right -->
+</section>
 
-<footer class="clearfix">
-      {{ if .Site.Data.social.links }}
-      <div id="footer-info">Copyright &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> - Diseño Web realizado por {{ .Site.Author.name }}</div>
-      <div class="footer-social">
-        {{ range .Site.Data.social.links }}
-          <span class="social-icon social-icon-{{ .name | urlize }}">
-            <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener">
-              <img src="{{ .image | relURL }}" width="24" height="24" alt="{{ .name }}"/>
-            </a>
-          </span>
-        {{ end }}
+<!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto espesifico de algun tema.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        <!-- Grid column -->
       </div>
-      {{ end }}
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="{{ now }}">{{ now.Format "2006" }}</time> - Diseño Web realizado por {{ .Site.Author.name }}
+  </div>
+  <!-- Copyright -->
 </footer>
+<!-- Footer -->

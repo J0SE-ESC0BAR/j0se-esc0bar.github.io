@@ -1,7 +1,7 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
-image: images/writer.jpeg
+image: images/no img.png
 menu:
   main:
     name: "About"

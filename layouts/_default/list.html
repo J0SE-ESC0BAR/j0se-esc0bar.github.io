@@ -1,13 +1,26 @@
 {{ define "body_classes" }}page-default-list{{ end }}
 
 {{ define "main" }}
-  <div class="intro">
-    <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
-    {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
-  </div>
+<div class="intro">
+  <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
+  {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
+</div>
+<div class="list-summary">
+<!--Paginas que van a hacer las veces de post pero adentro tambien tienen otras paginas-->
+  {{ if eq .Type "posts"}}
   {{ .Content }}
   {{ range.Pages }}
-    {{ .Render "summary" }}
+  {{ .Render "summary" }}
+  {{ end }}
   {{ end }}
 
+<!--Paginas que van a renderizar todas las paginas de tipo post y directorios, estas paginas son las listas principales-->  
+  {{ if eq .Type "list" }}
+  {{ $paginator := .Paginate (union (where .Site.Pages "Type" "directorio") (where .Site.Pages "Type" "posts")) }}
+  {{ range $paginator.Pages }}
+    {{ .Render "summary" }}
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}
+</div>
 {{ end }}

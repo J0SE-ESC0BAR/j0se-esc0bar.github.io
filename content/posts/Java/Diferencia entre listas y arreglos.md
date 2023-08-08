@@ -2,8 +2,9 @@
 title: "Diferencia entre listas y arreglos"
 date: 2022-12-25T21:28:43-06:00
 description: 'Auque paresca simple, no lo es para todos, ya que sus funciones son parecidas'
-image: images/cctv.jpeg
+image: images/java.png
 draft: false
+type: "sub_post"
 ---
 Cual es la diferencia entre 
 
