@@ -54,9 +54,6 @@ Ejemplo:
 \[Youtube]\(https://www.youtube.com)  
 [Youtube](https://www.youtube.com)
 
-\[CV_José_Escobar.pdf](../../../static/CV_José_Escobar.pdf)  
-[CV_José_Escobar.pdf](../../../static/CV_José_Escobar.pdf)
-
 \[Youtube]\(https://www.youtube.com "Visita YouTube")   
 [Youtube](https://www.youtube.com "Visita YouTube")  
 (Cuando coloques el cursor sobre el enlace, verás el mensaje "Visita YouTube".)
