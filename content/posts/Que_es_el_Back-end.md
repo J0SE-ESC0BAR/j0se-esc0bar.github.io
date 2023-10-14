@@ -1,11 +1,11 @@
 ---
 title: "¿Que es el Back End?"
 date: 2022-12-26T12:03:56-06:00
-description: 'As soon as Winston had dealt with each of the messages, he clipped his speakwritten corrections to the appropriate copy of the Times and pushed them into the pneumatic tube. '
+description: ''
 image: images/no img.png
 draft: false
+viewimg: false
 ---
-**¿Que es el Back End?**
 
 El backend, también conocido como "servidor", es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.
 

@@ -30,24 +30,6 @@ showAuthorOnPosts = false
 #ver publicaciones en pagina de inicio
 showPostsOnHomepage = true
 
-addFrame = true
-addDot = false
-showFooterOnHomepage = true
 # agregar hojas de estilo css (array de hojas de estilo)
 #Contiene bootstrap
 css = ["/css/bootstrap.min.css", "/css/styles_manual.css"]
-
-# agregar mas entradas a la cabezera
-#[menu]
-#  [[menu.main]]
-#    identifier = "contacto1"
-#    name = "Contacto1"
-#    title = "contacto1"
-#    url = "/contacto1/"
-#    weight = 0
-#  [[menu.main]]
-#    identifier = "contacto2"
-#    name = "Contacto2"
-#    title = "contacto2"
-#    url = "/contacto2/"
-#    weight = 0

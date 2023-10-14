@@ -1,9 +1,9 @@
 ---
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
-description: 'Hugo created the file in the content/posts directory. Open the file with your editor. '
+description: 'Directorio de alguin curso o contenido de un tipo de tema'
 image: images/no-img.png
 draft: false
 viewimg: true
-type: posts
+type: directorio
 ---

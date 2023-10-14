@@ -1,15 +1,27 @@
 <div class="summary">
   <!--Imagen con enlace dentro de un div-->
-  {{ if .Params.image }}
+
     <div class="summary-image">
       <a href="{{ .RelPermalink }}">
-        <img src="{{ .Params.image | relURL }}" />
+        <img class="img-fluid" src="{{ .Params.image | relURL }}" />
       </a>
     </div>
-  {{ end }}
   <div class="summary-content">
     <h2 class="summary-title lh-1"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <!-- Comprobar si la fecha está definida antes de mostrarla -->
+    {{ if .Date }}
       <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
+    {{ end }}
+    {{ if .Params.description }}
     <p class="summary-description lh-sm">Descripción: {{ .Params.description }}</p>
+    {{ end }}
+
+    {{ if eq .Type "directorio" }}
+    <ul class="summary-lista lh-sm">
+      {{ range .RegularPages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
   </div>
 </div>

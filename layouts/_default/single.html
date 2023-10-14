@@ -1,13 +1,17 @@
 {{ define "header_css" }}{{ end }}
 {{ define "body_classes" }}page-default-single{{ end }}
-
 {{ define "main" }}
-    <div class="intro">
-      {{ if .Params.image }}
-      <img class="img-fluid" src="{{ .Params.image | relURL }}" />
-      {{ end }}
-      <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
+<div class="intro">
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      <img src="{{ .Params.image | relURL }}" class="img-fluid" alt="{{ .Title }}">
     </div>
+    <div class="col-md-6 intro-content">
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </div>
+  </div>
+</div>
     <div class="content">
       {{ .Content }}
     </div>

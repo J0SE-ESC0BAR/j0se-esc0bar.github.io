@@ -13,6 +13,7 @@
   </div>
 <div class="content">
   <h2>Post destacado</h2>
+  <hr>
   <div class="summary">
     <div class="summary-image">
       <a href="../posts/hugo_uso_basico/">
@@ -27,16 +28,16 @@
     <p class="summary-description">Descripción: Estos son los comandos basicos para que comiences a trabajar con hugo</p>
   </div>
 </div>
-  <h2>Último post</h2>
+  <h2>Últimos posts</h2>
   <hr>
-<!--Ojo pueden cambiar de pagina si modifican la URL ej: http://localhost:1313/JAEM/page/6/ -->
-{{ if .Site.Params.showPostsOnHomepage }}
-  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-  {{ range (first 1 $paginator.Pages) }}
-    {{ .Render "summary" }}
+  {{ $allPosts := (where .Site.Pages "Type" "in" (slice "posts" "sub_post")) }}
+  {{ $sortedPosts := $allPosts.ByDate.Reverse }} <!-- Reverse para obtener de más reciente a más antiguo -->
+  {{ range first 3 $sortedPosts }}
+  {{ .Render "summary" }}
   {{ end }}
-{{ end }}
 </div>
+
+
 {{ end }}
 {{ define "footer_js" }}
 {{ end }}

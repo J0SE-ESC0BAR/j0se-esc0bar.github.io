@@ -2,25 +2,38 @@
 
 {{ define "main" }}
 <div class="intro">
-  <h1>{{ .Title }}{{ if .Site.Params.addDot }}{{ end }}</h1>
-  {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
+  <!-- Si existe una imagen en los parámetros y la vista de la imagen está activada, muestra la imagen -->
+  {{ if and .Params.image (ne .Params.image "no-img") (eq .Params.viewimg true) }}
+      <img class="img-fluid" src="{{ .Params.image | relURL }}" />
+  {{ end }}
+    <!-- Muestra el título de la página -->
+    <h1>{{ .Title }}</h1>
+    <!-- Si hay una descripción en los parámetros, la muestra -->
+    {{ if .Params.description }}
+      <p>{{ .Params.description }}</p>
+    {{ end }}
 </div>
-<div class="list-summary">
-<!--Paginas que van a hacer las veces de post pero adentro tambien tienen otras paginas-->
-  {{ if eq .Type "posts"}}
-  {{ .Content }}
-  {{ range.Pages }}
-  {{ .Render "summary" }}
-  {{ end }}
-  {{ end }}
 
-<!--Paginas que van a renderizar todas las paginas de tipo post y directorios, estas paginas son las listas principales-->  
-  {{ if eq .Type "list" }}
-  {{ $paginator := .Paginate (union (where .Site.Pages "Type" "directorio") (where .Site.Pages "Type" "posts")) }}
-  {{ range $paginator.Pages }}
-    {{ .Render "summary" }}
-  {{ end }}
-  {{ partial "pagination.html" . }}
-{{ end }}
-</div>
+  <!-- Sección de resumen de listas -->
+  <div class="list-summary">
+    <!-- Si el tipo de página es "page", "posts", o "directorio", muestra su contenido -->
+    {{ if or (eq .Type "page") (eq .Type "posts") (eq .Type "directorio")}}
+      {{ .Content }}
+      <!-- Renderiza un resumen para cada subpágina de esta página -->
+      {{ range .Pages }}
+        {{ .Render "summary" }}
+      {{ end }}
+    {{ end }}
+
+    <!-- Si el tipo de página es "list", muestra todas las páginas y directorios ordenados por fecha -->
+    {{ if eq .Type "list" }}
+      {{ $allContent := where .Site.Pages "Type" "in" (slice "posts" "directorio") }}
+      {{ $paginator := .Paginate $allContent }}
+      {{ range $paginator.Pages }}
+        {{ .Render "summary" }}
+      {{ end }}
+      <!-- Incluye la paginación para la lista -->
+      {{ partial "pagination.html" . }}
+    {{ end }}
+  </div>
 {{ end }}

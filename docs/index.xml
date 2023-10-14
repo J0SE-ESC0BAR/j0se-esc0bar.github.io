@@ -22,8 +22,8 @@
       <pubDate>Mon, 26 Dec 2022 12:03:56 -0600</pubDate>
       
       <guid>https://jaem.tk/posts/que_es_el_back-end/</guid>
-      <description>¿Que es el Back End?
-El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.</description>
+      <description>El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.
+El backend suele ser desarrollado utilizando lenguajes de programación como Python, Java o PHP y se ejecuta en servidores de aplicaciones o servidores web.</description>
     </item>
     
     <item>

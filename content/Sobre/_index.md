@@ -3,19 +3,22 @@ title: 'Acerca'
 menu:
   main:
     name: "Acerca"
-type: "posts"
+type: "page"
+description: "Información sobre mí.."
+image: "images/no img.png"
+draft: false
+viewimg: false
+type: "page"
 ---
 
-Información sobre mí..
-
-> Yo soy José Alfonso Escobar, estoy estudiando ingenieria en sistemas informaticos
+> Yo soy José Alfonso Escobar, estoy estudiando ingeniería en sistemas informaticos
 me gusta mucho la programacion, los problemas de logica, estrategia y quiero aprender más sobre desarrollo web.
 
 ## Mis gustos:
 
-- Me gusta el futball, el ajederez
+- Me gusta el fútbol, el ajedrez
 - La edicion de fotos, videos y crear objetos 3d
-- Me gusta la musica country
+- Me gusta la música country
 - Y me encantan los gatos y el modo nocturno en todas las aplicaciones
 
 ## Habilidades:
@@ -25,7 +28,7 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 - Python
 - JavaScript
 - SQL
-### Otras abilidades
+### Otras habilidades
 - Git & Github
 - HTML & CSS
 - Markdown

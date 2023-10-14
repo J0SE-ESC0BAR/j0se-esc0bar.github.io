@@ -5,6 +5,7 @@ description: 'En este post estan la cosas mas importantes que e aprendido de Con
 image: images/java.png
 draft: false
 type: "sub_post"
+viewimg: true
 ---
 
 ### Indice
