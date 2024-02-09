@@ -101,7 +101,7 @@ body {
   min-height: 15rem;
 }
 .summary-image{
-  width: 40%;
+  width: 35%;
   overflow: hidden;
   max-height: 15rem;
   min-height: 10rem;
@@ -204,12 +204,11 @@ a {
   font-weight: 500;
 }
 .intro img {
-  max-height: 15rem;
-  aspect-ratio: 21/9;
+  margin-top: 1rem;
+  aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 30rem;
 }
 
 .intro {

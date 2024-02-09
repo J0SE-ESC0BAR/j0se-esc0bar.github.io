@@ -4,14 +4,14 @@ menu:
   main:
     name: "Acerca"
 type: "page"
-description: "Información sobre mí.."
 image: "images/no img.png"
 draft: false
 viewimg: false
 type: "page"
 ---
+## Jose Alfonso Escobar Mejia
 
-> Yo soy José Alfonso Escobar, estoy estudiando ingeniería en sistemas informaticos
+> Soy José Alfonso Escobar, estoy estudiando ingeniería en sistemas informaticos
 me gusta mucho la programacion, los problemas de logica, estrategia y quiero aprender más sobre desarrollo web.
 
 ## Mis gustos:
@@ -28,10 +28,12 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 - Python
 - JavaScript
 - SQL
+- Go
 ### Otras habilidades
 - Git & Github
-- HTML & CSS
-- Markdown
+- HTML (react, hugo, jekyll, etc) 
+- CSS (tawilwind y bootstrap)
+- Mardown
 
 **Redes Sociales:**
 - ###### Twitter: https://twitter.com/J0SE_ESC0BAR

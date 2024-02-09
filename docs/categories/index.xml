@@ -2,9 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on JAEM</title>
-    <link>https://jaem.tk/categories/</link>
+    <link>https://j0se-esc0bar.github.io/categories/</link>
     <description>Recent content in Categories on JAEM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>es</language><atom:link href="https://jaem.tk/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>es</language>
+    <atom:link href="https://j0se-esc0bar.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -7,7 +7,7 @@
   <title>SQL Basico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="https://jaem.tk/favicon.ico">
+  <link rel="icon" href="https://j0se-esc0bar.github.io//favicon.ico">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   
@@ -24,8 +24,8 @@
     <meta name="description" content="SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos."/>
     <meta property="og:title" content="SQL Basico"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://jaem.tk/posts/sql_basico/"/>
-    <meta property="og:image" content="https://jaem.tk/images/Server.jpeg"/>
+    <meta property="og:url" content="https://j0se-esc0bar.github.io/posts/sql_basico/"/>
+    <meta property="og:image" content="https://j0se-esc0bar.github.io/images/Server.jpeg"/>
     <meta property="og:description" content="SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos."/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@JAEM_Developer"/>
@@ -36,12 +36,13 @@
 
 
 
-<body class='page frame page-blog-single'>
+<body class='page page-blog-single-post'>
+  
   
   
     <div class='header'>
   <nav class="nav">
-    <a class="header-logo" href="https://jaem.tk">JAEM</a>
+    <a class="header-logo" href="https://j0se-esc0bar.github.io/">JAEM</a>
     <button class="nav-toggle" aria-label="Abrir menú">
       <i class="bi bi-list"></i>
     </button>
@@ -60,14 +61,19 @@
     </nav>
   </div>
     
-    <div class="intro">
-      
-      <img class="img-fluid" src="../../images/Server.jpeg" />
-      
-      <h1>SQL Basico</h1>
+<div class="intro">
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      <img src="../../images/Server.jpeg" class="img-fluid" alt="SQL Basico">
     </div>
-    <div class="content">
-      <p>En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.</p>
+    <div class="col-md-6 intro-content">
+      <h1>SQL Basico</h1>
+      <p>SQL desde cero, comandos basicos de SQL para MySQL y SQL Server con ejemplos.</p>
+    </div>
+  </div>
+</div>
+  <div class="content">
+    <p>En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.</p>
 <h3 id="comandos-basicos">Comandos basicos</h3>
 <p>&ndash; Crea una nueva base de datos
 <div class="card bg-dark text-light mb-4">
@@ -81,10 +87,13 @@
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 create database Blog;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; seleccionar base de datos
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -97,10 +106,13 @@ create database Blog;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 use database Blog;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma</p>
 <p>(identificador) (tipo) (si puede quedar vacio)
 <div class="card bg-dark text-light mb-4">
@@ -114,7 +126,8 @@ use database Blog;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 -- crea una nueva tabla
 	create table usuarios2(
 	ID int not null,
@@ -122,8 +135,10 @@ use database Blog;
 	Apellido varchar(20) not null,
 	Telefono varchar(12) not null
 );
-</code></pre>
+
+    </div>
 </div>
+
 &ndash; Insertar valores a una fila (insertar un registro)
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -136,7 +151,8 @@ use database Blog;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 INSERT INTO usuarios2(
 	ID,
 	Nombre,
@@ -149,8 +165,10 @@ VALUES (
 	'Arias',
 	'809-123-1345'
 );
-</code></pre>
+
+    </div>
 </div>
+
 &ndash; Solicitar los datos de toda la tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -163,10 +181,13 @@ VALUES (
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Insertar varios valores a las columans (insertar varios registros)
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -179,7 +200,8 @@ SELECT * FROM usuarios2;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 INSERT INTO usuarios2(
 	ID,
 	Nombre,
@@ -270,8 +292,10 @@ VALUES (
 	'Pérez',
 	'724-353-442'
 );
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Solicitar una columna de una tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -284,10 +308,13 @@ VALUES (
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT Nombre FROM usuarios2;
-</code></pre>
+
+    </div>
 </div>
+
 &ndash; Solicitar dos columna de una tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -300,10 +327,13 @@ SELECT Nombre FROM usuarios2;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT Nombre,Telefono FROM usuarios2;
-</code></pre>
+
+    </div>
 </div>
+
 &ndash; Traer los registros unicos y eliminar los repetidos
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -316,11 +346,14 @@ SELECT Nombre,Telefono FROM usuarios2;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT DISTINCT Nombre,ID
 FROM usuarios2;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Ordenar los resultados por los criterios que elijamos
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -333,14 +366,17 @@ FROM usuarios2;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2
 Order BY Apellido;
 
 SELECT * FROM usuarios2
 Order BY Nombre,ID;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Extraer datos espesificos con operadores logicos &ldquo;WHERE&rdquo; (DONDE)
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -353,11 +389,14 @@ Order BY Nombre,ID;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2
 WHERE ID > 4;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Operador &ldquo;BETWEEN&rdquo; (ENTRE) junto con WHERE
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -370,11 +409,14 @@ WHERE ID > 4;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2
 WHERE ID BETWEEN 2 and 5;
-</code></pre>
+
+    </div>
 </div>
+
 &ndash; Actualizar datos de la tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -387,12 +429,15 @@ WHERE ID BETWEEN 2 and 5;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 UPDATE usuarios2
 SET Nombre='Marcos',Apellido='Vasquez'
 WHERE ID=5;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; tree solo una columna de la tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -405,11 +450,14 @@ WHERE ID=5;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2
 WHERE ID =5;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Eliminar registros de la tabla</p>
 <p>&ndash; Nota: no olvidar colocar WHERE
 &ndash; para espesificar el registro que queremos eliminar,
@@ -425,15 +473,18 @@ WHERE ID =5;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
 
 DELETE FROM usuarios2
 WHERE ID=8;
 -- (tabla despues de borrar el registro)
 SELECT * FROM usuarios2;
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Agregar una columna a nuestra tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -446,11 +497,14 @@ SELECT * FROM usuarios2;
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 --(nombre de la tabla) (identificador) (tipo que almacenara)
 ALTER TABLE usuarios2 ADD Dirección varchar(10);
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Renombrar un a columna de una tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -463,12 +517,15 @@ ALTER TABLE usuarios2 ADD Dirección varchar(10);
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2; -- (tabla antes de Renombrar columna)
 exec sp_rename 'usuarios2.dirección','Domicilio','COLUMN';
 SELECT * FROM usuarios2; -- (tabla despues de Renombrar columna)
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Borrar una columna de una tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -481,15 +538,18 @@ SELECT * FROM usuarios2; -- (tabla despues de Renombrar columna)
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 SELECT * FROM usuarios2; -- (tabla antes de borrar la columna)
 
 --ALTER TABLE (nombre de la tabla) DROP COLUMN	(identificador)
 ALTER TABLE usuarios2 DROP COLUMN Domicilio;
 
 SELECT * FROM usuarios2; -- (tabla despues de borrar la columna)
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; Cambiar el nombre a una tabla o renombrar una tabla
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -502,11 +562,14 @@ SELECT * FROM usuarios2; -- (tabla despues de borrar la columna)
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 -- (nombre actual de la tabla) (nuevo nombre de la tabla)
 exec sp_rename 'usuarios2', 'usuarios';
-</code></pre>
-</div></p>
+
+    </div>
+</div>
+</p>
 <p>&ndash; BORRAR UNA TABLA
 <div class="card bg-dark text-light mb-4">
     <div class="card-header d-flex align-items-center bg-secondary justify-content-between">
@@ -519,12 +582,15 @@ exec sp_rename 'usuarios2', 'usuarios';
             Copy code
         </button>
     </div>
-        <pre class="card-body p-4 overflow-auto"><code>
+    <div class="card-body bg-dark p-4">
+        
 DROP TABLE usuarios;
-</code></pre>
-</div></p>
 
     </div>
+</div>
+</p>
+
+  </div>
 
     
     
@@ -608,11 +674,7 @@ DROP TABLE usuarios;
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-<<<<<<< Updated upstream
-    Copyright &copy; <time datetime="2023-08-07 18:57:25.2303515 -0600 CST m=&#43;0.122042301">2023</time> - Diseño Web realizado por José Escobar
-=======
-    Copyright &copy; <time datetime="2023-08-07 19:36:46.5046974 -0600 CST m=&#43;0.136559701">2023</time> - Diseño Web realizado por José Escobar
->>>>>>> Stashed changes
+    Copyright &copy; <time datetime="2024-02-09 12:08:31.4375357 -0600 CST m=&#43;0.159019701">2024</time> - Diseño Web realizado por José Escobar
   </div>
   
 </footer>

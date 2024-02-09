@@ -2,9 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Acerca on JAEM</title>
-    <link>https://jaem.tk/sobre/</link>
+    <link>https://j0se-esc0bar.github.io/sobre/</link>
     <description>Recent content in Acerca on JAEM</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>es</language><atom:link href="https://jaem.tk/sobre/index.xml" rel="self" type="application/rss+xml" />
+    <language>es</language>
+    <atom:link href="https://j0se-esc0bar.github.io/sobre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mis proyectos</title>
+      <link>https://j0se-esc0bar.github.io/sobre/proyectos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://j0se-esc0bar.github.io/sobre/proyectos/</guid>
+      <description>Generador de códigos QR con Python conectado a MongoDB&#xA;¡Hola! Hoy, quiero compartir los emocionantes proyectos en los que he estado trabajando. La tecnología sigue avanzando, y con ella, las habilidades y herramientas.&#xA;Generador de códigos QR: Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos. Puedes encontrar todo el código en mi repositorio de GitHub.</description>
+    </item>
   </channel>
 </rss>

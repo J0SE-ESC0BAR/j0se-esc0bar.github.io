@@ -2,7 +2,7 @@
 title: 'Mis proyectos'
 type: "page"
 description: "Algunos de los proyectos que e realizado los tengo aquí."
-image: images/no img.png
+image: images/Proyectos.png
 draft: false
 viewimg: false
 type: "page"
