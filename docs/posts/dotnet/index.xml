@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>.NET on JAEM</title>
-    <link>https://j0se-esc0bar.github.io/posts/dotnet/</link>
+    <link>http://localhost:1313/posts/dotnet/</link>
     <description>Recent content in .NET on JAEM</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 13 Oct 2023 10:29:46 -0600</lastBuildDate>
-    <atom:link href="https://j0se-esc0bar.github.io/posts/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 15:07:06 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/dotnet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ASP.NET</title>
-      <link>https://j0se-esc0bar.github.io/posts/dotnet/aspdotnet/</link>
+      <link>http://localhost:1313/posts/dotnet/aspdotnet/</link>
       <pubDate>Fri, 13 Oct 2023 15:07:06 -0600</pubDate>
-      <guid>https://j0se-esc0bar.github.io/posts/dotnet/aspdotnet/</guid>
+      <guid>http://localhost:1313/posts/dotnet/aspdotnet/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows Forms</title>
-      <link>https://j0se-esc0bar.github.io/posts/dotnet/windowsforms/</link>
+      <link>http://localhost:1313/posts/dotnet/windowsforms/</link>
       <pubDate>Fri, 13 Oct 2023 10:29:46 -0600</pubDate>
-      <guid>https://j0se-esc0bar.github.io/posts/dotnet/windowsforms/</guid>
-      <description>Proximamente!! </description>
+      <guid>http://localhost:1313/posts/dotnet/windowsforms/</guid>
+      <description>&lt;h2 id=&#34;proximamente&#34;&gt;Proximamente!!&lt;/h2&gt;</description>
     </item>
   </channel>
 </rss>

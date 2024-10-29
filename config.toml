@@ -14,10 +14,9 @@ pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
 paginate = 6
 
-[Author]
-  name= "José Escobar"
 
 [params]
+name= "José Escobar"
 google_analytics_id = ""
 # Hey aquí pon tu twitter 👇
 twitter_handle = "@JAEM_Developer"

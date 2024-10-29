@@ -3,7 +3,8 @@
 
     <div class="summary-image">
       <a href="{{ .RelPermalink }}">
-        <img class="img-fluid" src="{{ .Params.image | relURL }}" />
+        <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
+    </a>
       </a>
     </div>
   <div class="summary-content">
