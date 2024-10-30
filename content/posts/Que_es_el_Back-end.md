@@ -2,7 +2,6 @@
 title: "¿Que es el Back End?"
 date: 2022-12-26T12:03:56-06:00
 description: ''
-image: images/no img.png
 draft: false
 viewimg: false
 ---

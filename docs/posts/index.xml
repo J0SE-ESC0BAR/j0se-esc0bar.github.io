@@ -23,13 +23,6 @@
       <description>&lt;p&gt;El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.&lt;/p&gt;&#xA;&lt;p&gt;El backend suele ser desarrollado utilizando lenguajes de programación como Python, Java o PHP y se ejecuta en servidores de aplicaciones o servidores web. Es común que el backend tenga una interfaz de programación de aplicaciones (API) que permite que otros sistemas o aplicaciones accedan a sus funcionalidades y datos de manera controlada.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Hugo uso básico</title>
-      <link>http://localhost:1313/posts/hugo_uso_basico/</link>
-      <pubDate>Sun, 25 Dec 2022 08:53:03 -0600</pubDate>
-      <guid>http://localhost:1313/posts/hugo_uso_basico/</guid>
-      <description>&lt;h2 id=&#34;crear-un-nuevo-post-en-hugo&#34;&gt;Crear un nuevo post en hugo&lt;/h2&gt;&#xA;&lt;p&gt;Para crear un nuevo post, abrimos la terminal en la ubicacion del proyecto de hugo y digitamos el sigiente comando:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;Hugo new posts/nombre_post.md&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Con este comando estariamos creando un nuevo post dentro de la carpeta posts&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;¿Como puedo crear un post dentro de subcarpetas?&lt;/strong&gt;&#xA;Supongamos que tienes todos tus posts dentro de una carpeta llamada &amp;ldquo;posts&amp;rdquo; y dentro de ella tienes otra carpeta llamada &lt;strong&gt;&amp;ldquo;Java&amp;rdquo;,&lt;/strong&gt; dentro de esta carpeta &lt;strong&gt;siempre&lt;/strong&gt; debe haber un &lt;strong&gt;_index.md&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>SQL Basico</title>
       <link>http://localhost:1313/posts/sql_basico/</link>
       <pubDate>Thu, 14 Jul 2022 09:20:48 -0600</pubDate>

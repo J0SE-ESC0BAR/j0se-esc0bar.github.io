@@ -5,6 +5,7 @@
     <h1>{{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}</h1>
     {{ if .Params.description }}<p>{{ .Params.description }}</p>{{ end }}
   </div>
+  
   {{ .Content }}
   {{ range.Pages }}
     {{ .Render "summary" }}

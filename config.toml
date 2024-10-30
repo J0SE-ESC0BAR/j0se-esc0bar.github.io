@@ -1,7 +1,7 @@
 baseURL = "https://j0se-esc0bar.github.io/"
 languageCode = 'es'
 title = "JAEM"
-theme = "hugo-winston-theme"
+theme = "hugo-jaem-theme"
 relativeURLs = true
 canonifyURLs = true
 
@@ -12,7 +12,7 @@ publishDir = "docs"
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
-paginate = 6
+paginate = 7
 
 
 [params]

@@ -1,0 +1,14 @@
+name = "Hugo JAEM"
+license = "MIT"
+licenselink = "https://github.com/J0SE-ESC0BAR/j0se-esc0bar.github.io/blob/main/LICENSE"
+description = "Hugo JAEM is a bold minimal blogging theme"
+
+homepage = "https://j0se-esc0bar.github.io/"
+demosite = "https://j0se-esc0bar.github.io/"
+
+tags = ["blog", "minimal", "clean", "Google analytics", "bootstrap", "zerostatic"]
+features = ["blog"]
+
+[author]
+  name = "JAEM"
+  homepage = "https://j0se-esc0bar.github.io/"

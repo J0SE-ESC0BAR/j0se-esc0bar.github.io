@@ -26,14 +26,11 @@
     <loc>http://localhost:1313/posts/java/</loc>
     <lastmod>2022-12-25T21:28:43-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hugo_uso_basico/</loc>
+    <loc>http://localhost:1313/posts/hugo/</loc>
     <lastmod>2022-12-25T08:53:03-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/java/java_concurrencia_y_springboot/</loc>
     <lastmod>2022-12-24T19:46:50-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/ingles/</loc>
-    <lastmod>2022-07-14T09:44:25-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/sql_basico/</loc>
     <lastmod>2022-07-14T09:20:48-06:00</lastmod>

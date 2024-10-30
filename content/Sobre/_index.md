@@ -4,7 +4,6 @@ menu:
   main:
     name: "Acerca"
 type: "page"
-image: "images/no img.png"
 draft: false
 viewimg: false
 type: "page"

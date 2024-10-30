@@ -2,19 +2,21 @@
 
 {{ define "main" }}
 <div class="intro">
-  <!-- Si existe una imagen en los parámetros y la vista de la imagen está activada, muestra la imagen -->
-  {{ if and .Params.image (ne .Params.image "no-img") (eq .Params.viewimg true) }}
-      <img class="img-fluid" src="{{ .Params.image | relURL }}" />
+
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      {{ if and .Params.image (ne .Params.image "no-img") (eq .Params.viewimg true) }}
+      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
   {{ end }}
-    <!-- Muestra el título de la página -->
-    <h1>{{ .Title }}</h1>
-    <!-- Si hay una descripción en los parámetros, la muestra -->
-    {{ if .Params.description }}
-      <p>{{ .Params.description }}</p>
-    {{ end }}
+    </div>
+    <div class="col-md-6 intro-content">
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </div>
+  </div>
 </div>
 
-  <!-- Sección de resumen de listas -->
+  <!-- Sección de resumen de listas (tambien pueden ser como cursos, con contenido dentro relacionado al tema de la lista) -->
   <div class="list-summary">
     <!-- Si el tipo de página es "page", "posts", o "directorio", muestra su contenido -->
     {{ if or (eq .Type "page") (eq .Type "posts") (eq .Type "directorio")}}
