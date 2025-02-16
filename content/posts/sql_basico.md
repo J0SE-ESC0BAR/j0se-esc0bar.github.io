@@ -6,7 +6,6 @@ image: images/Server.jpeg
 draft: false
 viewimg: true
 ---
-
 En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.
 
 ### Comandos basicos
@@ -26,26 +25,26 @@ Cada uno de los identificadores representa una columna y estan ordenados de la s
 (identificador) (tipo) (si puede quedar vacio)
 {{< custom-code "SQL" >}}
 -- crea una nueva tabla
-	create table usuarios2(
-	ID int not null,
-	Nombre varchar(20) not null,
-	Apellido varchar(20) not null,
-	Telefono varchar(12) not null
+create table usuarios2(
+ID int not null,
+Nombre varchar(20) not null,
+Apellido varchar(20) not null,
+Telefono varchar(12) not null
 );
 {{< /custom-code >}}
 -- Insertar valores a una fila (insertar un registro)
 {{< custom-code "SQL" >}}
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	01,
-	'Pedro',
-	'Arias',
-	'809-123-1345'
+01,
+'Pedro',
+'Arias',
+'809-123-1345'
 );
 {{< /custom-code >}}
 -- Solicitar los datos de toda la tabla
@@ -56,94 +55,94 @@ SELECT * FROM usuarios2;
 -- Insertar varios valores a las columans (insertar varios registros)
 {{< custom-code "SQL" >}}
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	02,
-	'Óscar',
-	'Pérez',
-	'864-323-742'
+02,
+'Óscar',
+'Pérez',
+'864-323-742'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	03,
-	'Juan',
-	'Arias',
-	'604-423-942'
+03,
+'Juan',
+'Arias',
+'604-423-942'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	04,
-	'Valentina',
-	'Sánchez',
-	'464-349-2142'
+04,
+'Valentina',
+'Sánchez',
+'464-349-2142'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	05,
-	'Óscar',
-	'León',
-	'984-632-8452'
+05,
+'Óscar',
+'León',
+'984-632-8452'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	06,
-	'Efraín',
-	'Ríos',
-	'895-224-3612'
+06,
+'Efraín',
+'Ríos',
+'895-224-3612'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	07,
-	'Pedro',
-	'Sánchez',
-	'434-343-1742'
+07,
+'Pedro',
+'Sánchez',
+'434-343-1742'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	08,
-	'Martín',
-	'Pérez',
-	'724-353-442'
+08,
+'Martín',
+'Pérez',
+'724-353-442'
 );
 {{< /custom-code >}}
 
@@ -196,8 +195,8 @@ WHERE ID =5;
 
 -- Eliminar registros de la tabla
 
--- Nota: no olvidar colocar WHERE 
--- para espesificar el registro que queremos eliminar, 
+-- Nota: no olvidar colocar WHERE
+-- para espesificar el registro que queremos eliminar,
 -- de lo contrario eliminara toda la tabla
 {{< custom-code "SQL" >}}
 SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
@@ -241,3 +240,33 @@ exec sp_rename 'usuarios2', 'usuarios';
 {{< custom-code "SQL" >}}
 DROP TABLE usuarios;
 {{< /custom-code >}}
+
+
+
+
+## Diferencia entre DELETE y DROP en SQL
+
+- **DELETE**
+
+  - Elimina *filas específicas* de una tabla.
+  - Permite usar la cláusula `WHERE` para definir condiciones.
+  - No afecta la estructura de la tabla, solo elimina datos.
+  - Se puede deshacer (rollback) en una transacción activa.
+  - Ejemplo:
+    ```sql
+    DELETE FROM empleados WHERE id = 5;
+    ```
+- **DROP**
+
+  - Elimina la *tabla completa*, incluyendo su estructura, datos e índices.
+  - No permite recuperar la tabla ni los datos, a menos que se tenga una copia de seguridad.
+  - No se usa `WHERE`, ya que elimina la tabla en su totalidad.
+  - Ejemplo:
+    ```sql
+    DROP TABLE empleados;
+    ```
+
+### Resumen
+
+- `DELETE` = Elimina datos específicos, mantiene la estructura de la tabla.
+- `DROP` = Elimina la tabla entera, incluyendo su estructura y datos.

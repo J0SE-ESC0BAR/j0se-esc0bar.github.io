@@ -129,11 +129,11 @@ use database Blog;
     <div class="card-body bg-dark p-4">
         
 -- crea una nueva tabla
-	create table usuarios2(
-	ID int not null,
-	Nombre varchar(20) not null,
-	Apellido varchar(20) not null,
-	Telefono varchar(12) not null
+create table usuarios2(
+ID int not null,
+Nombre varchar(20) not null,
+Apellido varchar(20) not null,
+Telefono varchar(12) not null
 );
 
     </div>
@@ -154,16 +154,16 @@ use database Blog;
     <div class="card-body bg-dark p-4">
         
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	01,
-	'Pedro',
-	'Arias',
-	'809-123-1345'
+01,
+'Pedro',
+'Arias',
+'809-123-1345'
 );
 
     </div>
@@ -203,94 +203,94 @@ SELECT * FROM usuarios2;
     <div class="card-body bg-dark p-4">
         
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	02,
-	'Óscar',
-	'Pérez',
-	'864-323-742'
+02,
+'Óscar',
+'Pérez',
+'864-323-742'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	03,
-	'Juan',
-	'Arias',
-	'604-423-942'
+03,
+'Juan',
+'Arias',
+'604-423-942'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	04,
-	'Valentina',
-	'Sánchez',
-	'464-349-2142'
+04,
+'Valentina',
+'Sánchez',
+'464-349-2142'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	05,
-	'Óscar',
-	'León',
-	'984-632-8452'
+05,
+'Óscar',
+'León',
+'984-632-8452'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	06,
-	'Efraín',
-	'Ríos',
-	'895-224-3612'
+06,
+'Efraín',
+'Ríos',
+'895-224-3612'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	07,
-	'Pedro',
-	'Sánchez',
-	'434-343-1742'
+07,
+'Pedro',
+'Sánchez',
+'434-343-1742'
 );
 
 INSERT INTO usuarios2(
-	ID,
-	Nombre,
-	Apellido,
-	Telefono
+ID,
+Nombre,
+Apellido,
+Telefono
 )
 VALUES (
-	08,
-	'Martín',
-	'Pérez',
-	'724-353-442'
+08,
+'Martín',
+'Pérez',
+'724-353-442'
 );
 
     </div>
@@ -589,6 +589,37 @@ DROP TABLE usuarios;
     </div>
 </div>
 </p>
+<h2 id="diferencia-entre-delete-y-drop-en-sql">Diferencia entre DELETE y DROP en SQL</h2>
+<ul>
+<li>
+<p><strong>DELETE</strong></p>
+<ul>
+<li>Elimina <em>filas específicas</em> de una tabla.</li>
+<li>Permite usar la cláusula <code>WHERE</code> para definir condiciones.</li>
+<li>No afecta la estructura de la tabla, solo elimina datos.</li>
+<li>Se puede deshacer (rollback) en una transacción activa.</li>
+<li>Ejemplo:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">empleados</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>DROP</strong></p>
+<ul>
+<li>Elimina la <em>tabla completa</em>, incluyendo su estructura, datos e índices.</li>
+<li>No permite recuperar la tabla ni los datos, a menos que se tenga una copia de seguridad.</li>
+<li>No se usa <code>WHERE</code>, ya que elimina la tabla en su totalidad.</li>
+<li>Ejemplo:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">empleados</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="resumen">Resumen</h3>
+<ul>
+<li><code>DELETE</code> = Elimina datos específicos, mantiene la estructura de la tabla.</li>
+<li><code>DROP</code> = Elimina la tabla entera, incluyendo su estructura y datos.</li>
+</ul>
 
   </div>
 
@@ -674,7 +705,7 @@ DROP TABLE usuarios;
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2024-10-29 21:50:27.163091 -0600 CST m=&#43;0.246976101">2024</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2024-11-10 22:05:45.6556981 -0600 CST m=&#43;0.949828101">2024</time> - Diseño Web realizado por 
   </div>
   
 </footer>

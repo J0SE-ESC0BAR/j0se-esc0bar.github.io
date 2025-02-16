@@ -82,90 +82,77 @@
     
       <h2 id="crear-un-nuevo-post-en-hugo">Crear un nuevo post en hugo</h2>
 <p>Para crear un nuevo post, abrimos la terminal en la ubicacion del proyecto de hugo y digitamos el sigiente comando:</p>
-<pre><code>Hugo new posts/nombre_post.md
-</code></pre>
-<p>Con este comando estariamos creando un nuevo post dentro de la carpeta posts</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Hugo new posts/nombre_post.md
+</span></span></code></pre></div><p>Un nuevo post dentro de un directorio</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Hugo new posts/Dotnet/PatronesDeDisenio.md
+</span></span></code></pre></div><p>Con este comando estariamos creando un nuevo post dentro de la carpeta posts</p>
 <p><strong>¿Como puedo crear un post dentro de subcarpetas?</strong>
 Supongamos que tienes todos tus posts dentro de una carpeta llamada &ldquo;posts&rdquo; y dentro de ella tienes otra carpeta llamada <strong>&ldquo;Java&rdquo;,</strong> dentro de esta carpeta <strong>siempre</strong> debe haber un <strong>_index.md</strong></p>
 <p>Para crear un nuevo post dento de la carpeta &ldquo;Java&rdquo; debes crear el post con el siguiente comando</p>
-<pre><code>Hugo new posts/Java/nombre_post.md
-</code></pre>
+<p>Hugo new posts/Java/nombre_post.md</p>
 <h2 id="como-ver-mi-sitio-de-hugo">¿Como ver mi sitio de hugo?</h2>
 <p>Con el comando <strong>hugo server</strong> inicia el servidor de hugo, lo inicia de forma local, por lo general se genera en: <strong>localhost:1313/</strong>(nombre_de_la_pagina_web)</p>
 <h2 id="compilar-archivos-de-hugo">Compilar archivos de hugo</h2>
 <p>Simplemente con lanzar el comando</p>
-<pre><code>hugo
-</code></pre>
-<p>desde la termnial, hugo genera los archivos nesesarios para la pagina web</p>
+<p>hugo
+desde la termnial, hugo genera los archivos nesesarios para la pagina web</p>
 <h2 id="si-no-quiero-que-se-guarde-en-public-quiero-que-se-guarde-en-una-carpeta-llamada-docs">Si no quiero que se guarde en public, quiero que se guarde en una carpeta llamada &ldquo;docs&rdquo;</h2>
 <p>Para cambiar la carpeta de destino de la página generada por Hugo, puedes modificar la opción &ldquo;publishDir&rdquo; en la configuración de tu proyecto de Hugo. Esta opción determina la ruta de la carpeta en la que se guardarán los archivos generados por Hugo.</p>
 <p>Por ejemplo, si quieres que tus páginas se guarden en una carpeta llamada &ldquo;docs&rdquo;, puedes agregar la siguiente línea a tu archivo de configuración <strong>&ldquo;config.toml&rdquo;</strong> o <strong>&ldquo;config.yaml&rdquo;</strong>:</p>
-<pre><code>publishDir = &quot;docs&quot;
-</code></pre>
-<p>Luego, cuando ejecutes el comando &ldquo;hugo&rdquo; para generar tu página, se guardará en la carpeta &ldquo;docs&rdquo; en lugar de en la carpeta &ldquo;public&rdquo;.</p>
+<p>publishDir = &ldquo;docs&rdquo;
+Luego, cuando ejecutes el comando &ldquo;hugo&rdquo; para generar tu página, se guardará en la carpeta &ldquo;docs&rdquo; en lugar de en la carpeta &ldquo;public&rdquo;.</p>
 <p>Tambien puedes ejecutal el comando &ldquo;hugo&rdquo; mas <strong>-d</strong> para indicarle el directorio</p>
-<pre><code>hugo -d docs
-</code></pre>
+<p>hugo -d docs</p>
 <h2 id="como-puedo-insertar-enlaces-en-markdown-para-hugo">¿Como puedo insertar enlaces en markdown para Hugo?</h2>
 <p>Para insertar enlaces en markdown para hugo, debes usar la siguiente sintaxis:</p>
-<pre><code>[Texto del enlace](/ruta_del_enlace)
-</code></pre>
-<p>Ejemplo:</p>
-<p>[Youtube](https://www.youtube.com)<br>
+<p><a href="../../ruta_del_enlace">Texto del enlace</a>
+Ejemplo:</p>
+<p>[Youtube](https://www.youtube.com)
 <a href="https://www.youtube.com">Youtube</a></p>
-<p>[Youtube](https://www.youtube.com &ldquo;Visita YouTube&rdquo;)<br>
-<a href="https://www.youtube.com" title="Visita YouTube">Youtube</a><br>
+<p>[Youtube](https://www.youtube.com &ldquo;Visita YouTube&rdquo;)
+<a href="https://www.youtube.com" title="Visita YouTube">Youtube</a>
 (Cuando coloques el cursor sobre el enlace, verás el mensaje &ldquo;Visita YouTube&rdquo;.)</p>
-<p>[CV_José_Escobar.pdf](/CV_José_Escobar.pdf)<br>
+<p>[CV_José_Escobar.pdf](/CV_José_Escobar.pdf)
 <a href="../../CV_Jos%C3%A9_Escobar.pdf">CV_José_Escobar.pdf</a></p>
 <h2 id="como-puedo-insertar-imagenes-en-markdown-para-hugo">¿Como puedo insertar imagenes en markdown para Hugo?</h2>
 <p>Para insertar imagenes en markdown para hugo, debes usar la siguiente sintaxis:</p>
-<pre><code>![Texto de la imagen](/ruta_de_la_imagen)
-</code></pre>
-<p>Ejemplo:</p>
+<p><img src="../../ruta_de_la_imagen" alt="Texto de la imagen">
+Ejemplo:</p>
 <p>![Texto de la imagen](/ruta_de_la_imagen)</p>
 <h2 id="como-puedo-insertar-videos-en-markdown-para-hugo">¿Como puedo insertar videos en markdown para Hugo?</h2>
 <p>Para insertar videos en markdown para hugo, debes usar la siguiente sintaxis:</p>
-<pre><code>{{&lt; youtube id_del_video &gt;}}
-</code></pre>
-<p>Ejemplo:</p>
+<p>{{&lt; youtube id_del_video &gt;}}
+Ejemplo:</p>
 <p>{{&lt; youtube XRLP4K_qON8 &gt;}}</p>
-<h2 id="como-hacer-que-hugo-ignore---como-comando">¿Como hacer que Hugo ignore {{&lt; &gt;}} como comando?</h2>
+<h2 id="como-hacer-que-hugo-ignore---como-comando">¿Como hacer que Hugo ignore {{* */}} como comando?</h2>
 <p>Para que Hugo ignore {{&lt;  &gt;}} como comando, debes usar la siguiente sintaxis:</p>
 <p>se utiliza el caracter de escape /* antes de {{ y */ despues de }}</p>
-<pre><code>{{&lt;/*  (TEXTO)  */&gt;}}
-</code></pre>
-<p>Ejemplo:</p>
-<pre><code>{{&lt; youtube id_del_video &gt;}}
-</code></pre>
+<p>{{&lt;/*  (TEXTO)  */&gt;}}
+Ejemplo:</p>
+<p>{{&lt; youtube id_del_video &gt;}}</p>
 <h2 id="como-hacer-que-hugo-ignore--como-comando">¿Como hacer que Hugo ignore ![] como comando?</h2>
 <p>Para que Hugo ignore ![Texto](Texto) como comando, debes usar la siguiente sintaxis:
 se utiliza el caracter de escape \ antes de ! y [</p>
 <p>![Texto de la imagen](/ruta_de_la_imagen)</p>
 <p>Ejemplo:</p>
-<pre><code>\!\[Texto de la imagen](/ruta_de_la_imagen)
-</code></pre>
+<p>![Texto de la imagen](/ruta_de_la_imagen)</p>
 <h2 id="como-hacer-que-hugo-ignore--como-comando-1">Como hacer que Hugo ignore [] como comando?</h2>
 <p>Para que Hugo ignore [Texto](Texto) como comando, debes usar la siguiente sintaxis:<!-- raw HTML omitted -->se utiliza el caracter de escape \ antes de [</p>
 <p>[Texto del enlace](/ruta_del_enlace)</p>
 <p>Ejemplo:</p>
-<pre><code>\[Texto del enlace](/ruta_del_enlace)
-</code></pre>
+<p>[Texto del enlace](/ruta_del_enlace)</p>
 <h2 id="como-puedo-hacer-un-salto-de-linea-en-markdown-para-hugo">¿Como puedo hacer un salto de linea en markdown para Hugo?</h2>
-<p>Doble retorno de carro: Después de tu texto, presiona la tecla de retorno dos veces para comenzar una nueva línea.<br>
+<p>Doble retorno de carro: Después de tu texto, presiona la tecla de retorno dos veces para comenzar una nueva línea.
 Ejemplo:</p>
-<pre><code>Esta es otra primera línea.
-
-Esta es otra segunda línea.
-</code></pre>
 <p>Esta es otra primera línea.</p>
+<p>Esta es otra segunda línea.
+Esta es otra primera línea.</p>
 <p>Esta es otra segunda línea.</p>
-<p>Para hacer un salto de linea simple solo debes colocar dos espacios al final de la linea de texto<br>
+<p>Para hacer un salto de linea simple solo debes colocar dos espacios al final de la linea de texto
 Ejemplo:</p>
-<pre><code>Esta es la primera línea.--(dos espacios aquí)
+<p>Esta es la primera línea.&ndash;(dos espacios aquí)
 Esta es la segunda línea.
-</code></pre>
-<p>Esta es la primera línea.<br>
+Esta es la primera línea.
 Esta es la segunda línea.</p>
 
       
@@ -258,7 +245,7 @@ Esta es la segunda línea.</p>
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2024-10-29 21:50:27.156477 -0600 CST m=&#43;0.240362101">2024</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2024-11-10 22:05:45.6562058 -0600 CST m=&#43;0.950335801">2024</time> - Diseño Web realizado por 
   </div>
   
 </footer>

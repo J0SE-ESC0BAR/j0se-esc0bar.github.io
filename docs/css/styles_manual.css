@@ -124,11 +124,9 @@ body {
   display: flex;
   align-items: stretch;
   margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco tenue */
+  /*border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco tenue */
   border-radius: 12px;
   overflow: hidden;
-  max-height: 20rem;
-  min-height: 15rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   color: #ffffff;
   transition: transform 0.2s ease-in-out;
@@ -408,21 +406,33 @@ blockquote p {
     object-fit: cover;
   }
   .summary{
-    max-height: 15rem;
+    max-height: 10rem;
     min-height: 10rem;
   }
+
   .summary-content{
     padding: 0.4rem;
-    padding-left: 0.8rem;
     overflow: hidden;
   }
-  .summary-title a {
-    font-size: 1.2rem;
-    font-weight: bold;
+  .summary-title{
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
   }
+  .summary-date {
+    font-size: 0.7rem;
+  }
+  .intro {
+    padding: 0;
+  }
+  .intro img {
+    margin: 0;
+  }
+
   .summary-description {
     font-size: 1rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    overflow: hidden;
   }
   #carouselExampleCaptions{
     margin-top: 2.75rem;

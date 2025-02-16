@@ -6,21 +6,28 @@
     <description>Recent content in .NET on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Fri, 13 Oct 2023 15:07:06 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2024 22:28:49 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/dotnet/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ASP.NET</title>
+      <title>Patrones de Diseño en .NET</title>
+      <link>http://localhost:1313/posts/dotnet/patronesdedisenio/</link>
+      <pubDate>Sat, 09 Nov 2024 22:28:49 -0600</pubDate>
+      <guid>http://localhost:1313/posts/dotnet/patronesdedisenio/</guid>
+      <description>&lt;hr&gt;&#xA;&lt;h3 id=&#34;1-patrones-creacionales&#34;&gt;1. Patrones Creacionales&lt;/h3&gt;&#xA;&lt;p&gt;Estos patrones se centran en cómo crear objetos de manera que el sistema sea flexible y escalable. Ayudan a abstraer y simplificar la creación de objetos en lugar de instanciarlos directamente.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Factory Method (Método de Fábrica)&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Proporciona una interfaz para crear objetos en una clase base, permitiendo a las subclases decidir qué objeto instanciar.&lt;/li&gt;&#xA;&lt;li&gt;Ejemplo: Un sistema de gestión de productos en el que diferentes tipos de productos (como físicos o digitales) se crean según la necesidad.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Abstract Factory (Fábrica Abstracta)&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ASP.NET: Introducción</title>
       <link>http://localhost:1313/posts/dotnet/aspdotnet/</link>
       <pubDate>Fri, 13 Oct 2023 15:07:06 -0600</pubDate>
       <guid>http://localhost:1313/posts/dotnet/aspdotnet/</guid>
-      <description></description>
+      <description>&lt;hr&gt;&#xA;&lt;h3 id=&#34;características-principales-de-aspnet&#34;&gt;Características Principales de ASP.NET&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Alto Rendimiento&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ASP.NET es conocido por su rendimiento optimizado, con tiempos de respuesta rápidos y manejo eficiente de solicitudes de usuario.&lt;/li&gt;&#xA;&lt;li&gt;Incluye capacidades avanzadas de administración de caché, compresión y almacenamiento en memoria para mejorar la experiencia del usuario.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Multiplataforma&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Con &lt;strong&gt;ASP.NET Core&lt;/strong&gt;, Microsoft introdujo soporte multiplataforma, permitiendo que las aplicaciones ASP.NET se ejecuten en Windows, Linux y macOS.&lt;/li&gt;&#xA;&lt;li&gt;Esto facilita la portabilidad y el despliegue de aplicaciones en una variedad de servidores y entornos en la nube.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Compatibilidad con MVC (Modelo-Vista-Controlador)&lt;/strong&gt;:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Windows Forms</title>
+      <title>Windows Forms: Introducción</title>
       <link>http://localhost:1313/posts/dotnet/windowsforms/</link>
       <pubDate>Fri, 13 Oct 2023 10:29:46 -0600</pubDate>
       <guid>http://localhost:1313/posts/dotnet/windowsforms/</guid>
-      <description>&lt;h2 id=&#34;proximamente&#34;&gt;Proximamente!!&lt;/h2&gt;</description>
+      <description>&lt;hr&gt;&#xA;&lt;h3 id=&#34;características-principales-de-windows-forms&#34;&gt;Características Principales de Windows Forms&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Desarrollo Rápido y Visual&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;WinForms permite el desarrollo rápido de interfaces gracias a su diseñador visual en &lt;strong&gt;Visual Studio&lt;/strong&gt;. Los desarrolladores pueden arrastrar y soltar componentes, como botones y cuadros de texto, directamente en el formulario, y ajustar sus propiedades visualmente.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Componentes Predefinidos&lt;/strong&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Windows Forms ofrece una variedad de controles listos para usar, como etiquetas, botones, cuadros de texto, listas, menús, barras de progreso y muchos más. Esto facilita el diseño de aplicaciones de usuario enriquecidas sin necesidad de programar todos los elementos de interfaz desde cero.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Facilidad de Personalización&lt;/strong&gt;:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

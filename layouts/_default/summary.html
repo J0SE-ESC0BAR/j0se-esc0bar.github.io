@@ -1,6 +1,5 @@
 <div class="summary">
   <!--Imagen con enlace dentro de un div-->
-
     <div class="summary-image">
       <a href="{{ .RelPermalink }}">
         <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
@@ -14,15 +13,15 @@
       <div class="summary-date">{{ dateFormat "Jan 2, 2006" .Date }}</div>
     {{ end }}
     {{ if .Params.description }}
-    <p class="summary-description lh-sm">Descripción: {{ .Params.description }}</p>
+    <p class="summary-description lh-sm">{{ .Params.description }}</p>
     {{ end }}
 
-    {{ if eq .Type "directorio" }}
+    <!--{{ if eq .Type "directorio" }}
     <ul class="summary-lista lh-sm">
       {{ range .RegularPages }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
-    {{ end }}
+    {{ end }}-->
   </div>
 </div>
