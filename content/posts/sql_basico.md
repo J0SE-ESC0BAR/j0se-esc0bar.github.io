@@ -6,267 +6,270 @@ image: images/Server.jpeg
 draft: false
 viewimg: true
 ---
+
 En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.
 
-### Comandos basicos
+### Comandos básicos
 
--- Crea una nueva base de datos
-{{< custom-code "SQL" >}}
+#### -- Crea una nueva base de datos
+```sql
 create database Blog;
-{{< /custom-code >}}
+```
 
--- seleccionar base de datos
-{{< custom-code "SQL" >}}
+#### -- Seleccionar base de datos
+```sql
 use database Blog;
-{{< /custom-code >}}
+```
 
-Cada uno de los identificadores representa una columna y estan ordenados de la siguiente forma
+Cada uno de los identificadores representa una columna y están ordenados de la siguiente forma:  
+(identificador) (tipo) (si puede quedar vacío)
 
-(identificador) (tipo) (si puede quedar vacio)
-{{< custom-code "SQL" >}}
--- crea una nueva tabla
+```sql
+-- Crea una nueva tabla
 create table usuarios2(
-ID int not null,
-Nombre varchar(20) not null,
-Apellido varchar(20) not null,
-Telefono varchar(12) not null
+  ID int not null,
+  Nombre varchar(20) not null,
+  Apellido varchar(20) not null,
+  Telefono varchar(12) not null
 );
-{{< /custom-code >}}
--- Insertar valores a una fila (insertar un registro)
-{{< custom-code "SQL" >}}
+```
+
+#### -- Insertar valores a una fila (insertar un registro)
+```sql
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-01,
-'Pedro',
-'Arias',
-'809-123-1345'
+  01,
+  'Pedro',
+  'Arias',
+  '809-123-1345'
 );
-{{< /custom-code >}}
--- Solicitar los datos de toda la tabla
-{{< custom-code "SQL" >}}
+```
+
+#### -- Solicitar los datos de toda la tabla
+```sql
 SELECT * FROM usuarios2;
-{{< /custom-code >}}
+```
 
--- Insertar varios valores a las columans (insertar varios registros)
-{{< custom-code "SQL" >}}
+#### -- Insertar varios valores a las columnas (insertar varios registros)
+```sql
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-02,
-'Óscar',
-'Pérez',
-'864-323-742'
+  02,
+  'Óscar',
+  'Pérez',
+  '864-323-742'
 );
 
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-03,
-'Juan',
-'Arias',
-'604-423-942'
+  03,
+  'Juan',
+  'Arias',
+  '604-423-942'
 );
 
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-04,
-'Valentina',
-'Sánchez',
-'464-349-2142'
+  04,
+  'Valentina',
+  'Sánchez',
+  '464-349-2142'
 );
 
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-05,
-'Óscar',
-'León',
-'984-632-8452'
+  05,
+  'Óscar',
+  'León',
+  '984-632-8452'
 );
 
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-06,
-'Efraín',
-'Ríos',
-'895-224-3612'
+  06,
+  'Efraín',
+  'Ríos',
+  '895-224-3612'
 );
 
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-07,
-'Pedro',
-'Sánchez',
-'434-343-1742'
+  07,
+  'Pedro',
+  'Sánchez',
+  '434-343-1742'
 );
 
 INSERT INTO usuarios2(
-ID,
-Nombre,
-Apellido,
-Telefono
+  ID,
+  Nombre,
+  Apellido,
+  Telefono
 )
 VALUES (
-08,
-'Martín',
-'Pérez',
-'724-353-442'
+  08,
+  'Martín',
+  'Pérez',
+  '724-353-442'
 );
-{{< /custom-code >}}
+```
 
--- Solicitar una columna de una tabla
-{{< custom-code "SQL" >}}
+#### -- Solicitar una columna de una tabla
+```sql
 SELECT Nombre FROM usuarios2;
-{{< /custom-code >}}
--- Solicitar dos columna de una tabla
-{{< custom-code "SQL" >}}
-SELECT Nombre,Telefono FROM usuarios2;
-{{< /custom-code >}}
--- Traer los registros unicos y eliminar los repetidos
-{{< custom-code "SQL" >}}
-SELECT DISTINCT Nombre,ID
+```
+
+#### -- Solicitar dos columnas de una tabla
+```sql
+SELECT Nombre, Telefono FROM usuarios2;
+```
+
+#### -- Traer los registros únicos y eliminar los repetidos
+```sql
+SELECT DISTINCT Nombre, ID
 FROM usuarios2;
-{{< /custom-code >}}
+```
 
--- Ordenar los resultados por los criterios que elijamos
-{{< custom-code "SQL" >}}
+#### -- Ordenar los resultados por los criterios que elijamos
+```sql
 SELECT * FROM usuarios2
-Order BY Apellido;
+ORDER BY Apellido;
 
 SELECT * FROM usuarios2
-Order BY Nombre,ID;
-{{< /custom-code >}}
+ORDER BY Nombre, ID;
+```
 
--- Extraer datos espesificos con operadores logicos "WHERE" (DONDE)
-{{< custom-code "SQL" >}}
+#### -- Extraer datos específicos con operadores lógicos "WHERE"
+```sql
 SELECT * FROM usuarios2
 WHERE ID > 4;
-{{< /custom-code >}}
+```
 
--- Operador "BETWEEN" (ENTRE) junto con WHERE
-{{< custom-code "SQL" >}}
+#### -- Operador "BETWEEN" junto con WHERE
+```sql
 SELECT * FROM usuarios2
 WHERE ID BETWEEN 2 and 5;
-{{< /custom-code >}}
--- Actualizar datos de la tabla
-{{< custom-code "SQL" >}}
+```
+
+#### -- Actualizar datos de la tabla
+```sql
 UPDATE usuarios2
-SET Nombre='Marcos',Apellido='Vasquez'
-WHERE ID=5;
-{{< /custom-code >}}
+SET Nombre = 'Marcos', Apellido = 'Vasquez'
+WHERE ID = 5;
+```
 
--- tree solo una columna de la tabla
-{{< custom-code "SQL" >}}
+#### -- Traer solo una fila de la tabla
+```sql
 SELECT * FROM usuarios2
-WHERE ID =5;
-{{< /custom-code >}}
+WHERE ID = 5;
+```
 
--- Eliminar registros de la tabla
-
--- Nota: no olvidar colocar WHERE
--- para espesificar el registro que queremos eliminar,
--- de lo contrario eliminara toda la tabla
-{{< custom-code "SQL" >}}
-SELECT * FROM usuarios2; -- (tabla antes de borrar el registro)
+#### -- Eliminar registros de la tabla
+```sql
+-- (Tabla antes de borrar el registro)
+SELECT * FROM usuarios2;
 
 DELETE FROM usuarios2
-WHERE ID=8;
--- (tabla despues de borrar el registro)
+WHERE ID = 8;
+
+-- (Tabla después de borrar el registro)
 SELECT * FROM usuarios2;
-{{< /custom-code >}}
+```
 
--- Agregar una columna a nuestra tabla
-{{< custom-code "SQL" >}}
---(nombre de la tabla) (identificador) (tipo que almacenara)
+#### -- Agregar una columna a nuestra tabla
+```sql
 ALTER TABLE usuarios2 ADD Dirección varchar(10);
-{{< /custom-code >}}
+```
 
--- Renombrar un a columna de una tabla
-{{< custom-code "SQL" >}}
-SELECT * FROM usuarios2; -- (tabla antes de Renombrar columna)
-exec sp_rename 'usuarios2.dirección','Domicilio','COLUMN';
-SELECT * FROM usuarios2; -- (tabla despues de Renombrar columna)
-{{< /custom-code >}}
+#### -- Renombrar una columna de una tabla
+```sql
+-- (Tabla antes de renombrar la columna)
+SELECT * FROM usuarios2;
+exec sp_rename 'usuarios2.dirección', 'Domicilio', 'COLUMN';
+-- (Tabla después de renombrar la columna)
+SELECT * FROM usuarios2;
+```
 
--- Borrar una columna de una tabla
-{{< custom-code "SQL" >}}
-SELECT * FROM usuarios2; -- (tabla antes de borrar la columna)
+#### -- Borrar una columna de una tabla
+```sql
+-- (Tabla antes de borrar la columna)
+SELECT * FROM usuarios2;
 
---ALTER TABLE (nombre de la tabla) DROP COLUMN	(identificador)
 ALTER TABLE usuarios2 DROP COLUMN Domicilio;
 
-SELECT * FROM usuarios2; -- (tabla despues de borrar la columna)
-{{< /custom-code >}}
+-- (Tabla después de borrar la columna)
+SELECT * FROM usuarios2;
+```
 
--- Cambiar el nombre a una tabla o renombrar una tabla
-{{< custom-code "SQL" >}}
--- (nombre actual de la tabla) (nuevo nombre de la tabla)
+#### -- Cambiar el nombre a una tabla o renombrar una tabla
+```sql
 exec sp_rename 'usuarios2', 'usuarios';
-{{< /custom-code >}}
+```
 
--- BORRAR UNA TABLA
-{{< custom-code "SQL" >}}
+#### -- Borrar una tabla
+```sql
 DROP TABLE usuarios;
-{{< /custom-code >}}
+```
 
-
-
+---
 
 ## Diferencia entre DELETE y DROP en SQL
 
 - **DELETE**
-
   - Elimina *filas específicas* de una tabla.
   - Permite usar la cláusula `WHERE` para definir condiciones.
   - No afecta la estructura de la tabla, solo elimina datos.
   - Se puede deshacer (rollback) en una transacción activa.
-  - Ejemplo:
+  - **Ejemplo:**
     ```sql
     DELETE FROM empleados WHERE id = 5;
     ```
-- **DROP**
 
+- **DROP**
   - Elimina la *tabla completa*, incluyendo su estructura, datos e índices.
   - No permite recuperar la tabla ni los datos, a menos que se tenga una copia de seguridad.
   - No se usa `WHERE`, ya que elimina la tabla en su totalidad.
-  - Ejemplo:
+  - **Ejemplo:**
     ```sql
     DROP TABLE empleados;
     ```
 
 ### Resumen
 
-- `DELETE` = Elimina datos específicos, mantiene la estructura de la tabla.
+- `DELETE` = Elimina datos específicos, manteniendo la estructura de la tabla.  
 - `DROP` = Elimina la tabla entera, incluyendo su estructura y datos.

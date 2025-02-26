@@ -2,7 +2,10 @@
   <!--Imagen con enlace dentro de un div-->
     <div class="summary-image">
       <a href="{{ .RelPermalink }}">
-        <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
+    <img class="img-fluid"
+      src="{{ .Params.image | relURL }}"
+      onerror="this.onerror=null; this.src='../images/no-img.png';"
+      alt="Imagen de Redes">
     </a>
       </a>
     </div>

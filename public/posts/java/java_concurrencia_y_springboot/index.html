@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Java Concurrencia y Springboot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://j0se-esc0bar.github.io//favicon.ico">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+  
+  <link rel="stylesheet" href="../../../css/styles_manual.css">
+  
+
+  
+    <meta name="description" content="En este post estan la cosas mas importantes que e aprendido de Concurrencia y Springboot, desde cosas basicas asta lo avanzado."/>
+    <meta property="og:title" content="Java Concurrencia y Springboot"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://j0se-esc0bar.github.io/posts/java/java_concurrencia_y_springboot/"/>
+    <meta property="og:image" content="https://j0se-esc0bar.github.io/images/java.png"/>
+    <meta property="og:description" content="En este post estan la cosas mas importantes que e aprendido de Concurrencia y Springboot, desde cosas basicas asta lo avanzado."/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@JAEM_Developer"/>
+    <meta name="twitter:creator" content="@JAEM_Developer"/>
+  
+</head>
+
+
+
+
+<body class='page page-blog-single-sub-post'>
+  
+  
+  
+    <div class='header'>
+  <nav class="nav">
+    
+    <a class="header-logo" href="https://j0se-esc0bar.github.io/">JAEM</a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      
+      
+        <li class="menu-item-posts">
+          
+          <a class="nav-menu-link nav-link" href="../../../posts/">
+            Posts
+          </a>
+        </li>
+      
+        <li class="menu-item-acerca">
+          
+          <a class="nav-menu-link nav-link" href="../../../sobre/">
+            Acerca
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+
+    
+<div class="intro">
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      <img src="../../../images/java.png" class="img-fluid" alt="Java Concurrencia y Springboot">
+    </div>
+    <div class="col-md-6 intro-content">
+      <h1>Java Concurrencia y Springboot</h1>
+      <p>En este post estan la cosas mas importantes que e aprendido de Concurrencia y Springboot, desde cosas basicas asta lo avanzado.</p>
+    </div>
+  </div>
+</div>
+    <div class="content">
+      <h3 id="indice">Indice</h3>
+<ul>
+<li>Requisitos</li>
+<li>funciones</li>
+<li>Stream</li>
+<li>Web Scraper</li>
+<li>Variables atomicas</li>
+<li>Concurrencia</li>
+</ul>
+<h3 id="requisitos-del-sistema">Requisitos del sistema</h3>
+<p>IDE
+JDK 11 o posterior</p>
+<h3 id="stream">Stream</h3>
+<p>Librerias a utilizar</p>
+<pre><code>import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+</code></pre>
+<p>Clase principal</p>
+<pre><code>public class Main {
+    public static void main(String[] args) {
+        List&lt;String&gt; cities = new ArrayList&lt;&gt;();
+        cities.add(&quot;London&quot;);
+        cities.add(&quot;New York&quot;);
+        cities.add(&quot;Tokyo&quot;);
+        cities.add(&quot;Barcelona&quot;);
+        cities.add(&quot;Buenos Aires&quot;);
+        cities.add(&quot;Bogota&quot;);
+        cities.add(&quot;Ciudad de Mexico&quot;);
+        cities.add(&quot;Lima&quot;);
+
+        //Recorrer una lista de forma tradicional
+        for (int i = 0; i &lt; cities.size(); i++) {
+            System.out.println(cities.get(i));
+        }
+
+        // Recorrer una lista de forma abrebiada
+        for (String city : cities) {
+            System.out.println(city);
+        }
+
+        //Ejemplo de stream
+        cities.stream().forEach(city -&gt; System.out.println(city));
+
+        /*Exprecion lambda 
+        ######### city -&gt; System.out.println(city) ###########
+        Es tratar de crear una funcion en una sola linea
+        (si solo tendara una variable no es nesesario declarar el tipo de la variable 
+        y si solo tiene una linea de codigo no es nesesario poner las llaves)
+        */
+
+        //Lamar una funcion tradicional e stram (referencia de metodo)
+        cities.stream().forEach(Main::printCity);
+        /*en ves de ser Main.prinCity, es con doble dos puntos Main::printCity */
+        cities.stream().forEach(System.out::println);
+
+        //Tambien se puede usar directo el foreach, pero el stream aunque no este, siempre se esta usando
+        cities.forEach(System.out::println);
+
+        //Ejecutar un proceso en paralelo
+        cities.stream().parallel().forEach(System.out::println);
+
+        //Al cocatenar metodos con &quot;.&quot; estamos usando el patron de diseño Pipeline
+        //Ejemplo de pipeline con filter
+        /*cities.stream().filter(city -&gt; city.startsWith(&quot;B&quot;)).forEach(System.out::println);*/
+        cities.stream()
+        .filter(city -&gt; city.startsWith(&quot;B&quot;))
+        .forEach(System.out::println);
+
+        //Ejemplo de expresion lambda con varias lineas
+        cities.stream().filter(city -&gt; {
+            boolean result = city.startsWith(&quot;B&quot;);
+            return result;
+        });
+
+        //Agregemos otro filto al metodo
+        cities.stream()
+        .filter(city -&gt; city.startsWith(&quot;B&quot;))
+        .filter(city -&gt; city.contains(&quot;n&quot;))
+        .forEach(System.out::println);
+
+        /*Existen dos tipos de metodos
+        * 1.- Metodos terminales
+        * foreach
+        * 2.- Metodos no terminales (NUNCA VAN A SER TERMINALES)
+        * filter
+        * 
+        */
+
+        /*Ejemplo, no lo podmeos guardar en una lista, porque no tiene metodo terminal
+        List &lt;String&gt; filttredCities = cities.stream()
+        .filter(city -&gt; city.startsWith(&quot;B&quot;))
+        .filter(city -&gt; city.contains(&quot;n&quot;));*/
+
+        //Usando el metodo terminal collect(collectors.toList()) si se podria hacer
+        List &lt;String&gt; filttredCities = cities.stream()
+        .filter(city -&gt; city.startsWith(&quot;B&quot;))
+        .filter(city -&gt; city.contains(&quot;n&quot;))
+        .collect(Collectors.toList());
+        //El metodo collect permite convertir un stream en una lista
+    }
+
+    //Metodo filtrar ciudad
+    public static boolean filterCity(String city) {
+        return city.startsWith(&quot;B&quot;);
+    }
+
+    //Metodo tradicional
+    public static void printCity(String city) {
+        System.out.println(city);
+    }
+}
+</code></pre>
+<h3 id="web-scraper">Web Scraper</h3>
+<h3 id="variables-atomicas">Variables atomicas</h3>
+<blockquote>
+<p>Las clases count y count_atomic se encuantran despues de los ejemplos</p>
+</blockquote>
+<p><strong>EJEMPLO 1</strong></p>
+<pre><code>public class App {
+    public static void main(String[] args) throws Exception {
+        System.out.println(&quot;Inicio&quot;);
+</code></pre>
+<p>Thread.sleep, detiene el programa por los determinados milisegundos</p>
+<pre><code>        Thread.sleep(2000);
+        System.out.println(&quot;Fin&quot;);
+        Counter counter = new Counter();
+        counter.run();
+        System.out.println(counter.count);
+}
+</code></pre>
+<p><strong>EJEMPLO 2 Uso de Hilos</strong></p>
+<pre><code>public class App {
+    public static void main(String[] args) throws Exception {
+        Counter counter = new Counter();
+</code></pre>
+<p>Creacion de un hilo</p>
+<pre><code>        Thread first = new Thread(counter, &quot;first&quot;);
+</code></pre>
+<p>Inicia el hilo</p>
+<pre><code>        first.start();	
+</code></pre>
+<p>Hacemos que el hilo principal espere 2 segundos para que el metodo alcace a terminar</p>
+<pre><code>        Thread.sleep(2000);
+        System.out.println(counter.count);
+</code></pre>
+<p><strong>EJEMPLO 3 Llamar un metodo en dos hilos</strong></p>
+<pre><code>public class App {
+    public static void main(String[] args) throws Exception {
+        Counter counter = new Counter();
+        Thread first = new Thread(counter, &quot;first&quot;);
+        Thread second = new Thread(counter, &quot;second&quot;);
+        first.start();
+        second.start();
+
+        Thread.sleep(2000);
+        System.out.println(counter.count);
+}
+</code></pre>
+<blockquote>
+<p>El resultado no es el correcto (2000), La respuesta varia al rededor de 2000, esto ocurre por que los hilos estan haciendo uso del metodo al mismo tiempo, en el ejemplo 4 se muesta una solucion a esto.</p>
+</blockquote>
+<p>Los hilos se ejecutan en paralelo y ejecutan el mismo metodo run(), no son dos metodos <strong>run()</strong> los hilos usan el mismo, no confundir con clases o objetos.</p>
+<p><strong>EJEMPLO 4 Variables atomicas</strong></p>
+<p>Para solucionar esto se pueden usar las clases atomicas</p>
+<pre><code>public class App {
+    public static void main(String[] args) throws Exception {
+        Counter_atomic counter_atomic = new Counter_atomic();
+        Thread primero = new Thread(counter_atomic, &quot;primero&quot;);
+        Thread segundo = new Thread(counter_atomic, &quot;segundo&quot;);
+        primero.start();
+        segundo.start();
+
+        primero.join();
+        segundo.join();
+        System.out.println(counter_atomic.count);
+}
+</code></pre>
+<h3 id="clase-counter-y-clase-counter_atomic">Clase Counter y Clase Counter_atomic</h3>
+<pre><code>    public static class Counter extends Thread{
+        public int count=0;
+//Metodo que suma 1 al contador hasta i &lt; 100000000
+        public void run(){
+            for(int i=0; i&lt;100000000; i++){
+                count++;
+            }
+        }
+    }
+    public static class Counter_atomic extends Thread{
+//Creamos un objeto AtomicInterger
+        public AtomicInteger count= new AtomicInteger(0);
+        public void run(){
+            for(int i=0; i&lt;100000000; i++){
+                count.addAndGet(1); //(agrega 1 a count)
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="explicacion-del-metodo-join">Explicacion del metodo join</h3>
+<p>El método <strong>join</strong> es una función de la clase <strong>Thread</strong> en Java que se utiliza para hacer que un hilo espere a que otro hilo termine su ejecución. Por ejemplo, si tenemos dos hilos de ejecución y queremos que el primer hilo espere a que el segundo hilo termine, podemos usar el método <strong>join</strong> para lograrlo.</p>
+<h3 id="concurrencia">Concurrencia</h3>
+<p><strong>Tipos de problemas con concurrencia</strong></p>
+<ul>
+<li>DEADLOCK</li>
+<li>LIVELOCK</li>
+<li>STARTVISION</li>
+</ul>
+<blockquote>
+<p>DEADLOCK</p>
+</blockquote>
+
+    </div>
+
+    
+    
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+
+
+<div class="box-icons">
+  
+<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-twitter" aria-hidden="true"></i>
+</a>
+
+<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-github" aria-hidden="true"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-linkedin" aria-hidden="true"></i>
+</a>
+
+</div>
+
+</section>
+
+
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+        
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2025-02-25 16:53:52.7200371 -0600 CST m=&#43;0.236145901">2025</time> - Diseño Web realizado por 
+  </div>
+  
+</footer>
+
+
+    
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="../../../js/bundle.min.52a8bc22398c4f696fccd6610e877826d1fe0acc45da4723b5e13ca973c56e29.js"></script>
+  
+
+  
+  
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</body>
+</html>

@@ -6,3 +6,5 @@ navToggle.addEventListener("click", () => {
     ? navToggle.setAttribute("aria-label", "Cerrar menú")
     : navToggle.setAttribute("aria-label", "Abrir menú");
 });
+
+

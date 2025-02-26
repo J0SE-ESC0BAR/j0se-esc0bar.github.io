@@ -1,34 +1,50 @@
+# URL base para tu sitio (GitHub Pages)
 baseURL = "https://j0se-esc0bar.github.io/"
-languageCode = 'es'
+
+# Ajustes de URLs
+canonifyURLs = true
+relativeURLs = true
+
+# Idioma, título y tema
+languageCode = "es"
 title = "JAEM"
 theme = "hugo-jaem-theme"
-relativeURLs = true
-canonifyURLs = true
 
-
-# Donde se guardara el contenido generado por Hugo
+# Carpeta donde se guardará el sitio generado por Hugo
 publishDir = "docs"
 
+# Ajustes de Pygments / Chroma
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
+
+# Paginación
 paginate = 7
 
+# Configuración para resaltado de código (Chroma)
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNumbersInTable = false
+    style = "dracula"  # Puedes cambiar a otro tema si lo deseas
 
 [params]
-name= "José Escobar"
-google_analytics_id = ""
-# Hey aquí pon tu twitter 👇
-twitter_handle = "@JAEM_Developer"
-#Ver autor en pagina inicial
-showAuthorOnHomepage = true
-enableRobotsTXT = true
-#Ver autor en posts
-showAuthorOnPosts = false
+  # Nombre y redes
+  name = "José Escobar"
+  google_analytics_id = ""
+  twitter_handle = "@JAEM_Developer"
 
-#ver publicaciones en pagina de inicio
-showPostsOnHomepage = true
+  # Visualización de autor y robots
+  showAuthorOnHomepage = true
+  showAuthorOnPosts = false
+  enableRobotsTXT = true
 
-# agregar hojas de estilo css (array de hojas de estilo)
-#Contiene bootstrap
-css = ["/css/bootstrap.min.css", "/css/styles_manual.css"]
+  # Mostrar publicaciones en la página de inicio
+  showPostsOnHomepage = true
+
+  # Hojas de estilo adicionales (Bootstrap y highlight.js)
+  css = [
+    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css",
+    "/css/styles_manual.css"
+  ]

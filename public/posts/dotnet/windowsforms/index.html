@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Windows Forms: Introducción</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://j0se-esc0bar.github.io//favicon.ico">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+  
+  <link rel="stylesheet" href="../../../css/styles_manual.css">
+  
+
+  
+    <meta name="description" content="**Windows Forms (WinForms)** es una biblioteca de clases en .NET que permite a los desarrolladores crear aplicaciones de escritorio con interfaz gráfica para Windows. Se utiliza principalmente para construir aplicaciones con ventanas, botones, cuadros de texto, menús, entre otros componentes de interfaz, proporcionando una forma rápida y sencilla de crear aplicaciones de escritorio para entornos Windows. "/>
+    <meta property="og:title" content="Windows Forms: Introducción"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://j0se-esc0bar.github.io/posts/dotnet/windowsforms/"/>
+    <meta property="og:image" content="https://j0se-esc0bar.github.io/images/WindowsForms.jpg"/>
+    <meta property="og:description" content="**Windows Forms (WinForms)** es una biblioteca de clases en .NET que permite a los desarrolladores crear aplicaciones de escritorio con interfaz gráfica para Windows. Se utiliza principalmente para construir aplicaciones con ventanas, botones, cuadros de texto, menús, entre otros componentes de interfaz, proporcionando una forma rápida y sencilla de crear aplicaciones de escritorio para entornos Windows. "/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@JAEM_Developer"/>
+    <meta name="twitter:creator" content="@JAEM_Developer"/>
+  
+</head>
+
+
+
+
+<body class='page page-blog-single-sub-post'>
+  
+  
+  
+    <div class='header'>
+  <nav class="nav">
+    
+    <a class="header-logo" href="https://j0se-esc0bar.github.io/">JAEM</a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      
+      
+        <li class="menu-item-posts">
+          
+          <a class="nav-menu-link nav-link" href="../../../posts/">
+            Posts
+          </a>
+        </li>
+      
+        <li class="menu-item-acerca">
+          
+          <a class="nav-menu-link nav-link" href="../../../sobre/">
+            Acerca
+          </a>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+
+    
+<div class="intro">
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      <img src="../../../images/WindowsForms.jpg" class="img-fluid" alt="Windows Forms: Introducción">
+    </div>
+    <div class="col-md-6 intro-content">
+      <h1>Windows Forms: Introducción</h1>
+      <p>**Windows Forms (WinForms)** es una biblioteca de clases en .NET que permite a los desarrolladores crear aplicaciones de escritorio con interfaz gráfica para Windows. Se utiliza principalmente para construir aplicaciones con ventanas, botones, cuadros de texto, menús, entre otros componentes de interfaz, proporcionando una forma rápida y sencilla de crear aplicaciones de escritorio para entornos Windows. </p>
+    </div>
+  </div>
+</div>
+    <div class="content">
+      <hr>
+<h3 id="características-principales-de-windows-forms">Características Principales de Windows Forms</h3>
+<ol>
+<li>
+<p><strong>Desarrollo Rápido y Visual</strong>:</p>
+<ul>
+<li>WinForms permite el desarrollo rápido de interfaces gracias a su diseñador visual en <strong>Visual Studio</strong>. Los desarrolladores pueden arrastrar y soltar componentes, como botones y cuadros de texto, directamente en el formulario, y ajustar sus propiedades visualmente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Componentes Predefinidos</strong>:</p>
+<ul>
+<li>Windows Forms ofrece una variedad de controles listos para usar, como etiquetas, botones, cuadros de texto, listas, menús, barras de progreso y muchos más. Esto facilita el diseño de aplicaciones de usuario enriquecidas sin necesidad de programar todos los elementos de interfaz desde cero.</li>
+</ul>
+</li>
+<li>
+<p><strong>Facilidad de Personalización</strong>:</p>
+<ul>
+<li>WinForms permite personalizar los componentes con diversas propiedades y estilos. Puedes cambiar el color, tamaño, fuente y muchas otras propiedades de cada control para adaptarse a las necesidades de la aplicación.</li>
+</ul>
+</li>
+<li>
+<p><strong>Eventos y Control de Flujo</strong>:</p>
+<ul>
+<li>Cada componente en Windows Forms puede manejar eventos, como clics de botón, cambios en cuadros de texto, o movimientos del ratón, lo cual permite controlar el flujo de la aplicación y responder a las interacciones del usuario de manera efectiva.</li>
+</ul>
+</li>
+<li>
+<p><strong>Soporte para Conexiones a Base de Datos</strong>:</p>
+<ul>
+<li>WinForms se integra bien con bases de datos mediante <strong>ADO.NET</strong> o <strong>Entity Framework</strong>, permitiendo construir aplicaciones CRUD (Crear, Leer, Actualizar, Eliminar) fácilmente, lo cual es ideal para aplicaciones de gestión o sistemas internos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Integración con API de Windows</strong>:</p>
+<ul>
+<li>Al ser una tecnología de Microsoft para Windows, WinForms permite acceder a varias funcionalidades del sistema operativo, como archivos, registros y servicios de Windows.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="componentes-comunes-de-windows-forms">Componentes Comunes de Windows Forms</h3>
+<ol>
+<li>
+<p><strong>Form (Formulario)</strong>:</p>
+<ul>
+<li>Representa una ventana de aplicación. Es el contenedor principal de los controles de la interfaz y se utiliza para crear la ventana principal de la aplicación o subventanas.</li>
+</ul>
+</li>
+<li>
+<p><strong>Label (Etiqueta)</strong>:</p>
+<ul>
+<li>Permite mostrar texto estático, como títulos o instrucciones. No se puede editar por el usuario.</li>
+</ul>
+</li>
+<li>
+<p><strong>TextBox (Cuadro de Texto)</strong>:</p>
+<ul>
+<li>Permite al usuario ingresar texto. Puede ser de una sola línea o multilinea y suele usarse para campos de entrada de datos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Button (Botón)</strong>:</p>
+<ul>
+<li>Un botón que se utiliza para iniciar una acción, como enviar un formulario o ejecutar una función específica al hacer clic en él.</li>
+</ul>
+</li>
+<li>
+<p><strong>DataGridView (Vista de Datos)</strong>:</p>
+<ul>
+<li>Un control que permite mostrar datos en formato de tabla, ideal para aplicaciones que interactúan con bases de datos.</li>
+</ul>
+</li>
+<li>
+<p><strong>ListBox (Lista)</strong>:</p>
+<ul>
+<li>Permite mostrar una lista de elementos de la cual el usuario puede seleccionar uno o más.</li>
+</ul>
+</li>
+<li>
+<p><strong>ComboBox (Lista Desplegable)</strong>:</p>
+<ul>
+<li>Similar a ListBox, pero en formato desplegable. Permite seleccionar un solo elemento de una lista.</li>
+</ul>
+</li>
+<li>
+<p><strong>MenuStrip y ToolStrip</strong>:</p>
+<ul>
+<li>Permiten agregar menús y barras de herramientas personalizadas, lo cual es útil para aplicaciones que requieren opciones de navegación complejas.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="ejemplo-básico-de-código-en-windows-forms">Ejemplo Básico de Código en Windows Forms</h3>
+<p>Este ejemplo muestra cómo crear un formulario simple con un cuadro de texto y un botón en Windows Forms usando C#:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#ff79c6">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">using</span> System.Windows.Forms;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#ff79c6">class</span> <span style="color:#50fa7b">MiFormulario</span> : Form
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> TextBox textBox;
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> Button button;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> MiFormulario()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        textBox = <span style="color:#ff79c6">new</span> TextBox() { Location = <span style="color:#ff79c6">new</span> System.Drawing.Point(<span style="color:#bd93f9">20</span>, <span style="color:#bd93f9">20</span>), Width = <span style="color:#bd93f9">200</span> };
+</span></span><span style="display:flex;"><span>        button = <span style="color:#ff79c6">new</span> Button() { Text = <span style="color:#f1fa8c">&#34;Mostrar&#34;</span>, Location = <span style="color:#ff79c6">new</span> System.Drawing.Point(<span style="color:#bd93f9">20</span>, <span style="color:#bd93f9">60</span>) };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        button.Click += MostrarMensaje;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Controls.Add(textBox);
+</span></span><span style="display:flex;"><span>        Controls.Add(button);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">private</span> <span style="color:#ff79c6">void</span> MostrarMensaje(<span style="color:#8be9fd">object</span> sender, EventArgs e)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        MessageBox.Show(<span style="color:#f1fa8c">&#34;Hola, &#34;</span> + textBox.Text);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b">
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b">    [STAThread]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">public</span> <span style="color:#8be9fd;font-style:italic">static</span> <span style="color:#ff79c6">void</span> Main()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Application.EnableVisualStyles();
+</span></span><span style="display:flex;"><span>        Application.Run(<span style="color:#ff79c6">new</span> MiFormulario());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    </div>
+
+    
+    
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+
+
+<div class="box-icons">
+  
+<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-twitter" aria-hidden="true"></i>
+</a>
+
+<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-github" aria-hidden="true"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-linkedin" aria-hidden="true"></i>
+</a>
+
+</div>
+
+</section>
+
+
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+        
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2025-02-25 16:53:52.7380724 -0600 CST m=&#43;0.254181201">2025</time> - Diseño Web realizado por 
+  </div>
+  
+</footer>
+
+
+    
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="../../../js/bundle.min.52a8bc22398c4f696fccd6610e877826d1fe0acc45da4723b5e13ca973c56e29.js"></script>
+  
+
+  
+  
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</body>
+</html>

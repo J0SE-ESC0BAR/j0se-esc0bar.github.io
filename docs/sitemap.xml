@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/examplenewpost/</loc>
+    <lastmod>2025-02-25T17:11:57-06:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-11-09T22:45:56-06:00</lastmod>
+    <lastmod>2025-02-25T17:11:57-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/redes/redes/</loc>
+    <lastmod>2025-02-25T10:00:00-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/redes/</loc>
     <lastmod>2024-11-09T22:45:56-06:00</lastmod>

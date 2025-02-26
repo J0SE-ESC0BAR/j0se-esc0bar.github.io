@@ -1,16 +1,23 @@
 <div class='header'>
   <nav class="nav">
-    <a class="header-logo" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+    <!-- 1) Enlace al Home con absLangURL -->
+    <a class="header-logo" href="{{ "/" | absLangURL }}">{{ .Site.Title }}</a>
+
+    <!-- Botón toggle para móvil -->
     <button class="nav-toggle" aria-label="Abrir menú">
       <i class="bi bi-list"></i>
     </button>
-      <ul class="nav-menu">
-          {{ $currentPage := . }}
-          {{ range .Site.Menus.main.ByWeight.Reverse }}
-              <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
-                  <a class="nav-menu-link nav-link" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-              </li>
-          {{end}}
-      </ul>
-    </nav>
-  </div>
+
+    <ul class="nav-menu">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main.ByWeight.Reverse }}
+        <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+          <!-- 2) Menú con relLangURL o absLangURL -->
+          <a class="nav-menu-link nav-link" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>

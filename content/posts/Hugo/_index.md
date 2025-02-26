@@ -1,143 +1,185 @@
 ---
 title: "Hugo uso básico"
 date: 2022-12-25T08:53:03-06:00
-description: 'Estos son los comandos basicos para que comiences a trabajar con hugo'
-image: images/Hugo_logo.png
+description: "Estos son los comandos básicos para que comiences a trabajar con Hugo."
+image: "images/Hugo_logo.png"
 draft: false
 viewimg: true
 type: "posts"
 ---
-## Crear un nuevo post en hugo
 
-Para crear un nuevo post, abrimos la terminal en la ubicacion del proyecto de hugo y digitamos el sigiente comando:
+## Introducción
 
-```Hugo
-Hugo new posts/nombre_post.md
+Hugo es un generador de sitios estáticos muy rápido y flexible. A continuación, verás los comandos y pasos básicos para crear, estructurar y desplegar tu sitio con Hugo.
+
+---
+
+## 1. Crear un Nuevo Post en Hugo
+
+Para crear un nuevo post, abre la terminal en la ubicación de tu proyecto de Hugo y escribe:
+
+```bash
+hugo new posts/nombre_post.md
 ```
 
-Un nuevo post dentro de un directorio
+Esto generará un archivo Markdown dentro de `content/posts/`. Por ejemplo, si deseas crear un post dentro de un directorio específico:
 
-
+```bash
+hugo new posts/Dotnet/PatronesDeDisenio.md
 ```
-Hugo new posts/Dotnet/PatronesDeDisenio.md
+
+Así, se creará un nuevo post en la carpeta `Dotnet`, dentro de `posts`.
+
+### ¿Cómo crear un post dentro de subcarpetas?
+
+Si tienes una carpeta `posts` y dentro otra llamada `Java` (que siempre debe tener un `_index.md` para que se reconozca como sección), usa:
+
+```bash
+hugo new posts/Java/nombre_post.md
 ```
 
-Con este comando estariamos creando un nuevo post dentro de la carpeta posts
+---
 
-**¿Como puedo crear un post dentro de subcarpetas?**
-Supongamos que tienes todos tus posts dentro de una carpeta llamada "posts" y dentro de ella tienes otra carpeta llamada **"Java",** dentro de esta carpeta **siempre** debe haber un **_index.md**
+## 2. Visualizar tu Sitio en Local
 
-Para crear un nuevo post dento de la carpeta "Java" debes crear el post con el siguiente comando
+Para iniciar el servidor de Hugo y ver tu sitio localmente en `http://localhost:1313/`, ejecuta:
 
-Hugo new posts/Java/nombre_post.md
+```bash
+hugo server
+```
 
-## ¿Como ver mi sitio de hugo?
+---
 
-Con el comando **hugo server** inicia el servidor de hugo, lo inicia de forma local, por lo general se genera en: **localhost:1313/**(nombre_de_la_pagina_web)
+## 3. Compilar Archivos de Hugo
 
-## Compilar archivos de hugo
+Cuando quieras generar tu sitio estático en la carpeta de salida (por defecto `public`), ejecuta:
 
-Simplemente con lanzar el comando
-
+```bash
 hugo
-desde la termnial, hugo genera los archivos nesesarios para la pagina web
+```
 
-## Si no quiero que se guarde en public, quiero que se guarde en una carpeta llamada "docs"
+### Cambiar la Carpeta de Salida a "docs"
 
-Para cambiar la carpeta de destino de la página generada por Hugo, puedes modificar la opción "publishDir" en la configuración de tu proyecto de Hugo. Esta opción determina la ruta de la carpeta en la que se guardarán los archivos generados por Hugo.
+1. Edita tu archivo de configuración (`config.toml` o similar) y agrega:
+   ```toml
+   publishDir = "docs"
+   ```
+2. O, en la terminal:
+   ```bash
+   hugo -d docs
+   ```
 
-Por ejemplo, si quieres que tus páginas se guarden en una carpeta llamada "docs", puedes agregar la siguiente línea a tu archivo de configuración **"config.toml"** o **"config.yaml"**:
+De esta manera, en lugar de la carpeta `public`, tu sitio se generará en `docs`.
 
-publishDir = "docs"
-Luego, cuando ejecutes el comando "hugo" para generar tu página, se guardará en la carpeta "docs" en lugar de en la carpeta "public".
+---
 
-Tambien puedes ejecutal el comando "hugo" mas **-d** para indicarle el directorio
+## 4. Insertar Enlaces en Markdown
 
-hugo -d docs
+La sintaxis de Markdown para enlaces es:
 
-## ¿Como puedo insertar enlaces en markdown para Hugo?
-
-Para insertar enlaces en markdown para hugo, debes usar la siguiente sintaxis:
-
+```markdown
 [Texto del enlace](/ruta_del_enlace)
-Ejemplo:
+```
 
-\[Youtube]\(https://www.youtube.com)
-[Youtube](https://www.youtube.com)
+**Ejemplos:**
 
-\[Youtube]\(https://www.youtube.com "Visita YouTube")
-[Youtube](https://www.youtube.com "Visita YouTube")
-(Cuando coloques el cursor sobre el enlace, verás el mensaje "Visita YouTube".)
-
-\[CV_José_Escobar.pdf]\(/CV_José_Escobar.pdf)
+```markdown
+[YouTube](https://www.youtube.com)
+[YouTube](https://www.youtube.com "Visita YouTube")   --> (con mensaje al pasar el ratón)
 [CV_José_Escobar.pdf](/CV_José_Escobar.pdf)
+```
 
-## ¿Como puedo insertar imagenes en markdown para Hugo?
+[YouTube](https://www.youtube.com)  
+[YouTube](https://www.youtube.com "Visita YouTube")  
+[CV_José_Escobar.pdf](/CV_José_Escobar.pdf)  
 
-Para insertar imagenes en markdown para hugo, debes usar la siguiente sintaxis:
 
+---
+
+## 5. Insertar Imágenes en Markdown
+
+La sintaxis para imágenes:
+
+```markdown
 ![Texto de la imagen](/ruta_de_la_imagen)
-Ejemplo:
+```
 
-\!\[Texto de la imagen](/ruta_de_la_imagen)
+**Ejemplo:**
 
-## ¿Como puedo insertar videos en markdown para Hugo?
+```markdown
+![Logo Hugo](/images/Hugo_logo.png)
+```
+![Logo Hugo](/images/Hugo_logo.png)
 
-Para insertar videos en markdown para hugo, debes usar la siguiente sintaxis:
+---
 
-{{</* youtube id_del_video */>}}
-Ejemplo:
+## 6. Insertar Videos (YouTube) en Hugo
 
+Hugo permite incrustar videos de YouTube mediante shortcodes:
+
+```markdown
+{{</* youtube ID_DEL_VIDEO */>}}
+```
+
+**Ejemplo:**
+
+```markdown
 {{</* youtube XRLP4K_qON8 */>}}
+```
 
-## ¿Como hacer que Hugo ignore {{* */}} como comando?
+> Si quieres que Hugo ignore el shortcode, deberás escapar las llaves, por ejemplo:  
+> `{{</* youtube ID_DEL_VIDEO */>}}`
 
-Para que Hugo ignore {{</*  */>}} como comando, debes usar la siguiente sintaxis:
+Ejemplo de video de YouTube:  
+{{< youtube XRLP4K_qON8 >}}
 
-se utiliza el caracter de escape /* antes de {{ y */ despues de }}
+---
 
-{{</*/*  (TEXTO)  */*/>}}
-Ejemplo:
+## 7. Escapar Markdown y Shortcodes en Hugo
 
-{{</* youtube id_del_video */>}}
+### Ignorar `{{*/ */}}` como comando
 
-## ¿Como hacer que Hugo ignore ![] como comando?
+Para que Hugo ignore `{{</*  */>}}`, coloca caracteres de escape. Por ejemplo:
 
-Para que Hugo ignore \!\[Texto](Texto) como comando, debes usar la siguiente sintaxis:
-se utiliza el caracter de escape \ antes de ! y [
+```markdown
+{{</*/* youtube ID_DEL_VIDEO */*/>}}
+```
 
-\!\[Texto de la imagen](/ruta_de_la_imagen)
+### Ignorar `![]` como comando
 
-Ejemplo:
+Para no interpretar `![Texto]`, agrega `\`:
 
-\!\[Texto de la imagen](/ruta_de_la_imagen)
+```markdown
+\![Texto de la imagen](/ruta_de_la_imagen)
+```
 
-## Como hacer que Hugo ignore [] como comando?
+### Ignorar `[]` como comando
 
-Para que Hugo ignore \[Texto](Texto) como comando, debes usar la siguiente sintaxis:<br>se utiliza el caracter de escape \ antes de [
+Coloca `\` antes del corchete:
 
+```markdown
 \[Texto del enlace](/ruta_del_enlace)
+```
 
-Ejemplo:
+---
 
-\[Texto del enlace](/ruta_del_enlace)
+## 8. Saltos de Línea en Markdown
 
-## ¿Como puedo hacer un salto de linea en markdown para Hugo?
+- **Salto de línea doble**: Deja una línea en blanco entre párrafos.
+- **Salto de línea simple**: Añade dos espacios al final de la línea.
 
-Doble retorno de carro: Después de tu texto, presiona la tecla de retorno dos veces para comenzar una nueva línea.
-Ejemplo:
+**Ejemplo:**
 
-Esta es otra primera línea.
-
-Esta es otra segunda línea.
-Esta es otra primera línea.
-
-Esta es otra segunda línea.
-
-Para hacer un salto de linea simple solo debes colocar dos espacios al final de la linea de texto
-Ejemplo:
-
-Esta es la primera línea.--(dos espacios aquí)
+```markdown
+Esta es la primera línea.{··}  
 Esta es la segunda línea.
-Esta es la primera línea.
-Esta es la segunda línea.
+
+Esta es la tercera línea.
+```
+*(Donde `··` representan los dos espacios.)*
+
+---
+
+## Conclusión
+
+Estos son los comandos y trucos básicos para que comiences a trabajar con Hugo: crear nuevos posts, ver tu sitio en local, compilar los archivos y personalizar rutas de salida. Además, aprenderás a insertar enlaces, imágenes, videos y a escapar elementos para que no sean interpretados como shortcodes. ¡Explora y personaliza tu sitio según tus necesidades!
