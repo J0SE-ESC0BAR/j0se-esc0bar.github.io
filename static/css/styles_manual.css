@@ -185,10 +185,15 @@ body {
 }
 
 .summary-description {
-  font-size: 0.95rem;
-  margin-top: 0.5rem;
-  line-height: 1.4;
-  color: #dcdcdc; /* Descripción en un color gris claro */
+     font-size: 0.95rem; 
+     line-height: 1.4;
+     color: #dcdcdc;
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 3; 
+     line-clamp: 3; 
+     overflow: hidden;
+     margin-top: 0.5rem;
 }
 
 /* Estilos para los contenedores principales */
@@ -206,16 +211,6 @@ body {
 }
 
 
-/* pre {
-  /* Color de fondo claro */
-  /* Borde alrededor del bloque de código */
-  padding: 15px;              /*Espaciado interior */
-  overflow-x: auto;           /*Barra de desplazamiento horizontal si el código es demasiado largo */
-  border-radius: 8px;       /* Esquinas redondeadas */
-  margin-bottom: 20px;       /* Margen inferior para separación con otros elementos */
-  white-space: pre-wrap;      /*Permite que las palabras se ajusten al ancho del contenedor */
-  background-color: #00000070;
-} */
 
 code {
   font-size: 0.9rem !important;
@@ -429,10 +424,9 @@ blockquote p {
   }
 
   .summary-description {
-    font-size: 1rem;
+    font-size: 1.25rem; 
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
-    overflow: hidden;
   }
   #carouselExampleCaptions{
     margin-top: 2.75rem;

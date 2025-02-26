@@ -1,0 +1,11 @@
+{{- $alt := .Text | default .Title -}}
+<figure>
+  <img
+    src="{{ .Destination | safeURL }}"
+    alt="{{ $alt }}"
+    class="img-fluid"
+  />
+  {{- if .Title -}}
+    <figcaption>{{ .Title }}</figcaption>
+  {{- end -}}
+</figure>
