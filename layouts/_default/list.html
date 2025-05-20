@@ -2,23 +2,34 @@
 
 {{ define "main" }}
 <div class="intro">
-
-  <div class="fila">
-    <div class="col-md-6 intro-image">
-      {{ if and .Params.image (ne .Params.image "no-img") (eq .Params.viewimg true) }}
-      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
-  {{ end }}
-    </div>
-    <div class="col-md-6 intro-content">
+  <div class="intro-container">
+    <div class="intro-content ">
       <h1>{{ .Title }}</h1>
-      <p>{{ .Description }}</p>
+      {{ if .Description }}<p>{{ .Description }}</p>{{ end }}
     </div>
+    {{ if or (not .Params.image) (eq .Params.image "no-img") }}
+    <div class="toggle-container">
+      <button id="btn-toggle" class="btn btn-outline-primary btn-sm" onclick="toggleVista()">
+        <span id="vista-icon">Vista</span>
+      </button>
+    </div>
+    {{ end }}
+    {{ if and .Params.image (ne .Params.image "no-img") (eq .Params.viewimg true) }}
+    <div class="intro-image">
+      <img class="img-fluid" src="{{ .Params.image | relURL }}"
+          onerror="this.onerror=null; this.src='{{ `/images/no-img.png` | relURL }}';"
+          alt="Imagen representativa: {{ .Title }}"
+          loading="lazy" />
+    </div>
+    {{ end }}
   </div>
 </div>
 
   <!-- Sección de resumen de listas (tambien pueden ser como cursos, con contenido dentro relacionado al tema de la lista) -->
-  <div class="list-summary">
+  <div id="list" class="list-summary">
     <!-- Si el tipo de página es "page", "posts", o "directorio", muestra su contenido -->
+    <!-- Botón de vista -->
+    
     {{ if or (eq .Type "page") (eq .Type "posts") (eq .Type "directorio")}}
       {{ .Content }}
       <!-- Renderiza un resumen para cada subpágina de esta página -->
@@ -34,8 +45,10 @@
       {{ range $paginator.Pages }}
         {{ .Render "summary" }}
       {{ end }}
-      <!-- Incluye la paginación para la lista -->
-      {{ partial "pagination.html" . }}
-    {{ end }}
-  </div>
+      {{ end }}
+      
+
+</div>
+{{ partial "pagination.html" . }}
+<!-- Incluye la paginación para la lista -->
 {{ end }}

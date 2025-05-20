@@ -2,63 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://j0se-esc0bar.github.io/posts/redes/redes/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/proyectos/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/redes/redes/</loc>
     <lastmod>2025-02-25T10:00:00-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/</loc>
-    <lastmod>2025-02-25T10:00:00-06:00</lastmod>
-  </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/redes/</loc>
+    <loc>http://localhost:1313/posts/redes/</loc>
     <lastmod>2024-11-09T22:45:56-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/dotnet/patronesdedisenio/</loc>
+    <loc>http://localhost:1313/posts/dotnet/patronesdedisenio/</loc>
     <lastmod>2024-11-09T22:28:49-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/dotnet/aspdotnet/</loc>
+    <loc>http://localhost:1313/posts/dotnet/aspdotnet/</loc>
     <lastmod>2023-10-13T15:07:06-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/dotnet/</loc>
+    <loc>http://localhost:1313/posts/dotnet/</loc>
     <lastmod>2023-10-13T10:29:46-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/dotnet/windowsforms/</loc>
+    <loc>http://localhost:1313/posts/dotnet/windowsforms/</loc>
     <lastmod>2023-10-13T10:29:46-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/gpt3_es_malo_jugar/</loc>
+    <loc>http://localhost:1313/posts/gpt3_es_malo_jugar/</loc>
     <lastmod>2022-12-26T21:28:43-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/que_es_el_back-end/</loc>
+    <loc>http://localhost:1313/posts/que_es_el_back-end/</loc>
     <lastmod>2022-12-26T12:03:56-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/java/diferencia-entre-listas-y-arreglos/</loc>
+    <loc>http://localhost:1313/posts/java/diferencia-entre-listas-y-arreglos/</loc>
     <lastmod>2022-12-25T21:28:43-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/java/</loc>
+    <loc>http://localhost:1313/posts/java/</loc>
     <lastmod>2022-12-25T21:28:43-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/hugo/</loc>
+    <loc>http://localhost:1313/posts/hugo/</loc>
     <lastmod>2022-12-25T08:53:03-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/java/java_concurrencia_y_springboot/</loc>
+    <loc>http://localhost:1313/posts/java/java_concurrencia_y_springboot/</loc>
     <lastmod>2022-12-24T19:46:50-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/sql_basico/</loc>
+    <loc>http://localhost:1313/posts/sql_basico/</loc>
     <lastmod>2022-07-14T09:20:48-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/halo_ce_errores/</loc>
+    <loc>http://localhost:1313/posts/halo_ce_errores/</loc>
     <lastmod>2022-06-07T17:57:53-06:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2022-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/posts/mi_aprendizaje/</loc>
+    <loc>http://localhost:1313/posts/mi_aprendizaje/</loc>
     <lastmod>2022-04-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/sobre/</loc>
+    <loc>http://localhost:1313/sobre/</loc>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/sobre/proyectos/</loc>
+    <loc>http://localhost:1313/proyectos/proyectos/</loc>
   </url><url>
-    <loc>https://j0se-esc0bar.github.io/tags/</loc>
+    <loc>http://localhost:1313/servicios/proyectos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/sobre/proyectos/</loc>
+  </url><url>
+    <loc>http://localhost:1313/servicios/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Proyectos on JAEM</title>
-    <link>https://J0SE-ESC0BAR.github.io/My_blog/proyectos/</link>
+    <link>http://localhost:1313/proyectos/</link>
     <description>Recent content in Proyectos on JAEM</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>es</language><atom:link href="https://J0SE-ESC0BAR.github.io/My_blog/proyectos/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/proyectos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mis proyectos</title>
-      <link>https://J0SE-ESC0BAR.github.io/My_blog/proyectos/proyectos/</link>
+      <link>http://localhost:1313/proyectos/proyectos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://J0SE-ESC0BAR.github.io/My_blog/proyectos/proyectos/</guid>
-      <description>Proyectos que e realizado Pagina web Parroquia Santa Catarina Programa de tienda Apis Pagina web pasteleria Juego en scratch </description>
+      <guid>http://localhost:1313/proyectos/proyectos/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Generador de códigos QR con Python conectado a MongoDB&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;hola&#34;&gt;¡Hola!&lt;/h3&gt;&#xA;&lt;p&gt;Hoy, quiero compartir los emocionantes proyectos en los que he estado trabajando. La tecnología sigue avanzando, y con ella, las habilidades y herramientas.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Generador de códigos QR:&lt;/strong&gt; Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos. Puedes encontrar todo el código en mi repositorio de GitHub.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Acerca</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="https://j0se-esc0bar.github.io//favicon.ico">
+  <link rel="icon" href="http://localhost:1313//favicon.ico">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   
@@ -17,14 +17,26 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
   
-  <link rel="stylesheet" href="../css/styles_manual.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  
+  <link rel="stylesheet" href="../css/base.css">
+  
+  <link rel="stylesheet" href="../css/header.css">
+  
+  <link rel="stylesheet" href="../css/components.css">
+  
+  <link rel="stylesheet" href="../css/footer.css">
+  
+  <link rel="stylesheet" href="../css/utilities.css">
+  
+  <link rel="stylesheet" href="../css/responsive.css">
   
 
   
     
     <meta property="og:title" content="Acerca"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://j0se-esc0bar.github.io/sobre/"/>
+    <meta property="og:url" content="http://localhost:1313/sobre/"/>
     
     
     <meta name="twitter:card" content="summary"/>
@@ -43,7 +55,7 @@
     <div class='header'>
   <nav class="nav">
     
-    <a class="header-logo" href="https://j0se-esc0bar.github.io/">JAEM</a>
+    <a class="header-logo" href="http://localhost:1313/">JAEM</a>
 
     
     <button class="nav-toggle" aria-label="Abrir menú">
@@ -52,6 +64,13 @@
 
     <ul class="nav-menu">
       
+      
+        <li class="menu-item-proyectos">
+          
+          <a class="nav-menu-link nav-link" href="../proyectos/">
+            Proyectos
+          </a>
+        </li>
       
         <li class="menu-item-posts">
           
@@ -67,26 +86,39 @@
           </a>
         </li>
       
+        <li class="menu-item-servicios">
+          
+          <a class="nav-menu-link nav-link" href="../servicios/">
+            Servicios
+          </a>
+        </li>
+      
     </ul>
   </nav>
 </div>
 
     
 <div class="intro">
-
-  <div class="fila">
-    <div class="col-md-6 intro-image">
+  <div class="intro-container">
+    <div class="intro-content ">
+      <h1>Acerca</h1>
       
     </div>
-    <div class="col-md-6 intro-content">
-      <h1>Acerca</h1>
-      <p></p>
+    
+    <div class="toggle-container">
+      <button id="btn-toggle" class="btn btn-outline-primary btn-sm" onclick="toggleVista()">
+        <span id="vista-icon">Vista</span>
+      </button>
     </div>
+    
+    
   </div>
 </div>
 
   
-  <div class="list-summary">
+  <div id="list" class="list-summary">
+    
+    
     
     
       <h2 id="jose-alfonso-escobar-mejia">Jose Alfonso Escobar Mejia</h2>
@@ -141,34 +173,47 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
       
       
         <div class="summary">
-  
-    <div class="summary-image">
-      <a href="../sobre/proyectos/">
-    <img class="img-fluid"
-      src="../images/Proyectos.png"
-      onerror="this.onerror=null; this.src='../images/no-img.png';"
-      alt="Imagen de Redes">
+  <div class="summary-image">
+    <a href="../sobre/proyectos/">
+      <img class="img-fluid"
+        src="../images/Proyectos.png"
+        onerror="this.onerror=null; this.src='../images/no-img.png';"
+        alt="Imagen de Mis proyectos">
     </a>
-      </a>
-    </div>
+  </div>
   <div class="summary-content">
     <h2 class="summary-title lh-1"><a href="../sobre/proyectos/">Mis proyectos</a></h2>
     
     
-    
-    <p class="summary-description lh-sm">Algunos de los proyectos que e realizado los tengo aquí.</p>
-    
-
+      <p class="summary-description lh-sm">Algunos de los proyectos que e realizado los tengo aquí.</p>
     
   </div>
 </div>
-
       
     
 
     
     
-  </div>
+      
+
+</div>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#">Anterior</a>
+    </li>
+    
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="../sobre/">1</a>
+      </li>
+    
+    <li class="page-item disabled">
+      <a class="page-link" href="#">Siguiente</a>
+    </li>
+  </ul>
+</nav>
+
 
     
     
@@ -252,7 +297,7 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-02-26 16:09:54.6292965 -0600 CST m=&#43;0.226729901">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-05-19 20:47:36.9232012 -0600 CST m=&#43;1.275770801">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -265,7 +310,7 @@ me gusta mucho la programacion, los problemas de logica, estrategia y quiero apr
   
 
   
-  <script type="text/javascript" src="../js/bundle.min.52a8bc22398c4f696fccd6610e877826d1fe0acc45da4723b5e13ca973c56e29.js"></script>
+  <script type="text/javascript" src="../js/bundle.js"></script>
   
 
   

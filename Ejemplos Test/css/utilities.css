@@ -1,0 +1,251 @@
+/* Utility Classes */
+.intro img {
+  margin-top: 1rem;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  width: 30rem;
+}
+
+.intro .intro-image {
+  padding: 0;
+  order: 2;
+}
+
+.intro .intro-content {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.intro .fila {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-icons > a > i {
+  font-size: 1.5rem;
+}
+
+.me-5 span {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.active > .page-link {
+  z-index: 2;
+}
+.intro {
+  margin: 4rem auto 0 auto;
+  flex-wrap: wrap;
+  padding: 1.5rem 10%;
+  max-width: 100rem;
+  background: rgba(15, 46, 67, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+}
+.intro-content  h1{
+  margin-bottom: 0px;
+}
+/* Container Styles */
+.content, .list-summary{
+  max-width: 100rem;
+  margin: 0 5%;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin: 0 auto;
+}
+
+/* Universal box-sizing para evitar desbordamientos */
+*, *::before, *::after { box-sizing: border-box; }
+/* Ajuste de padding dinámico */
+.content, .list-summary {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+#carouselExampleCaptions {
+  margin-top: 4rem;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .content, .list-summary {
+    padding: 0.5rem;
+  }
+
+  .content > p {
+    word-wrap: break-word;
+  }
+
+  .list-controls-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .intro .intro-content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .intro h1, .intro p {
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+  }
+
+  .intro {
+    margin-top: 2.75rem;
+    padding: 0 5%;
+  }
+
+  .intro img {
+    margin: 0;
+  }
+
+  .intro-image {
+    order: 0 !important;
+    width: 100%;
+  }
+
+  #carouselExampleCaptions {
+    margin-top: 2.75rem;
+  }
+
+  .carousel-caption > p {
+    font-size: smaller;
+  }
+
+  .carousel-caption > h5 {
+    font-size: medium;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 0;
+  }
+
+  .carousel-caption {
+    padding-bottom: 0;
+  }
+}
+/* List Page Styles */
+.intro-content {
+  max-width: 100%;
+}
+
+.intro-image {
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.toggle-container {
+  position: absolute;
+  margin: auto 0;
+}
+
+.intro-container:not(:has(.intro-image)) .toggle-container {
+  position: static;
+  text-align: right;
+}
+
+/* Intro layout adjustments */
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 0.5rem;
+}
+.intro .intro-content {
+  flex: 1 1 60%;
+  max-width: 60%;
+}
+.intro .intro-image {
+  flex: 0 0 35%;
+  max-width: 35%;
+}
+.intro .intro-image img {
+  border-radius: 12px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .intro-container {
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .intro-image {
+    margin: 0 auto;
+  }
+
+  .toggle-container {
+    position: static;
+    text-align: right;
+  }
+}
+
+@media (max-width: 729px) {
+  .list-summary.cuadros .summary {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .list-summary.cuadros .summary-image {
+    min-height: 100px;
+    max-height: 100px;
+  }
+
+  .list-summary.cuadros .summary-content {
+    padding: 0.5rem;
+  }
+
+  .list-summary.cuadros .summary-title {
+    font-size: 0.9rem;
+  }
+
+  .list-summary.cuadros .summary-description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2; /* Limita a 2 líneas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 1120px) {
+  /*class="list-summary cuadros"*/
+  .list-summary {
+    padding: 5%;
+  }
+}
+
+/* Clase para truncar texto a 3 líneas con puntos suspensivos */
+.text-truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ajustes responsivos para los botones */
+@media (max-width: 576px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .toggle-container {
+    margin-top: 1rem;
+    align-self: flex-start !important;
+  }
+}

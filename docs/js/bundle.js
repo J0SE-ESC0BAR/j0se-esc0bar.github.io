@@ -60,4 +60,34 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // Configuración inicial de la vista
+  const contenedor = document.getElementById('list');
+  if (contenedor) {
+    const vistaGuardada = localStorage.getItem('vistaPreferida') || 'lista';
+    contenedor.classList.add(vistaGuardada);
+    actualizarTextoBoton(vistaGuardada);
+  }
 });
+
+function toggleVista() {
+  const contenedor = document.getElementById('list');
+  const vistaTexto = document.getElementById('vista-icon');
+  
+  if (!contenedor) return;
+
+  const nuevaVista = contenedor.classList.contains('lista') ? 'cuadros' : 'lista';
+  
+  contenedor.classList.remove('lista', 'cuadros');
+  contenedor.classList.add(nuevaVista);
+  
+  localStorage.setItem('vistaPreferida', nuevaVista);
+  actualizarTextoBoton(nuevaVista);
+}
+
+function actualizarTextoBoton(vista) {
+  const vistaTexto = document.getElementById('vista-icon');
+  if (vistaTexto) {
+    vistaTexto.textContent = vista === 'lista' ? '🟪' : '🟰';
+  }
+}

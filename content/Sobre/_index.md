@@ -6,7 +6,6 @@ menu:
 type: "page"
 draft: false
 viewimg: false
-type: "page"
 ---
 ## Jose Alfonso Escobar Mejia
 

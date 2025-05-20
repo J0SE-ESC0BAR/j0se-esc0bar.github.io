@@ -21,16 +21,14 @@ body {
   overflow-x: hidden;
 }
 
-.acrylic-background,  .intro, .content, .list-summary {
-  background: rgba(15, 46, 67, 0.6); /* Fondo oscuro semitransparente */
-  backdrop-filter: blur(12px); /* Desenfoque para el efecto de cristal */
-  -webkit-backdrop-filter: blur(12px); /* Compatibilidad con Safari */
+.acrylic-background, .intro, .content, .list-summary {
+  background: rgba(15, 46, 67, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 20px;
   margin-bottom: 20px;
-  color: #ffffff; /* Texto claro para buena legibilidad */
+  color: #ffffff;
 }
-
-
 
 @keyframes backgroundMove {
   0% { background-position: 0% 50%; }
@@ -39,9 +37,9 @@ body {
 }
 
 .header {
-  background: rgba(6, 69, 170, 0.869); /* Fondo semitransparente */
-  backdrop-filter: blur(80px); /* Desenfoque para efecto de cristal */
-  -webkit-backdrop-filter: blur(80px); /* Compatibilidad con Safari */
+  background: rgba(6, 69, 170, 0.869);
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
   height: 64px;
   position: fixed;
   width: 100%;
@@ -53,7 +51,7 @@ body {
   justify-content: space-between;
   padding: 0 20px;
   color: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el header */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav {
@@ -83,7 +81,7 @@ body {
   margin: auto;
   font-size: 18px;
 }
-.nav-menu-link:hover{
+.nav-menu-link:hover {
   text-decoration: none;
   color: #ffffff;
 }
@@ -117,14 +115,14 @@ body {
   width: 100%;
   object-fit: cover;
 }
+
 .summary {
-  background: rgba(10, 10, 10, 0.6); /* Fondo semitransparente para el efecto de cristal */
-  backdrop-filter: blur(10px); /* Desenfoque para el efecto de cristal */
-  -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: stretch;
   margin-bottom: 20px;
-  /*border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco tenue */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
@@ -133,11 +131,11 @@ body {
 }
 
 .summary:hover {
-  transform: scale(1.03); /* Efecto de zoom al pasar el ratón */
+  transform: scale(1.03);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
-.summary-image{
+.summary-image {
   width: 35%;
   overflow: hidden;
   max-height: 15rem;
@@ -152,7 +150,7 @@ body {
 }
 
 .summary-image a:hover img {
-  opacity: 0.7; /* Opacidad más ligera al hacer hover */
+  opacity: 0.7;
 }
 
 .summary-content {
@@ -161,7 +159,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: auto; 
+  overflow: auto;
 }
 
 .summary-title {
@@ -181,19 +179,19 @@ body {
 
 .summary-date {
   font-size: 0.9rem;
-  color: #bbbbbb; /* Fecha en color más tenue */
+  color: #bbbbbb;
 }
 
 .summary-description {
-     font-size: 0.95rem; 
-     line-height: 1.4;
-     color: #dcdcdc;
-     display: -webkit-box;
-     -webkit-box-orient: vertical;
-     -webkit-line-clamp: 3; 
-     line-clamp: 3; 
-     overflow: hidden;
-     margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #dcdcdc;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
 
 /* Estilos para los contenedores principales */
@@ -210,8 +208,6 @@ body {
   user-select: none;
 }
 
-
-
 code {
   font-size: 0.9rem !important;
   color: #d9d9d9 !important;
@@ -223,26 +219,31 @@ a {
   text-decoration: none;
 }
 
-#carouselExampleCaptions{
+#carouselExampleCaptions {
   margin-top: 4rem;
 }
+
 .text-border {
   text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
-.active>.page-link{
+
+.active > .page-link {
   z-index: 2;
 }
+
 .box-icons > a > i {
   font-size: 1.5rem;
 }
+
 .me-5 span {
-  font-size: 1.5rem; /* Cambia esto al tamaño que prefieras */
+  font-size: 1.5rem;
   font-weight: 500;
 }
+
 .intro img {
   margin-top: 1rem;
   aspect-ratio: 16/9;
@@ -269,24 +270,25 @@ a {
   padding-right: 1rem;
   margin-top: 1rem;
 }
-.intro .fila{
+
+.intro .fila {
   display: flex;
   flex-wrap: wrap;
 }
 
 blockquote {
-  margin: 20px 0; /* Margen arriba y abajo para separación */
-  padding: 15px 20px; /* Relleno alrededor del texto */
-  font-size: 18px; /* Tamaño de fuente */
-  line-height: 1.3; /* Altura de línea */
+  margin: 20px 0;
+  padding: 15px 20px;
+  font-size: 18px;
+  line-height: 1.3;
   position: relative;
-  color: #afafaf; /* Color del texto */
-  background-color: #000000; /* Color de fondo */
-  border-left: 5px solid #c8c8c8; /* Línea vertical en el lado izquierdo */
+  color: #afafaf;
+  background-color: #000000;
+  border-left: 5px solid #c8c8c8;
 }
 
 blockquote p {
-  margin: 0; /* Elimina los márgenes del párrafo dentro del blockquote */
+  margin: 0;
 }
 
 /* Estilos para el menú móvil */
@@ -302,15 +304,14 @@ blockquote p {
   .intro {
     margin-top: 2.75rem;
   }
-
-  .intro-image{
+  .intro-image {
     order: 0 !important;
     width: 100%;
   }
   .content {
     padding: 0.5rem;
   }
-  .content > p{
+  .content > p {
     word-wrap: break-word;
   }
   .box-icons > a > i {
@@ -323,7 +324,7 @@ blockquote p {
   .header {
     height: 44px;
   }
-  .list-summary{
+  .list-summary {
     padding: 0 0.5rem;
   }
   .header-logo {
@@ -347,10 +348,9 @@ blockquote p {
     left: 100%;
     transition: left 0.3s;
   }
-  .nav > ul> li > a{
+  .nav > ul > li > a {
     text-align: center;
   }
-  
   .nav-menu > li {
     font-size: 25px;
     line-height: 60px;
@@ -590,4 +590,304 @@ Etiqueta de lenguaje en la esquina superior izquierda
 pre code.hljs {
   background: none;
   padding: 0;
+}
+
+/* Puedes agregar esto en tu archivo CSS */
+.list-summary.lista .summary.card {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+.list-summary.lista .card-img-top {
+  width: 150px;
+  object-fit: cover;
+}
+.list-summary.lista .card-body {
+  flex: 1;
+}
+
+
+.list-summary.cuadros .card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.list-summary.cuadros .card-body {
+  padding: 1rem;
+}
+
+.list-summary.lista .summary.card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 180px;
+  min-height: 180px;
+  max-height: 220px;
+  margin-bottom: 2rem;
+  background: rgba(10, 10, 10, 0.6);
+}
+
+.list-summary.lista .card-img-top {
+  width: 220px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.list-summary.lista .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.list-summary.lista .card-title,
+.list-summary.lista .card-title a {
+  color: #fff;
+}
+
+.list-summary.lista .card-subtitle,
+.list-summary.lista .card-text {
+  color: #dcdcdc;
+}
+
+.list-summary.cuadros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.list-summary.cuadros .summary {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-width: 250px;
+  max-width: 100%;
+  height: 350px; /* Altura fija */
+  background: rgba(10, 10, 10, 0.7);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.list-summary.cuadros .summary-image {
+  width: 100%;
+  min-height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.list-summary.cuadros .summary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.list-summary.cuadros .summary-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.list-summary.cuadros .summary-description {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #dcdcdc;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Limita a 3 líneas */
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+/* Vista horizontal (lista) */
+.list-summary.lista {
+  display: block;
+}
+.list-summary.lista .summary {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  transition: transform 0.2s ease-in-out;
+  min-height: 10rem;
+  max-height: 15rem;
+  height: 12rem;
+}
+.list-summary.lista .summary-image {
+  width: 35%;
+  overflow: hidden;
+  max-height: 15rem;
+  min-height: 10rem;
+}
+.list-summary.lista .summary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease-in-out;
+}
+.list-summary.lista .summary-content {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+/* Vista de cuadros (tarjetas) */
+.list-summary.cuadros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+.list-summary.cuadros .summary {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  min-width: 250px;
+  max-width: 100%;
+  height: 350px; /* Altura fija para todos los cuadros */
+  background: rgba(10, 10, 10, 0.7);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.list-summary.cuadros .summary-image {
+  width: 100%;
+  min-height: 180px;
+  max-height: 180px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.list-summary.cuadros .summary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.list-summary.cuadros .summary-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.list-summary.cuadros .summary-description {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #dcdcdc;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* Limita a 3 líneas */
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+/* Contenedor para controles de lista (botones de vista y paginación) */
+.list-controls-container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  margin-bottom: 20px; /* Añadir espacio antes del footer o siguiente elemento */
+}
+
+/* Asegurar que los botones de vista permanezcan a la derecha dentro del contenedor */
+.list-controls-container .text-end {
+  text-align: right !important; /* Forzar alineación a la derecha */
+}
+
+/* Centrar la paginación */
+.list-controls-container .pagination {
+  justify-content: center;
+}
+
+/* Estilo para los botones de vista */
+.list-controls-container .btn-outline-primary,
+.list-controls-container .btn-outline-secondary {
+  background: rgba(10, 10, 10, 0.6); /* Fondo como los cuadros */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff; /* Texto blanco */
+  border-color: rgba(255, 255, 255, 0.3); /* Borde tenue */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilo hover para botones de vista */
+.list-controls-container .btn-outline-primary:hover,
+.list-controls-container .btn-outline-secondary:hover {
+  background: rgba(25, 25, 25, 0.7); /* Fondo ligeramente más claro/opaco al pasar el ratón */
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo para el botón activo (necesitará JS para añadir una clase 'active-view') */
+/* Asumiendo que el JS añade/quita una clase 'active-view' al botón activo */
+.list-controls-container button.active-view {
+  background: rgba(0, 162, 232, 0.7); /* Fondo azul destacado para el activo */
+  border-color: #00a2e8;
+  color: #ffffff;
+}
+
+/* Ajustes responsivos para el contenedor de controles */
+@media (max-width: 768px) {
+  .list-controls-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Contenedor principal de la sección "Acerca" */
+.intro {
+  background: rgba(15, 46, 67, 0.6); /* Fondo unificado */
+  backdrop-filter: blur(12px); /* Desenfoque */
+  -webkit-backdrop-filter: blur(12px); /* Compatibilidad con Safari */
+  padding: 2rem; /* Espaciado interno */
+  margin: 0 auto; /* Centrar */
+  margin-bottom: 0; /* Eliminar separación con la lista */
+  border-radius: 12px 12px 0 0; /* Bordes redondeados superiores */
+}
+
+/* Contenedor de los elementos de la lista */
+.list-summary {
+  background: rgba(15, 46, 67, 0.6); /* Mismo fondo que la sección "Acerca" */
+  backdrop-filter: blur(12px); /* Desenfoque */
+  -webkit-backdrop-filter: blur(12px); /* Compatibilidad con Safari */
+  padding: 2rem; /* Espaciado interno */
+  margin: 0; /* Eliminar márgenes */
+  border-radius: 0 0 12px 12px; /* Bordes redondeados inferiores */
+}
+
+/* Ajustes para la transición entre "Acerca" y la lista */
+.list-controls-container {
+  background: rgba(15, 46, 67, 0.6); /* Fondo unificado */
+  backdrop-filter: blur(12px); /* Desenfoque */
+  -webkit-backdrop-filter: blur(12px); /* Compatibilidad con Safari */
+  padding: 1rem; /* Espaciado interno */
+  margin: 0; /* Eliminar márgenes */
+  border-radius: 0; /* Sin bordes redondeados */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .intro, .list-summary, .list-controls-container {
+    padding: 1rem; /* Reducir espaciado en pantallas pequeñas */
+  }
 }

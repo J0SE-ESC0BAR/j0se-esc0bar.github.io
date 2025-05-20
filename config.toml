@@ -1,5 +1,5 @@
 # URL base para tu sitio (GitHub Pages)
-baseURL = "https://j0se-esc0bar.github.io/"
+baseURL = "https://jaem.dev/"
 
 # Ajustes de URLs
 canonifyURLs = true
@@ -46,5 +46,12 @@ paginate = 7
   # Hojas de estilo adicionales (Bootstrap y highlight.js)
   css = [
     "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css",
-    "/css/styles_manual.css"
+    #"/css/styles_manual.css"
+    "/css/variables.css",
+    "/css/base.css",
+    "/css/header.css",
+    "/css/components.css",
+    "/css/footer.css",
+    "/css/utilities.css",
+    "/css/responsive.css"
   ]

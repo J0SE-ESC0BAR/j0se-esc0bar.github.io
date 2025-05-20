@@ -1,0 +1,93 @@
+/* Media Queries and Responsive Styles */
+@media (max-width: 768px) {
+  /* Summary Styles */
+  .summary {
+    max-height: 10rem;
+    min-height: 10rem;
+  }
+
+  .summary-content {
+    padding: 0.4rem;
+    overflow: hidden;
+  }
+
+  .summary-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .summary-date {
+    font-size: 0.7rem;
+  }
+
+  .summary-description {
+    font-size: 1.25rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+
+  /* List Summary Styles */
+  .list-summary.lista .summary {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 10rem;
+    max-height: 15rem;
+    height: 12rem;
+  }
+
+  .list-summary.lista .summary-image {
+    width: 35%;
+    overflow: hidden;
+    max-height: 15rem;
+    min-height: 10rem;
+  }
+
+  .list-summary.lista .summary-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  .list-summary.cuadros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+  .list-summary.cuadros .summary {
+    width: 100%;
+    height: auto;
+    min-height: 10rem;
+  }
+
+  .list-summary.cuadros .summary-image {
+    width: 100%;
+    min-height: 150px;
+    max-height: 150px;
+  }
+
+  /* Carousel Styles */
+  .carousel-item img {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 320px) {
+  .summary {
+    flex-direction: column;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .summary-image {
+    width: 100% !important;
+    height: 150px !important;
+  }
+}

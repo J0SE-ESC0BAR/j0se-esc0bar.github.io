@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Hugo uso básico</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="icon" href="https://j0se-esc0bar.github.io//favicon.ico">
+  <link rel="icon" href="http://localhost:1313//favicon.ico">
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   
@@ -17,15 +17,27 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
   
-  <link rel="stylesheet" href="../../css/styles_manual.css">
+  <link rel="stylesheet" href="../../css/variables.css">
+  
+  <link rel="stylesheet" href="../../css/base.css">
+  
+  <link rel="stylesheet" href="../../css/header.css">
+  
+  <link rel="stylesheet" href="../../css/components.css">
+  
+  <link rel="stylesheet" href="../../css/footer.css">
+  
+  <link rel="stylesheet" href="../../css/utilities.css">
+  
+  <link rel="stylesheet" href="../../css/responsive.css">
   
 
   
     <meta name="description" content="Estos son los comandos básicos para que comiences a trabajar con Hugo."/>
     <meta property="og:title" content="Hugo uso básico"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://j0se-esc0bar.github.io/posts/hugo/"/>
-    <meta property="og:image" content="https://j0se-esc0bar.github.io/images/Hugo_logo.png"/>
+    <meta property="og:url" content="http://localhost:1313/posts/hugo/"/>
+    <meta property="og:image" content="http://localhost:1313/images/Hugo_logo.png"/>
     <meta property="og:description" content="Estos son los comandos básicos para que comiences a trabajar con Hugo."/>
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:site" content="@JAEM_Developer"/>
@@ -43,7 +55,7 @@
     <div class='header'>
   <nav class="nav">
     
-    <a class="header-logo" href="https://j0se-esc0bar.github.io/">JAEM</a>
+    <a class="header-logo" href="http://localhost:1313/">JAEM</a>
 
     
     <button class="nav-toggle" aria-label="Abrir menú">
@@ -52,6 +64,13 @@
 
     <ul class="nav-menu">
       
+      
+        <li class="menu-item-proyectos">
+          
+          <a class="nav-menu-link nav-link" href="../../proyectos/">
+            Proyectos
+          </a>
+        </li>
       
         <li class="menu-item-posts">
           
@@ -67,28 +86,40 @@
           </a>
         </li>
       
+        <li class="menu-item-servicios">
+          
+          <a class="nav-menu-link nav-link" href="../../servicios/">
+            Servicios
+          </a>
+        </li>
+      
     </ul>
   </nav>
 </div>
 
     
 <div class="intro">
-
-  <div class="fila">
-    <div class="col-md-6 intro-image">
-      
-      <img class="img-fluid" src="../../images/Hugo_logo.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt="Imagen de Hugo uso básico" />
-  
-    </div>
-    <div class="col-md-6 intro-content">
+  <div class="intro-container">
+    <div class="intro-content ">
       <h1>Hugo uso básico</h1>
       <p>Estos son los comandos básicos para que comiences a trabajar con Hugo.</p>
     </div>
+    
+    
+    <div class="intro-image">
+      <img class="img-fluid" src="../../images/Hugo_logo.png"
+          onerror="this.onerror=null; this.src='\/images\/no-img.png';"
+          alt="Imagen representativa: Hugo uso básico"
+          loading="lazy" />
+    </div>
+    
   </div>
 </div>
 
   
-  <div class="list-summary">
+  <div id="list" class="list-summary">
+    
+    
     
     
       <h2 id="introducción">Introducción</h2>
@@ -197,7 +228,26 @@
 
     
     
-  </div>
+      
+
+</div>
+
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link" href="#">Anterior</a>
+    </li>
+    
+      <li class="page-item active" aria-current="page">
+        <a class="page-link" href="../../posts/hugo/">1</a>
+      </li>
+    
+    <li class="page-item disabled">
+      <a class="page-link" href="#">Siguiente</a>
+    </li>
+  </ul>
+</nav>
+
 
     
     
@@ -281,7 +331,7 @@
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-02-26 16:09:54.6371755 -0600 CST m=&#43;0.234608901">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-05-19 20:47:36.7545223 -0600 CST m=&#43;1.107091901">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -294,7 +344,7 @@
   
 
   
-  <script type="text/javascript" src="../../js/bundle.min.52a8bc22398c4f696fccd6610e877826d1fe0acc45da4723b5e13ca973c56e29.js"></script>
+  <script type="text/javascript" src="../../js/bundle.js"></script>
   
 
   
