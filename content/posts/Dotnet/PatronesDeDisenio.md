@@ -5,7 +5,7 @@ description: 'Los patrones de diseño son soluciones reutilizables para problema
 image: images/no-img.png
 draft: false
 viewimg: true
-type: page
+type: "post"
 ---
 ---
 

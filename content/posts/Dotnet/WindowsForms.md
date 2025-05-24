@@ -5,7 +5,7 @@ description: '**Windows Forms (WinForms)** es una biblioteca de clases en .NET q
 image: images/WindowsForms.jpg
 draft: false
 viewimg: true
-type: "sub_post"
+type: "post"
 ---
 ---
 

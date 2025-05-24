@@ -4,8 +4,8 @@ date: 2022-12-25T08:53:03-06:00
 description: "Estos son los comandos básicos para que comiences a trabajar con Hugo."
 image: "images/Hugo_logo.png"
 draft: false
+layout: "section"
 viewimg: true
-type: "posts"
 ---
 
 ## Introducción

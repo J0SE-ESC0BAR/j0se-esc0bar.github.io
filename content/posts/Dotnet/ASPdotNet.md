@@ -4,7 +4,7 @@ date: 2023-10-13T15:07:06-06:00
 description: '**ASP.NET** es un framework de desarrollo web creado por Microsoft, diseñado para construir aplicaciones web dinámicas, sitios web y servicios. Basado en .NET, ASP.NET permite a los desarrolladores utilizar lenguajes de programación como C# o VB.NET para crear aplicaciones de alto rendimiento que pueden ejecutarse en distintos sistemas operativos.'
 image: images/ASP.NET.png
 draft: false
-type: sub_post
+type: post
 ---
 ---
 

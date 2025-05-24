@@ -4,7 +4,7 @@ date: 2025-02-25T10:00:00-06:00
 description: "Guía esencial para la administración y solución de problemas en Windows y Linux. Aprende a gestionar procesos, configurar redes y optimizar el rendimiento con comandos clave."
 image: images/no-img.png
 draft: false
-type: sub_post
+type: "post"
 ---
 # Administración y Resolución de Problemas en Windows y Linux
 
