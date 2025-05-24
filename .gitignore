@@ -3,4 +3,6 @@
 public/index.html
 /.roo
 /public
-.kilocode/mcp.json
+/.vscode
+/docs
+/.kilocode
