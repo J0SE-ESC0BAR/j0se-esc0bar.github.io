@@ -91,3 +91,26 @@
     height: 150px !important;
   }
 }
+
+@media (max-width: 767.98px) { /* Breakpoint sm de Bootstrap */
+    .list-item {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: flex-start; /* Alinea al inicio */
+    }
+    .list-item img {
+        width: 100%; /* La imagen ocupa todo el ancho disponible */
+        height: auto; /* Altura automática para mantener la proporción */
+        margin-right: 0;
+        margin-bottom: 10px; /* Espacio debajo de la imagen */
+    }
+}
+
+@media (max-width: 575.98px) {
+  /* Ocultar el toggle de vista en pantallas de una columna */
+  .view-toggle {
+    display: none !important;
+  }
+  .list-summary{
+    padding: 0;
+  }
+}

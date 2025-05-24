@@ -149,6 +149,10 @@ body {
   .nav-toggle:focus:not(:focus-visible) {
     outline: none;
   }
+  .nav-menu.no-transition 
+  { 
+    transition: none !important; 
+  }
 }
 
 @media (max-width: 320px) {
@@ -158,4 +162,6 @@ body {
   .nav-menu_visible {
     transform: translateX(-100%);
   }
+  /* Desactiva la transición mientras exista esta clase */
+
 }

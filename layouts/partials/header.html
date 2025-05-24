@@ -1,3 +1,27 @@
+<script>
+  (function () {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const menu = document.querySelector(".nav-menu");
+      if (!menu) return;
+  
+      /* 1️  Mostrar sin transición */
+      menu.classList.add("nav-menu_visible", "no-transition");
+      void menu.offsetHeight;                 // forzar reflujo
+      menu.classList.remove("no-transition"); // reactivamos la transición
+  
+      /* 2️  En el siguiente frame → quitar visible ⇒ anima cierre */
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {         // segundo frame para asegurar pintado
+          menu.classList.remove("nav-menu_visible");
+          localStorage.removeItem('menuShouldCloseOnLoad');
+        });
+      });
+    });
+  })();
+  </script>
 <div class='header'>
   <nav class="nav">
     <!-- 1) Enlace al Home con absLangURL -->
@@ -10,14 +34,35 @@
 
     <ul class="nav-menu">
       {{ $currentPage := . }}
+      
       {{ range .Site.Menus.main.ByWeight.Reverse }}
-        <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
-          <!-- 2) Menú con relLangURL o absLangURL -->
-          <a class="nav-menu-link nav-link" href="{{ .URL | relLangURL }}">
+        {{ $menuURL := .URL | relLangURL }}
+        {{ $pageURL := $currentPage.RelPermalink }}
+        
+        {{ $isActive := false }}
+        {{ $isSectionActive := false }}
+        
+        {{ if eq $menuURL $pageURL }}
+          {{ $isActive = true }}
+        {{ else if (hasPrefix $pageURL (print $menuURL "/")) }}
+          {{ $isSectionActive = true }}
+        {{ else if eq $menuURL "/" }}
+          {{ $isActive = eq $pageURL "/" }}
+        {{ end }}
+        
+        <!-- Usar también HasMenuCurrent para capturar páginas hijas -->
+        {{ $isActive = or $isActive (or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .)) }}
+        {{ $isSectionActive = or $isSectionActive ($currentPage.HasMenuCurrent "main" .) }}
+        
+        <li class="menu-item-{{ if .Identifier }}{{ .Identifier }}{{ else }}{{ .Name | urlize }}{{ end }}{{ if or $isActive $isSectionActive }} active{{ end }}">
+          <a class="nav-menu-link nav-link{{ if or $isActive $isSectionActive }} active{{ end }}"
+             href="{{ $menuURL }}"
+             {{ if or $isActive $isSectionActive }}aria-current="page"{{ end }}>
             {{ .Name }}
           </a>
         </li>
       {{ end }}
     </ul>
+    
   </nav>
 </div>

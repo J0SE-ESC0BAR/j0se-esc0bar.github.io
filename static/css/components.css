@@ -1,9 +1,9 @@
 .acrylic-background, .content, .list-summary {
-  background: rgba(15, 46, 67, 0.6);
+  background: var(--acrylic-bg-color);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--card-text-color);
 }
 
 /* Carousel */
@@ -20,7 +20,7 @@
 
 /* Summary Cards */
 .summary {
-  background: rgba(10, 10, 10, 0.6);
+  background: var(--card-bg-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
@@ -29,7 +29,7 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  color: #ffffff;
+  color: var(--card-text-color);
   transition: transform 0.2s ease-in-out;
   min-width: 300px;
   min-height: 200px;
@@ -75,11 +75,11 @@
 
 .summary-title a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--card-text-color);
 }
 
 .summary-title a:hover {
-  color: #4ca2ff;
+  color: var(--link-hover-color);
 }
 
 /* Toggle Container Styles */
@@ -100,13 +100,13 @@
 
 .summary-date {
   font-size: 0.9rem;
-  color: #bbbbbb;
+  color: var(--text-color);
 }
 
 .summary-description {
   font-size: 0.95rem;
   line-height: 1.4;
-  color: #dcdcdc;
+  color: var(--text-color);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
@@ -116,53 +116,81 @@
 }
 
 /* Code Block Styles */
-.code-block {
-  margin: 1em 0;
-  background-color: #1e1e1e;
-  border-radius: 6px;
-  overflow: hidden;
+.highlight {
+  margin: 1.5em 0;
   position: relative;
-  border: 1px solid #333;
-  margin: auto;
+}
+
+.code-block {
+  background-color: var(--code-bg-color, #1e1e1e);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--code-border-color, #3c3c3c);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .code-block__header {
-  background-color: #007acc;
+  background-color: var(--code-header-bg-color, #2d2d2d);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.2em 1em;
+  padding: 0.75em 1.25em;
+  border-bottom: 1px solid var(--code-border-color, #3c3c3c);
 }
 
 .code-block__lang {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #ccc;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-color, #e4e4e4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .code-block__copybtn {
-  background: #007acc;
-  border: none;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
+  background: var(--code-header-bg-color, #2d2d2d);
+  border: 1px solid var(--code-border-color, #3c3c3c);
+  color: var(--card-text-color, #e4e4e4);
+  padding: 6px 12px;
+  border-radius: 4px;
   font-size: 0.8rem;
   cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .code-block__copybtn:hover {
-  background: #005a9e;
+  background: var(--code-header-bg-hover-color, #404040);
+  border-color: var(--highlight-color, #007acc);
+  transform: translateY(-1px);
+}
+
+.code-block__copybtn:active {
+  transform: translateY(0);
 }
 
 .code-block pre {
   margin: 0;
-  padding: 1em;
+  padding: 1.25em;
   background: transparent;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.code-block pre code {
+  background: none;
+  padding: 0;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
 pre code.hljs {
   background: none;
   padding: 0;
+}
+
+/* Asegurar que el contenedor highlight tenga el estilo correcto */
+.highlight .code-block {
+  width: 100%;
 }
 
 /* List Views */
@@ -201,6 +229,25 @@ pre code.hljs {
   height: 100%;
 }
 
+/* Igualar altura de cards en la vista de cuadrícula */
+.list-summary.row {
+  align-items: stretch;
+}
+
+.grid-item {
+  display: flex;
+  align-items: stretch;
+}
+
+.grid-item .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.grid-item .card-body {
+  flex: 1;
+}
 
 /* List Controls */
 .list-controls-container {
@@ -208,12 +255,10 @@ pre code.hljs {
   margin: 0 auto;
   padding-left: 10rem;
   padding-right: 10rem;
-  margin-bottom: 20px;
-  background: rgba(15, 46, 67, 0.6);
+  background: var(--acrylic-bg-color);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 1rem;
-  border-radius: 0;
 }
 
 .list-controls-container .text-end {
@@ -226,23 +271,422 @@ pre code.hljs {
 
 .list-controls-container .btn-outline-primary,
 .list-controls-container .btn-outline-secondary {
-  background: rgba(10, 10, 10, 0.6);
+  background: var(--card-bg-color);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--card-text-color);
+  border-color: var(--button-outline-border-color);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .list-controls-container .btn-outline-primary:hover,
 .list-controls-container .btn-outline-secondary:hover {
-  background: rgba(25, 25, 25, 0.7);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.5);
+  background: var(--button-outline-hover-bg-color);
+  color: var(--card-text-color);
+  border-color: var(--button-outline-hover-border-color);
 }
 
 .list-controls-container button.active-view {
-  background: rgba(0, 162, 232, 0.7);
-  border-color: #00a2e8;
-  color: #ffffff;
+  background: var(--button-active-bg-color);
+  border-color: var(--highlight-color);
+  color: var(--card-text-color);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* Normalización de altura para cards e imágenes */
+#itemsContainer .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Contenedor de columnas como flex para altura uniforme */
+#itemsContainer .row > .col {
+    display: flex;
+}
+
+/* Cards ocupando todo el alto disponible */
+#itemsContainer .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: var(--card-bg-color);
+    color: var(--card-text-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, opacity;
+}
+
+/* Transición suave para las vistas */
+#gridView, #listView {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    will-change: opacity, transform;
+}
+
+#gridView .grid-item {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#listView .card {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Card body creciendo para empujar el botón al fondo */
+#itemsContainer .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Estilos anteriores de cards - eliminando height: 100% duplicado */
+.card {
+    background-color: var(--card-bg-color);
+    color: var(--card-text-color);
+}
+
+/* Eliminar esta regla que podría entrar en conflicto con nuestra nueva configuración */
+/* .card img {
+    height: 50%; 
+    object-fit: cover; 
+} */
+
+.list-item {
+    display: none; /* Oculto por defecto, se mostrará cuando el body tenga la clase list-view */
+    align-items: center; /* Alinea verticalmente la imagen y el contenido */
+    margin-bottom: 10px;
+    /*border: 1px solid var(--button-outline-border-color);*/
+    border-radius: 4px;
+    background-color: var(--card-bg-color); /* Añadido para consistencia */
+    color: var(--card-text-color); /* Añadido para consistencia */
+}
+.list-item img {
+    width: 100px; /* Ancho fijo para la imagen en la vista de lista */
+    height: 100px; /* Altura fija para la imagen en la vista de lista */
+    object-fit: cover;
+    margin-right: 15px;
+}
+/* Por defecto, mostrar grid y ocultar list */
+.grid-item { display: block; } /* o flex, o lo que corresponda según Bootstrap para .col-md-4 */
+
+body.list-view .list-item {
+    display: flex; /* Muestra los items de lista cuando el body tiene la clase list-view */
+    /* altura dinámica con límite */
+    max-height: 20vh;
+    height: auto;
+    overflow: hidden;
+}
+body.list-view .list-item p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 0;
+    line-height: 1.5;
+    /* truncado de párrafos con ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3; /* propiedad estándar añadida para compatibilidad */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Altura dinámica para entradas en vista lista y mostrar títulos completos */
+body.list-view .list-item {
+  max-height: none !important;
+  overflow: visible !important;
+}
+/* Asegurar truncado sólo en párrafos */
+body.list-view .list-item p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* propiedad estándar añadida para compatibilidad */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body.list-view .grid-item {
+    display: none; /* Oculta los items de grid cuando el body tiene la clase list-view */
+}
+
+.post-link-wrapper,
+.post-link-wrapper:hover,
+.post-link-wrapper:focus {
+    text-decoration: none;
+    color: inherit;
+    display: contents; /* Para que el 'a' no afecte el layout de flex/grid de sus padres si es necesario, o display: block si envuelve un block item */
+}
+
+/* Estilos para el cambio entre vista de lista y cuadrícula */
+/* Por defecto (vista de cuadrícula) */
+.grid-item {
+    display: block; /* Forzamos la visualización */
+
+}
+
+/* Mejorar el espaciado entre tarjetas cuando están en layout de cuadrícula */
+#itemsContainer.row {
+    gap: 1rem; /* Espacio entre tarjetas */
+}
+
+/* Añadir más espacio a las tarjetas */
+.grid-item .card {
+    height: 150%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
+}
+
+.grid-item .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* truncado de texto en tarjetas grid */
+.grid-item .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3; /* propiedad estándar añadida para compatibilidad */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Cuando se activa la vista de lista */
+body.list-view .grid-item {
+    display: none !important; /* Forzamos ocultar elementos de cuadrícula */
+}
+body.list-view .list-item {
+    display: flex !important; /* Mostramos los elementos de lista como flex para el layout */
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: var(--card-bg-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
+    transition: transform .2s;
+    height: 30vh;
+}
+
+body.list-view .list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+body.list-view .list-item img {
+    width: 30%; /* Reducido al 25% del ancho disponible */
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+    margin-right: 1.5rem;
+}
+
+body.list-view .list-item div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body.list-view .list-item h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+    color: var(--card-text-color);
+}
+
+body.list-view .list-item .summary-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 0.75rem;
+}
+
+body.list-view .list-item p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* Ajuste responsive para vista de lista */
+/* Eliminadas las reglas que cambiaban el layout en modo móvil */
+/* 
+@media (max-width: 768px) {
+  #listView .card {
+    flex-direction: column !important;
+  }
+  
+  #listView .ratio {
+    flex: none !important;
+    width: 100%;
+  }
+  
+  #listView .ratio .rounded-start {
+    border-top-right-radius: 0.375rem;
+    border-bottom-left-radius: 0 !important;
+  }
+  
+  #listView .card-body {
+    padding: 1rem;
+  }
+}
+*/
+
+/* Estilos para el modo lista usando Bootstrap list-group */
+body.list-view #itemsContainer .list-group-item {
+    background-color: var(--card-bg-color);
+    color: var(--card-text-color);
+    border-color: rgba(255, 255, 255, 0.1);
+    transition: transform .2s, box-shadow .2s;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+}
+
+body.list-view #itemsContainer .list-group-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    background-color: rgba(10, 10, 10, 0.7);
+}
+
+body.list-view #itemsContainer .list-group-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+/* Ocultar elementos según el modo de vista */
+body.list-view .grid-item {
+    display: none !important;
+}
+
+body:not(.list-view) #lista-container {
+    display: none !important;
+}
+
+.post-link-wrapper,
+.post-link-wrapper:hover,
+.post-link-wrapper:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Estilos para la vista de lista usando tarjetas horizontales */
+#listView .card {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: none;
+}
+
+#listView .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Tamaño personalizado para contenedor de imágenes en vista lista */
+#listView .ratio.ratio-16x9 {
+  flex: 0 0 25rem;
+}
+
+#listView .card-body {
+  padding: 1.25rem;
+}
+
+#listView .btn-primary {
+  background-color: var(--highlight-color);
+  border-color: var(--highlight-color);
+}
+
+/* Ajustes responsivos para la vista de lista */
+/* Reglas específicas para mantener el layout horizontal en móviles */
+@media (max-width: 768px) and (min-width: 576px) {
+  #listView .card {
+    flex-direction: row !important;
+  }
+  
+  /* Ajustar tamaño de imagen para que sea más pequeña pero mantenga proporción */
+  #listView .ratio {
+    flex: 0 0 160px !important;
+    width: 160px !important;
+  }
+  
+  /* Mantener bordes redondeados solo en lado izquierdo */
+  #listView .ratio .rounded-start {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  
+  /* Reducir padding en dispositivos pequeños */
+  #listView .card-body {
+    padding: 0.75rem;
+  }
+}
+
+/* Para dispositivos muy pequeños (menos de 576px), forzar vista de cuadrícula */
+@media (max-width: 575.98px) {
+  /* Forzar modo cuadrícula */
+  body {
+    /* Resetear cualquier clase de vista de lista que se haya aplicado */
+    &.list-view {
+      .list-view {
+        display: none !important;
+      }
+    }
+  }
+  
+  /* Ocultar botones de cambio de vista */
+  .toggle-container {
+    display: none !important;
+  }
+  
+  /* Mostrar siempre la vista de cuadrícula */
+  #gridView {
+    display: block !important;
+  }
+  
+  /* Ocultar siempre la vista de lista */
+  #listView {
+    display: none !important;
+  }
+  
+  /* Mostrar elementos de la cuadrícula */
+  .grid-item {
+    display: block !important;
+  }
+  
+  /* Ajustar tamaño de las cards para que ocupen todo el ancho */
+  #gridView .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Hacer invisibles los contenedores según la vista activa */
+body:not(.list-view) #listView {
+  display: none !important;
+}
+
+body.list-view #gridView {
+  display: none !important;
 }

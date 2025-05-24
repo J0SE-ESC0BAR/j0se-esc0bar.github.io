@@ -1,9 +1,16 @@
 # URL base para tu sitio (GitHub Pages)
-baseURL = "https://jaem.dev/"
 
+#Desarrollo
+baseURL = "/"
 # Ajustes de URLs
-canonifyURLs = true
+canonifyURLs = false
 relativeURLs = true
+
+# Producción
+#baseURL = "https://jaem.dev/"
+# Ajustes de URLs
+#canonifyURLs = true
+#relativeURLs = false
 
 # Idioma, título y tema
 languageCode = "es"
@@ -19,7 +26,27 @@ pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
 
 # Paginación
-paginate = 7
+[pagination]
+  pagerSize = 6
+
+[menu]
+  [[menu.main]]
+    name  = "Acerca"
+    url   = "/about/"
+    weight = 10
+  [[menu.main]]
+    name  = "Servicios"
+    url   = "/services/"
+    weight = 20
+  [[menu.main]]
+    name  = "Posts"
+    url   = "/posts/"
+    weight = 30
+  [[menu.main]]
+    name  = "Proyectos"
+    url   = "/projects/"
+    weight = 40
+
 
 # Configuración para resaltado de código (Chroma)
 [markup]
@@ -28,6 +55,10 @@ paginate = 7
     guessSyntax = true
     lineNumbersInTable = false
     style = "dracula"  # Puedes cambiar a otro tema si lo deseas
+    noClasses = false  # Usar clases CSS en lugar de estilos inline
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Permitir HTML raw en markdown
 
 [params]
   # Nombre y redes
@@ -43,10 +74,16 @@ paginate = 7
   # Mostrar publicaciones en la página de inicio
   showPostsOnHomepage = true
 
+  # Ordenar por fecha descendente (más nuevo primero)
+  defaultContentOrder = "-date"
+
+  # Post destacado en la página de inicio
+  featuredPost = "posts/hugo"  # Ruta relativa al post destacado
+  showFeaturedPost = true  # true para mostrar, false para ocultar
+
   # Hojas de estilo adicionales (Bootstrap y highlight.js)
   css = [
-    "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css",
-    #"/css/styles_manual.css"
+    "/css/chroma-syntax.css", # Estilos para el resaltado de sintaxis de Chroma
     "/css/variables.css",
     "/css/base.css",
     "/css/header.css",
@@ -54,4 +91,7 @@ paginate = 7
     "/css/footer.css",
     "/css/utilities.css",
     "/css/responsive.css"
+  ]
+  js = [
+    "/js/scripts.js"
   ]

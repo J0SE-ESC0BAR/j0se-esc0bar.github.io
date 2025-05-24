@@ -1,45 +1,95 @@
-{{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page-home{{ end }}
+{{ define "header_css" }}{{ end }} {{ define "body_classes" }}page-home
+list-view{{ end }} {{ define "main" }} {{ if .Site.Params.showAuthorOnHomepage
+}} {{ partial "carousel.html" . }} {{ end }}
 
-{{ define "main" }}
-  {{ if .Site.Params.showAuthorOnHomepage }}
-  {{ partial "carousel.html" . }}
-  {{ end }}
-  <!-- Introduccion desactivada-->
-  <div class="intro" style="margin-top: 0;" >
-    <h2>{{ .Title }}</h2>
-    <hr>
-      <p>{{.Description}}</p>
+<div class="intro" style="margin-top: 0">
+  <h2>{{ .Title }}</h2>
+  <hr />
+  <p>{{.Description}}</p>
+  <h2>Destacado 📌</h2>
+</div>
+
+<!-- Post destacado con estilo de lista -->
+<div id="itemsContainer" class="list-summary row home-posts-container">
+  <div id="listView" class="container py-4 flex-column gap-3">
+    <a
+      href="//localhost:1313/posts/hugo/"
+      class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3"
+    >
+      <div class="ratio ratio-16x9">
+        <img
+          src="./images/Hugo_logo.png"
+          class="object-fit-cover rounded-start"
+          alt="Imagen de Hugo uso básico"
+          onerror="this.onerror=null;this.src='\/images\/no-img.png';"
+        />
+      </div>
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title mb-1">Hugo uso básico</h5>
+        <small class="text-muted mb-2">25 Dec 2022</small>
+        <p class="card-text flex-grow-1 text-truncate-3">
+          Estos son los comandos básicos para que comiences a trabajar con Hugo.
+        </p>
+        <p class="mb-0 mt-auto">
+          <span class="badge bg-primary">1 artículos</span>
+        </p>
+      </div>
+    </a>
   </div>
-<div class="content">
-  <h2>Post destacado</h2>
-  <hr>
-  <div class="summary">
-    <div class="summary-image">
-      <a href="../posts/hugo/">
-        <img src="../images/Hugo_logo.png">
-      </a>
+  <div id="gridView" class="container">
+    {{/* ada */}}
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div class="col grid-item">
+        <a
+          href="//localhost:1313/posts/hugo/"
+          class="post-link-wrapper text-decoration-none"
+        >
+          <div class="card h-100 shadow-sm hover-zoom">
+            <img
+              src="./images/Hugo_logo.png"
+              class="card-img-top object-fit-cover"
+              alt="Imagen de Hugo uso básico"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='\/images\/no-img.png';"
+            />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Hugo uso básico</h5>
+              <small class="text-muted mb-2">25 Dec 2022</small>
+              <p class="card-text line-clamp">
+                Estos son los comandos básicos para que comiences a trabajar con
+                Hugo.
+              </p>
+              <p class="mb-0 mt-auto">
+                <span class="badge bg-primary">1 artículos</span>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-  <div class="summary-content">
-    <h2 class="summary-title"><a href="../posts/hugo/">Hugo uso básico</a></h2>
-    
-      <div class="summary-date">Dec 25, 2022</div>
-    
-    <p class="summary-description">Descripción: Estos son los comandos basicos para que comiences a trabajar con hugo</p>
   </div>
 </div>
-  <h2>Últimos posts</h2>
-  <hr>
-  {{ $allPosts := (where .Site.Pages "Type" "in" (slice "posts" "sub_post")) }}
-  {{ $sortedPosts := $allPosts.ByDate.Reverse }} <!-- Reverse para obtener de más reciente a más antiguo -->
-  {{ range first 3 $sortedPosts }}
-  {{ .Render "summary" }}
-  {{ end }}
+
+<div id="itemsContainer" class="list-summary row home-posts-container">
+  <div id="listView" class="container py-4 flex-column gap-3">
+    <h2>Últimos posts 🕒</h2>
+  </div>
 </div>
 
+<div id="itemsContainer" class="list-summary row home-posts-container">
+  <div id="gridView" class="container py-4 flex-column gap-3">
+    <h2>Últimos posts 🕒</h2>
+  </div>
+</div>
 
-{{ end }}
-{{ define "footer_js" }}
-{{ end }}
-
-
+{{/* Obtener los últimos 4 posts con el mismo formato que posts/root.html */}}
+{{ $allPosts := (where .Site.Pages "Type" "in" (slice "posts" "sub_post")) }} {{
+$sortedPosts := $allPosts.ByDate.Reverse }} {{ $latestPosts := first 4
+$sortedPosts }} {{/* Usar el mismo partial que posts/root.html para mantener
+consistencia */}} {{ if gt (len $latestPosts) 0 }} {{ partial
+"posts_grid_list.html" (dict "Pages" $latestPosts "Context" .
+"ViewContainerClass" "home-posts-container") }} {{ else }}
+<div class="container py-5 text-center">
+  <p>No hay posts disponibles.</p>
+</div>
+{{ end }} {{ end }} {{ define "footer_js" }}{{ end }}

@@ -1,0 +1,92 @@
+{{ define "body_classes" }}posts list-view{{ end }}
+
+{{ define "main" }}
+  {{/* Diseño especial para la página principal de Posts */}}
+  <div class="intro hero-section">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <div class="posts-header">
+          <h1 class="posts-title mb-1">{{ .Title }}</h1>
+            {{ $categories := slice }}
+              {{ range .Pages }}
+                {{ if and .IsSection (gt (len .Pages) 0) }}
+                  {{ $categories = $categories | append . }}
+                {{ end }}
+            {{ end }}
+          <p class="posts-meta mb-0">
+            <span>{{ len .Pages }}</span> articles in <span>{{ len $categories }}</span> categories
+          </p>
+        </div>
+        <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
+          <button class="btn btn-outline-secondary" id="btnGrid">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Cuadrícula
+          </button>
+          <button class="btn active-view btn-outline-primary" id="btnList">
+            <i class="bi bi-list-ul"></i> Lista
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Combinar categorías (secciones de posts) y artículos (páginas regulares de posts) */}}
+  {{ $currentPage := . }}
+  
+  {{/* Obtener las categorías (subsecciones de posts) */}}
+  {{ $categories := .Sections }}
+  
+  {{/* Obtener solo los artículos que están directamente en /posts/ (sin categoría) */}}
+  {{ $uncategorizedArticles := where .RegularPages "Section" "posts" }}
+  
+  {{/* Combinar categorías y artículos sin categoría */}}
+  {{ $allItems := $categories | union $uncategorizedArticles }}
+
+  {{/* Crear una lista con fechas efectivas para ordenamiento */}}
+  {{ $itemsWithDates := slice }}
+  {{ range $allItems }}
+    {{ $effectiveDate := .Date }}
+    {{ if .IsSection }}
+      {{/* Para categorías, usar la fecha del artículo más reciente */}}
+      {{ if .Pages }}
+        {{ $latestPage := index (sort .Pages "Date" "desc") 0 }}
+        {{ $effectiveDate = $latestPage.Date }}
+      {{ end }}
+    {{ end }}
+    {{ $itemsWithDates = $itemsWithDates | append (dict "item" . "effectiveDate" $effectiveDate) }}
+  {{ end }}
+
+  {{/* Ordenar por fecha efectiva de más reciente a más antiguo */}}
+  {{ $sortedItems := sort $itemsWithDates "effectiveDate" "desc" }}
+  
+  {{/* Extraer solo los items ordenados */}}
+  {{ $allItems = slice }}
+  {{ range $sortedItems }}
+    {{ $allItems = $allItems | append .item }}
+  {{ end }}
+
+
+  {{/* Sección Unificada de Categorías y Artículos con toggle */}}
+  {{ if gt (len $allItems) 0 }}
+
+      {{/*
+        Aquí se llamará al partial 'posts_grid_list.html' (o se integrará su lógica).
+        Este partial necesitará ser modificado para:
+        1. Iterar sobre $allItems.
+        2. Diferenciar entre 'section' (categoría) y 'page' (artículo) usando .IsSection o .Kind.
+        3. Aplicar el estilo de tarjeta para la vista de cuadrícula a AMBOS:
+           - Categorías: imagen, título, descripción, badge con número de artículos.
+           - Artículos: imagen, título, descripción (o resumen), fecha.
+        4. Aplicar el estilo de lista horizontal para la vista de lista a AMBOS:
+           - Mantener imagen a la izquierda, info a la derecha.
+           - Categorías: badge con número de artículos.
+           - Artículos: fecha.
+      */}}
+      {{ partial "posts_grid_list.html" (dict "Pages" $allItems "Context" . "ViewContainerClass" "unified-view-container") }}
+      {{/* Se añade ViewContainerClass para que el JS del toggle apunte al contenedor correcto */}}
+    
+  {{ else }}
+  <div class="container py-5 text-center">
+    <p>No hay contenido disponible en esta sección.</p>
+  </div>
+  {{ end }}
+{{ end }}

@@ -6,66 +6,95 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--Favicon-->
-  <link rel="icon" href="{{ .Site.BaseURL }}/favicon.ico">
-  <!--Bootstrap icons-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   
-  <!--CSS Personalizados en rango-->
+  <!-- Favicon -->
+  <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+  
+  <!-- Bootstrap icons - Actualizado a la versión 1.11.3 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  
+  <!-- Bootstrap CSS - Actualizado a la versión 5.3.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  
+  <!-- CSS Personalizados -->
   {{ range .Site.Params.css }}
-  <link rel="stylesheet" href="{{ . | relURL }}">
+    <link rel="stylesheet" href="{{ . | relURL }}">
   {{ end }}
-<!--
-  Open Graph
-  Este código es parte de una plantilla de Hugo 
-  y se utiliza para generar etiquetas meta que son útiles para SEO 
-  y para compartir en redes sociales.
--->
+
+  <!-- Meta tags para SEO y redes sociales -->
   {{ block "meta_tags" . }}
-    {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
-    <meta property="og:title" content="{{ .Title }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{ .Permalink }}"/>
-    {{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}"/>{{ end }}
-    {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
-    <meta name="twitter:card" content="summary"/>
-    {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
-    {{ if .Site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
+    <!-- Meta descripción -->
+    {{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+    {{ with .Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    {{ with .Site.Params.twitter_handle }}
+      <meta name="twitter:site" content="{{ . }}">
+      <meta name="twitter:creator" content="{{ . }}">
+    {{ end }}
   {{ end }}
+  
+  <!-- Script para evitar el parpadeo de vistas -->
+  <script>
+    /* Evitar FOUC: ocultamos mientras decidimos */
+    document.documentElement.classList.add('preload');
+    
+    (function() {
+      const pref = localStorage.getItem('vistaPreferida') || 'list';  // 'grid' | 'list'
+      
+      // Aplicamos clases tanto al HTML como al body para máxima compatibilidad
+      if (pref === 'grid') {
+        document.documentElement.classList.add('grid-view');
+        document.documentElement.classList.remove('list-view');
+        document.body.classList.add('grid-view');
+        document.body.classList.remove('list-view');
+      } else {
+        document.documentElement.classList.add('list-view');
+        document.documentElement.classList.remove('grid-view');
+        document.body.classList.add('list-view');
+        document.body.classList.remove('grid-view');
+      }
+    })();
+  </script>
 </head>
 
 {{ $themeStyle := slice "" }}
 {{ if eq .Site.Params.addFrame true }}{{ $themeStyle = $themeStyle | append "frame" }}{{ end }}
 
-<body class='page{{ delimit $themeStyle " " }} {{ block "body_classes" . }}{{ end }}'>
+<body class="d-flex flex-column min-vh-100 page{{ delimit $themeStyle " " }} {{ block "body_classes" . }}{{ end }}">
+  <!-- Header -->
+  {{ partial "header.html" . }}
   
-  <!--- Page post's -->
-  <!--<div id="wrapper" class="wrapper">-->
-    {{ partial "header.html" . }}
-    {{ block "main" . }}
-    {{ end }}
-    {{ block "footer" . }}
+  <!-- Main content -->
+  <main class="flex-grow-1">
+    {{ block "main" . }}{{ end }}
+  </main>
+  
+  <!-- Footer -->
+  {{ block "footer" . }}
     {{ partial "footer.html" . }}
-    {{ end }}
-  <!--</div>-->
-  {{ $scripts := resources.Get "js/scripts.js" }}
-
-  {{ $js := slice $scripts | resources.Concat "js/bundle.js" }}
-
-  {{ if hugo.IsServer }}
-  <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
-  {{ else }}
-  <script type="text/javascript" src="{{ ($js | minify | fingerprint).RelPermalink }}"></script>
   {{ end }}
 
-  {{ block "footer_js" . }}
+  <!-- JavaScript -->
+  <!-- Carga de scripts personalizados desde static/js -->
+  {{ range .Site.Params.js }}
+    <script src="{{ . | absURL }}"></script>
   {{ end }}
-<!-- Agregar Bootstrap JS, Popper.js y, opcionalmente, el complemento de iconos de Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+  <!-- Custom footer JavaScript -->
+  {{ block "footer_js" . }}{{ end }}
+
+  <!-- jQuery (slim version) - Actualizado a la versión 3.7.1 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  
+  <!-- Bootstrap 5 Bundle (incluye Popper) - Actualizado a la versión 5.3.3 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
