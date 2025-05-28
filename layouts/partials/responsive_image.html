@@ -1,0 +1,69 @@
+{{/*
+  Partial para imágenes responsivas con lazy loading y placeholders.
+  Uso: {{ partial "responsive_image.html" (dict src="path/to/image.jpg" alt="Descripción" class="my-class") }}
+
+  Parámetros:
+  - src (obligatorio): Ruta de la imagen (relativa a /static o /assets).
+  - alt (obligatorio): Texto alternativo para la imagen.
+  - class (opcional): Clases CSS adicionales para la etiqueta <img>.
+  - sizes (opcional): Atributo 'sizes' para imágenes responsivas.
+  - widths (opcional): Lista de anchos para generar srcset (ej: "300,600,900,1200"). Por defecto: 300, 600, 900, 1200, 1500.
+  - loading (opcional): "lazy" (por defecto), "eager", "auto".
+  - decoding (opcional): "async" (por defecto), "sync", "auto".
+  - placeholder (opcional): "true" para añadir un placeholder SVG o CSS. Por defecto: false.
+  - critical (opcional): "true" para cargar eager y sin lazy-placeholder (para LCP). Por defecto: false.
+*/}}
+
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+{{ $sizes := .sizes | default "100vw" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $decoding := .decoding | default "async" }}
+{{ $placeholder := .placeholder | default false }}
+{{ $critical := .critical | default false }}
+
+{{ $widths := slice 300 600 900 1200 1500 }}
+{{ if .widths }}
+  {{ $widths = split .widths "," | apply (partial "cast.html") "int" }}
+{{ end }}
+
+{{ $image := "" }}
+{{ $isAsset := false }}
+
+{{/* Intentar obtener la imagen de /assets primero */}}
+{{ with resources.Get $src }}
+  {{ $image = . }}
+  {{ $isAsset = true }}
+{{ else }}
+  {{/* Si no está en /assets, intentar en /static */}}
+  {{ $staticPath := printf "static/%s" $src }}
+  {{ with resources.Get $staticPath }}
+    {{ $image = . }}
+  {{ else }}
+    {{/* Imagen no encontrada, se usará el fallback */}}
+  {{ end }}
+{{ end }}
+
+{{/* Si la imagen no se encuentra, usar el fallback */}}
+{{ $finalSrc := "" }}
+{{ if $image }}
+  {{ $finalSrc = $image.RelPermalink }}
+{{ else }}
+  {{ $finalSrc = "/images/no-img.png" | relURL }} {{/* Usar el fallback si la imagen no se encuentra */}}
+{{ end }}
+
+{{/* Placeholder CSS simple si se solicita */}}
+{{ $placeholderStyle := "" }}
+{{ if $placeholder }}
+  {{ $placeholderStyle = "background-color: #f0f0f0; min-height: 1px;" }}
+{{ end }}
+
+<img
+  src="{{ $finalSrc }}"
+  alt="{{ $alt }}"
+  class="{{ $class }}"
+  {{ if not $critical }}loading="{{ $loading }}"{{ end }}
+  decoding="{{ $decoding }}"
+  {{ if $placeholder }}style="{{ $placeholderStyle }}"{{ end }}
+>

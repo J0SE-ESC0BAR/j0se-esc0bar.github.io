@@ -1,0 +1,147 @@
+/* static/css/enhanced.css */
+
+/* Animations and Transitions from base.css */
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body { /* Apply animation if not overridden by new-index-styles */
+  animation: backgroundMove 15s ease infinite;
+}
+
+/* Transitions for view toggling (from base.css) */
+html.grid-view #gridView,
+body.grid-view #gridView,
+html.list-view #listView,
+body.list-view #listView {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Transitions from header.css */
+@media (max-width: 768px) {
+  .nav-menu {
+    transition: left 0.3s;
+  }
+  .nav-menu-link:hover {
+    transition: 0.2s;
+  }
+}
+
+/* Transitions and Animations from components.css */
+.summary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+.summary { /* Add transition for the hover effect */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.summary-image a:hover img {
+  opacity: 0.7;
+}
+.summary-image img { /* Add transition for the hover effect */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.code-block__copybtn {
+  transition: all 0.2s ease;
+}
+.code-block__copybtn:hover {
+  background: var(--code-header-bg-hover-color, #404040);
+  border-color: var(--highlight-color, #007acc);
+  transform: translateY(-1px);
+}
+.code-block__copybtn:active {
+  transform: translateY(0);
+}
+
+.list-controls-container .btn-outline-primary,
+.list-controls-container .btn-outline-secondary {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.list-controls-container .btn-outline-primary:hover,
+.list-controls-container .btn-outline-secondary:hover {
+  background: var(--button-outline-hover-bg-color);
+  color: var(--card-text-color);
+  border-color: var(--button-outline-hover-border-color);
+}
+
+#itemsContainer .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, opacity; /* Hint for browser optimization */
+}
+
+#gridView, #listView { /* Base transition for view containers */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    will-change: opacity, transform;
+}
+
+#gridView .grid-item {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#listView .card { /* This applies to cards within #listView specifically */
+    animation: slideIn 0.3s ease-in-out;
+    /* Adding transition for hover effects if any are defined for #listView .card:hover */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.grid-item .card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.grid-item .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+body.list-view .list-item {
+    transition: transform .2s, box-shadow .2s;
+}
+body.list-view .list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+body.list-view #itemsContainer .list-group-item {
+    transition: transform .2s, box-shadow .2s;
+}
+body.list-view #itemsContainer .list-group-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    background-color: rgba(10, 10, 10, 0.7); /* Ensure hover bg is defined */
+}
+
+#listView .card:hover { /* Hover effect for cards specifically in #listView */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Carousel transitions (from critical.css as they were there initially) */
+.carousel-item {
+  transition: transform .6s ease-in-out;
+}

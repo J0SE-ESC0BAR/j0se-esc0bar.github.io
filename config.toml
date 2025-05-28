@@ -20,6 +20,23 @@ theme = "hugo-jaem-theme"
 # Carpeta donde se guardará el sitio generado por Hugo
 publishDir = "docs"
 
+# Configuración de Módulos de Hugo para encontrar dependencias en node_modules
+# Se intentará un enfoque más simple primero, confiando en que Hugo busque en node_modules.
+# Si esto no funciona, se puede volver a la configuración de montaje explícita
+# después de resolver los errores de plantilla.
+[module]
+  # Montar el directorio 'static' como un directorio de recursos para Hugo Pipes
+  [[module.mounts]]
+    source = "static"
+    target = "assets"
+  # Montar Bootstrap desde node_modules
+  [[module.mounts]]
+    source = "node_modules/bootstrap/scss"
+    target = "assets/scss/bootstrap"
+  [[module.mounts]]
+    source = "node_modules/bootstrap/dist/js"
+    target = "assets/js/bootstrap/dist"
+
 # Ajustes de Pygments / Chroma
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
@@ -79,19 +96,15 @@ pygmentsUseClasses = true
   featuredPost = "posts/dotnet/windowsforms/"  # Ruta relativa al post destacado
   showFeaturedPost = true  # true para mostrar, false para ocultar
 
-  # Hojas de estilo adicionales (Bootstrap y highlight.js)
+  # Hojas de estilo adicionales
+  # main.css y enhanced.css se cargan directamente en baseof.html
+  # bootstrap.css se genera y enlaza mediante Hugo Pipes en baseof.html
   css = [
-    "/css/chroma-syntax.css", # Estilos para el resaltado de sintaxis de Chroma
-    "/css/NewStyles.css",
-    
-    "/css/variables.css",
-    "/css/base.css",
-    "/css/header.css",
-    "/css/components.css",
-    "/css/footer.css",
-    "/css/utilities.css",
-    "/css/responsive.css"
+    "/css/chroma-syntax.css" # Mantener si se usa Chroma y se carga explícitamente
+    # Los archivos CSS antiguos como NewStyles.css, variables.css, etc.,
+    # y los CSS de Bootstrap CDN han sido eliminados o reemplazados.
   ]
   js = [
-    "/js/scripts.js"
+    "/js/scripts.js" # scripts.js se carga desde baseof.html
+    # bootstrap.bundle.js se genera y enlaza mediante Hugo Pipes en baseof.html
   ]

@@ -62,24 +62,30 @@
   {{ end }}
 
 
+  {{/* Crear el paginador aquí en el template principal */}}
+  {{ $paginator := .Paginate $allItems }}
+
+  {{/* Calcular total de artículos y categorías para el header del parcial */}}
+  {{ $totalProjects := len .Pages }}
+  {{ $rootSections := slice }}
+  {{ range .Pages }} {{/* Iterar sobre .Pages de la página actual (root) para encontrar secciones directas */}}
+    {{ if and .IsSection (gt (len .Pages) 0) }}
+      {{ $rootSections = $rootSections | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $totalCategories := len $rootSections }}
+
   {{/* Sección Unificada de Sections y Projects con toggle */}}
   {{ if gt (len $allItems) 0 }}
-
-      {{/*
-        Aquí se llamará al partial 'projects_grid_list.html' (o se integrará su lógica).
-        Este partial necesitará ser modificado para:
-        1. Iterar sobre $allItems.
-        2. Diferenciar entre 'section' (section) y 'page' (project) usando .IsSection o .Kind.
-        3. Aplicar el estilo de tarjeta para la vista de cuadrícula a AMBOS:
-           - Sections: imagen, título, descripción, badge con número de projects.
-           - Projects: imagen, título, descripción (o resumen), fecha.
-        4. Aplicar el estilo de lista horizontal para la vista de lista a AMBOS:
-           - Mantener imagen a la izquierda, info a la derecha.
-           - Sections: badge con número de projects.
-           - Projects: fecha.
-      */}}
-      {{ partial "projects_grid_list.html" (dict "Pages" $allItems "Context" $currentPage "ViewContainerClass" "unified-view-container") }}
-      {{/* Se añade ViewContainerClass para que el JS del toggle apunte al contenedor correcto */}}
+      {{ partial "projects_grid_list.html" (dict
+          "Paginator" $paginator
+          "Context" .
+          "ViewContainerClass" "unified-view-container"
+          "ShowHeader" true
+          "ShowViewButtons" true
+          "TotalProjects" $totalProjects
+          "TotalCategories" $totalCategories
+      ) }}
     
   {{ else }}
   <div class="container py-5 text-center">

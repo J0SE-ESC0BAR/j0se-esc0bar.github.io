@@ -1,41 +1,27 @@
 {{/* Partial reutilizable para mostrar posts/projects en vista grid/lista */}}
 {{/* Parámetros esperados: .Paginator (paginador ya creado) O .Pages (las páginas a mostrar) + .Context, y parámetros opcionales para el header */}}
 
-{{/* Detectar si recibimos un paginador o páginas directas */}}
-{{ $paginator := "" }}
+{{ $paginator := .Paginator }}
 {{ $context := .Context }}
-
-{{ if .Paginator }}
-  {{/* Si recibimos un paginador directamente (como en posts) */}}
-  {{ $paginator = .Paginator }}
-{{ else if .Pages }}
-  {{/* Si recibimos páginas directamente (como en projects) */}}
-  {{ $pages := .Pages }}
-  {{ $paginator = $context.Paginate $pages }}
-{{ else }}
-  {{/* Error: sin datos */}}
-  {{ errorf "projects_grid_list.html: Se requiere .Paginator o .Pages en el diccionario" }}
-{{ end }}
-
 {{ $showHeader := .ShowHeader | default false }}
-{{ $totalArticles := .TotalArticles | default 0 }}
+{{ $totalProjects := .TotalProjects | default 0 }}
 {{ $totalCategories := .TotalCategories | default 0 }}
 
   {{/* Header con estadísticas y botones de vista (solo si ShowHeader es true) */}}
   {{ if $showHeader }}
   <div id="itemsContainer" class="container">
     <div class="d-flex flex-wrap justify-content-between align-items-center">
-      <div class="posts-header">
-        <h1 class="posts-title mb-1">Posts</h1>
-        <p class="posts-meta mb-0">
-          <span>{{ $totalArticles }}</span> artículos en <span>{{ $totalCategories }}</span> categorías
+      <div class="projects-header">
+        <h1 class="projects-title mb-1">Proyectos</h1>
+        <p class="projects-meta mb-0">
+          <span>{{ $totalProjects }}</span> proyectos{{ if gt $totalCategories 0 }} en <span>{{ $totalCategories }}</span> categorías{{ end }}
         </p>
       </div>
       <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
-        <button id="btnGrid" class="btn btn-outline-light active active-view btn-outline-primary">
+        <button id="btnGrid" class="btn btn-outline-secondary">
           <i class="bi bi-grid-3x3-gap-fill me-1"></i> Cuadrícula
         </button>
-        <button id="btnList" class="btn btn-outline-light btn-outline-secondary">
+        <button id="btnList" class="btn active-view btn-outline-primary">
           <i class="bi bi-list-ul me-1"></i> Lista
         </button>
       </div>
@@ -51,13 +37,19 @@
         <a href="{{ .Permalink }}" class="post-link-wrapper text-decoration-none">
           <div class="card h-100 shadow-sm hover-zoom">
             {{ $fallbackImg := "/images/no-img.png" | relURL }}
-            <img
-              src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
-              class="card-img-top object-fit-cover"
-              alt="Imagen de {{ .Title }}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
-            />
+            {{ $imageSrc := "" }}
+            {{ with .Params.image }}
+              {{ $imageSrc = . }}
+            {{ else }}
+              {{ $imageSrc = "images/no-img.png" }}
+            {{ end }}
+            {{ partial "responsive_image.html" (dict
+              "src" $imageSrc
+              "alt" (printf "Imagen de %s" .Title)
+              "class" "card-img-top object-fit-cover"
+              "loading" "lazy"
+              "placeholder" true
+            ) }}
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ .Title }}</h5>
               <small class="text-muted mb-2">{{ .Date.Format "2 Jan 2006" }}</small>
@@ -84,12 +76,19 @@
     <a href="{{ .Permalink }}" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
       <div class="ratio ratio-16x9">
         {{ $fallbackImg := "/images/no-img.png" | relURL }}
-        <img
-          src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
-          class="object-fit-cover rounded-start"
-          alt="Imagen de {{ .Title }}"
-          onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
-        />
+        {{ $imageSrc := "" }}
+        {{ with .Params.image }}
+          {{ $imageSrc = . }}
+        {{ else }}
+          {{ $imageSrc = "images/no-img.png" }}
+        {{ end }}
+        {{ partial "responsive_image.html" (dict
+          "src" $imageSrc
+          "alt" (printf "Imagen de %s" .Title)
+          "class" "object-fit-cover rounded-start"
+          "loading" "lazy"
+          "placeholder" true
+        ) }}
       </div>
       <div class="card-body d-flex flex-column">
         <h5 class="card-title mb-1">{{ .Title }}</h5>
