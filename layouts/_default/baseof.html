@@ -68,33 +68,42 @@
 {{ $themeStyle := slice "" }}
 {{ if eq .Site.Params.addFrame true }}{{ $themeStyle = $themeStyle | append "frame" }}{{ end }}
 
-<body class="d-flex flex-column min-vh-100 page{{ delimit $themeStyle " " }} {{ block "body_classes" . }}{{ end }}">
+<body class="d-flex flex-column min-vh-100 {{ block "body_classes" . }}{{ end }}">
+  <!--<body class="d-flex flex-column min-vh-100 preload"> Es de la pag ejemplo (no funciona con este proyecto)-->
   <!-- Header -->
   {{ partial "header.html" . }}
   
-  <!-- Main content -->
-  <main class="flex-grow-1">
+  <!-- Main content  Antigua vercion-->
+  {{/*  <main class="flex-grow-1">
     {{ block "main" . }}{{ end }}
-  </main>
-  
+  </main>  */}}
+    {{ block "carusel" . }}
+    {{ end }}
+    <main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0">
+      <div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white">
+        {{ block "main" . }}
+        {{ end }}
+      </div>
+    </main>
   <!-- Footer -->
   {{ block "footer" . }}
     {{ partial "footer.html" . }}
   {{ end }}
-
   <!-- JavaScript -->
   <!-- Carga de scripts personalizados desde static/js -->
   {{ range .Site.Params.js }}
     <script src="{{ . | absURL }}"></script>
   {{ end }}
-
   <!-- Custom footer JavaScript -->
   {{ block "footer_js" . }}{{ end }}
-
   <!-- jQuery (slim version) - Actualizado a la versión 3.7.1 -->
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
   <!-- Bootstrap 5 Bundle (incluye Popper) - Actualizado a la versión 5.3.3 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
+
+
+
+
+
 </html>

@@ -1,11 +1,9 @@
 ---
-title: 'Mis proyectos'
-type: "page"
-description: "Algunos de los proyectos que e realizado los tengo aquí."
+title: 'Pagina web Parroquia Apopa'
+description: "Pagina web que realice para la parroquia de Apopa"
 image: images/Proyectos.png
 draft: false
 viewimg: false
-type: "page"
 ---
 **Generador de códigos QR con Python conectado a MongoDB**
 

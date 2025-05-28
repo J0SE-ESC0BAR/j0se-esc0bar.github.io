@@ -4,7 +4,7 @@ date: 2025-05-23T15:07:06-06:00
 description: Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.
 image: images/no-img.png
 draft: false
-type: post
+viewimg: true
 ---
 
 

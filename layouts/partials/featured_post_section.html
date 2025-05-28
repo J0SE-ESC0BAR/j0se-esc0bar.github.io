@@ -1,0 +1,22 @@
+{{/* Partial para mostrar la sección de post destacado con título
+     Parámetros: .Context (el contexto actual) */}}
+
+{{ $context := .Context }}
+
+{{ if and $context.Site.Params.showFeaturedPost $context.Site.Params.featuredPost }}
+  {{ $featuredPost := $context.Site.GetPage $context.Site.Params.featuredPost }}
+  {{ if $featuredPost }}
+    
+      <h2>Destacado 📌</h2>
+      <div id="listView" class="py-4 flex-column gap-3">
+        {{ partial "single_post_card.html" (dict "Post" $featuredPost "ViewType" "list") }}
+      </div>
+      <div id="gridView">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+          <div class="col grid-item">
+            {{ partial "single_post_card.html" (dict "Post" $featuredPost "ViewType" "grid") }}
+          </div>
+        </div>
+      </div>
+  {{ end }}
+{{ end }}

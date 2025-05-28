@@ -1,6 +1,6 @@
 {{/* --------------------------------------------- */}}
 {{/* Bloque para las clases del <body> */}}
-{{ define "body_classes" }}default section{{ if eq .Type "list" }} list-view{{ end }}{{ end }}
+{{ define "body_classes" }}post section{{ if eq .Type "list" }} list-view{{ end }}{{ end }}
 
 {{/* --------------------------------------------- */}}
 {{/* Bloque principal: diseño unificado basado en posts(OldVersion).html */}}
@@ -46,14 +46,19 @@
         {{ end }}
       </div>
     </div>
-{{/* Mostrar el contenido de la página de sección (ej. _index.md) */}}
-  <div class="container section-content py-3">
-    {{ with .Description }}
-      <p class="lead">{{ . }}</p>
-    {{ end }}
-    {{ .Content }}
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      
+      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
+    </div>
+    <div class="col-md-6 intro-content">
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </div>
   </div>
-
+    <div class="container py-4">
+      {{ .Content }}
+    </div>
   {{/* Crear una lista con fechas efectivas para ordenamiento */}}
   {{ $itemsWithDates := slice }}
   {{ range $allItems }}

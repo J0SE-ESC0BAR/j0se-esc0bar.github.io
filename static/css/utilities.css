@@ -65,7 +65,9 @@
   max-width: 100rem;
   margin: 0 auto;
   padding: 0 10%;
-  padding-bottom: 2rem;
+}
+.home-posts-container{
+  padding: 0 10%;
 }
 
 #carouselExampleCaptions {
@@ -223,12 +225,6 @@
   }
 }
 
-@media (max-width: 1120px) {
-  /*class="list-summary cuadros"*/
-  .list-summary {
-    padding: 5%;
-  }
-}
 
 /* Clase para truncar texto a 3 líneas con puntos suspensivos */
 .text-truncate-3 {

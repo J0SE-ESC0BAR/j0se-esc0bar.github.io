@@ -1,8 +1,7 @@
 {{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page single{{ end }}
+{{ define "body_classes" }}page about{{ end }}
 
 {{ define "main" }}
-<div class="intro">
   <div class="fila">
     <div class="col-md-6 intro-image">
       <img src="{{ .Params.image | relURL }}" class="img-fluid" alt="{{ .Title }}">
@@ -12,8 +11,5 @@
       <p>{{ .Description }}</p>
     </div>
   </div>
-</div>
-    <div class="content">
       {{ .Content }}
-    </div>
 {{ end }}

@@ -3,7 +3,7 @@
 #Desarrollo
 baseURL = "/"
 # Ajustes de URLs
-canonifyURLs = false
+canonifyURLs = true
 relativeURLs = true
 
 # Producción
@@ -67,8 +67,6 @@ pygmentsUseClasses = true
   twitter_handle = "@JAEM_Developer"
 
   # Visualización de autor y robots
-  showAuthorOnHomepage = true
-  showAuthorOnPosts = false
   enableRobotsTXT = true
 
   # Mostrar publicaciones en la página de inicio
@@ -78,12 +76,14 @@ pygmentsUseClasses = true
   defaultContentOrder = "-date"
 
   # Post destacado en la página de inicio
-  featuredPost = "posts/hugo"  # Ruta relativa al post destacado
+  featuredPost = "posts/dotnet/windowsforms/"  # Ruta relativa al post destacado
   showFeaturedPost = true  # true para mostrar, false para ocultar
 
   # Hojas de estilo adicionales (Bootstrap y highlight.js)
   css = [
     "/css/chroma-syntax.css", # Estilos para el resaltado de sintaxis de Chroma
+    "/css/NewStyles.css",
+    
     "/css/variables.css",
     "/css/base.css",
     "/css/header.css",

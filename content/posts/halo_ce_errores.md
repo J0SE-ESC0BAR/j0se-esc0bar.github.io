@@ -5,7 +5,6 @@ description: 'Soluciones a los errores mas comunes en el de halo ce, desde la in
 image: images/Halo Combat Evolved.jpg
 draft: false
 viewimg: true
-type: "post"
 ---
 
 ## Halo CE 2022 | Solución de errores

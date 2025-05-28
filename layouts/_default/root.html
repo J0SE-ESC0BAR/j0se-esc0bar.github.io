@@ -1,20 +1,22 @@
-{{ define "body_classes" }}posts list-view{{ end }}
+{{ define "body_classes" }}default root list-view{{ end }}
 
 {{ define "main" }}
   {{/* Diseño especial para la página principal de Posts */}}
-  <div class="intro hero-section">
+    {{/* Diseño especial para la página principal de Projects */}}
+  <!--<div class="intro hero-section"> </div>-->
+
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center">
-        <div class="posts-header">
-          <h1 class="posts-title mb-1">{{ .Title }}</h1>
+        <div class="projects-header">
+          <h1 class="projects-title mb-1">{{ .Title }}</h1>
             {{ $categories := slice }}
               {{ range .Pages }}
                 {{ if and .IsSection (gt (len .Pages) 0) }}
                   {{ $categories = $categories | append . }}
                 {{ end }}
             {{ end }}
-          <p class="posts-meta mb-0">
-            <span>{{ len .Pages }}</span> articles in <span>{{ len $categories }}</span> categories
+          <p class="projects-meta mb-0">
+            <span>{{ len .Pages }}</span> posts <span>{{len $categories }}</span> secciones
           </p>
         </div>
         <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
@@ -27,26 +29,21 @@
         </div>
       </div>
     </div>
-  </div>
 
-  {{/* Combinar categorías (secciones de posts) y artículos (páginas regulares de posts) */}}
+  {{/* Combinar sections (secciones de posts) y posts (páginas regulares de posts) */}}
   {{ $currentPage := . }}
-  
-  {{/* Obtener las categorías (subsecciones de posts) */}}
-  {{ $categories := .Sections }}
-  
-  {{/* Obtener solo los artículos que están directamente en /posts/ (sin categoría) */}}
-  {{ $uncategorizedArticles := where .RegularPages "Section" "posts" }}
-  
-  {{/* Combinar categorías y artículos sin categoría */}}
-  {{ $allItems := $categories | union $uncategorizedArticles }}
-
+  {{/* Obtener las sections (subsecciones de posts) */}}
+  {{ $pageSections := .Sections }} {{/* Renombrado para evitar conflicto con $sections en el cálculo de TotalCategoriesInRoot */}}
+  {{/* Obtener solo los posts que están directamente en /posts/ (sin section) */}}
+  {{ $uncategorizedPosts := where .RegularPages "Section" "posts" }}
+  {{/* Combinar sections y posts sin section */}}
+  {{ $allItems := $pageSections | union $uncategorizedPosts }}
   {{/* Crear una lista con fechas efectivas para ordenamiento */}}
   {{ $itemsWithDates := slice }}
   {{ range $allItems }}
     {{ $effectiveDate := .Date }}
     {{ if .IsSection }}
-      {{/* Para categorías, usar la fecha del artículo más reciente */}}
+      {{/* Para sections, usar la fecha del post más reciente */}}
       {{ if .Pages }}
         {{ $latestPage := index (sort .Pages "Date" "desc") 0 }}
         {{ $effectiveDate = $latestPage.Date }}
@@ -54,36 +51,37 @@
     {{ end }}
     {{ $itemsWithDates = $itemsWithDates | append (dict "item" . "effectiveDate" $effectiveDate) }}
   {{ end }}
-
   {{/* Ordenar por fecha efectiva de más reciente a más antiguo */}}
   {{ $sortedItems := sort $itemsWithDates "effectiveDate" "desc" }}
-  
   {{/* Extraer solo los items ordenados */}}
   {{ $allItems = slice }}
   {{ range $sortedItems }}
     {{ $allItems = $allItems | append .item }}
   {{ end }}
+  {{/* Crear el paginador aquí en el template principal */}}
+  {{ $paginator := .Paginate $allItems }}
 
+  {{/* Calcular total de artículos y categorías para el header del parcial */}}
+  {{ $totalArticlesInRoot := len .Pages }}
+  {{ $rootSections := slice }}
+  {{ range .Pages }} {{/* Iterar sobre .Pages de la página actual (root) para encontrar secciones directas */}}
+    {{ if and .IsSection (gt (len .Pages) 0) }}
+      {{ $rootSections = $rootSections | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $totalCategoriesInRoot := len $rootSections }}
 
   {{/* Sección Unificada de Categorías y Artículos con toggle */}}
   {{ if gt (len $allItems) 0 }}
-
-      {{/*
-        Aquí se llamará al partial 'posts_grid_list.html' (o se integrará su lógica).
-        Este partial necesitará ser modificado para:
-        1. Iterar sobre $allItems.
-        2. Diferenciar entre 'section' (categoría) y 'page' (artículo) usando .IsSection o .Kind.
-        3. Aplicar el estilo de tarjeta para la vista de cuadrícula a AMBOS:
-           - Categorías: imagen, título, descripción, badge con número de artículos.
-           - Artículos: imagen, título, descripción (o resumen), fecha.
-        4. Aplicar el estilo de lista horizontal para la vista de lista a AMBOS:
-           - Mantener imagen a la izquierda, info a la derecha.
-           - Categorías: badge con número de artículos.
-           - Artículos: fecha.
-      */}}
-      {{ partial "posts_grid_list.html" (dict "Pages" $allItems "Context" . "ViewContainerClass" "unified-view-container") }}
-      {{/* Se añade ViewContainerClass para que el JS del toggle apunte al contenedor correcto */}}
-    
+      {{ partial "posts_grid_list.html" (dict
+          "Paginator" $paginator
+          "Context" .
+          "ViewContainerClass" "unified-view-container"
+          "ShowHeader" true
+          "ShowViewButtons" true
+          "TotalArticles" $totalArticlesInRoot
+          "TotalCategories" $totalCategoriesInRoot
+      ) }}
   {{ else }}
   <div class="container py-5 text-center">
     <p>No hay contenido disponible en esta sección.</p>

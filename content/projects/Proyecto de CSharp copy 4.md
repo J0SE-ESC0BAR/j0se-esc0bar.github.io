@@ -1,6 +1,5 @@
 ---
 title: 'Proyectos de Csharp'
-type: "proyecto"
 description: "Proyecto que realice usando c# y sql"
 image: images/ProyectoCSharp.png
 draft: false

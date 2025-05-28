@@ -5,7 +5,6 @@ description: 'Auque paresca simple, no lo es para todos, ya que sus funciones so
 image: images/java.png
 draft: false
 viewimg: true
-type: "post"
 ---
 Cual es la diferencia entre 
 

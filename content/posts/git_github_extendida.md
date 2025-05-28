@@ -2,10 +2,9 @@
 title: "Quiero Git Hub"
 date: 2022-04-22
 description: 'Quiero versión extendida de git y github'
-draft: false
+draft: true
 image: images/git.png
 viewimg: true
-type: "post"
 ---
 Porque quiero aprender mas sobre git
 # Para programar mejor

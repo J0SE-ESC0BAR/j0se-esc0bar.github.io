@@ -251,14 +251,6 @@ pre code.hljs {
 
 /* List Controls */
 .list-controls-container {
-  max-width: 100rem;
-  margin: 0 auto;
-  padding-left: 10rem;
-  padding-right: 10rem;
-  background: var(--acrylic-bg-color);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 1rem;
 }
 
 .list-controls-container .text-end {

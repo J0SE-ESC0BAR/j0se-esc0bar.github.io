@@ -21,10 +21,9 @@
 {{ $totalArticles := .TotalArticles | default 0 }}
 {{ $totalCategories := .TotalCategories | default 0 }}
 
-<div id="itemsContainer" class="list-summary row {{ .ViewContainerClass }}">
   {{/* Header con estadísticas y botones de vista (solo si ShowHeader es true) */}}
   {{ if $showHeader }}
-  <div class="container">
+  <div id="itemsContainer" class="container">
     <div class="d-flex flex-wrap justify-content-between align-items-center">
       <div class="posts-header">
         <h1 class="posts-title mb-1">Posts</h1>
@@ -107,10 +106,6 @@
     </a>
     {{ end }}
   </div>
-</div>
-
-
-
 {{/* Paginación */}}
 {{ if gt $paginator.TotalPages 1 }}
 <nav class="list-controls-container" aria-label="Paginación">

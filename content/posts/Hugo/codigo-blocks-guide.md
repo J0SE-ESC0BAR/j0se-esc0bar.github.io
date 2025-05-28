@@ -4,7 +4,7 @@ date: 2025-05-23T15:07:06-06:00
 description: "Aprende a usar los nuevos bloques de código con header y botón de copiar en Hugo"
 image: images/no-img.png
 draft: false
-type: post
+viewimg: true
 ---
 
 # Guía de Bloques de Código Mejorados

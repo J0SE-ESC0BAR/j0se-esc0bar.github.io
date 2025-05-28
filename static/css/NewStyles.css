@@ -1,0 +1,19 @@
+:root {
+  --bs-bg-deep: #000328; /* fondo exterior */
+  --bs-bg-mid:  #162f8b; /* panel central */
+}
+
+/* Estilos específicos para la página de inicio que usa la nueva estructura */
+body.new-index-styles {
+  background: var(--bs-bg-deep) !important; /* !important para anular base.css debido al orden de carga */
+  padding-top: 104px !important; /* !important para asegurar que el padding del header se aplique correctamente */
+}
+
+/* Estilos para el contenedor central, aplicable donde se use la clase .mid-wrapper */
+.mid-wrapper {
+  background: var(--bs-bg-mid);
+  max-width: 1000px;
+  padding: 0rem 3rem; /* Espacio interno */
+  padding-top: 5rem;
+  /* Las clases de Bootstrap como d-flex, flex-column, etc., se aplican directamente en el HTML */
+}

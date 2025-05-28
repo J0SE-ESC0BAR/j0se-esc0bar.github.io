@@ -1,6 +1,5 @@
 ---
-title: 'Mi proyecto'
-type: "page"
+title: 'Mis proyectos'
 description: "Algunos de los proyectos que e realizado los tengo aquí."
 image: images/Proyectos.png
 draft: false

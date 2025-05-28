@@ -5,7 +5,6 @@ description: 'SQL desde cero, comandos basicos de SQL para MySQL y SQL Server co
 image: images/Server.jpeg
 draft: false
 viewimg: true
-type: "post"
 ---
 
 En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.

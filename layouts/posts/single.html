@@ -1,23 +1,61 @@
 {{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}page-blog-single-post{{ end }}
-
+{{ define "body_classes" }}post single{{ end }}
 {{ define "main" }}
-<div class="intro">
   <div class="fila">
     <div class="col-md-6 intro-image">
-      <img class="img-fluid" 
-      src="{{ .Params.image | relURL }}"
-      alt="Imagen de {{ .Title }}" 
-      loading="lazy"/>   
-
+      
+      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
     </div>
     <div class="col-md-6 intro-content">
       <h1>{{ .Title }}</h1>
       <p>{{ .Description }}</p>
     </div>
   </div>
-</div>
-  <div class="content">
-    {{ .Content }}
-  </div>
+    <div class="container py-4">
+      {{ .Content }}
+    </div>
+    {{/* Navegación entre posts */}}
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-4">
+          {{ if .NextInSection }}
+            <a href="{{ .NextInSection.Permalink }}" class="btn btn-outline-primary">
+              <i class="bi bi-arrow-left"></i> Post Anterior
+              <small class="d-block text-muted">{{ .NextInSection.Title | truncate 30 }}</small>
+            </a>
+          {{ else }}
+            {{/* Si es el primer post (más nuevo), volver a la categoría/sección */}}
+            {{ if .Parent }}
+              <a href="{{ .Parent.RelPermalink }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Volver a {{ .Parent.Title }}
+              </a>
+            {{ else }}
+              <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Volver a Posts
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+        
+        <div class="col-md-4 text-center">
+          <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
+            <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
+          </a>
+        </div>
+        
+        <div class="col-md-4 text-end">
+          {{ if .PrevInSection }}
+            <a href="{{ .PrevInSection.Permalink }}" class="btn btn-outline-primary">
+              Post Siguiente <i class="bi bi-arrow-right"></i>
+              <small class="d-block text-muted">{{ .PrevInSection.Title | truncate 30 }}</small>
+            </a>
+          {{ else }}
+            {{/* Si es el último post (más antiguo) de la sección, ir a todos los posts */}}
+            <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
+              Ver todos los Posts <i class="bi bi-grid-3x3-gap"></i>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
 {{ end }}

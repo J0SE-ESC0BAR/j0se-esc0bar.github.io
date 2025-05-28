@@ -1,0 +1,19 @@
+{{/* Partial para mostrar la sección de últimos posts con título
+     Parámetros: .Context (el contexto actual) */}}
+
+{{ $context := .Context }}
+
+{{/* Obtener los últimos 4 posts individuales (excluyendo categorías/secciones) */}}
+{{ $allPosts := where $context.Site.RegularPages "Type" "posts" }}
+{{ $sortedPosts := $allPosts.ByDate.Reverse }}
+{{ $latestPosts := first 4 $sortedPosts }}
+
+{{/* Mostrar los posts usando el partial existente */}}
+{{ if gt (len $latestPosts) 0 }}
+  <h2>Últimos posts 🕒</h2>
+  {{ partial "posts_grid_list.html" (dict "Pages" $latestPosts "Context" $context "ViewContainerClass" "home-posts-container") }}
+{{ else }}
+<div class="container py-5 text-center">
+  <p>No hay posts disponibles.</p>
+</div>
+{{ end }}

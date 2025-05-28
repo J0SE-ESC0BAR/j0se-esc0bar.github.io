@@ -10,7 +10,6 @@ if (navToggle && navMenu) {
       "aria-label",
       abierto ? "Cerrar menú" : "Abrir menú"
     );
-
     // Si lo cerró manualmente, limpiamos el flag
     if (!abierto) localStorage.removeItem('menuShouldCloseOnLoad');
   });

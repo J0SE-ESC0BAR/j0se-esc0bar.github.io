@@ -4,7 +4,7 @@ date: 2025-05-23T15:07:06-06:00
 description: "Este post demuestra cómo usar los nuevos bloques de código con header y botón de copiar."
 image: images/no-img.png
 draft: false
-type: post
+viewimg: true
 ---
 
 # Bloques de Código Mejorados

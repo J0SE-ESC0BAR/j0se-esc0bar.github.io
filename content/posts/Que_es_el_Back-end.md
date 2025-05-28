@@ -4,7 +4,7 @@ date: 2022-12-26T12:03:56-06:00
 description: ''
 draft: false
 viewimg: false
-type: "post"
+image: images/back-end.png
 ---
 El backend, también conocido como "servidor", es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.
 

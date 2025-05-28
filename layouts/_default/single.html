@@ -1,7 +1,6 @@
 {{ define "header_css" }}{{ end }}
-{{ define "body_classes" }}default-single{{ end }}
+{{ define "body_classes" }}default single{{ end }}
 {{ define "main" }}
-<div class="intro">
   <div class="fila">
     <div class="col-md-6 intro-image">
       
@@ -12,11 +11,9 @@
       <p>{{ .Description }}</p>
     </div>
   </div>
-</div>
-    <div class="content">
+    <div class="container py-4">
       {{ .Content }}
     </div>
-
     {{/* Navegación entre posts */}}
     <div class="container py-4">
       <div class="row">
