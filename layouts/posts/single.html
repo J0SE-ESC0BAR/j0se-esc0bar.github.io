@@ -1,15 +1,16 @@
 {{ define "header_css" }}{{ end }}
 {{ define "body_classes" }}post single{{ end }}
 {{ define "main" }}
+<div class="intro container py-4">
   <div class="fila">
-    <div class="col-md-6 intro-image">
-      
-      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
-    </div>
     <div class="col-md-6 intro-content">
       <h1>{{ .Title }}</h1>
       <p>{{ .Description }}</p>
     </div>
+    <div class="col-md-6 intro-image">
+      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
+    </div>
+  </div>
   </div>
     <div class="container py-4">
       {{ .Content }}

@@ -2,14 +2,17 @@
 {{ define "body_classes" }}page about{{ end }}
 
 {{ define "main" }}
+<div class="intro">
   <div class="fila">
-    <div class="col-md-6 intro-image">
-      <img src="{{ .Params.image | relURL }}" class="img-fluid" alt="{{ .Title }}">
-    </div>
+    
     <div class="col-md-6 intro-content">
       <h1>{{ .Title }}</h1>
       <p>{{ .Description }}</p>
     </div>
+    <div class="col-md-6 intro-image">
+      <img src="{{ .Params.image | relURL }}" class="img-fluid" alt="{{ .Title }}">
+    </div>
   </div>
-      {{ .Content }}
+</div>
+{{ .Content }}
 {{ end }}

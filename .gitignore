@@ -6,3 +6,6 @@ public/index.html
 /.vscode
 /docs
 /.kilocode
+.prettierignore
+/node_modules
+test-featured-post.html

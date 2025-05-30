@@ -1,7 +1,7 @@
 ---
 title: 'Servicios'
 type: "page"
-draft: false
+draft: true
 viewimg: false
 ---
-Aquí puedes describir los servicios que ofreces.
+Proximamente

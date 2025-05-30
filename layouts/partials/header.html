@@ -54,10 +54,13 @@
         {{ $isActive = or $isActive (or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .)) }}
         {{ $isSectionActive = or $isSectionActive ($currentPage.HasMenuCurrent "main" .) }}
         
-        <li class="menu-item-{{ if .Identifier }}{{ .Identifier }}{{ else }}{{ .Name | urlize }}{{ end }}{{ if or $isActive $isSectionActive }} active{{ end }}">
-          <a class="nav-menu-link nav-link{{ if or $isActive $isSectionActive }} active{{ end }}"
-             href="{{ $menuURL }}"
-             {{ if or $isActive $isSectionActive }}aria-current="page"{{ end }}>
+        {{ $isDisabled := .Params.disabled | default false }}
+        
+        <li class="menu-item-{{ if .Identifier }}{{ .Identifier }}{{ else }}{{ .Name | urlize }}{{ end }}{{ if or $isActive $isSectionActive }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}">
+          <a class="nav-menu-link nav-link{{ if or $isActive $isSectionActive }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}"
+             href="{{ if not $isDisabled }}{{ $menuURL }}{{ else }}#{{ end }}"
+             {{ if or $isActive $isSectionActive }}aria-current="page"{{ end }}
+             {{ if $isDisabled }}tabindex="-1" aria-disabled="true"{{ end }}>
             {{ .Name }}
           </a>
         </li>

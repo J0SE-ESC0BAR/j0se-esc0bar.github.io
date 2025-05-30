@@ -1,7 +1,7 @@
 ---
-title: 'Sobre Mí' # Más formal
+title: 'Sobre Mí' 
 draft: false
-viewimg: true # Recomendado si usas una imagen profesional
+viewimg: true
 description: "Perfil profesional de José Alfonso Escobar Mejía, desarrollador de software con enfoque en .NET, C# y soluciones web."
 image: images/JoseEscobar.HEIC
 type: "page"
@@ -55,11 +55,5 @@ Estoy abierto a nuevas oportunidades y colaboraciones. Puedes contactarme a trav
 
 *   **Email:** [jose@jaem.dev](mailto:jose@jaem.dev)
 *   **LinkedIn:** [José Alfonso Escobar Mejía](https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/)
-*   **GitHub:** [j0se-esc0bar](https://github.com/j0se-esc0bar) (Aquí puedes ver algunos de mis proyectos)
-*   **Portafolio Web:** [https://www.jaem.dev](https://www.jaem.dev)
-
-## Currículum Vitae
-
-Para un resumen detallado de mi perfil profesional, puedes descargar mi CV:
-
-*   [Descargar CV (PDF)](/CV_José_Escobar.pdf)
+*   **GitHub:** [j0se-esc0bar](https://github.com/j0se-esc0bar)
+*   **Portafolio Web:** [https://www.jaem.dev/projects](https://www.jaem.dev/projects)

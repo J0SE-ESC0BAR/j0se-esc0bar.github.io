@@ -38,6 +38,8 @@ pygmentsUseClasses = true
     name  = "Servicios"
     url   = "/services/"
     weight = 20
+    [menu.main.params]
+      disabled = true
   [[menu.main]]
     name  = "Posts"
     url   = "/posts/"
@@ -74,9 +76,8 @@ pygmentsUseClasses = true
 
   # Ordenar por fecha descendente (más nuevo primero)
   defaultContentOrder = "-date"
-
   # Post destacado en la página de inicio
-  featuredPost = "posts/dotnet/windowsforms/"  # Ruta relativa al post destacado
+  featuredPost = "posts/Dotnet/WindowsForms/"  # Ruta relativa al post destacado
   showFeaturedPost = true  # true para mostrar, false para ocultar
 
   # Hojas de estilo adicionales (Bootstrap y highlight.js)

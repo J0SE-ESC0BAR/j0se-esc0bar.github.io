@@ -545,67 +545,35 @@ body.list-view .list-item p {
 }
 */
 
-/* Estilos para el modo lista usando Bootstrap list-group */
-body.list-view #itemsContainer .list-group-item {
-    background-color: var(--card-bg-color);
-    color: var(--card-text-color);
-    border-color: rgba(255, 255, 255, 0.1);
-    transition: transform .2s, box-shadow .2s;
-    margin-bottom: 1rem;
-    border-radius: 0.75rem;
-}
-
-body.list-view #itemsContainer .list-group-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
-    background-color: rgba(10, 10, 10, 0.7);
-}
-
-body.list-view #itemsContainer .list-group-item img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-}
-
-/* Ocultar elementos según el modo de vista */
-body.list-view .grid-item {
-    display: none !important;
-}
-
-body:not(.list-view) #lista-container {
-    display: none !important;
-}
-
-.post-link-wrapper,
-.post-link-wrapper:hover,
-.post-link-wrapper:focus {
-    text-decoration: none;
-    color: inherit;
-}
-
 /* Estilos para la vista de lista usando tarjetas horizontales */
-#listView .card {
+#listView .card,
+.featured-post-container #featuredListView .card {
   background-color: var(--card-bg-color);
   color: var(--card-text-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   border: none;
+  animation: slideIn 0.3s ease-in-out; /* Asegurar que la animación también se aplique */
 }
 
-#listView .card:hover {
+#listView .card:hover,
+.featured-post-container #featuredListView .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 /* Tamaño personalizado para contenedor de imágenes en vista lista */
-#listView .ratio.ratio-16x9 {
+#listView .ratio.ratio-16x9,
+.featured-post-container #featuredListView .ratio.ratio-16x9 {
   flex: 0 0 25rem;
 }
 
-#listView .card-body {
+#listView .card-body,
+.featured-post-container #featuredListView .card-body {
   padding: 1.25rem;
 }
 
-#listView .btn-primary {
+#listView .btn-primary,
+.featured-post-container #featuredListView .btn-primary {
   background-color: var(--highlight-color);
   border-color: var(--highlight-color);
 }
@@ -613,64 +581,68 @@ body:not(.list-view) #lista-container {
 /* Ajustes responsivos para la vista de lista */
 /* Reglas específicas para mantener el layout horizontal en móviles */
 @media (max-width: 768px) and (min-width: 576px) {
-  #listView .card {
+  #listView .card,
+  .featured-post-container #featuredListView .card {
     flex-direction: row !important;
   }
   
-  /* Ajustar tamaño de imagen para que sea más pequeña pero mantenga proporción */
-  #listView .ratio {
+  #listView .ratio,
+  .featured-post-container #featuredListView .ratio {
     flex: 0 0 160px !important;
     width: 160px !important;
   }
   
-  /* Mantener bordes redondeados solo en lado izquierdo */
-  #listView .ratio .rounded-start {
+  #listView .ratio .rounded-start,
+  .featured-post-container #featuredListView .ratio .rounded-start {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
   
-  /* Reducir padding en dispositivos pequeños */
-  #listView .card-body {
+  #listView .card-body,
+  .featured-post-container #featuredListView .card-body {
     padding: 0.75rem;
   }
 }
 
-/* Para dispositivos muy pequeños (menos de 576px), forzar vista de cuadrícula */
-@media (max-width: 575.98px) {
-  /* Forzar modo cuadrícula */
-  body {
-    /* Resetear cualquier clase de vista de lista que se haya aplicado */
-    &.list-view {
-      .list-view {
-        display: none !important;
-      }
-    }
-  }
-  
-  /* Ocultar botones de cambio de vista */
-  .toggle-container {
+/* Estilos específicos para #listView y #gridView (control de visibilidad global) */
+body:not(.list-view) #listView {
+  display: none !important;
+}
+
+body.list-view #gridView {
+  display: none !important;
+}
+
+/* Featured Post Section - Estilos específicos */
+.featured-post-container {
+  margin-bottom: 2rem;
+}
+
+/* Por defecto (pantallas > 576px): El post destacado SIEMPRE en vista de lista */
+.featured-post-container #featuredListView {
+  display: flex !important;
+}
+.featured-post-container #featuredGridView {
+  display: none !important;
+}
+
+/* En pantallas ≤ 576px (MÓVIL): El post destacado SIEMPRE en vista de cuadrícula */
+@media (max-width: 576px) {
+  .featured-post-container #featuredListView {
     display: none !important;
   }
-  
-  /* Mostrar siempre la vista de cuadrícula */
-  #gridView {
+  .featured-post-container #featuredGridView {
     display: block !important;
   }
   
-  /* Ocultar siempre la vista de lista */
-  #listView {
-    display: none !important;
+  /* Ajustes específicos para la cuadrícula del destacado en móvil */
+  .featured-post-container #featuredGridView .row {
+    margin: 0;
   }
-  
-  /* Mostrar elementos de la cuadrícula */
-  .grid-item {
-    display: block !important;
-  }
-  
-  /* Ajustar tamaño de las cards para que ocupen todo el ancho */
-  #gridView .col {
+  .featured-post-container #featuredGridView .col {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 0;
   }
 }
 
