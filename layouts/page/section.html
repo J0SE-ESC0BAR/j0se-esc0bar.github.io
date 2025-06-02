@@ -18,7 +18,7 @@
   {{ $allItems := $subSections | union $directArticles }}
 
   {{/* Diseño especial para la página principal de Posts */}}
-    <div class="container">
+    <div class="">
       <div class="d-flex flex-wrap justify-content-between align-items-center">
         <div class="posts-header">
           <h1 class="posts-title mb-1">{{ .Title }}</h1>
@@ -47,7 +47,7 @@
       </div>
     </div>
 {{/* Mostrar el contenido de la página de sección (ej. _index.md) */}}
-  <div class="container section-content py-3">
+  <div class="section-content py-3">
     {{ with .Description }}
       <p class="lead">{{ . }}</p>
     {{ end }}
@@ -99,7 +99,7 @@
   {{ end }}
 
   {{/* Navegación de sections - Botón para volver a la raíz */}}
-  <div class="container py-4">
+  <div class="py-4">
     <div class="row">
       <div class="col-md-4">
         {{ if eq .Section "posts" }}
