@@ -2,7 +2,7 @@
 
 {{ define "main" }}
   {{/* Diseño especial para la página principal de Projects */}}
-    <div class="container">
+    <div class="">
       <div class="d-flex flex-wrap justify-content-between align-items-center">
         <div class="projects-header">
           <h1 class="projects-title mb-1">{{ .Title }}</h1>
@@ -82,7 +82,7 @@
       {{/* Se añade ViewContainerClass para que el JS del toggle apunte al contenedor correcto */}}
     
   {{ else }}
-  <div class="container py-5 text-center">
+  <div class="py-5 text-center">
     <p>No hay contenido disponible en esta sección.</p>
   </div>
   {{ end }}
