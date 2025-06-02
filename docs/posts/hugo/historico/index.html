@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Historico Sección “Posts”</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  
+  
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+  
+
+  
+  
+    
+    <meta name="description" content="Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.">
+    
+    
+    <meta property="og:title" content="Historico Sección “Posts”">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaem.dev/posts/hugo/historico/">
+    <meta property="og:image" content="https://jaem.dev/images/no-img.png">
+    <meta property="og:description" content="Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.">
+    
+    
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:site" content="@JAEM_Developer">
+      <meta name="twitter:creator" content="@JAEM_Developer">
+    
+  
+  
+  
+  <script>
+     
+    document.documentElement.classList.add('preload');
+    
+    (function() {
+      const pref = localStorage.getItem('vistaPreferida') || 'list';  
+      
+      
+      if (pref === 'grid') {
+        document.documentElement.classList.add('grid-view');
+        document.documentElement.classList.remove('list-view');
+        document.body.classList.add('grid-view');
+        document.body.classList.remove('list-view');
+      } else {
+        document.documentElement.classList.add('list-view');
+        document.documentElement.classList.remove('grid-view');
+        document.body.classList.add('list-view');
+        document.body.classList.remove('grid-view');
+      }
+    })();
+  </script>
+</head>
+
+
+
+
+<body class="d-flex flex-column min-vh-100 post single">
+  
+  
+  <script>
+  (function () {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const menu = document.querySelector(".nav-menu");
+      if (!menu) return;
+  
+       
+      menu.classList.add("nav-menu_visible", "no-transition");
+      void menu.offsetHeight;                 
+      menu.classList.remove("no-transition"); 
+  
+       
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {         
+          menu.classList.remove("nav-menu_visible");
+          localStorage.removeItem('menuShouldCloseOnLoad');
+        });
+      });
+    });
+  })();
+  </script>
+<header class='header'>
+  <nav class="nav">
+    
+    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-proyectos">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/projects/"
+             
+             >
+            Proyectos
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-posts">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/posts/"
+             
+             >
+            Posts
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-servicios disabled">
+          <a class="nav-menu-link nav-link disabled"
+             href="#"
+             
+             tabindex="-1" aria-disabled="true">
+            Servicios
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-acerca">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/about/"
+             
+             >
+            Acerca
+          </a>
+        </li>
+      
+    </ul>
+    
+  </nav>
+</header>
+  
+  
+  
+    
+    
+    <main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0">
+      <div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white">
+        
+<div class="intro">
+  <div class="fila">
+    <div class="col-md-6 intro-content">
+      <h1>Historico Sección “Posts”</h1>
+      <p>Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.</p>
+    </div>
+    <div class="col-md-6 intro-image">
+      <img class="img-fluid" src="https://jaem.dev/images/no-img.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Historico Sección “Posts”' />
+    </div>
+  </div>
+  </div>
+    <div class="py-4">
+      <h3 id="resumen-de-la-estructura-y-lógica-de-la-sección-posts">Resumen de la Estructura y Lógica de la Sección &ldquo;Posts&rdquo;</h3>
+<p>El objetivo principal de la página <code>/posts/</code> es mostrar una lista combinada de:</p>
+<ol>
+<li><strong>Categorías de Posts</strong>: Son subdirectorios dentro de <code>content/posts/</code> (ej: <code>content/posts/Redes/</code>, <code>content/posts/Java/</code>) que contienen sus propios archivos <code>_index.md</code>.</li>
+<li><strong>Artículos Sin Categoría</strong>: Son archivos de artículos individuales (ej: <code>content/posts/mi_aprendizaje.md</code>) que residen directamente en <code>content/posts/</code> y no dentro de un subdirectorio de categoría.</li>
+</ol>
+<p>Esta lista combinada se ordena cronológicamente de más reciente a más antiguo.</p>
+<h4 id="1-archivo-principal-de-la-sección-layoutspostsroothtml">1. Archivo Principal de la Sección: <a href="layouts/posts/root.html:1"><code>layouts/posts/root.html</code></a></h4>
+<p>Esta es la plantilla que Hugo usa cuando alguien visita la URL <code>/posts/</code>. Su lógica principal es:</p>
+<ul>
+<li>
+<p><strong>Identificar el Contenido a Mostrar</strong>:</p>
+<ul>
+<li><strong>Categorías (<code>$categories</code>)</strong>: Se obtienen todas las subsecciones directas de la página actual (que es <code>/posts/</code>). En Hugo, <code>.Sections</code> en una página de sección lista sus subsecciones inmediatas.
+<div class="highlight">
+  <div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">GO-HTML-TEMPLATE</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.closest('.code-block').querySelector('code');
+        if (codeBlock) {
+          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+            alert('Code copied to clipboard!');
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      }
+    </script>
+    </div>
+    <pre tabindex="0" class="chroma">
+      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $categories := .Sections }}</code>
+    </pre>
+  </div>
+</div></li>
+<li><strong>Artículos Sin Categoría (<code>$uncategorizedArticles</code>)</strong>: Se buscan todas las páginas regulares (<code>.RegularPages</code>) que pertenecen directamente a la sección &ldquo;posts&rdquo; (es decir, no están en sub-subsecciones).
+<div class="highlight">
+  <div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">GO-HTML-TEMPLATE</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.closest('.code-block').querySelector('code');
+        if (codeBlock) {
+          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+            alert('Code copied to clipboard!');
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      }
+    </script>
+    </div>
+    <pre tabindex="0" class="chroma">
+      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $uncategorizedArticles := where .RegularPages &#34;Section&#34; &#34;posts&#34; }}</code>
+    </pre>
+  </div>
+</div></li>
+<li><strong>Combinar Listas (<code>$allItems</code>)</strong>: Las categorías y los artículos sin categoría se unen en una sola lista.
+<div class="highlight">
+  <div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">GO-HTML-TEMPLATE</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.closest('.code-block').querySelector('code');
+        if (codeBlock) {
+          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+            alert('Code copied to clipboard!');
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      }
+    </script>
+    </div>
+    <pre tabindex="0" class="chroma">
+      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $allItems := $categories | union $uncategorizedArticles }}</code>
+    </pre>
+  </div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>Ordenamiento por Fecha Efectiva</strong>:
+Para asegurar un orden cronológico correcto donde las categorías reflejen la &ldquo;frescura&rdquo; de su contenido:</p>
+<ul>
+<li>Se crea una nueva lista (<code>$itemsWithDates</code>) donde cada elemento es un diccionario que contiene el ítem original (<code>item</code>) y su <code>effectiveDate</code>.</li>
+<li><strong>Para Artículos</strong>: <code>effectiveDate</code> es simplemente la fecha de publicación del artículo (<code>.Date</code>).</li>
+<li><strong>Para Categorías</strong>: <code>effectiveDate</code> se determina por la fecha del artículo más reciente publicado <em>dentro</em> de esa categoría. Si una categoría no tiene artículos, se usa su propia fecha (<code>.Date</code> del <code>_index.md</code> de la categoría).
+<div class="highlight">
+  <div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">GO-HTML-TEMPLATE</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.closest('.code-block').querySelector('code');
+        if (codeBlock) {
+          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+            alert('Code copied to clipboard!');
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      }
+    </script>
+    </div>
+    <pre tabindex="0" class="chroma">
+      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ range $allItems }}
+  {{ $effectiveDate := .Date }}
+  {{ if .IsSection }}
+    {{ if .Pages }}
+      {{ $latestPage := index (sort .Pages &#34;Date&#34; &#34;desc&#34;) 0 }}
+      {{ $effectiveDate = $latestPage.Date }}
+    {{ end }}
+  {{ end }}
+  {{/* ... se añade a $itemsWithDates ... */}}
+{{ end }}</code>
+    </pre>
+  </div>
+</div></li>
+<li>La lista <code>$itemsWithDates</code> se ordena por <code>effectiveDate</code> en orden descendente (más reciente primero).</li>
+<li>Finalmente, se extraen los ítems ordenados de nuevo a la variable <code>$allItems</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paginación y Renderizado</strong>:</p>
+<ul>
+<li>La lista final y ordenada <code>$allItems</code> se pasa al sistema de paginación de Hugo.</li>
+<li>Luego, se llama al partial <a href="layouts/partials/posts_grid_list.html:1"><code>layouts/partials/posts_grid_list.html</code></a> para mostrar los ítems de la página actual.
+<div class="highlight">
+  <div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">GO-HTML-TEMPLATE</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
+    <script>
+      function copyToClipboard(button) {
+        const codeBlock = button.closest('.code-block').querySelector('code');
+        if (codeBlock) {
+          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+            alert('Code copied to clipboard!');
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      }
+    </script>
+    </div>
+    <pre tabindex="0" class="chroma">
+      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $paginator := .Paginate $allItems }}
+{{ partial &#34;posts_grid_list.html&#34; (dict &#34;Pages&#34; $paginator.Pages &#34;Context&#34; . &#34;ViewContainerClass&#34; &#34;my-3&#34;) }}</code>
+    </pre>
+  </div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-partial-de-visualización-layoutspartialsposts_grid_listhtml">2. Partial de Visualización: <a href="layouts/partials/posts_grid_list.html:1"><code>layouts/partials/posts_grid_list.html</code></a></h4>
+<p>Este archivo es responsable de tomar una lista de ítems (que pueden ser categorías o artículos) y mostrarlos.</p>
+<ul>
+<li><strong>Iteración</strong>: Recorre la lista de ítems que le pasó <code>root.html</code>.</li>
+<li><strong>Diferenciación de Contenido</strong>:
+<ul>
+<li>Usa <code>{{ if .IsSection }}</code> para verificar si el ítem actual es una categoría.
+<ul>
+<li><strong>Si es Categoría</strong>: Muestra el título de la categoría, su imagen (si la tiene), una descripción breve, y un contador de cuántos artículos contiene (<code>len .Pages</code>).</li>
+</ul>
+</li>
+<li><code>{{ else }}</code> (si no es una sección, es un artículo).
+<ul>
+<li><strong>Si es Artículo</strong>: Muestra el título del artículo, su imagen, fecha de publicación y un resumen o descripción.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Formatos de Vista</strong>: El partial tiene la estructura HTML para dos vistas: &ldquo;Grid&rdquo; (cuadrícula) y &ldquo;List&rdquo; (lista). Un script de JavaScript (no definido en este partial, sino globalmente) se encarga de alternar la visibilidad entre estas dos vistas.</li>
+<li><strong>Paginación</strong>: Si hay más ítems de los que caben en una página, muestra los controles de navegación de la paginación (Anterior, Siguiente, números de página).</li>
+</ul>
+<h4 id="estructura-de-contenido-esperada-contentposts">Estructura de Contenido Esperada (<code>content/posts/</code>)</h4>
+<p>Para que esta lógica funcione como se describe, la estructura de tus archivos en <code>content/posts/</code> debería ser:</p>
+<ul>
+<li><code>content/posts/_index.md</code>: Define la página principal de la sección <code>/posts/</code>.</li>
+<li><code>content/posts/articulo-general.md</code>: Un artículo que aparecerá en la lista principal porque no está en una categoría.</li>
+<li><code>content/posts/nombre-categoria/</code>: Un directorio para una categoría.
+<ul>
+<li><code>content/posts/nombre-categoria/_index.md</code>: Define la página de la categoría (ej. <code>/posts/nombre-categoria/</code>). Aquí puedes poner una descripción e imagen para la categoría.</li>
+<li><code>content/posts/nombre-categoria/articulo-dentro-de-categoria.md</code>: Un artículo que pertenece a &ldquo;nombre-categoria&rdquo;. <strong>Este tipo de artículo NO se mostrará en la lista principal de <code>/posts/</code> según la lógica actual</strong>, solo se contaría para la fecha efectiva de la categoría y se listaría si visitas la página de la categoría directamente.</li>
+</ul>
+</li>
+</ul>
+<h4 id="en-resumen-para-un-recién-llegado">En Resumen para un Recién Llegado:</h4>
+<p>Cuando visitas <code>/posts/</code>:</p>
+<ol>
+<li>El sistema recopila todas las <strong>carpetas de categorías</strong> (como &ldquo;Redes&rdquo;, &ldquo;Java&rdquo;) y todos los <strong>artículos sueltos</strong> que no están en ninguna categoría.</li>
+<li>Luego, organiza esta mezcla. Los artículos se ordenan por su fecha. Las categorías se &ldquo;fechan&rdquo; según su artículo más reciente. Todo se pone en una línea de tiempo, del más nuevo al más viejo.</li>
+<li>Esta lista ordenada se presenta en la página, permitiéndote ver tanto los grandes temas (categorías) como los artículos generales, con lo más reciente o actualizado apareciendo primero. Los artículos que están <em>dentro</em> de las categorías no se listan individualmente en esta vista principal, solo las categorías en sí.</li>
+</ol>
+<p>Espero que este resumen detallado te sea útil.</p>
+
+    </div>
+    
+    <div class="py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 text-center mb-3">
+          
+            <a href="https://jaem.dev/posts/hugo/codigo-blocks-guide/" class="btn btn-outline-primary btn-lg w-100">
+              <i class="bi bi-arrow-left"></i> Post Anterior
+              <small class="d-block text-light">Guía de Bloques de Código …</small>
+            </a>
+          
+        </div>
+        
+        <div class="col-12 col-md-4 text-center mb-3">
+          <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+            <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
+          </a>
+        </div>
+        
+        <div class="col-12 col-md-4 text-center mb-3">
+          
+            
+            <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+              Ver todos los Posts <i class="bi bi-grid-3x3-gap"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </main>
+  
+  
+    
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+
+
+<div class="box-icons">
+  
+<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-twitter" aria-hidden="true"></i>
+</a>
+
+<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-github" aria-hidden="true"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-linkedin" aria-hidden="true"></i>
+</a>
+
+</div>
+
+</section>
+
+
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+        
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2025-06-01 23:17:25.3194362 -0600 CST m=&#43;0.320211801">2025</time> - Diseño Web realizado por 
+  </div>
+  
+</footer>
+
+
+  
+  
+  
+  
+    <script src="https://jaem.dev/js/scripts.js"></script>
+  
+  
+  
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>¿Que es el Back End?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  
+  
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+  
+
+  
+  
+    
+    
+    
+    
+    <meta property="og:title" content="¿Que es el Back End?">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaem.dev/posts/que_es_el_back-end/">
+    <meta property="og:image" content="https://jaem.dev/images/back-end.png">
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:site" content="@JAEM_Developer">
+      <meta name="twitter:creator" content="@JAEM_Developer">
+    
+  
+  
+  
+  <script>
+     
+    document.documentElement.classList.add('preload');
+    
+    (function() {
+      const pref = localStorage.getItem('vistaPreferida') || 'list';  
+      
+      
+      if (pref === 'grid') {
+        document.documentElement.classList.add('grid-view');
+        document.documentElement.classList.remove('list-view');
+        document.body.classList.add('grid-view');
+        document.body.classList.remove('list-view');
+      } else {
+        document.documentElement.classList.add('list-view');
+        document.documentElement.classList.remove('grid-view');
+        document.body.classList.add('list-view');
+        document.body.classList.remove('grid-view');
+      }
+    })();
+  </script>
+</head>
+
+
+
+
+<body class="d-flex flex-column min-vh-100 post single">
+  
+  
+  <script>
+  (function () {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const menu = document.querySelector(".nav-menu");
+      if (!menu) return;
+  
+       
+      menu.classList.add("nav-menu_visible", "no-transition");
+      void menu.offsetHeight;                 
+      menu.classList.remove("no-transition"); 
+  
+       
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {         
+          menu.classList.remove("nav-menu_visible");
+          localStorage.removeItem('menuShouldCloseOnLoad');
+        });
+      });
+    });
+  })();
+  </script>
+<header class='header'>
+  <nav class="nav">
+    
+    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-proyectos">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/projects/"
+             
+             >
+            Proyectos
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-posts">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/posts/"
+             
+             >
+            Posts
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-servicios disabled">
+          <a class="nav-menu-link nav-link disabled"
+             href="#"
+             
+             tabindex="-1" aria-disabled="true">
+            Servicios
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-acerca">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/about/"
+             
+             >
+            Acerca
+          </a>
+        </li>
+      
+    </ul>
+    
+  </nav>
+</header>
+  
+  
+  
+    
+    
+    <main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0">
+      <div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white">
+        
+<div class="intro">
+  <div class="fila">
+    <div class="col-md-6 intro-content">
+      <h1>¿Que es el Back End?</h1>
+      <p></p>
+    </div>
+    <div class="col-md-6 intro-image">
+      <img class="img-fluid" src="https://jaem.dev/images/back-end.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de ¿Que es el Back End?' />
+    </div>
+  </div>
+  </div>
+    <div class="py-4">
+      <p>El backend, también conocido como &ldquo;servidor&rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.</p>
+<p>El backend suele ser desarrollado utilizando lenguajes de programación como Python, Java o PHP y se ejecuta en servidores de aplicaciones o servidores web. Es común que el backend tenga una interfaz de programación de aplicaciones (API) que permite que otros sistemas o aplicaciones accedan a sus funcionalidades y datos de manera controlada.</p>
+<p>El backend es una parte esencial de muchas aplicaciones y sitios web modernos, ya que permite realizar tareas complejas de manera rápida y segura sin tener que confiar en el equipo del usuario final. Por ejemplo, si una aplicación web necesita acceder a una base de datos para obtener información, el backend se encargará de realizar la consulta y devolver los datos de manera organizada y estructurada, mientras que el frontend (la parte de la aplicación que el usuario final ve) se encargará de presentar esta información de manera atractiva y fácil de usar.</p>
+<p><strong>¿Cuales son los mejores lenguajes de programacion para el back-end y sus frameworks?</strong></p>
+<p>Existen muchos lenguajes de programación y frameworks que se pueden utilizar para desarrollar el backend de una aplicación o sitio web. Algunos de los más populares son:</p>
+<blockquote>
+<blockquote>
+<p>Python: es un lenguaje de programación de alto nivel que se utiliza ampliamente en el backend. Cuenta con una gran cantidad de bibliotecas y frameworks que lo hacen muy versátil y adecuado para muchos tipos de proyectos. Algunos de los frameworks más populares para Python son Django y Flask.</p></blockquote>
+<blockquote>
+<p>Java: es un lenguaje de programación orientado a objetos que se ha utilizado durante muchos años en el desarrollo de backend. Cuenta con una gran cantidad de frameworks y librerías disponibles, como Spring y Hibernate.</p></blockquote>
+<blockquote>
+<p>PHP: es un lenguaje de programación diseñado específicamente para el desarrollo de sitios web. Aunque es más comúnmente utilizado en el desarrollo del frontend, también se puede utilizar para el backend. Algunos de los frameworks más populares para PHP son Laravel y CodeIgniter.</p></blockquote>
+<blockquote>
+<p>Node.js: es un framework basado en JavaScript que se ejecuta en el lado del servidor. Se ha vuelto muy popular en los últimos años debido a su facilidad de uso y la capacidad de construir aplicaciones de backend y frontend con el mismo lenguaje de programación. Algunos de los frameworks más populares para Node.js son Express y Koa.</p></blockquote></blockquote>
+<p>En general, cualquiera de estos lenguajes y frameworks puede ser adecuado para el backend de una aplicación o sitio web, dependiendo de sus necesidades y requisitos específicos. Al elegir un lenguaje de programación y framework para el backend, es importante considerar factores como la facilidad de uso, la velocidad de ejecución, la escalabilidad y la disponibilidad de recursos de aprendizaje y soporte.</p>
+
+    </div>
+    
+    <div class="py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4 text-center mb-3">
+          
+            <a href="https://jaem.dev/posts/gpt3_es_malo_jugar/" class="btn btn-outline-primary btn-lg w-100">
+              <i class="bi bi-arrow-left"></i> Post Anterior
+              <small class="d-block text-light">GPT3 Responde: ¿Es malo jugar?</small>
+            </a>
+          
+        </div>
+        
+        <div class="col-12 col-md-4 text-center mb-3">
+          <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+            <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
+          </a>
+        </div>
+        
+        <div class="col-12 col-md-4 text-center mb-3">
+          
+            <a href="https://jaem.dev/posts/sql_basico/" class="btn btn-outline-primary btn-lg w-100">
+              Post Siguiente <i class="bi bi-arrow-right"></i>
+              <small class="d-block text-light">SQL Basico</small>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </main>
+  
+  
+    
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+
+
+<div class="box-icons">
+  
+<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-twitter" aria-hidden="true"></i>
+</a>
+
+<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-github" aria-hidden="true"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-linkedin" aria-hidden="true"></i>
+</a>
+
+</div>
+
+</section>
+
+
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+        
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2025-06-01 23:17:25.4180803 -0600 CST m=&#43;0.418855901">2025</time> - Diseño Web realizado por 
+  </div>
+  
+</footer>
+
+
+  
+  
+  
+  
+    <script src="https://jaem.dev/js/scripts.js"></script>
+  
+  
+  
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+</html>

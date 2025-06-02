@@ -1,0 +1,167 @@
+:root {
+  --bs-bg-deep: #000328; /* fondo exterior */
+  --bs-bg-mid:  #002d6fbf; /* panel central */
+}
+
+/* Estilos específicos para la página de inicio que usa la nueva estructura */
+body.new-index-styles {
+  background: var(--bs-bg-deep) !important; /* !important para anular base.css debido al orden de carga */
+  padding-top: 104px !important; /* !important para asegurar que el padding del header se aplique correctamente */
+}
+
+/* Estilos para el contenedor central, aplicable donde se use la clase .mid-wrapper */
+.mid-wrapper {
+  background: var(--bs-bg-mid);
+  max-width: 90rem; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 0rem 3rem; /* Espacio interno */
+  padding-top: 5rem;
+  /* Las clases de Bootstrap como d-flex, flex-column, etc., se aplican directamente en el HTML */
+}
+
+/* ===== ESTILOS PARA PÁGINA 404 ===== */
+.error-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.error-content {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.error-code {
+  font-weight: 900;
+  background: linear-gradient(45deg, var(--primary-color, #007bff), #0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.error-title {
+  color: var(--bs-dark, #212529);
+  font-weight: 600;
+}
+
+.error-description {
+  color: var(--bs-secondary, #6c757d);
+  font-size: 1.1rem;
+}
+
+.error-actions .btn {
+  transition: all 0.3s ease;
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+}
+
+.error-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quick-links .list-group-item {
+  transition: all 0.3s ease;
+  border-radius: 10px !important;
+  margin: 0 0.25rem;
+}
+
+.quick-links .list-group-item:hover {
+  background-color: var(--bs-primary, #007bff) !important;
+  color: white !important;
+  transform: translateY(-2px);
+}
+
+.quick-links .list-group-item:hover i {
+  color: white !important;
+}
+
+.search-suggestions .badge {
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+}
+
+.search-suggestions .badge:hover {
+  background-color: var(--bs-primary, #007bff) !important;
+  border-color: var(--bs-primary, #007bff);
+  transform: scale(1.05);
+}
+
+.search-suggestions .badge:hover a {
+  color: white !important;
+}
+
+.error-icon i {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for 404 page */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 4rem !important;
+  }
+  
+  .error-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .error-content {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .error-actions .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .quick-links .list-group {
+    flex-direction: column !important;
+  }
+  
+  .quick-links .list-group-item {
+    margin: 0.25rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .error-section {
+    min-height: 60vh;
+    padding: 1rem 0;
+  }
+  
+  .error-icon i {
+    font-size: 3rem !important;
+  }
+  
+  .search-suggestions {
+    margin-top: 2rem !important;
+  }
+
+  .mid-wrapper {
+    padding: 0rem 1rem;
+    padding-top: 3rem;
+  }
+}
