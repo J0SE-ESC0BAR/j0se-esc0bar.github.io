@@ -18,7 +18,7 @@
   {{ $allItems := $subSections | union $directArticles }}
 
   {{/* Diseño especial para la página principal de Posts */}}
-    <div class="intro container py-4">
+    <div class="intro px-4">
       <div class="fila">
     <div class="col-md-6 intro-content">
       <div class="posts-header">
@@ -46,7 +46,7 @@
     </div>
   </div>
     </div>
-    <div class="container py-4">
+    <div class="">
       {{ .Content }}
     </div>
   {{/* Crear una lista con fechas efectivas para ordenamiento */}}
@@ -93,7 +93,7 @@
     ) }}
   {{ end }}  {{/* Navegación de sections - Botón para volver a la raíz */}}
   {{ if eq .Section "posts" }}
-  <div class="container py-4">
+  <div class="py-4">
     <div class="row">
       <div class="col-md-4">
         <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
@@ -103,7 +103,7 @@
     </div>
   </div>
   {{ else if eq .Section "projects" }}
-  <div class="container py-4">
+  <div class="py-4">
     <div class="row">
       <div class="col-md-4">
         <a href="{{ "/projects/" | relURL }}" class="btn btn-outline-secondary">
@@ -113,7 +113,7 @@
     </div>
   </div>
   {{ else }}
-  <div class="container py-4">
+  <div class="py-4">
     <div class="row">
       <div class="col-md-4">
         <a href="{{ "/" | relURL }}" class="btn btn-outline-secondary">
