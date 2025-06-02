@@ -90,6 +90,50 @@
     width: 100% !important;
     height: 150px !important;
   }
+  .mid-wrapper {
+    padding: 0rem 0.5rem;
+    padding-top: 3rem;
+  }
+  .intro-about{
+    padding: 0.5rem 0rem;
+    flex-basis: 100%;
+    max-width: 100%;
+  
+  }
+
+  /* Added for about page layout on very small screens */
+  .intro .fila {
+    display: flex; /* Asegura el contexto flex */
+    flex-direction: column-reverse; /* Apila los elementos e invierte el orden (imagen arriba) */
+  }
+
+  .intro .fila .intro-content,
+  .intro .fila .about-img {
+    width: 100%; /* Asegura que ambos elementos ocupen el ancho completo */
+    max-width: 100%; /* Sobrescribe cualquier max-width de las clases col-md-6 */
+    flex-basis: auto; /* Permite que el tamaño se base en el contenido o el ancho */
+    margin-bottom: 1rem; /* Añade un pequeño margen inferior para separación */
+  }
+  
+
+  .intro .fila .about-img {
+    width: 80%; /* Reducimos el ancho del contenedor de la imagen */
+    max-width: 250px; /* Un máximo para que no sea demasiado grande en proporción */
+    margin-left: auto; /* Centramos el contenedor */
+    margin-right: auto; /* Centramos el contenedor */
+    margin-bottom: 1rem; /* Mantenemos el margen inferior para separación */
+    flex-basis: auto; /* Permite que el tamaño se base en el contenido o el ancho */
+  }
+
+  .intro .fila .about-img img {
+    display: block; /* Asegura que la imagen se comporte como bloque para centrado si es necesario */
+    width: 100%; /* La imagen ocupa el 100% de su contenedor .about-img */
+    height: auto; /* Mantiene la proporción */
+  }
+
+  .intro .fila .intro-content { /* El contenido de texto estará abajo */
+    margin-bottom: 0; /* Elimina el margen inferior del último elemento */
+  }
 }
 
 @media (max-width: 767.98px) { /* Breakpoint sm de Bootstrap */
@@ -99,7 +143,7 @@
     }
     .list-item img {
         width: 100%; /* La imagen ocupa todo el ancho disponible */
-        height: auto; /* Altura automática para mantener la proporción */
+        
         margin-right: 0;
         margin-bottom: 10px; /* Espacio debajo de la imagen */
     }
