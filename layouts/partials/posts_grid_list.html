@@ -1,5 +1,6 @@
 {{/* Partial reutilizable para mostrar posts en vista grid/lista */}}
-{{/* Parámetros esperados: .Pages (las páginas a mostrar), .Context (el contexto actual), y parámetros opcionales para el header */}}
+{{/* Parámetros esperados: .Pages (las páginas a mostrar), .Context (el contexto actual), y parámetros opcionales para
+el header */}}
 
 {{ $pages := .Pages }}
 {{ $context := .Context }}
@@ -11,8 +12,10 @@
 {{/* Contenedor principal para botones de vista y las vistas */}}
 <div class="view-wrapper">
   {{/* Botones de cambio de vista */}}
+
+
   {{ if $showViewButtons }}
-  <div class="d-flex justify-content-end mb-3">
+  <div class="d-flex justify-content-end">
     <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
       <button class="btn btn-outline-secondary" id="btnGrid">
         <i class="bi bi-grid-3x3-gap-fill"></i> Cuadrícula
@@ -25,23 +28,19 @@
   {{ end }}
 
   {{/* Vista Grid */}}
-  <div id="gridView">
+  <div id="gridView" class="py-4 flex-column gap-3">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       {{ range $paginator.Pages }}
       <div class="col grid-item">
         <a href="{{ .Permalink }}" class="post-link-wrapper text-decoration-none">
-          <div class="card h-100 shadow-sm hover-zoom">
+          <div class="card hover-zoom">
             {{ $fallbackImg := "/images/no-img.png" | relURL }}
-            <img
-              src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
-              class="card-img-top object-fit-cover"
-              alt="Imagen de {{ .Title }}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
-            />
+            <img src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
+              class="card-img-top object-fit-cover" alt="Imagen de {{ .Title }}" loading="lazy"
+              onerror="this.onerror=null;this.src='{{ $fallbackImg }}';" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ .Title }}</h5>
-              <small class="text-muted mb-2">{{ .Date.Format "2 Jan 2006" }}</small>
+              <small class="text-light mb-2">{{ .Date.Format "2 Jan 2006" }}</small>
               <p class="card-text line-clamp">
                 {{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 120 }}{{ end }}
               </p>
@@ -58,23 +57,20 @@
       {{ end }}
     </div>
   </div>
-
   {{/* Vista Lista */}}
   <div id="listView" class="py-4 flex-column gap-3">
     {{ range $paginator.Pages }}
+    <div class="list-item">
     <a href="{{ .Permalink }}" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
       <div class="ratio ratio-16x9">
         {{ $fallbackImg := "/images/no-img.png" | relURL }}
-        <img
-          src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
-          class="object-fit-cover rounded-start"
-          alt="Imagen de {{ .Title }}"
-          onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
-        />
+        <img src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
+          class="object-fit-cover rounded-start" alt="Imagen de {{ .Title }}"
+          onerror="this.onerror=null;this.src='{{ $fallbackImg }}';" />
       </div>
       <div class="card-body d-flex flex-column">
         <h5 class="card-title mb-1">{{ .Title }}</h5>
-        <small class="text-muted mb-2">{{ .Date.Format "2 Jan 2006" }}</small>
+        <small class="text-light mb-2">{{ .Date.Format "2 Jan 2006" }}</small>
         <p class="card-text flex-grow-1 text-truncate-3">
           {{ with .Description }}{{ . }}{{ else }}{{ .Summary | truncate 180 }}{{ end }}
         </p>
@@ -85,12 +81,13 @@
         {{ end }}
       </div>
     </a>
+    </div>
     {{ end }}
   </div>
 
   {{/* Paginación */}}
   {{ if gt $paginator.TotalPages 1 }}
-  <nav class= "p-4 list-controls-container" aria-label="Paginación">
+  <nav class="p-4 list-controls-container" aria-label="Paginación">
     <ul class="pagination">
       {{ if $paginator.HasPrev }}
       <li class="page-item">
@@ -99,13 +96,13 @@
       {{ else }}
       <li class="page-item disabled"><span class="page-link">Anterior</span></li>
       {{ end }}
-      
+
       {{ range $paginator.Pagers }}
       <li class="page-item{{ if eq . $paginator }} active{{ end }}" aria-current="page">
         <a class="page-link" href="{{ .URL }}">{{ .PageNumber }}</a>
       </li>
       {{ end }}
-      
+
       {{ if $paginator.HasNext }}
       <li class="page-item">
         <a class="page-link" href="{{ $paginator.Next.URL }}">Siguiente</a>
