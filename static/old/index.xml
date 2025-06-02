@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JAEM</title>
+    <link>https://jaem.dev/old/</link>
+    <description>Recent content on JAEM</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Tue, 25 Feb 2025 10:00:00 -0600</lastBuildDate>
+    <atom:link href="https://jaem.dev/old/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Administración y Resolución de Problemas en Windows y Linux</title>
+      <link>https://jaem.dev/old/posts/redes/redes/</link>
+      <pubDate>Tue, 25 Feb 2025 10:00:00 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/redes/redes/</guid>
+      <description>Administración y Resolución de Problemas en Windows y Linux Esta guía te ayudará a comprender conceptos básicos de administración y troubleshooting en estos sistemas operativos. Aquí aprenderás a manejar procesos, servicios, redes y más.&#xA;🔹 Windows Reiniciar un Servicio Existen dos métodos principales:&#xA;CMD: net stop NombreDelServicio net start NombreDelServicio PowerShell: Restart-Service -Name NombreDelServicio Gestión de Procesos y Rendimiento Listar procesos: tasklist Finalizar procesos con alto consumo de CPU: taskkill /PID &amp;lt;Número_PID&amp;gt; /F Ver conexiones de red: netstat -an Información de red: ipconfig /all Otros Comandos Útiles Información del sistema: systeminfo Apagar o reiniciar el sistema: shutdown /r /t 0 🔹 Linux Monitoreo de Procesos y Recursos Visualizar procesos en tiempo real:</description>
+    </item>
+    <item>
+      <title>Patrones de Diseño en .NET</title>
+      <link>https://jaem.dev/old/posts/dotnet/patronesdedisenio/</link>
+      <pubDate>Sat, 09 Nov 2024 22:28:49 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/dotnet/patronesdedisenio/</guid>
+      <description>1. Patrones Creacionales Estos patrones se centran en cómo crear objetos de manera que el sistema sea flexible y escalable. Ayudan a abstraer y simplificar la creación de objetos en lugar de instanciarlos directamente.&#xA;Factory Method (Método de Fábrica):&#xA;Proporciona una interfaz para crear objetos en una clase base, permitiendo a las subclases decidir qué objeto instanciar. Ejemplo: Un sistema de gestión de productos en el que diferentes tipos de productos (como físicos o digitales) se crean según la necesidad.</description>
+    </item>
+    <item>
+      <title>ASP.NET: Introducción</title>
+      <link>https://jaem.dev/old/posts/dotnet/aspdotnet/</link>
+      <pubDate>Fri, 13 Oct 2023 15:07:06 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/dotnet/aspdotnet/</guid>
+      <description>Características Principales de ASP.NET Alto Rendimiento:&#xA;ASP.NET es conocido por su rendimiento optimizado, con tiempos de respuesta rápidos y manejo eficiente de solicitudes de usuario. Incluye capacidades avanzadas de administración de caché, compresión y almacenamiento en memoria para mejorar la experiencia del usuario. Multiplataforma:&#xA;Con ASP.NET Core, Microsoft introdujo soporte multiplataforma, permitiendo que las aplicaciones ASP.NET se ejecuten en Windows, Linux y macOS. Esto facilita la portabilidad y el despliegue de aplicaciones en una variedad de servidores y entornos en la nube.</description>
+    </item>
+    <item>
+      <title>Windows Forms: Introducción</title>
+      <link>https://jaem.dev/old/posts/dotnet/windowsforms/</link>
+      <pubDate>Fri, 13 Oct 2023 10:29:46 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/dotnet/windowsforms/</guid>
+      <description>Características Principales de Windows Forms Desarrollo Rápido y Visual:&#xA;WinForms permite el desarrollo rápido de interfaces gracias a su diseñador visual en Visual Studio. Los desarrolladores pueden arrastrar y soltar componentes, como botones y cuadros de texto, directamente en el formulario, y ajustar sus propiedades visualmente. Componentes Predefinidos:&#xA;Windows Forms ofrece una variedad de controles listos para usar, como etiquetas, botones, cuadros de texto, listas, menús, barras de progreso y muchos más.</description>
+    </item>
+    <item>
+      <title>GPT3 Responde: ¿Es malo jugar?</title>
+      <link>https://jaem.dev/old/posts/gpt3_es_malo_jugar/</link>
+      <pubDate>Mon, 26 Dec 2022 21:28:43 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/gpt3_es_malo_jugar/</guid>
+      <description>No hay una respuesta simple a esta pregunta, ya que depende de cómo se use el juego y de la persona que lo está jugando. Algunos estudios han demostrado que jugar videojuegos puede tener efectos positivos en el cerebro, como mejorar la habilidad de resolución de problemas y la coordinación mano-ojo. Sin embargo, como con cualquier actividad, es importante moderar el tiempo que se dedica a jugar videojuegos y asegurarse de tener un equilibrio adecuado en la vida.</description>
+    </item>
+    <item>
+      <title>¿Que es el Back End?</title>
+      <link>https://jaem.dev/old/posts/que_es_el_back-end/</link>
+      <pubDate>Mon, 26 Dec 2022 12:03:56 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/que_es_el_back-end/</guid>
+      <description>El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.&#xA;El backend suele ser desarrollado utilizando lenguajes de programación como Python, Java o PHP y se ejecuta en servidores de aplicaciones o servidores web.</description>
+    </item>
+    <item>
+      <title>Diferencia entre listas y arreglos</title>
+      <link>https://jaem.dev/old/posts/java/diferencia-entre-listas-y-arreglos/</link>
+      <pubDate>Sun, 25 Dec 2022 21:28:43 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/java/diferencia-entre-listas-y-arreglos/</guid>
+      <description>Cual es la diferencia entre&#xA;List&amp;lt;String&amp;gt; cities = new ArrayList&amp;lt;&amp;gt;(); y&#xA;String[] cities = {};&#xD;La principal diferencia entre List cities = new ArrayList&amp;lt;&amp;gt;(); y String[] cities = {}; es el tipo de objeto que están creando.&#xA;List cities = new ArrayList&amp;lt;&amp;gt;(); crea una lista de cadenas utilizando la clase ArrayList de Java. La clase ArrayList es una clase de la biblioteca de Java que proporciona una implementación de la interfaz List.</description>
+    </item>
+    <item>
+      <title>Java Concurrencia y Springboot</title>
+      <link>https://jaem.dev/old/posts/java/java_concurrencia_y_springboot/</link>
+      <pubDate>Sat, 24 Dec 2022 19:46:50 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/java/java_concurrencia_y_springboot/</guid>
+      <description>Indice Requisitos funciones Stream Web Scraper Variables atomicas Concurrencia Requisitos del sistema IDE JDK 11 o posterior&#xA;Stream Librerias a utilizar&#xA;import java.util.ArrayList;&#xD;import java.util.List;&#xD;import java.util.stream.Collectors;&#xD;Clase principal&#xA;public class Main {&#xD;public static void main(String[] args) {&#xD;List&amp;lt;String&amp;gt; cities = new ArrayList&amp;lt;&amp;gt;();&#xD;cities.add(&amp;quot;London&amp;quot;);&#xD;cities.add(&amp;quot;New York&amp;quot;);&#xD;cities.add(&amp;quot;Tokyo&amp;quot;);&#xD;cities.add(&amp;quot;Barcelona&amp;quot;);&#xD;cities.add(&amp;quot;Buenos Aires&amp;quot;);&#xD;cities.add(&amp;quot;Bogota&amp;quot;);&#xD;cities.add(&amp;quot;Ciudad de Mexico&amp;quot;);&#xD;cities.add(&amp;quot;Lima&amp;quot;);&#xD;//Recorrer una lista de forma tradicional&#xD;for (int i = 0; i &amp;lt; cities.size(); i++) {&#xD;System.</description>
+    </item>
+    <item>
+      <title>SQL Basico</title>
+      <link>https://jaem.dev/old/posts/sql_basico/</link>
+      <pubDate>Thu, 14 Jul 2022 09:20:48 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/sql_basico/</guid>
+      <description>En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.&#xA;Comandos básicos &amp;ndash; Crea una nueva base de datos create database Blog; &amp;ndash; Seleccionar base de datos use database Blog; Cada uno de los identificadores representa una columna y están ordenados de la siguiente forma:</description>
+    </item>
+    <item>
+      <title>Halo CE</title>
+      <link>https://jaem.dev/old/posts/halo_ce_errores/</link>
+      <pubDate>Tue, 07 Jun 2022 17:57:53 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/halo_ce_errores/</guid>
+      <description>Halo CE 2022 | Solución de errores Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE. Explicación de que es hac2 y chimera Componentes necesarios que necesita Halo CE Solución a errores Explicación de que es hac2 y chimera ¿Qué es hac2? Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son:&#xA;Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.</description>
+    </item>
+    <item>
+      <title>Mi aprendizaje en Launch X</title>
+      <link>https://jaem.dev/old/posts/mi_aprendizaje/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/old/posts/mi_aprendizaje/</guid>
+      <description>Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X&#xA;Introducción Python Logica de Programacion Fron-end HTML CSS JavaScript Vue(basico) Back-end Git GitHub GitHub Pages Hugo Markdown (basico) node.js </description>
+    </item>
+    <item>
+      <title>Mis proyectos</title>
+      <link>https://jaem.dev/old/sobre/proyectos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/old/sobre/proyectos/</guid>
+      <description>Generador de códigos QR con Python conectado a MongoDB&#xA;¡Hola! Hoy, quiero compartir los emocionantes proyectos en los que he estado trabajando. La tecnología sigue avanzando, y con ella, las habilidades y herramientas.&#xA;Generador de códigos QR: Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos. Puedes encontrar todo el código en mi repositorio de GitHub.</description>
+    </item>
+  </channel>
+</rss>
