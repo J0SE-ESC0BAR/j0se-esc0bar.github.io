@@ -1,3 +1,7 @@
 /public
 /node_modules
 .prettierignore
+/.vscode
+/.roo
+/.kilocode
+/sequiential-thinking-mcp
