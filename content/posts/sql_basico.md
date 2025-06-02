@@ -256,9 +256,9 @@ DROP TABLE usuarios;
   - No afecta la estructura de la tabla, solo elimina datos.
   - Se puede deshacer (rollback) en una transacción activa.
   - **Ejemplo:**
-    ```sql
-    DELETE FROM empleados WHERE id = 5;
-    ```
+```sql
+  DELETE FROM empleados WHERE id = 5;
+ ```
 
 - **DROP**
   - Elimina la *tabla completa*, incluyendo su estructura, datos e índices.

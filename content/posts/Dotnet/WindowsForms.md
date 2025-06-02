@@ -1,12 +1,10 @@
 ---
 title: "Windows Forms: Introducción"
 date: 2023-10-13T10:29:46-06:00
-description: '**Windows Forms (WinForms)** es una biblioteca de clases en .NET que permite a los desarrolladores crear aplicaciones de escritorio con interfaz gráfica para Windows. Se utiliza principalmente para construir aplicaciones con ventanas, botones, cuadros de texto, menús, entre otros componentes de interfaz, proporcionando una forma rápida y sencilla de crear aplicaciones de escritorio para entornos Windows. '
+description: 'Windows Forms (WinForms) es una biblioteca de clases en .NET que permite a los desarrolladores crear aplicaciones de escritorio con interfaz gráfica para Windows. Se utiliza principalmente para construir aplicaciones con ventanas, botones, cuadros de texto, menús, entre otros componentes de interfaz, proporcionando una forma rápida y sencilla de crear aplicaciones de escritorio para entornos Windows. '
 image: images/WindowsForms.jpg
 draft: false
 viewimg: true
-type: "sub_post"
----
 ---
 
 ### Características Principales de Windows Forms

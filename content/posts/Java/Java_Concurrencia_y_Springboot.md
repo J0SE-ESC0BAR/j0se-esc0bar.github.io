@@ -4,7 +4,6 @@ date: 2022-12-24T19:46:50-06:00
 description: 'En este post estan la cosas mas importantes que e aprendido de Concurrencia y Springboot, desde cosas basicas asta lo avanzado.'
 image: images/java.png
 draft: false
-type: "sub_post"
 viewimg: true
 ---
 

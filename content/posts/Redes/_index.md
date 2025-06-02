@@ -5,5 +5,4 @@ description: 'Guía para comprender algunos conceptos básicos de administració
 image: images/redes.png
 draft: false
 viewimg: true
-type: posts
 ---

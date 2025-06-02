@@ -1,0 +1,121 @@
+{{/* --------------------------------------------- */}}
+{{/* Bloque para las clases del <body> */}}
+{{ define "body_classes" }}default section{{ if eq .Type "list" }} list-view{{ end }}{{ end }}
+
+{{/* --------------------------------------------- */}}
+{{/* Bloque principal: diseño unificado basado en posts(OldVersion).html */}}
+{{ define "main" }}
+  {{/* Combinar subsecciones y artículos directos de esta sección */}}
+  {{ $currentPage := . }}
+  
+  {{/* Obtener las subsecciones de la sección actual */}}
+  {{ $subSections := .Sections }}
+  
+  {{/* Obtener los artículos que están directamente en esta sección */}}
+  {{ $directArticles := .RegularPages }}
+  
+  {{/* Combinar subsecciones y artículos directos */}}
+  {{ $allItems := $subSections | union $directArticles }}
+
+  {{/* Diseño especial para la página principal de Posts */}}
+    <div class="">
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <div class="posts-header">
+          <h1 class="posts-title mb-1">{{ .Title }}</h1>
+            {{ $categories := slice }}
+              {{ range .Pages }}
+                {{ if and .IsSection (gt (len .Pages) 0) }}
+                  {{ $categories = $categories | append . }}
+                {{ end }}
+            {{ end }}
+          {{ if gt (len .Pages) 0 }}
+          <p class="posts-meta mb-0">
+            <span>{{ len .Pages }}</span> posts <span>
+          </p>
+          {{ end }}
+        </div>
+        {{ if gt (len $allItems) 0 }}
+        <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
+          <button class="btn btn-outline-secondary" id="btnGrid">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Cuadrícula
+          </button>
+          <button class="btn active-view btn-outline-primary" id="btnList">
+            <i class="bi bi-list-ul"></i> Lista
+          </button>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+{{/* Mostrar el contenido de la página de sección (ej. _index.md) */}}
+  <div class="section-content py-3">
+    {{ with .Description }}
+      <p class="lead">{{ . }}</p>
+    {{ end }}
+    {{ .Content }}
+  </div>
+
+  {{/* Crear una lista con fechas efectivas para ordenamiento */}}
+  {{ $itemsWithDates := slice }}
+  {{ range $allItems }}
+    {{ $effectiveDate := .Date }}
+    {{ if .IsSection }}
+      {{/* Para subsecciones, usar la fecha del artículo más reciente dentro de ellas */}}
+      {{ if .Pages }}
+        {{ $latestPage := index (sort .Pages "Date" "desc") 0 }}
+        {{ $effectiveDate = $latestPage.Date }}
+      {{ end }}
+    {{ end }}
+    {{ $itemsWithDates = $itemsWithDates | append (dict "item" . "effectiveDate" $effectiveDate) }}
+  {{ end }}
+
+  {{/* Ordenar por fecha efectiva de más reciente a más antiguo */}}
+  {{ $sortedItems := sort $itemsWithDates "effectiveDate" "desc" }}
+  
+  {{/* Extraer solo los items ordenados */}}
+  {{ $allItems = slice }}
+  {{ range $sortedItems }}
+    {{ $allItems = $allItems | append .item }}
+  {{ end }}
+
+  {{/* Crear el paginador aquí en el template principal */}}
+  {{ $paginator := .Paginate $allItems }}
+
+  {{/* Calcular total de artículos y categorías para el header del parcial */}}
+  {{ $totalArticlesInSection := len (where .Pages "Kind" "page") }} {{/* Todos los artículos bajo esta sección */}}
+  {{ $totalSubSections := len .Sections }} {{/* Subsecciones directas */}}
+
+  {{/* Sección Unificada de Categorías y Artículos con toggle */}}
+  {{ if gt (len $allItems) 0 }}
+    {{/* Usar el partial posts_grid_list.html para manejar las vistas */}}
+    {{ partial "posts_grid_list.html" (dict
+        "Paginator" $paginator
+        "Context" .
+        "ViewContainerClass" "unified-view-container"
+        "ShowHeader" true
+        "ShowViewButtons" true
+        "TotalArticles" $totalArticlesInSection
+        "TotalCategories" $totalSubSections
+    ) }}
+  {{ end }}
+
+  {{/* Navegación de sections - Botón para volver a la raíz */}}
+  <div class="py-4">
+    <div class="row">
+      <div class="col-md-4">
+        {{ if eq .Section "posts" }}
+          <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Volver a Posts
+          </a>
+        {{ else if eq .Section "projects" }}
+          <a href="{{ "/projects/" | relURL }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Volver a Projects
+          </a>
+        {{ else }}
+          <a href="{{ "/" | relURL }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Volver al Inicio
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

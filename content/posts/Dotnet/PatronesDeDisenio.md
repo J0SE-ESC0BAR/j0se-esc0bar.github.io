@@ -2,10 +2,9 @@
 title: "Patrones de Diseño en .NET"
 date: 2024-11-09T22:28:49-06:00
 description: 'Los patrones de diseño son soluciones reutilizables para problemas comunes en el desarrollo de software. Se dividen en tres categorías principales: creacionales, estructurales y de comportamiento. A continuación se describen estos tipos con ejemplos en .NET.'
-image: images/no-img.png
+image: images/desainPatternsNet.png
 draft: false
 viewimg: true
-type: page
 ---
 ---
 

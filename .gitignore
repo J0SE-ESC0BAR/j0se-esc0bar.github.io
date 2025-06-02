@@ -1,2 +1,11 @@
 /Design
 /BKUP
+public/index.html
+/.roo
+/public
+/.vscode
+/docs
+/.kilocode
+.prettierignore
+/node_modules
+test-featured-post.html

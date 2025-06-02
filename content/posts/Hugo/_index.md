@@ -5,7 +5,6 @@ description: "Estos son los comandos básicos para que comiences a trabajar con 
 image: "images/Hugo_logo.png"
 draft: false
 viewimg: true
-type: "posts"
 ---
 
 ## Introducción
@@ -86,12 +85,10 @@ La sintaxis de Markdown para enlaces es:
 ```markdown
 [YouTube](https://www.youtube.com)
 [YouTube](https://www.youtube.com "Visita YouTube")   --> (con mensaje al pasar el ratón)
-[CV_José_Escobar.pdf](/CV_José_Escobar.pdf)
 ```
 
 [YouTube](https://www.youtube.com)  
 [YouTube](https://www.youtube.com "Visita YouTube")  
-[CV_José_Escobar.pdf](/CV_José_Escobar.pdf)  
 
 
 ---

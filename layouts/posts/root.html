@@ -1,0 +1,87 @@
+{{ define "body_classes" }}post root list-view{{ end }}
+
+{{ define "main" }}
+
+    <div class="">
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <div class="projects-header">
+          <h1 class="projects-title mb-1">{{ .Title }}</h1>
+            {{ $categories := slice }}
+              {{ range .Pages }}
+                {{ if and .IsSection (gt (len .Pages) 0) }}
+                  {{ $categories = $categories | append . }}
+                {{ end }}
+            {{ end }}
+          <p class="projects-meta mb-0">
+            <span>{{ len .Pages }}</span> posts <span>{{len $categories }}</span> secciones
+          </p>
+        </div>
+        <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
+          <button class="btn btn-outline-secondary" id="btnGrid">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Cuadrícula
+          </button>
+          <button class="btn active-view btn-outline-primary" id="btnList">
+            <i class="bi bi-list-ul"></i> Lista
+          </button>
+        </div>
+      </div>
+    </div>
+
+  {{/* Combinar sections (secciones de posts) y posts (páginas regulares de posts) */}}
+  {{ $currentPage := . }}
+  {{/* Obtener las sections (subsecciones de posts) */}}
+  {{ $pageSections := .Sections }} {{/* Renombrado para evitar conflicto con $sections en el cálculo de TotalCategoriesInRoot */}}
+  {{/* Obtener solo los posts que están directamente en /posts/ (sin section) */}}
+  {{ $uncategorizedPosts := where .RegularPages "Section" "posts" }}
+  {{/* Combinar sections y posts sin section */}}
+  {{ $allItems := $pageSections | union $uncategorizedPosts }}
+  {{/* Crear una lista con fechas efectivas para ordenamiento */}}
+  {{ $itemsWithDates := slice }}
+  {{ range $allItems }}
+    {{ $effectiveDate := .Date }}
+    {{ if .IsSection }}
+      {{/* Para sections, usar la fecha del post más reciente */}}
+      {{ if .Pages }}
+        {{ $latestPage := index (sort .Pages "Date" "desc") 0 }}
+        {{ $effectiveDate = $latestPage.Date }}
+      {{ end }}
+    {{ end }}
+    {{ $itemsWithDates = $itemsWithDates | append (dict "item" . "effectiveDate" $effectiveDate) }}
+  {{ end }}
+  {{/* Ordenar por fecha efectiva de más reciente a más antiguo */}}
+  {{ $sortedItems := sort $itemsWithDates "effectiveDate" "desc" }}
+  {{/* Extraer solo los items ordenados */}}
+  {{ $allItems = slice }}
+  {{ range $sortedItems }}
+    {{ $allItems = $allItems | append .item }}
+  {{ end }}
+  {{/* Crear el paginador aquí en el template principal */}}
+  {{ $paginator := .Paginate $allItems }}
+
+  {{/* Calcular total de artículos y categorías para el header del parcial */}}
+  {{ $totalArticlesInRoot := len .Pages }}
+  {{ $rootSections := slice }}
+  {{ range .Pages }} {{/* Iterar sobre .Pages de la página actual (root) para encontrar secciones directas */}}
+    {{ if and .IsSection (gt (len .Pages) 0) }}
+      {{ $rootSections = $rootSections | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $totalCategoriesInRoot := len $rootSections }}
+
+  {{/* Sección Unificada de Categorías y Artículos con toggle */}}
+  {{ if gt (len $allItems) 0 }}
+      {{ partial "posts_grid_list.html" (dict
+          "Paginator" $paginator
+          "Context" .
+          "ViewContainerClass" "unified-view-container"
+          "ShowHeader" true
+          "ShowViewButtons" false
+          "TotalArticles" $totalArticlesInRoot
+          "TotalCategories" $totalCategoriesInRoot
+      ) }}
+  {{ else }}
+  <div class="py-5 text-center">
+    <p>No hay contenido disponible en esta sección.</p>
+  </div>
+  {{ end }}
+{{ end }}
