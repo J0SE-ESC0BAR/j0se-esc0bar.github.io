@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on JAEM</title>
+    <link>https://jaem.dev/old/posts/</link>
+    <description>Recent content in Posts on JAEM</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Mon, 26 Dec 2022 21:28:43 -0600</lastBuildDate>
+    <atom:link href="https://jaem.dev/old/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT3 Responde: ¿Es malo jugar?</title>
+      <link>https://jaem.dev/old/posts/gpt3_es_malo_jugar/</link>
+      <pubDate>Mon, 26 Dec 2022 21:28:43 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/gpt3_es_malo_jugar/</guid>
+      <description>No hay una respuesta simple a esta pregunta, ya que depende de cómo se use el juego y de la persona que lo está jugando. Algunos estudios han demostrado que jugar videojuegos puede tener efectos positivos en el cerebro, como mejorar la habilidad de resolución de problemas y la coordinación mano-ojo. Sin embargo, como con cualquier actividad, es importante moderar el tiempo que se dedica a jugar videojuegos y asegurarse de tener un equilibrio adecuado en la vida.</description>
+    </item>
+    <item>
+      <title>¿Que es el Back End?</title>
+      <link>https://jaem.dev/old/posts/que_es_el_back-end/</link>
+      <pubDate>Mon, 26 Dec 2022 12:03:56 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/que_es_el_back-end/</guid>
+      <description>El backend, también conocido como &amp;ldquo;servidor&amp;rdquo;, es la parte de una aplicación o sitio web que se encarga de realizar tareas en segundo plano, es decir, que el usuario final no ve. El backend puede ser utilizado para realizar tareas como almacenar y recuperar información de una base de datos, realizar cálculos y procesamientos complicados, enviar y recibir información a través de Internet, entre otras cosas.&#xA;El backend suele ser desarrollado utilizando lenguajes de programación como Python, Java o PHP y se ejecuta en servidores de aplicaciones o servidores web.</description>
+    </item>
+    <item>
+      <title>SQL Basico</title>
+      <link>https://jaem.dev/old/posts/sql_basico/</link>
+      <pubDate>Thu, 14 Jul 2022 09:20:48 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/sql_basico/</guid>
+      <description>En este post se describen los comandos básicos de SQL, desde la creación de una base de datos hasta la eliminación de una tabla. Además, se muestran ejemplos de cómo insertar valores en una tabla, solicitar datos específicos, ordenar resultados y actualizar o eliminar registros. También se incluyen comandos para agregar, renombrar o eliminar columnas en una tabla.&#xA;Comandos básicos &amp;ndash; Crea una nueva base de datos create database Blog; &amp;ndash; Seleccionar base de datos use database Blog; Cada uno de los identificadores representa una columna y están ordenados de la siguiente forma:</description>
+    </item>
+    <item>
+      <title>Halo CE</title>
+      <link>https://jaem.dev/old/posts/halo_ce_errores/</link>
+      <pubDate>Tue, 07 Jun 2022 17:57:53 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/halo_ce_errores/</guid>
+      <description>Halo CE 2022 | Solución de errores Este post estara dividido en 3 partes para entender mejor el funcionamiento de Halo CE. Explicación de que es hac2 y chimera Componentes necesarios que necesita Halo CE Solución a errores Explicación de que es hac2 y chimera ¿Qué es hac2? Hac2 es un modificador de halo ce que mejora la jugabilidad dentro del juego, sus principales características son:&#xA;Permite añadir servidores a favorito (f3) para añadir y (f5) para ver, (alt+num) para entrar al servidor.</description>
+    </item>
+    <item>
+      <title>Mi aprendizaje en Launch X</title>
+      <link>https://jaem.dev/old/posts/mi_aprendizaje/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/old/posts/mi_aprendizaje/</guid>
+      <description>Quiero comartir con ustedes todo lo que e aprendido hasta hoy en Lauch-X&#xA;Introducción Python Logica de Programacion Fron-end HTML CSS JavaScript Vue(basico) Back-end Git GitHub GitHub Pages Hugo Markdown (basico) node.js </description>
+    </item>
+  </channel>
+</rss>

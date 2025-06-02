@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scratch on JAEM</title>
+    <link>https://jaem.dev/tags/scratch/</link>
+    <description>Recent content in Scratch on JAEM</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <atom:link href="https://jaem.dev/tags/scratch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Juego en Scratch</title>
+      <link>https://jaem.dev/projects/juego_scratch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/projects/juego_scratch/</guid>
+      <description>&lt;p&gt;Para los aficionados a los juegos, aquí tienes un juego que creé en Scratch.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver el juego en acción en YouTube: &lt;a href=&#34;https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAEM&#34;&gt;https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAEM&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/Terraria_OtherWold.png&#34;&#xD;&#xA;    alt=&#34;Juego de terraria&#34;&#xD;&#xA;    class=&#34;img-fluid&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Si estás interesado en probar este proyecto, aquí tienes un enlace de descarga:&#xA;&lt;a href=&#34;https://mega.nz/#!D9dURSZA!jiNh93sZMcUd1ur3vFB_kAtJJmiMBzr0mSi6E6mSmx4&#34;&gt;https://mega.nz/#!D9dURSZA!jiNh93sZMcUd1ur3vFB_kAtJJmiMBzr0mSi6E6mSmx4&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

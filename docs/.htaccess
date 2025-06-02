@@ -1,0 +1,48 @@
+# Configuración para manejo de errores 404
+ErrorDocument 404 /404.html
+
+# Redireccionamiento de URLs comunes mal escritas
+RewriteEngine On
+
+# Redirigir URLs con mayúsculas a minúsculas
+RewriteCond %{REQUEST_URI} [A-Z]
+RewriteRule (.*) ${tolower:$1} [R=301,L]
+
+# Redirigir servicios temporalmente a la página principal
+RewriteRule ^servicios/?$ / [R=302,L]
+RewriteRule ^services/?$ / [R=302,L]
+
+# Redirigir URLs comunes mal escritas
+RewriteRule ^blog/?$ /posts/ [R=301,L]
+RewriteRule ^portfolio/?$ /projects/ [R=301,L]
+RewriteRule ^contacto/?$ /about/ [R=301,L]
+RewriteRule ^contact/?$ /about/ [R=301,L]
+
+# Forzar HTTPS (si aplica)
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Configuración de caché para mejorar rendimiento
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# Compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>

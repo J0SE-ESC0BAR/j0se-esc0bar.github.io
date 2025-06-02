@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET on JAEM</title>
+    <link>https://jaem.dev/old/posts/dotnet/</link>
+    <description>Recent content in .NET on JAEM</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 09 Nov 2024 22:28:49 -0600</lastBuildDate>
+    <atom:link href="https://jaem.dev/old/posts/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Patrones de Diseño en .NET</title>
+      <link>https://jaem.dev/old/posts/dotnet/patronesdedisenio/</link>
+      <pubDate>Sat, 09 Nov 2024 22:28:49 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/dotnet/patronesdedisenio/</guid>
+      <description>1. Patrones Creacionales Estos patrones se centran en cómo crear objetos de manera que el sistema sea flexible y escalable. Ayudan a abstraer y simplificar la creación de objetos en lugar de instanciarlos directamente.&#xA;Factory Method (Método de Fábrica):&#xA;Proporciona una interfaz para crear objetos en una clase base, permitiendo a las subclases decidir qué objeto instanciar. Ejemplo: Un sistema de gestión de productos en el que diferentes tipos de productos (como físicos o digitales) se crean según la necesidad.</description>
+    </item>
+    <item>
+      <title>ASP.NET: Introducción</title>
+      <link>https://jaem.dev/old/posts/dotnet/aspdotnet/</link>
+      <pubDate>Fri, 13 Oct 2023 15:07:06 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/dotnet/aspdotnet/</guid>
+      <description>Características Principales de ASP.NET Alto Rendimiento:&#xA;ASP.NET es conocido por su rendimiento optimizado, con tiempos de respuesta rápidos y manejo eficiente de solicitudes de usuario. Incluye capacidades avanzadas de administración de caché, compresión y almacenamiento en memoria para mejorar la experiencia del usuario. Multiplataforma:&#xA;Con ASP.NET Core, Microsoft introdujo soporte multiplataforma, permitiendo que las aplicaciones ASP.NET se ejecuten en Windows, Linux y macOS. Esto facilita la portabilidad y el despliegue de aplicaciones en una variedad de servidores y entornos en la nube.</description>
+    </item>
+    <item>
+      <title>Windows Forms: Introducción</title>
+      <link>https://jaem.dev/old/posts/dotnet/windowsforms/</link>
+      <pubDate>Fri, 13 Oct 2023 10:29:46 -0600</pubDate>
+      <guid>https://jaem.dev/old/posts/dotnet/windowsforms/</guid>
+      <description>Características Principales de Windows Forms Desarrollo Rápido y Visual:&#xA;WinForms permite el desarrollo rápido de interfaces gracias a su diseñador visual en Visual Studio. Los desarrolladores pueden arrastrar y soltar componentes, como botones y cuadros de texto, directamente en el formulario, y ajustar sus propiedades visualmente. Componentes Predefinidos:&#xA;Windows Forms ofrece una variedad de controles listos para usar, como etiquetas, botones, cuadros de texto, listas, menús, barras de progreso y muchos más.</description>
+    </item>
+  </channel>
+</rss>
