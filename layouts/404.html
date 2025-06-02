@@ -1,0 +1,269 @@
+{{ define "title" }}Página no encontrada - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<style>
+    .error-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+    }
+    .error-content {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .error-icon {
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .floating-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .floating-shapes div {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+    .btn-glass {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+    .btn-glass:hover {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+        transform: translateY(-2px);
+    }
+    .search-box {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        backdrop-filter: blur(10px);
+    }
+    .search-box input {
+        background: transparent;
+        border: none;
+        color: white;
+    }
+    .search-box input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .suggestion-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    .suggestion-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 1.5rem;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .suggestion-card:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-5px);
+        color: white;
+    }
+</style>
+
+<section class="error-section position-relative">
+    <div class="floating-shapes">
+        <div style="width: 50px; height: 50px; border-radius: 50%; top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div style="width: 30px; height: 30px; border-radius: 50%; top: 20%; right: 15%; animation-delay: 1s;"></div>
+        <div style="width: 40px; height: 40px; border-radius: 50%; bottom: 30%; left: 20%; animation-delay: 2s;"></div>
+        <div style="width: 25px; height: 25px; border-radius: 50%; bottom: 20%; right: 25%; animation-delay: 3s;"></div>
+    </div>
+    
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+                <div class="error-content">
+                    <div class="error-icon mb-4">
+                        <i class="bi bi-emoji-dizzy" style="font-size: 5rem; color: #fff;"></i>
+                    </div>
+                    <h1 class="error-code display-1 mb-3" style="font-size: 8rem; font-weight: 900;">404</h1>
+                    <h2 class="error-title h1 mb-4">¡Oops! Esta página se perdió en el código</h2>
+                    <p class="error-description lead mb-4">
+                        Parece que la URL que buscas no existe o ha sido refactorizada. 
+                        <br>¡Pero no te preocupes! Aquí tienes algunas opciones para continuar navegando.
+                    </p>
+
+                    <!-- Búsqueda rápida -->
+                    <div class="search-box p-3 mb-4 mx-auto" style="max-width: 400px;">
+                        <div class="input-group">
+                            <input type="text" id="quick-search" class="form-control" placeholder="Buscar contenido...">
+                            <button class="btn btn-glass" type="button" onclick="performSearch()">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                      <!-- Mensaje específico para servicios -->
+                    <div id="services-message" class="alert alert-warning mt-4" style="display: none; background: rgba(255, 193, 7, 0.2); border: 1px solid rgba(255, 193, 7, 0.5);">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-tools me-2" style="font-size: 1.5rem;"></i>
+                            <div>
+                                <h4 class="alert-heading mb-2">¿Buscabas información sobre servicios?</h4>
+                                <p class="mb-0">Esta sección está actualmente en desarrollo. Pronto estará
+                                    disponible con información detallada sobre mis servicios profesionales de desarrollo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="error-actions mt-5">
+                        <a href="{{ "/" | relLangURL }}" class="btn btn-glass btn-lg me-3 mb-2">
+                            <i class="bi bi-house me-2"></i>Ir al inicio
+                        </a>
+                        <a href="{{ "/posts/" | relLangURL }}" class="btn btn-glass btn-lg me-3 mb-2">
+                            <i class="bi bi-file-text me-2"></i>Ver posts
+                        </a>
+                        <a href="{{ "/projects/" | relLangURL }}" class="btn btn-glass btn-lg mb-2">
+                            <i class="bi bi-folder me-2"></i>Ver proyectos
+                        </a>
+                    </div>
+
+                    <!-- Sugerencias de contenido popular -->
+                    <div class="suggestion-cards">
+                        <a href="{{ "/posts/" | relLangURL }}" class="suggestion-card">
+                            <i class="bi bi-journal-code" style="font-size: 2rem;"></i>
+                            <h5 class="mt-2 mb-1">Blog de Desarrollo</h5>
+                            <p class="small mb-0">Artículos sobre programación, tecnología y más</p>
+                        </a>
+                        <a href="{{ "/projects/" | relLangURL }}" class="suggestion-card">
+                            <i class="bi bi-code-slash" style="font-size: 2rem;"></i>
+                            <h5 class="mt-2 mb-1">Mis Proyectos</h5>
+                            <p class="small mb-0">Aplicaciones y desarrollos que he creado</p>
+                        </a>
+                        <a href="{{ "/about/" | relLangURL }}" class="suggestion-card">
+                            <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
+                            <h5 class="mt-2 mb-1">Sobre Mí</h5>
+                            <p class="small mb-0">Conoce más sobre mi experiencia y habilidades</p>
+                        </a>
+                    </div>                    <!-- Enlaces de contacto rápido -->
+                    <div class="mt-4">
+                        <p class="text-light opacity-75">¿Necesitas ayuda? Contáctame directamente:</p>
+                        <a href="mailto:jose@jaem.dev" class="btn btn-glass me-2">
+                            <i class="bi bi-envelope me-1"></i>Email
+                        </a>
+                        <a href="#" class="btn btn-glass" onclick="goBack()">
+                            <i class="bi bi-arrow-left me-1"></i>Regresar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mostrar mensaje específico si la URL contiene "services" o "servicios"
+        const currentPath = window.location.pathname.toLowerCase();
+        if (currentPath.includes('services') || currentPath.includes('servicios')) {
+            const servicesMessage = document.getElementById('services-message');
+            if (servicesMessage) {
+                servicesMessage.style.display = 'block';
+            }
+        }
+
+        // Agregar efecto de entrada
+        const errorContent = document.querySelector('.error-content');
+        errorContent.style.opacity = '0';
+        errorContent.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            errorContent.style.transition = 'all 0.8s ease';
+            errorContent.style.opacity = '1';
+            errorContent.style.transform = 'translateY(0)';
+        }, 100);
+
+        // Focus en el campo de búsqueda
+        document.getElementById('quick-search').focus();
+
+        // Log para debugging
+        console.log('404 Error - Página no encontrada:', window.location.pathname);
+        
+        // Tracking de error 404 (si tienes Google Analytics)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_not_found', {
+                'page_location': window.location.href,
+                'page_path': window.location.pathname
+            });
+        }
+    });
+
+    function performSearch() {
+        const searchTerm = document.getElementById('quick-search').value.trim();
+        if (searchTerm) {
+            // Redirigir a Google con búsqueda del sitio
+            window.location.href = `https://www.google.com/search?q=site:{{ .Site.BaseURL }} ${encodeURIComponent(searchTerm)}`;
+        }
+    }
+
+    function goBack() {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = '{{ "/" | relLangURL }}';
+        }
+    }
+
+    // Permitir buscar con Enter
+    document.getElementById('quick-search').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // Easter egg: Konami Code
+    let konamiCode = [];
+    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+    
+    document.addEventListener('keydown', function(e) {
+        konamiCode.push(e.keyCode);
+        if (konamiCode.length > 10) {
+            konamiCode.shift();
+        }
+        
+        if (konamiCode.toString() === konamiSequence.toString()) {
+            // Easter egg activado
+            document.querySelector('.error-icon i').className = 'bi bi-emoji-sunglasses';
+            document.querySelector('.error-title').textContent = '¡Código Konami activado! 🎮';
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    });
+</script>
+
+<!-- Script para confetti (opcional) -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+{{ end }}
+
