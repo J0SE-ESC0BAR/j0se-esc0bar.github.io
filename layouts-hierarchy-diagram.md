@@ -31,12 +31,12 @@ graph TB
     layouts[📁 layouts/<br/>🏗️ Sistema de Templates Hugo<br/>Arquitectura: Herencia + Partials + Shortcodes]:::directory
     
     %% 🏠 ARCHIVO PRINCIPAL INDEX.HTML
-    layouts --> index_html[index.html<br/>🏠 Homepage Template<br/>📋 Blocks: header_css, body_classes, carusel, main, footer_js<br/>🎯 Context: Site, Pages<br/>⚡ Features: Carousel, Featured Post, Latest Posts]:::htmlFile
+    layouts --> index_html[index.html<br/>🏠 Homepage Template<br/>📋 Blocks: header_css, body_classes, carousel, main, footer_js<br/>🎯 Context: Site, Pages<br/>⚡ Features: Carousel, Featured Post, Latest Posts]:::htmlFile
     
     %% 📂 DIRECTORIO _DEFAULT - TEMPLATES BASE
     layouts --> default_dir[📁 _default/<br/>🏗️ Base Templates Repository<br/>🔧 Hugo Template Hierarchy Root<br/>📜 Inheritance Chain Origin]:::directory
     
-    default_dir --> baseof[baseof.html<br/>🏗️ Master Base Template<br/>📋 Blocks: title, meta_tags, header_css, body_classes, carusel, main, footer, footer_js<br/>🎨 Loads: Bootstrap 5.3.6, Icons 1.13.1, Custom CSS/JS<br/>📱 Features: Responsive, SEO, FOUC Prevention<br/>🔧 Script: Grid/List View Management<br/>⚙️ Meta: OpenGraph, Twitter Cards]:::layout
+    default_dir --> baseof[baseof.html<br/>🏗️ Master Base Template<br/>📋 Blocks: title, meta_tags, header_css, body_classes, carousel, main, footer, footer_js<br/>🎨 Loads: Bootstrap 5.3.6, Icons 1.13.1, Custom CSS/JS<br/>📱 Features: Responsive, SEO, FOUC Prevention<br/>🔧 Script: Grid/List View Management<br/>⚙️ Meta: OpenGraph, Twitter Cards]:::layout
     
     default_dir --> root_default[root.html<br/>📄 Root Page Template<br/>🎯 Usage: Homepage alternatives<br/>📋 Inherits: baseof.html]:::layout
     
