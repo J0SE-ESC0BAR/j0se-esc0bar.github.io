@@ -6,7 +6,3 @@ draft: false
 viewimg: false
 layout: "root"
 ---
-## Proyectos
-mis proyectos
-
-#### ejemplo
