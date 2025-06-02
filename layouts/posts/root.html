@@ -1,11 +1,8 @@
 {{ define "body_classes" }}post root list-view{{ end }}
 
 {{ define "main" }}
-  {{/* Diseño especial para la página principal de Posts */}}
-    {{/* Diseño especial para la página principal de Projects */}}
-  <!--<div class="intro hero-section"> </div>-->
 
-    <div class="container">
+    <div class="">
       <div class="d-flex flex-wrap justify-content-between align-items-center">
         <div class="projects-header">
           <h1 class="projects-title mb-1">{{ .Title }}</h1>
@@ -18,6 +15,14 @@
           <p class="projects-meta mb-0">
             <span>{{ len .Pages }}</span> posts <span>{{len $categories }}</span> secciones
           </p>
+        </div>
+        <div class="view-toggle btn-group" role="group" aria-label="Cambiar vista">
+          <button class="btn btn-outline-secondary" id="btnGrid">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Cuadrícula
+          </button>
+          <button class="btn active-view btn-outline-primary" id="btnList">
+            <i class="bi bi-list-ul"></i> Lista
+          </button>
         </div>
       </div>
     </div>
@@ -70,12 +75,12 @@
           "Context" .
           "ViewContainerClass" "unified-view-container"
           "ShowHeader" true
-          "ShowViewButtons" true
+          "ShowViewButtons" false
           "TotalArticles" $totalArticlesInRoot
           "TotalCategories" $totalCategoriesInRoot
       ) }}
   {{ else }}
-  <div class="container py-5 text-center">
+  <div class="py-5 text-center">
     <p>No hay contenido disponible en esta sección.</p>
   </div>
   {{ end }}
