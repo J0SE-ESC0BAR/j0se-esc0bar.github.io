@@ -243,9 +243,43 @@ pre code.hljs {
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100%;
 }
 
 .grid-item .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Altura uniforme para tarjetas en vista grid */
+#gridView .row {
+  align-items: stretch;
+}
+
+#gridView .col {
+  display: flex;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
   flex: 1;
 }
 
@@ -304,11 +338,18 @@ body {
 #itemsContainer .card {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    height: 100%;
     background-color: var(--card-bg-color);
     color: var(--card-text-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     will-change: transform, opacity;
+}
+
+/* Card body flex para distribución uniforme */
+#itemsContainer .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 /* Transición suave para las vistas */
@@ -366,59 +407,7 @@ body {
     object-fit: cover; 
 } */
 
-.list-item {
-    display: none; /* Oculto por defecto, se mostrará cuando el body tenga la clase list-view */
-    align-items: center; /* Alinea verticalmente la imagen y el contenido */
-    margin-bottom: 10px;
-    /*border: 1px solid var(--button-outline-border-color);*/
-    border-radius: 4px;
-    background-color: var(--card-bg-color); /* Añadido para consistencia */
-    color: var(--card-text-color); /* Añadido para consistencia */
-}
-.list-item img {
-    width: 100px; /* Ancho fijo para la imagen en la vista de lista */
-    height: 100px; /* Altura fija para la imagen en la vista de lista */
-    object-fit: cover;
-    margin-right: 15px;
-}
-/* Por defecto, mostrar grid y ocultar list */
-.grid-item { display: block; } /* o flex, o lo que corresponda según Bootstrap para .col-md-4 */
 
-body.list-view .list-item {
-    display: flex; /* Muestra los items de lista cuando el body tiene la clase list-view */
-    /* altura dinámica con límite */
-    max-height: 20vh;
-    height: auto;
-    overflow: hidden;
-}
-body.list-view .list-item p {
-    font-size: 0.95rem;
-    color: var(--text-color);
-    margin-bottom: 0;
-    line-height: 1.5;
-    /* truncado de párrafos con ellipsis */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3; /* propiedad estándar añadida para compatibilidad */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Altura dinámica para entradas en vista lista y mostrar títulos completos */
-body.list-view .list-item {
-  max-height: none !important;
-  overflow: visible !important;
-}
-/* Asegurar truncado sólo en párrafos */
-body.list-view .list-item p {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3; /* propiedad estándar añadida para compatibilidad */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 body.list-view .grid-item {
     display: none; /* Oculta los items de grid cuando el body tiene la clase list-view */
@@ -446,7 +435,7 @@ body.list-view .grid-item {
 
 /* Añadir más espacio a las tarjetas */
 .grid-item .card {
-    height: 150%;
+    height: 100%;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
 }
@@ -470,56 +459,7 @@ body.list-view .grid-item {
 body.list-view .grid-item {
     display: none !important; /* Forzamos ocultar elementos de cuadrícula */
 }
-body.list-view .list-item {
-    display: flex !important; /* Mostramos los elementos de lista como flex para el layout */
-    width: 100%;
-    margin-bottom: 1rem;
-    background-color: var(--card-bg-color);
-    border-radius: 0.75rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
-    transition: transform .2s;
-    height: 30vh;
-}
 
-body.list-view .list-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
-}
-
-body.list-view .list-item img {
-    width: 30%; /* Reducido al 25% del ancho disponible */
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 0.75rem;
-    border-bottom-left-radius: 0.75rem;
-    margin-right: 1.5rem;
-}
-
-body.list-view .list-item div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-body.list-view .list-item h5 {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-    color: var(--card-text-color);
-}
-
-body.list-view .list-item .summary-date {
-    font-size: 0.8rem;
-    color: #6c757d;
-    margin-bottom: 0.75rem;
-}
-
-body.list-view .list-item p {
-    font-size: 0.95rem;
-    color: var(--text-color);
-    margin-bottom: 0;
-    line-height: 1.5;
-}
 
 /* Ajuste responsive para vista de lista */
 /* Eliminadas las reglas que cambiaban el layout en modo móvil */
@@ -551,7 +491,6 @@ body.list-view .list-item p {
   background-color: var(--card-bg-color);
   color: var(--card-text-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  border: none;
   animation: slideIn 0.3s ease-in-out; /* Asegurar que la animación también se aplique */
 }
 
@@ -566,6 +505,12 @@ body.list-view .list-item p {
 .featured-post-container #featuredListView .ratio.ratio-16x9 {
   flex: 0 0 25rem;
 }
+
+.list-item .card {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
+}
+
+
 
 #listView .card-body,
 .featured-post-container #featuredListView .card-body {
