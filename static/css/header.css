@@ -38,6 +38,7 @@ body {
   text-decoration: none;
   color: #ffffff;
   border-radius: 6px;
+  text-align: center; /* Center the text */
 }
 
 .nav-menu {
@@ -60,7 +61,41 @@ body {
 }
 
 .active > .nav-menu-link {
-  background-color: #034574;
+  position: relative;
+  font-weight: 900; /* Make the text bold */
+  animation: font-weight-bold 0.2s ease-in-out forwards; /* Apply font-weight animation */
+}
+
+@keyframes underline-grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes font-weight-bold {
+  from {
+    font-weight: 400; /* Normal weight */
+    transform: scale(1); /* Initial scale */
+  }
+  to {
+    font-weight: 900; /* Bold weight */
+    transform: scale(1.05); /* Slightly larger scale */
+  }
+}
+
+.active > .nav-menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #4995ff;
+  border-radius: 2px 2px 0 0;
+  animation: underline-grow 0.3s ease-in-out forwards; /* Apply animation */
 }
 
 .nav-toggle {
@@ -160,8 +195,7 @@ body {
     width: 100vw;
   }
   .nav-menu_visible {
-    transform: translateX(-100%);
+    left: 0;
+    transform: none;
   }
-  /* Desactiva la transición mientras exista esta clase */
-
 }
