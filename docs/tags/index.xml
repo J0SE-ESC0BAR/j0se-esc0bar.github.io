@@ -2,72 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on JAEM</title>
-    <link>https://jaem.dev/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="https://jaem.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Códigos QR</title>
-      <link>https://jaem.dev/tags/c%C3%B3digos-qr/</link>
+      <link>http://localhost:1313/tags/c%C3%B3digos-qr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/c%C3%B3digos-qr/</guid>
+      <guid>http://localhost:1313/tags/c%C3%B3digos-qr/</guid>
       <description></description>
     </item>
     <item>
       <title>Desarrollo De Juegos</title>
-      <link>https://jaem.dev/tags/desarrollo-de-juegos/</link>
+      <link>http://localhost:1313/tags/desarrollo-de-juegos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/desarrollo-de-juegos/</guid>
+      <guid>http://localhost:1313/tags/desarrollo-de-juegos/</guid>
       <description></description>
     </item>
     <item>
       <title>Desarrollo Web</title>
-      <link>https://jaem.dev/tags/desarrollo-web/</link>
+      <link>http://localhost:1313/tags/desarrollo-web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/desarrollo-web/</guid>
+      <guid>http://localhost:1313/tags/desarrollo-web/</guid>
       <description></description>
     </item>
     <item>
       <title>Diseño Web</title>
-      <link>https://jaem.dev/tags/dise%C3%B1o-web/</link>
+      <link>http://localhost:1313/tags/dise%C3%B1o-web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/dise%C3%B1o-web/</guid>
+      <guid>http://localhost:1313/tags/dise%C3%B1o-web/</guid>
       <description></description>
     </item>
     <item>
       <title>Full Stack</title>
-      <link>https://jaem.dev/tags/full-stack/</link>
+      <link>http://localhost:1313/tags/full-stack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/full-stack/</guid>
+      <guid>http://localhost:1313/tags/full-stack/</guid>
       <description></description>
     </item>
     <item>
       <title>MongoDB</title>
-      <link>https://jaem.dev/tags/mongodb/</link>
+      <link>http://localhost:1313/tags/mongodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/mongodb/</guid>
+      <guid>http://localhost:1313/tags/mongodb/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://jaem.dev/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Scratch</title>
-      <link>https://jaem.dev/tags/scratch/</link>
+      <link>http://localhost:1313/tags/scratch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/scratch/</guid>
+      <guid>http://localhost:1313/tags/scratch/</guid>
       <description></description>
     </item>
     <item>
       <title>Sitio Parroquial</title>
-      <link>https://jaem.dev/tags/sitio-parroquial/</link>
+      <link>http://localhost:1313/tags/sitio-parroquial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/sitio-parroquial/</guid>
+      <guid>http://localhost:1313/tags/sitio-parroquial/</guid>
       <description></description>
     </item>
   </channel>
