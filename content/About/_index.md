@@ -29,8 +29,7 @@ Mi formación y experiencia se centran en el desarrollo de soluciones tecnológi
 
 *   **Certificaciones Destacadas:**
     *   Foundational C# with Microsoft (freeCodeCamp)
-    *   Patrones de Diseño con ASP.NET (Udemy)
-    *(Nota: Considera poner el año de obtención si ya las tienes, o "En proceso" si es el caso. Las fechas futuras como "2025" pueden confundir si no se aclaran).*
+    *   Patrones de Diseño con ASP.NET (Udemy) - En proceso
 
 ## Habilidades Técnicas
 
