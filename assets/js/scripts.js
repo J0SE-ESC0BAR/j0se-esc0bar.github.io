@@ -89,5 +89,6 @@ function actualizarTextoBoton(vista) {
   const vistaTexto = document.getElementById('vista-icon');
   if (vistaTexto) {
     vistaTexto.textContent = vista === 'lista' ? '🟪' : '🟰';
+    vistaTexto.setAttribute("aria-label", vista === 'lista' ? 'Vista en lista' : 'Vista en cuadros');
   }
 }
