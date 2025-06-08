@@ -1,26 +1,57 @@
-{{- $lang := .Type | default "code" -}}
-{{- $content := .Inner -}}
-
-<div class="highlight">
+{{- /* Verificar si es un diagrama Mermaid */ -}}
+{{- if eq .Type "mermaid" -}}
+  <pre class="mermaid">
+    {{ .Inner | htmlEscape | safeHTML }}
+  </pre>
+  {{ .Page.Store.Set "hasMermaid" true }}
+{{- else -}}
+  {{- /* Usar el transform.Highlight nativo de Hugo para todos los demás lenguajes */ -}}
+  {{- $lang := .Type | default "text" -}}
+  {{- $content := .Inner -}}
+  {{- $options := dict "lineNos" false "lineNumbersInTable" true "style" "dracula" "noClasses" false -}}
+  
+  {{- /* Permitir opciones personalizadas desde los atributos del bloque de código */ -}}
+  {{- if .Attributes -}}
+    {{- range $key, $value := .Attributes -}}
+      {{- $options = merge $options (dict $key $value) -}}
+    {{- end -}}
+  {{- end -}}
+  
   <div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">{{ upper $lang }}</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    {{ transform.Highlight $content $lang $options }}
+  </div>
+  
+  {{- /* Script para copiar al portapapeles (solo se agrega una vez por página) */ -}}
+  {{- if not (.Page.Store.Get "copyScriptAdded") -}}
+    {{- .Page.Store.Set "copyScriptAdded" true -}}
     <script>
       function copyToClipboard(button) {
         const codeBlock = button.closest('.code-block').querySelector('code');
         if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
           }).catch(err => {
-            console.error('Failed to copy text: ', err);
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
           });
         }
       }
     </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-{{ $lang }} hljs" data-lang="{{ $lang }}">{{- $content -}}</code>
-    </pre>
-  </div>
-</div>
+  {{- end -}}
+{{- end -}}
