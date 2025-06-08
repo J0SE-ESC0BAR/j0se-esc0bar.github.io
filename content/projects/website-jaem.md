@@ -1,5 +1,5 @@
 ---
-title: "Mi Página Web Antigua"
+title: "Mi Página Web"
 date: 2024-06-01T10:00:00-06:00
 draft: false
 description: "La versión anterior de mi sitio web personal, creada con Hugo."
