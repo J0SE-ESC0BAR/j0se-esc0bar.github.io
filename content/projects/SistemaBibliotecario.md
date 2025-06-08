@@ -89,7 +89,7 @@ Aquí algunas vistas de la aplicación:
 
 ### 1. Clonar el Repositorio
 ```powershell
-git clone https://github.com/tu-usuario/BibliotecaFrom.git # Reemplaza tu-usuario con tu nombre de usuario de GitHub
+git clone https://github.com/J0SE-ESC0BAR/BibliotecaForms.git 
 cd BibliotecaFrom
 ```
 
