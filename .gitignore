@@ -1,7 +1,7 @@
 /public
 /node_modules
 .prettierignore
-.kilocode/mcp.json
-.vscode/mcp.json
-mcp-servers/github.com/mendableai/firecrawl-mcp-server/mcp_settings.json
-mcp-servers/github.com/upstash/context7-mcp/mcp_settings.json
+/.vscode
+/.roo
+/.kilocode
+/sequiential-thinking-mcp
