@@ -20,6 +20,8 @@
   
     <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
   
+    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+  
     <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
   
     <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
@@ -221,8 +223,7 @@
     
   </nav>
 </header>
-  
-  
+    
   
     
     
@@ -335,59 +336,67 @@
 <hr>
 <h3 id="ejemplo-básico-de-código-en-windows-forms">Ejemplo Básico de Código en Windows Forms</h3>
 <p>Este ejemplo muestra cómo crear un formulario simple con un cuadro de texto y un botón en Windows Forms usando C#:</p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CSHARP</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MiFormulario</span> <span class="p">:</span> <span class="n">Form</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextBox</span> <span class="n">textBox</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">button</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MiFormulario</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">textBox</span> <span class="p">=</span> <span class="k">new</span> <span class="n">TextBox</span><span class="p">()</span> <span class="p">{</span> <span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">20</span><span class="p">),</span> <span class="n">Width</span> <span class="p">=</span> <span class="m">200</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">        <span class="n">button</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Button</span><span class="p">()</span> <span class="p">{</span> <span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;Mostrar&#34;</span><span class="p">,</span> <span class="n">Location</span> <span class="p">=</span> <span class="k">new</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Point</span><span class="p">(</span><span class="m">20</span><span class="p">,</span> <span class="m">60</span><span class="p">)</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">button</span><span class="p">.</span><span class="n">Click</span> <span class="p">+=</span> <span class="n">MostrarMensaje</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">textBox</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Controls</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">MostrarMensaje</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&#34;Hola, &#34;</span> <span class="p">+</span> <span class="n">textBox</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">    [STAThread]</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Application</span><span class="p">.</span><span class="n">EnableVisualStyles</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Application</span><span class="p">.</span><span class="n">Run</span><span class="p">(</span><span class="k">new</span> <span class="n">MiFormulario</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><script>
       function copyToClipboard(button) {
         const codeBlock = button.closest('.code-block').querySelector('code');
         if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
           }).catch(err => {
-            console.error('Failed to copy text: ', err);
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
           });
         }
       }
     </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-csharp hljs" data-lang="csharp">using System;
-using System.Windows.Forms;
-
-public class MiFormulario : Form
-{
-    private TextBox textBox;
-    private Button button;
-
-    public MiFormulario()
-    {
-        textBox = new TextBox() { Location = new System.Drawing.Point(20, 20), Width = 200 };
-        button = new Button() { Text = &#34;Mostrar&#34;, Location = new System.Drawing.Point(20, 60) };
-
-        button.Click &#43;= MostrarMensaje;
-
-        Controls.Add(textBox);
-        Controls.Add(button);
-    }
-
-    private void MostrarMensaje(object sender, EventArgs e)
-    {
-        MessageBox.Show(&#34;Hola, &#34; &#43; textBox.Text);
-    }
-
-    [STAThread]
-    public static void Main()
-    {
-        Application.EnableVisualStyles();
-        Application.Run(new MiFormulario());
-    }
-}</code>
-    </pre>
-  </div>
-</div>
     </div>
     
     <div class="py-4">
@@ -503,7 +512,7 @@ public class MiFormulario : Form
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-01 23:17:25.2052956 -0600 CST m=&#43;0.206071201">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-07 23:20:49.0595658 -0600 CST m=&#43;0.258084501">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -518,9 +527,11 @@ public class MiFormulario : Form
   
   
   
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
 </body>
 
 

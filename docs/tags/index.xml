@@ -6,7 +6,127 @@
     <description>Recent content in Tags on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
+    <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jaem.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Biblioteca</title>
+      <link>https://jaem.dev/tags/biblioteca/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/biblioteca/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>C#</title>
+      <link>https://jaem.dev/tags/c%23/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/c%23/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gestión De Proyectos</title>
+      <link>https://jaem.dev/tags/gesti%C3%B3n-de-proyectos/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/gesti%C3%B3n-de-proyectos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MDI</title>
+      <link>https://jaem.dev/tags/mdi/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/mdi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistema De Sesiones</title>
+      <link>https://jaem.dev/tags/sistema-de-sesiones/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/sistema-de-sesiones/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL Server</title>
+      <link>https://jaem.dev/tags/sql-server/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/sql-server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows Forms</title>
+      <link>https://jaem.dev/tags/windows-forms/</link>
+      <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/windows-forms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Básico</title>
+      <link>https://jaem.dev/tags/b%C3%A1sico/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/b%C3%A1sico/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bloques De Código</title>
+      <link>https://jaem.dev/tags/bloques-de-c%C3%B3digo/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/bloques-de-c%C3%B3digo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chroma</title>
+      <link>https://jaem.dev/tags/chroma/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/chroma/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desarrollo Web</title>
+      <link>https://jaem.dev/tags/desarrollo-web/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/desarrollo-web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diagramas</title>
+      <link>https://jaem.dev/tags/diagramas/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/diagramas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Documentación</title>
+      <link>https://jaem.dev/tags/documentaci%C3%B3n/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/documentaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Guía De Inicio</title>
+      <link>https://jaem.dev/tags/gu%C3%ADa-de-inicio/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/gu%C3%ADa-de-inicio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://jaem.dev/tags/hugo/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mermaid</title>
+      <link>https://jaem.dev/tags/mermaid/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/mermaid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Syntax Highlighting</title>
+      <link>https://jaem.dev/tags/syntax-highlighting/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.dev/tags/syntax-highlighting/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Códigos QR</title>
       <link>https://jaem.dev/tags/c%C3%B3digos-qr/</link>
@@ -19,13 +139,6 @@
       <link>https://jaem.dev/tags/desarrollo-de-juegos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://jaem.dev/tags/desarrollo-de-juegos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Desarrollo Web</title>
-      <link>https://jaem.dev/tags/desarrollo-web/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/tags/desarrollo-web/</guid>
       <description></description>
     </item>
     <item>

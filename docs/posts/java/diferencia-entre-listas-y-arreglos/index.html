@@ -20,6 +20,8 @@
   
     <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
   
+    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+  
     <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
   
     <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
@@ -221,8 +223,7 @@
     
   </nav>
 </header>
-  
-  
+    
   
     
     
@@ -242,52 +243,49 @@
   </div>
     <div class="py-4">
       <p>Cual es la diferencia entre</p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
-      <span class="code-block__lang">CODE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
+      <span class="code-block__lang">TEXT</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">List&lt;String&gt; cities = new ArrayList&lt;&gt;(); </span></span></code></pre></div>
+  </div><script>
       function copyToClipboard(button) {
         const codeBlock = button.closest('.code-block').querySelector('code');
         if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
           }).catch(err => {
-            console.error('Failed to copy text: ', err);
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
           });
         }
       }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-code hljs" data-lang="code">List&lt;String&gt; cities = new ArrayList&lt;&gt;(); </code>
-    </pre>
-  </div>
-</div><p>y</p>
-<div class="highlight">
-  <div class="code-block">
+    </script><p>y</p>
+<div class="code-block">
     <div class="code-block__header">
-      <span class="code-block__lang">CODE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <span class="code-block__lang">TEXT</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-code hljs" data-lang="code">String[] cities = {};</code>
-    </pre>
-  </div>
-</div><p>La principal diferencia entre List<String> cities = new ArrayList&lt;&gt;(); y String[] cities = {};
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">String[] cities = {};</span></span></code></pre></div>
+  </div><p>La principal diferencia entre List<String> cities = new ArrayList&lt;&gt;(); y String[] cities = {};
 es <strong>el tipo de objeto que están creando.</strong></p>
 <h3 id="list-cities--new-arraylist">List<String> cities = new ArrayList&lt;&gt;();</h3>
 <p>crea una lista de cadenas utilizando la clase ArrayList de Java. La clase ArrayList es una clase de la biblioteca de Java que proporciona una implementación de la interfaz List. La interfaz List es una de las interfaces más comunes utilizadas en Java para trabajar con colecciones de datos. La clase ArrayList es una implementación de la interfaz List que utiliza un arreglo interno para almacenar los elementos de la lista.</p>
@@ -412,7 +410,7 @@ es <strong>el tipo de objeto que están creando.</strong></p>
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-01 23:17:25.3793441 -0600 CST m=&#43;0.380119701">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-07 23:20:49.4175163 -0600 CST m=&#43;0.616035001">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -427,9 +425,11 @@ es <strong>el tipo de objeto que están creando.</strong></p>
   
   
   
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
 </body>
 
 

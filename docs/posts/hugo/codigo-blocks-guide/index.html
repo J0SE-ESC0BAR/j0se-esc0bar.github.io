@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Guía de Bloques de Código Mejorados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  <link rel="icon" href="http://localhost:1313/favicon.ico">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -18,23 +18,25 @@
   
   
   
-    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/chroma-syntax.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/code-blocks.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/NewStyles.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/variables.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/base.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/header.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/components.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/footer.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+    <link rel="stylesheet" href="http://localhost:1313/css/utilities.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/responsive.css">
   
 
   
@@ -45,8 +47,8 @@
     
     <meta property="og:title" content="Guía de Bloques de Código Mejorados">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaem.dev/posts/hugo/codigo-blocks-guide/">
-    <meta property="og:image" content="https://jaem.dev/images/no-img.png">
+    <meta property="og:url" content="http://localhost:1313/posts/hugo/codigo-blocks-guide/">
+    <meta property="og:image" content="http://localhost:1313/images/no-img.png">
     <meta property="og:description" content="Aprende a usar los nuevos bloques de código con header y botón de copiar en Hugo">
     
     
@@ -114,7 +116,7 @@
 <header class='header'>
   <nav class="nav">
     
-    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+    <a class="header-logo" href="http://localhost:1313/">JAEM</a>
 
     
     <button class="nav-toggle" aria-label="Abrir menú">
@@ -141,7 +143,7 @@
         
         <li class="menu-item-proyectos">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/projects/"
+             href="http://localhost:1313/projects/"
              
              >
             Proyectos
@@ -164,7 +166,7 @@
         
         <li class="menu-item-posts">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/posts/"
+             href="http://localhost:1313/posts/"
              
              >
             Posts
@@ -210,7 +212,7 @@
         
         <li class="menu-item-acerca">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/about/"
+             href="http://localhost:1313/about/"
              
              >
             Acerca
@@ -221,8 +223,7 @@
     
   </nav>
 </header>
-  
-  
+    
   
     
     
@@ -236,7 +237,7 @@
       <p>Aprende a usar los nuevos bloques de código con header y botón de copiar en Hugo</p>
     </div>
     <div class="col-md-6 intro-image">
-      <img class="img-fluid" src="https://jaem.dev/images/no-img.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Guía de Bloques de Código Mejorados' />
+      <img class="img-fluid" src="http://localhost:1313/images/no-img.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Guía de Bloques de Código Mejorados' />
     </div>
   </div>
   </div>
@@ -254,56 +255,55 @@
 <h2 id="-uso">📋 Uso</h2>
 <h3 id="método-1-bloques-de-código-markdown-recomendado">Método 1: Bloques de código markdown (Recomendado)</h3>
 <p>Simplemente usa la sintaxis normal de markdown con triple backtick:</p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="s">```javascript
+</span></span></span><span class="line"><span class="cl"><span class="s"></span><span class="kd">function</span> <span class="nx">saludar</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`¡Hola, </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">saludar</span><span class="p">(</span><span class="s1">&#39;Mundo&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div>
+  </div><script>
       function copyToClipboard(button) {
         const codeBlock = button.closest('.code-block').querySelector('code');
         if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
           }).catch(err => {
-            console.error('Failed to copy text: ', err);
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
           });
         }
       }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">```javascript
-function saludar(nombre) {
-    console.log(`¡Hola, ${nombre}!`);
-}
-
-saludar(&#39;Mundo&#39;);
-```</code>
-    </pre>
-  </div>
-</div><h3 id="método-2-shortcode-personalizado">Método 2: Shortcode personalizado</h3>
+    </script><h3 id="método-2-shortcode-personalizado">Método 2: Shortcode personalizado</h3>
 <p>Para mayor control, usa el shortcode <code>codeblock</code>:</p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown"><div class="highlight">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><div class="highlight">
   <div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">PYTHON</span>
@@ -318,77 +318,53 @@ def fibonacci(n):
 </code>
     </pre>
   </div>
-</div></code>
-    </pre>
-  </div>
-</div><h2 id="-personalización">🎨 Personalización</h2>
+</div></span></span></code></pre></div>
+  </div><h2 id="-personalización">🎨 Personalización</h2>
 <h3 id="variables-css-disponibles">Variables CSS disponibles</h3>
 <p>En <code>static/css/variables.css</code> puedes personalizar:</p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CSS</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-css hljs" data-lang="css">:root {
-  --code-bg-color: #1e1e1e;              /* Fondo del código */
-  --code-border-color: #3c3c3c;          /* Color del borde */
-  --code-header-bg-color: #2d2d2d;       /* Fondo del header */
-  --code-header-bg-hover-color: #404040; /* Hover del botón */
-  --text-color: #e4e4e4;                 /* Color del texto */
-  --highlight-color: #007acc;            /* Color de acento */
-}</code>
-    </pre>
-  </div>
-</div><h3 id="estilos-personalizados">Estilos personalizados</h3>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--code-bg-color</span><span class="p">:</span> <span class="mh">#1e1e1e</span><span class="p">;</span>              <span class="c">/* Fondo del código */</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--code-border-color</span><span class="p">:</span> <span class="mh">#3c3c3c</span><span class="p">;</span>          <span class="c">/* Color del borde */</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--code-header-bg-color</span><span class="p">:</span> <span class="mh">#2d2d2d</span><span class="p">;</span>       <span class="c">/* Fondo del header */</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--code-header-bg-hover-color</span><span class="p">:</span> <span class="mh">#404040</span><span class="p">;</span> <span class="c">/* Hover del botón */</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--text-color</span><span class="p">:</span> <span class="mh">#e4e4e4</span><span class="p">;</span>                 <span class="c">/* Color del texto */</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--highlight-color</span><span class="p">:</span> <span class="mh">#007acc</span><span class="p">;</span>            <span class="c">/* Color de acento */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><h3 id="estilos-personalizados">Estilos personalizados</h3>
 <p>Los estilos están en <code>static/css/components.css</code> bajo la sección &ldquo;Code Block Styles&rdquo;.</p>
 <h2 id="-configuración-de-hugo">🔧 Configuración de Hugo</h2>
 <p>En tu <code>config.toml</code>, asegúrate de tener:</p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">TOML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-toml hljs" data-lang="toml">[markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNumbersInTable = false
-    style = &#34;dracula&#34;
-    noClasses = false
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true</code>
-    </pre>
-  </div>
-</div><h2 id="-archivos-del-sistema">📁 Archivos del sistema</h2>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">codeFences</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">guessSyntax</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">lineNumbersInTable</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">style</span> <span class="p">=</span> <span class="s2">&#34;dracula&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">goldmark</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">goldmark</span><span class="p">.</span><span class="nx">renderer</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">unsafe</span> <span class="p">=</span> <span class="kc">true</span></span></span></code></pre></div>
+  </div><h2 id="-archivos-del-sistema">📁 Archivos del sistema</h2>
 <h3 id="render-hook">Render Hook</h3>
 <ul>
 <li><code>layouts/_default/_markup/render-codeblock.html</code> - Maneja bloques markdown automáticamente</li>
@@ -416,128 +392,95 @@ def fibonacci(n):
 <li><strong>Otros</strong>: <code>markdown</code>, <code>xml</code>, <code>txt</code>, etc.</li>
 </ul>
 <h2 id="-ejemplo-completo">🎯 Ejemplo completo</h2>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">---
-title: &#34;Mi Post con Código&#34;
-date: 2025-01-24
----
-
-# Ejemplo de uso
-
-Aquí tienes un ejemplo de JavaScript:
-
-```javascript
-// Función async/await
-async function obtenerDatos() {
-    try {
-        const response = await fetch(&#39;/api/datos&#39;);
-        const datos = await response.json();
-        return datos;
-    } catch (error) {
-        console.error(&#39;Error:&#39;, error);
-    }
-}</code>
-    </pre>
-  </div>
-</div><p>Y aquí SQL:</p>
-<div class="highlight">
-  <div class="code-block">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#34;Mi Post con Código&#34;
+</span></span><span class="line"><span class="cl">date: 2025-01-24
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gh"># Ejemplo de uso
+</span></span></span><span class="line"><span class="cl"><span class="gh"></span>
+</span></span><span class="line"><span class="cl">Aquí tienes un ejemplo de JavaScript:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```javascript
+</span></span><span class="line"><span class="cl">// Función async/await
+</span></span><span class="line"><span class="cl">async function obtenerDatos() {
+</span></span><span class="line"><span class="cl">    try {
+</span></span><span class="line"><span class="cl">        const response = await fetch(&#39;/api/datos&#39;);
+</span></span><span class="line"><span class="cl">        const datos = await response.json();
+</span></span><span class="line"><span class="cl">        return datos;
+</span></span><span class="line"><span class="cl">    } catch (error) {
+</span></span><span class="line"><span class="cl">        console.error(&#39;Error:&#39;, error);
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></div>
+  </div><p>Y aquí SQL:</p>
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">SQL</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-sql hljs" data-lang="sql">SELECT u.nombre, u.email, p.titulo
-FROM usuarios u
-JOIN posts p ON u.id = p.autor_id
-WHERE u.activo = true
-ORDER BY p.fecha_creacion DESC;</code>
-    </pre>
-  </div>
-</div><div class="highlight">
-  <div class="code-block">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">nombre</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">titulo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">FROM</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="n">u</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">JOIN</span><span class="w"> </span><span class="n">posts</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">autor_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">WHERE</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">activo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">fecha_creacion</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span></span></span></code></pre></div>
+  </div><div class="code-block">
     <div class="code-block__header">
-      <span class="code-block__lang">CODE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <span class="code-block__lang">TEXT</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-code hljs" data-lang="code">
-## 🛠️ Solución de problemas
-
-### El botón no funciona
-- Verifica que `static/js/scripts.js` esté cargado
-- Revisa la consola del navegador para errores
-
-### Los estilos no se aplican
-- Confirma que `static/css/components.css` esté incluido
-- Verifica las variables CSS en `variables.css`
-
-### El render hook no funciona
-- Asegúrate de que `render-codeblock.html` esté en la ruta correcta
-- Verifica la configuración de Hugo en `config.toml`
-
-## 🔄 Actualización desde versión anterior
-
-Si actualizas desde una versión anterior:
-
-1. Respalda tu `scripts.js` actual
-2. Copia los nuevos archivos de layout
-3. Actualiza tu `config.toml`
-4. Prueba con un post de ejemplo
-
-¡Listo! Ahora tienes bloques de código modernos y funcionales en tu sitio Hugo. 🎉</code>
-    </pre>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## 🛠️ Solución de problemas
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### El botón no funciona
+</span></span><span class="line"><span class="cl">- Verifica que `static/js/scripts.js` esté cargado
+</span></span><span class="line"><span class="cl">- Revisa la consola del navegador para errores
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### Los estilos no se aplican
+</span></span><span class="line"><span class="cl">- Confirma que `static/css/components.css` esté incluido
+</span></span><span class="line"><span class="cl">- Verifica las variables CSS en `variables.css`
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### El render hook no funciona
+</span></span><span class="line"><span class="cl">- Asegúrate de que `render-codeblock.html` esté en la ruta correcta
+</span></span><span class="line"><span class="cl">- Verifica la configuración de Hugo en `config.toml`
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">## 🔄 Actualización desde versión anterior
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Si actualizas desde una versión anterior:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">1. Respalda tu `scripts.js` actual
+</span></span><span class="line"><span class="cl">2. Copia los nuevos archivos de layout
+</span></span><span class="line"><span class="cl">3. Actualiza tu `config.toml`
+</span></span><span class="line"><span class="cl">4. Prueba con un post de ejemplo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">¡Listo! Ahora tienes bloques de código modernos y funcionales en tu sitio Hugo. 🎉</span></span></code></pre></div>
   </div>
-</div>
     </div>
     
     <div class="py-4">
       <div class="row justify-content-center">
         <div class="col-12 col-md-4 text-center mb-3">
           
-            <a href="https://jaem.dev/posts/hugo/test-codigo-blocks/" class="btn btn-outline-primary btn-lg w-100">
+            <a href="http://localhost:1313/posts/hugo/test-codigo-blocks/" class="btn btn-outline-primary btn-lg w-100">
               <i class="bi bi-arrow-left"></i> Post Anterior
               <small class="d-block text-light">Demostración de Bloques de …</small>
             </a>
@@ -545,14 +488,14 @@ Si actualizas desde una versión anterior:
         </div>
         
         <div class="col-12 col-md-4 text-center mb-3">
-          <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+          <a href="http://localhost:1313/posts/" class="btn btn-outline-secondary btn-lg w-100">
             <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
           </a>
         </div>
         
         <div class="col-12 col-md-4 text-center mb-3">
           
-            <a href="https://jaem.dev/posts/hugo/historico/" class="btn btn-outline-primary btn-lg w-100">
+            <a href="http://localhost:1313/posts/hugo/historico/" class="btn btn-outline-primary btn-lg w-100">
               Post Siguiente <i class="bi bi-arrow-right"></i>
               <small class="d-block text-light">Historico Sección “Posts”</small>
             </a>
@@ -646,7 +589,7 @@ Si actualizas desde una versión anterior:
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-01 23:17:25.3141733 -0600 CST m=&#43;0.314948901">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-05 20:49:54.2831812 -0600 CST m=&#43;0.518227101">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -656,14 +599,16 @@ Si actualizas desde una versión anterior:
   
   
   
-    <script src="https://jaem.dev/js/scripts.js"></script>
+    <script src="http://localhost:1313/js/scripts.js"></script>
   
   
   
   
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
 </body>
 
 

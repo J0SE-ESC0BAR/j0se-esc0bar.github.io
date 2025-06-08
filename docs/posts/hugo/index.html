@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Hugo uso básico</title>
+  <title>Artículos sobre Hugo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
@@ -19,6 +19,8 @@
   
   
     <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
   
     <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
   
@@ -40,14 +42,14 @@
   
   
     
-    <meta name="description" content="Estos son los comandos básicos para que comiences a trabajar con Hugo.">
+    <meta name="description" content="Colección de guías y tutoriales sobre el generador de sitios estáticos Hugo, desde lo básico hasta funciones avanzadas.">
     
     
-    <meta property="og:title" content="Hugo uso básico">
+    <meta property="og:title" content="Artículos sobre Hugo">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaem.dev/posts/hugo/">
     <meta property="og:image" content="https://jaem.dev/images/Hugo_logo.png">
-    <meta property="og:description" content="Estos son los comandos básicos para que comiences a trabajar con Hugo.">
+    <meta property="og:description" content="Colección de guías y tutoriales sobre el generador de sitios estáticos Hugo, desde lo básico hasta funciones avanzadas.">
     
     
     <meta name="twitter:card" content="summary">
@@ -221,8 +223,7 @@
     
   </nav>
 </header>
-  
-  
+    
   
     
     
@@ -246,7 +247,7 @@
       <div class="fila">
     <div class="col-md-6 intro-content">
       <div class="posts-header">
-          <h1 class="posts-title mb-1">Hugo uso básico</h1>
+          <h1 class="posts-title mb-1">Artículos sobre Hugo</h1>
             
               
                 
@@ -255,473 +256,33 @@
             
                 
             
+                
+            
           
           <p class="posts-meta mb-0">
-            <span>3</span> posts
+            <span>4</span> posts
           </p>
           
         </div>
-      <p>Estos son los comandos básicos para que comiences a trabajar con Hugo.</p>
+      <p>Colección de guías y tutoriales sobre el generador de sitios estáticos Hugo, desde lo básico hasta funciones avanzadas.</p>
     </div>
     
-    <div class="col-md-6 intro-image">
+    <div class="col-md-6 intro intro-image">
       <img class="img-fluid" 
            src="https://jaem.dev/images/Hugo_logo.png" 
            onerror="this.onerror=null; this.src='\/images\/no-img.png';" 
-           alt="Imagen de Hugo uso básico" />
+           alt="Imagen de Artículos sobre Hugo" />
     </div>
   </div>
     </div>
     <div class="">
-      <h2 id="introducción">Introducción</h2>
-<p>Hugo es un generador de sitios estáticos muy rápido y flexible. A continuación, verás los comandos y pasos básicos para crear, estructurar y desplegar tu sitio con Hugo.</p>
-<hr>
-<h2 id="1-crear-un-nuevo-post-en-hugo">1. Crear un Nuevo Post en Hugo</h2>
-<p>Para crear un nuevo post, abre la terminal en la ubicación de tu proyecto de Hugo y escribe:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">hugo new posts/nombre_post.md</code>
-    </pre>
-  </div>
-</div><p>Esto generará un archivo Markdown dentro de <code>content/posts/</code>. Por ejemplo, si deseas crear un post dentro de un directorio específico:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">hugo new posts/Dotnet/PatronesDeDisenio.md</code>
-    </pre>
-  </div>
-</div><p>Así, se creará un nuevo post en la carpeta <code>Dotnet</code>, dentro de <code>posts</code>.</p>
-<h3 id="cómo-crear-un-post-dentro-de-subcarpetas">¿Cómo crear un post dentro de subcarpetas?</h3>
-<p>Si tienes una carpeta <code>posts</code> y dentro otra llamada <code>Java</code> (que siempre debe tener un <code>_index.md</code> para que se reconozca como sección), usa:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">hugo new posts/Java/nombre_post.md</code>
-    </pre>
-  </div>
-</div><hr>
-<h2 id="2-visualizar-tu-sitio-en-local">2. Visualizar tu Sitio en Local</h2>
-<p>Para iniciar el servidor de Hugo y ver tu sitio localmente en <code>http://localhost:1313/</code>, ejecuta:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">hugo server</code>
-    </pre>
-  </div>
-</div><hr>
-<h2 id="3-compilar-archivos-de-hugo">3. Compilar Archivos de Hugo</h2>
-<p>Cuando quieras generar tu sitio estático en la carpeta de salida (por defecto <code>public</code>), ejecuta:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">hugo</code>
-    </pre>
-  </div>
-</div><h3 id="cambiar-la-carpeta-de-salida-a-docs">Cambiar la Carpeta de Salida a &ldquo;docs&rdquo;</h3>
-<ol>
-<li>Edita tu archivo de configuración (<code>config.toml</code> o similar) y agrega:
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">TOML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-toml hljs" data-lang="toml">publishDir = &#34;docs&#34;</code>
-    </pre>
-  </div>
-</div></li>
-<li>O, en la terminal:
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">hugo -d docs</code>
-    </pre>
-  </div>
-</div></li>
-</ol>
-<p>De esta manera, en lugar de la carpeta <code>public</code>, tu sitio se generará en <code>docs</code>.</p>
-<hr>
-<h2 id="4-insertar-enlaces-en-markdown">4. Insertar Enlaces en Markdown</h2>
-<p>La sintaxis de Markdown para enlaces es:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">[Texto del enlace](/ruta_del_enlace)</code>
-    </pre>
-  </div>
-</div><p><strong>Ejemplos:</strong></p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">[YouTube](https://www.youtube.com)
-[YouTube](https://www.youtube.com &#34;Visita YouTube&#34;)   --&gt; (con mensaje al pasar el ratón)</code>
-    </pre>
-  </div>
-</div><p><a href="https://www.youtube.com">YouTube</a><br>
-<a href="https://www.youtube.com" title="Visita YouTube">YouTube</a></p>
-<hr>
-<h2 id="5-insertar-imágenes-en-markdown">5. Insertar Imágenes en Markdown</h2>
-<p>La sintaxis para imágenes:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">![Texto de la imagen](/ruta_de_la_imagen)</code>
-    </pre>
-  </div>
-</div><p><strong>Ejemplo:</strong></p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">![Logo Hugo](/images/Hugo_logo.png)</code>
-    </pre>
-  </div>
-</div><p><figure>
-  <img
-    src="https://jaem.dev/images/Hugo_logo.png"
-    alt="Logo Hugo"
-    class="img-fluid"
-  /></figure>
-</p>
-<hr>
-<h2 id="6-insertar-videos-youtube-en-hugo">6. Insertar Videos (YouTube) en Hugo</h2>
-<p>Hugo permite incrustar videos de YouTube mediante shortcodes:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">{{&lt; youtube ID_DEL_VIDEO &gt;}}</code>
-    </pre>
-  </div>
-</div><p><strong>Ejemplo:</strong></p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">{{&lt; youtube XRLP4K_qON8 &gt;}}</code>
-    </pre>
-  </div>
-</div><blockquote>
-<p>Si quieres que Hugo ignore el shortcode, deberás escapar las llaves, por ejemplo:<br>
-<code>{{&lt; youtube ID_DEL_VIDEO &gt;}}</code></p></blockquote>
-<p>Ejemplo de video de YouTube:<br>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/XRLP4K_qON8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
-    </div>
-</p>
-<hr>
-<h2 id="7-escapar-markdown-y-shortcodes-en-hugo">7. Escapar Markdown y Shortcodes en Hugo</h2>
-<h3 id="ignorar---como-comando">Ignorar <code>{{*/ */}}</code> como comando</h3>
-<p>Para que Hugo ignore <code>{{&lt;  &gt;}}</code>, coloca caracteres de escape. Por ejemplo:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">{{&lt;/* youtube ID_DEL_VIDEO */&gt;}}</code>
-    </pre>
-  </div>
-</div><h3 id="ignorar--como-comando">Ignorar <code>![]</code> como comando</h3>
-<p>Para no interpretar <code>![Texto]</code>, agrega <code>\</code>:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">\![Texto de la imagen](/ruta_de_la_imagen)</code>
-    </pre>
-  </div>
-</div><h3 id="ignorar--como-comando-1">Ignorar <code>[]</code> como comando</h3>
-<p>Coloca <code>\</code> antes del corchete:</p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">\[Texto del enlace](/ruta_del_enlace)</code>
-    </pre>
-  </div>
-</div><hr>
-<h2 id="8-saltos-de-línea-en-markdown">8. Saltos de Línea en Markdown</h2>
+      <p>Explora nuestras guías detalladas sobre Hugo. Aprende a configurar tu sitio, dominar los bloques de código, integrar diagramas Mermaid y mucho más.</p>
+<p>En esta sección encontrarás:</p>
 <ul>
-<li><strong>Salto de línea doble</strong>: Deja una línea en blanco entre párrafos.</li>
-<li><strong>Salto de línea simple</strong>: Añade dos espacios al final de la línea.</li>
+<li>Una guía de inicio para familiarizarte con los comandos básicos de Hugo.</li>
+<li>Un tutorial exhaustivo sobre cómo potenciar tus bloques de código con resaltado de sintaxis avanzado y funcionalidades extra.</li>
+<li>Instrucciones claras para integrar y utilizar diagramas Mermaid en tus contenidos.</li>
 </ul>
-<p><strong>Ejemplo:</strong></p>
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-markdown hljs" data-lang="markdown">Esta es la primera línea.{··}  
-Esta es la segunda línea.
-
-Esta es la tercera línea.</code>
-    </pre>
-  </div>
-</div><p><em>(Donde <code>··</code> representan los dos espacios.)</em></p>
-<hr>
-<h2 id="conclusión">Conclusión</h2>
-<p>Estos son los comandos y trucos básicos para que comiences a trabajar con Hugo: crear nuevos posts, ver tu sitio en local, compilar los archivos y personalizar rutas de salida. Además, aprenderás a insertar enlaces, imágenes, videos y a escapar elementos para que no sean interpretados como shortcodes. ¡Explora y personaliza tu sitio según tus necesidades!</p>
 
     </div>
   
@@ -739,12 +300,18 @@ Esta es la tercera línea.</code>
     
     
   
+    
+    
+    
+  
 
   
   
   
   
   
+  
+    
   
     
   
@@ -796,17 +363,17 @@ Esta es la tercera línea.</code>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       
       <div class="col grid-item">
-        <a href="https://jaem.dev/posts/hugo/test-codigo-blocks/" class="post-link-wrapper text-decoration-none">
+        <a href="https://jaem.dev/posts/hugo/bloques-codigo-hugo/" class="post-link-wrapper text-decoration-none">
           <div class="card hover-zoom">
             
-            <img src="https://jaem.dev/images/no-img.png"
-              class="card-img-top object-fit-cover" alt="Imagen de Demostración de Bloques de Código Mejorados" loading="lazy"
+            <img src="https://jaem.dev/images/HugoBloquesCodigo.png"
+              class="card-img-top object-fit-cover" alt="Imagen de Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas" loading="lazy"
               onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Demostración de Bloques de Código Mejorados</h5>
-              <small class="text-light mb-2">23 May 2025</small>
+              <h5 class="card-title">Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</h5>
+              <small class="text-light mb-2">5 Jun 2025</small>
               <p class="card-text line-clamp">
-                Este post demuestra cómo usar los nuevos bloques de código con header y botón de copiar.
+                Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.
               </p>
 
               
@@ -816,17 +383,37 @@ Esta es la tercera línea.</code>
       </div>
       
       <div class="col grid-item">
-        <a href="https://jaem.dev/posts/hugo/codigo-blocks-guide/" class="post-link-wrapper text-decoration-none">
+        <a href="https://jaem.dev/posts/hugo/guia-inicio-hugo/" class="post-link-wrapper text-decoration-none">
           <div class="card hover-zoom">
             
-            <img src="https://jaem.dev/images/no-img.png"
-              class="card-img-top object-fit-cover" alt="Imagen de Guía de Bloques de Código Mejorados" loading="lazy"
+            <img src="https://jaem.dev/images/GuiaUsoBasicoHugo.png"
+              class="card-img-top object-fit-cover" alt="Imagen de Guía de Inicio y Uso Básico de Hugo" loading="lazy"
               onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
             <div class="card-body d-flex flex-column">
-              <h5 class="card-title">Guía de Bloques de Código Mejorados</h5>
-              <small class="text-light mb-2">23 May 2025</small>
+              <h5 class="card-title">Guía de Inicio y Uso Básico de Hugo</h5>
+              <small class="text-light mb-2">5 Jun 2025</small>
               <p class="card-text line-clamp">
-                Aprende a usar los nuevos bloques de código con header y botón de copiar en Hugo
+                Aprende los comandos y conceptos básicos para empezar a trabajar con Hugo, desde crear posts hasta compilar tu sitio.
+              </p>
+
+              
+            </div>
+          </div>
+        </a>
+      </div>
+      
+      <div class="col grid-item">
+        <a href="https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/" class="post-link-wrapper text-decoration-none">
+          <div class="card hover-zoom">
+            
+            <img src="https://jaem.dev/images/DiagramasMermaid.png"
+              class="card-img-top object-fit-cover" alt="Imagen de Integración y Uso de Diagramas Mermaid en Hugo" loading="lazy"
+              onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Integración y Uso de Diagramas Mermaid en Hugo</h5>
+              <small class="text-light mb-2">5 Jun 2025</small>
+              <p class="card-text line-clamp">
+                Aprende a crear e integrar diagramas Mermaid en tus posts de Hugo para visualizaciones efectivas.
               </p>
 
               
@@ -839,7 +426,7 @@ Esta es la tercera línea.</code>
         <a href="https://jaem.dev/posts/hugo/historico/" class="post-link-wrapper text-decoration-none">
           <div class="card hover-zoom">
             
-            <img src="https://jaem.dev/images/no-img.png"
+            <img src="https://jaem.dev/images/HistoricoHugoPost.png"
               class="card-img-top object-fit-cover" alt="Imagen de Historico Sección “Posts”" loading="lazy"
               onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
             <div class="card-body d-flex flex-column">
@@ -861,18 +448,18 @@ Esta es la tercera línea.</code>
   <div id="listView" class="py-4 flex-column gap-3">
     
     <div class="list-item">
-    <a href="https://jaem.dev/posts/hugo/test-codigo-blocks/" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
+    <a href="https://jaem.dev/posts/hugo/bloques-codigo-hugo/" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
       <div class="ratio ratio-16x9">
         
-        <img src="https://jaem.dev/images/no-img.png"
-          class="object-fit-cover rounded-start" alt="Imagen de Demostración de Bloques de Código Mejorados"
+        <img src="https://jaem.dev/images/HugoBloquesCodigo.png"
+          class="object-fit-cover rounded-start" alt="Imagen de Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas"
           onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
       </div>
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title mb-1">Demostración de Bloques de Código Mejorados</h5>
-        <small class="text-light mb-2">23 May 2025</small>
+        <h5 class="card-title mb-1">Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</h5>
+        <small class="text-light mb-2">5 Jun 2025</small>
         <p class="card-text flex-grow-1 text-truncate-3">
-          Este post demuestra cómo usar los nuevos bloques de código con header y botón de copiar.
+          Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.
         </p>
         
       </div>
@@ -880,18 +467,37 @@ Esta es la tercera línea.</code>
     </div>
     
     <div class="list-item">
-    <a href="https://jaem.dev/posts/hugo/codigo-blocks-guide/" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
+    <a href="https://jaem.dev/posts/hugo/guia-inicio-hugo/" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
       <div class="ratio ratio-16x9">
         
-        <img src="https://jaem.dev/images/no-img.png"
-          class="object-fit-cover rounded-start" alt="Imagen de Guía de Bloques de Código Mejorados"
+        <img src="https://jaem.dev/images/GuiaUsoBasicoHugo.png"
+          class="object-fit-cover rounded-start" alt="Imagen de Guía de Inicio y Uso Básico de Hugo"
           onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
       </div>
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title mb-1">Guía de Bloques de Código Mejorados</h5>
-        <small class="text-light mb-2">23 May 2025</small>
+        <h5 class="card-title mb-1">Guía de Inicio y Uso Básico de Hugo</h5>
+        <small class="text-light mb-2">5 Jun 2025</small>
         <p class="card-text flex-grow-1 text-truncate-3">
-          Aprende a usar los nuevos bloques de código con header y botón de copiar en Hugo
+          Aprende los comandos y conceptos básicos para empezar a trabajar con Hugo, desde crear posts hasta compilar tu sitio.
+        </p>
+        
+      </div>
+    </a>
+    </div>
+    
+    <div class="list-item">
+    <a href="https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
+      <div class="ratio ratio-16x9">
+        
+        <img src="https://jaem.dev/images/DiagramasMermaid.png"
+          class="object-fit-cover rounded-start" alt="Imagen de Integración y Uso de Diagramas Mermaid en Hugo"
+          onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
+      </div>
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title mb-1">Integración y Uso de Diagramas Mermaid en Hugo</h5>
+        <small class="text-light mb-2">5 Jun 2025</small>
+        <p class="card-text flex-grow-1 text-truncate-3">
+          Aprende a crear e integrar diagramas Mermaid en tus posts de Hugo para visualizaciones efectivas.
         </p>
         
       </div>
@@ -902,7 +508,7 @@ Esta es la tercera línea.</code>
     <a href="https://jaem.dev/posts/hugo/historico/" class="card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
       <div class="ratio ratio-16x9">
         
-        <img src="https://jaem.dev/images/no-img.png"
+        <img src="https://jaem.dev/images/HistoricoHugoPost.png"
           class="object-fit-cover rounded-start" alt="Imagen de Historico Sección “Posts”"
           onerror="this.onerror=null;this.src='\/images\/no-img.png';" />
       </div>
@@ -1020,7 +626,7 @@ Esta es la tercera línea.</code>
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-01 23:17:25.2964936 -0600 CST m=&#43;0.297269201">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-07 23:20:49.1485426 -0600 CST m=&#43;0.347061301">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -1035,9 +641,11 @@ Esta es la tercera línea.</code>
   
   
   
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
 </body>
 
 

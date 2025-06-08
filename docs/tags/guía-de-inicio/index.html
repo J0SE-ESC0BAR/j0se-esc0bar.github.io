@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Guía De Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  
+  
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+  
+    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+  
+
+  
+  
+    
+    
+    
+    
+    <meta property="og:title" content="Guía De Inicio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jaem.dev/tags/gu%C3%ADa-de-inicio/">
+    
+    
+    
+    
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:site" content="@JAEM_Developer">
+      <meta name="twitter:creator" content="@JAEM_Developer">
+    
+  
+  
+  
+  <script>
+     
+    document.documentElement.classList.add('preload');
+    
+    (function() {
+      const pref = localStorage.getItem('vistaPreferida') || 'list';  
+      
+      
+      if (pref === 'grid') {
+        document.documentElement.classList.add('grid-view');
+        document.documentElement.classList.remove('list-view');
+        document.body.classList.add('grid-view');
+        document.body.classList.remove('list-view');
+      } else {
+        document.documentElement.classList.add('list-view');
+        document.documentElement.classList.remove('grid-view');
+        document.body.classList.add('list-view');
+        document.body.classList.remove('grid-view');
+      }
+    })();
+  </script>
+</head>
+
+
+
+
+<body class="d-flex flex-column min-vh-100 page-default-list">
+  
+  
+  <script>
+  (function () {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const menu = document.querySelector(".nav-menu");
+      if (!menu) return;
+  
+       
+      menu.classList.add("nav-menu_visible", "no-transition");
+      void menu.offsetHeight;                 
+      menu.classList.remove("no-transition"); 
+  
+       
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {         
+          menu.classList.remove("nav-menu_visible");
+          localStorage.removeItem('menuShouldCloseOnLoad');
+        });
+      });
+    });
+  })();
+  </script>
+<header class='header'>
+  <nav class="nav">
+    
+    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-proyectos">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/projects/"
+             
+             >
+            Proyectos
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-posts">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/posts/"
+             
+             >
+            Posts
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-servicios disabled">
+          <a class="nav-menu-link nav-link disabled"
+             href="#"
+             
+             tabindex="-1" aria-disabled="true">
+            Servicios
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-acerca">
+          <a class="nav-menu-link nav-link"
+             href="https://jaem.dev/about/"
+             
+             >
+            Acerca
+          </a>
+        </li>
+      
+    </ul>
+    
+  </nav>
+</header>
+    
+  
+    
+    
+    <main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0">
+      <div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white">
+        
+  <div class="intro">
+    <h1>Guía De Inicio</h1>
+    
+  </div>
+  
+  
+  
+    <div class="summary">
+  
+    <div class="summary-date">Jun 5, 2025</div>
+  
+  <h2 class="summary-title"><a href="https://jaem.dev/posts/hugo/guia-inicio-hugo/">Guía de Inicio y Uso Básico de Hugo</a></h2>
+  <p class="summary-description">Aprende los comandos y conceptos básicos para empezar a trabajar con Hugo, desde crear posts hasta compilar tu sitio.</p>
+</div>
+  
+
+      </div>
+    </main>
+  
+  
+    
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+
+
+<div class="box-icons">
+  
+<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-twitter" aria-hidden="true"></i>
+</a>
+
+<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-github" aria-hidden="true"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-linkedin" aria-hidden="true"></i>
+</a>
+
+</div>
+
+</section>
+
+
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+        
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2025-06-07 23:20:49.7663218 -0600 CST m=&#43;0.964840501">2025</time> - Diseño Web realizado por 
+  </div>
+  
+</footer>
+
+
+  
+  
+  
+  
+    <script src="https://jaem.dev/js/scripts.js"></script>
+  
+  
+  
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
+</body>
+
+
+
+
+
+</html>

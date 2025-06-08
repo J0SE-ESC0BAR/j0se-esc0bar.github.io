@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Estilos personalizados para bloques de código
+   ========================================================================== */
+
+/* Contenedor del bloque de código */
+.code-block {
+  position: relative;
+  margin: 1rem 0;
+  border-radius: 8px;
+  background-color: #282a36;
+  border: 1px solid #44475a;
+  overflow: hidden;
+}
+
+/* Header del bloque de código */
+.code-block__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #44475a;
+  border-bottom: 1px solid #6272a4;
+  font-size: 0.875rem;
+}
+
+/* Etiqueta del lenguaje */
+.code-block__lang {
+  color: #f8f8f2;
+  font-weight: 600;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Botón de copiar */
+.code-block__copybtn {
+  background: none;
+  border: none;
+  color: #f8f8f2;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.code-block__copybtn:hover {
+  background-color: #6272a4;
+  color: #fff;
+}
+
+.code-block__copybtn:active {
+  transform: scale(0.95);
+}
+
+/* Contenedor del highlight generado por Hugo */
+.code-block .highlight {
+  margin: 0;
+  background: transparent !important;
+}
+
+.code-block .highlight pre {
+  margin: 0;
+  padding: 1rem;
+  background: transparent !important;
+  border: none;
+  border-radius: 0;
+  overflow-x: auto;
+}
+
+.code-block .highlight code {
+  background: transparent !important;
+  padding: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Estilos para números de línea cuando están habilitados */
+.code-block .highlight .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto;
+  overflow: visible;
+  display: block;
+}
+
+.code-block .highlight .lntd {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.code-block .highlight .lntd:first-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+.code-block .highlight .lnt {
+  color: #6272a4;
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid #44475a;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .code-block__header {
+    padding: 0.75rem;
+  }
+  
+  .code-block .highlight pre {
+    padding: 0.75rem;
+  }
+  
+  .code-block .highlight code {
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   Estilos para diagramas Mermaid
+   ========================================================================== */
+
+/* Contenedor de Mermaid */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  overflow-x: auto;
+}
+
+/* Tema oscuro para Mermaid */
+@media (prefers-color-scheme: dark) {
+  .mermaid {
+    background-color: #2d3748;
+    border-color: #4a5568;
+  }
+}
+
+/* Responsive para Mermaid */
+@media (max-width: 768px) {
+  .mermaid {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ==========================================================================
+   Utilidades adicionales
+   ========================================================================== */
+
+/* Para bloques de código en línea (inline code) */
+code:not(.chroma code) {
+  background-color: #f1f3f4;
+  color: #c23621;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.875em;
+}
+
+/* Tema oscuro para código inline */
+@media (prefers-color-scheme: dark) {
+  code:not(.chroma code) {
+    background-color: #44475a;
+    color: #ff79c6;
+  }
+}
+
+/* Scrollbar personalizada para bloques de código */
+.code-block .highlight pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block .highlight pre::-webkit-scrollbar-track {
+  background: #44475a;
+}
+
+.code-block .highlight pre::-webkit-scrollbar-thumb {
+  background: #6272a4;
+  border-radius: 4px;
+}
+
+.code-block .highlight pre::-webkit-scrollbar-thumb:hover {
+  background: #bd93f9;
+}

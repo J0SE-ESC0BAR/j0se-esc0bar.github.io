@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Sistema de Gestión Bibliotecaria - BibliotecaForm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  
+  
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/chroma-syntax.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/code-blocks.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/NewStyles.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/variables.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/base.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/header.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/components.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/footer.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/utilities.css">
+  
+    <link rel="stylesheet" href="http://localhost:1313/css/responsive.css">
+  
+
+  
+  
+    
+    <meta name="description" content="Un sistema completo de gestión bibliotecaria desarrollado en C# con Windows Forms, con interfaz MDI moderna y gestión avanzada de sesiones.">
+    
+    
+    <meta property="og:title" content="Sistema de Gestión Bibliotecaria - BibliotecaForm">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:1313/projects/sistemabibliotecario1/">
+    <meta property="og:image" content="http://localhost:1313/Capturas/BibliotecaInicio.png">
+    <meta property="og:description" content="Un sistema completo de gestión bibliotecaria desarrollado en C# con Windows Forms, con interfaz MDI moderna y gestión avanzada de sesiones.">
+    
+    
+    <meta name="twitter:card" content="summary">
+    
+      <meta name="twitter:site" content="@JAEM_Developer">
+      <meta name="twitter:creator" content="@JAEM_Developer">
+    
+  
+  
+  
+  <script>
+     
+    document.documentElement.classList.add('preload');
+    
+    (function() {
+      const pref = localStorage.getItem('vistaPreferida') || 'list';  
+      
+      
+      if (pref === 'grid') {
+        document.documentElement.classList.add('grid-view');
+        document.documentElement.classList.remove('list-view');
+        document.body.classList.add('grid-view');
+        document.body.classList.remove('list-view');
+      } else {
+        document.documentElement.classList.add('list-view');
+        document.documentElement.classList.remove('grid-view');
+        document.body.classList.add('list-view');
+        document.body.classList.remove('grid-view');
+      }
+    })();
+  </script>
+</head>
+
+
+
+
+<body class="d-flex flex-column min-vh-100 project single">
+  
+  
+  <script>
+  (function () {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const menu = document.querySelector(".nav-menu");
+      if (!menu) return;
+  
+       
+      menu.classList.add("nav-menu_visible", "no-transition");
+      void menu.offsetHeight;                 
+      menu.classList.remove("no-transition"); 
+  
+       
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {         
+          menu.classList.remove("nav-menu_visible");
+          localStorage.removeItem('menuShouldCloseOnLoad');
+        });
+      });
+    });
+  })();
+  </script>
+<header class='header'>
+  <nav class="nav">
+    
+    <a class="header-logo" href="http://localhost:1313/">JAEM</a>
+
+    
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <ul class="nav-menu">
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-proyectos">
+          <a class="nav-menu-link nav-link"
+             href="http://localhost:1313/projects/"
+             
+             >
+            Proyectos
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-posts">
+          <a class="nav-menu-link nav-link"
+             href="http://localhost:1313/posts/"
+             
+             >
+            Posts
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-servicios disabled">
+          <a class="nav-menu-link nav-link disabled"
+             href="#"
+             
+             tabindex="-1" aria-disabled="true">
+            Servicios
+          </a>
+        </li>
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <li class="menu-item-acerca">
+          <a class="nav-menu-link nav-link"
+             href="http://localhost:1313/about/"
+             
+             >
+            Acerca
+          </a>
+        </li>
+      
+    </ul>
+    
+  </nav>
+</header>
+    
+  
+    
+    
+    <main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0">
+      <div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white">
+        
+  <div class="fila">
+    <div class="col-md-6 intro-image">
+      <img src="http://localhost:1313/./Capturas/BibliotecaInicio.png" class="img-fluid" alt="Sistema de Gestión Bibliotecaria - BibliotecaForm">
+    </div>
+    <div class="col-md-6 intro-content">
+      <h1>Sistema de Gestión Bibliotecaria - BibliotecaForm</h1>
+      <p>Un sistema completo de gestión bibliotecaria desarrollado en C# con Windows Forms, con interfaz MDI moderna y gestión avanzada de sesiones.</p>
+    </div>
+  </div>
+      <p><figure>
+  <img
+    src="./Resources/1BNS.png"
+    alt="BibliotecaFrom Logo"
+    class="img-fluid"
+  /></figure>
+</p>
+<p><a href="https://dotnet.microsoft.com/download/dotnet-framework"><figure>
+  <img
+    src="https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg"
+    alt=".NET Framework"
+    class="img-fluid"
+  /></figure>
+</a>
+<a href="https://www.microsoft.com/sql-server"><figure>
+  <img
+    src="https://img.shields.io/badge/SQL%20Server-2019&#43;-red.svg"
+    alt="SQL Server"
+    class="img-fluid"
+  /></figure>
+</a>
+<a href="https://docs.microsoft.com/dotnet/desktop/winforms/"><figure>
+  <img
+    src="https://img.shields.io/badge/UI-Windows%20Forms-green.svg"
+    alt="Windows Forms"
+    class="img-fluid"
+  /></figure>
+</a>
+<a href="LICENSE"><figure>
+  <img
+    src="https://img.shields.io/badge/license-MIT-blue.svg"
+    alt="License"
+    class="img-fluid"
+  /></figure>
+</a></p>
+<h2 id="-bienvenido-a-bibliotecaform-">🌟 ¡Bienvenido a BibliotecaForm! 🌟</h2>
+<p><strong>BibliotecaForm</strong> es un sistema de gestión de bibliotecas robusto y fácil de usar, desarrollado en C# con Windows Forms. Ofrece una interfaz MDI moderna y funcionalidades completas para la administración de libros, usuarios y préstamos, ideal para pequeñas y medianas bibliotecas.</p>
+<p>Este proyecto nació de la necesidad de contar con una herramienta eficiente y visualmente atractiva para la gestión bibliotecaria, enfocándose en la experiencia del usuario y la solidez funcional.</p>
+<h2 id="-tabla-de-contenidos">📋 Tabla de Contenidos</h2>
+<ul>
+<li><a href="#-bienvenido-a-bibliotecaform-">🌟 ¡Bienvenido a BibliotecaForm!</a></li>
+<li><a href="#-caracter%C3%ADsticas-principales">✨ Características Principales</a></li>
+<li><a href="#-capturas-de-pantalla">📸 Capturas de Pantalla</a></li>
+<li><a href="#%EF%B8%8F-tecnolog%C3%ADas-utilizadas">🛠️ Tecnologías Utilizadas</a></li>
+<li><a href="#-requisitos-del-sistema">💻 Requisitos del Sistema</a></li>
+<li><a href="#-instalaci%C3%B3n-y-configuraci%C3%B3n">🚀 Instalación y Configuración</a></li>
+<li><a href="#-arquitectura-del-sistema">🏗️ Arquitectura del Sistema</a></li>
+<li><a href="#-m%C3%B3dulos-y-funcionalidades">🔧 Módulos y Funcionalidades</a></li>
+<li><a href="#%EF%B8%8F-base-de-datos">🗄️ Base de Datos</a></li>
+<li><a href="#-estructura-del-proyecto">📁 Estructura del Proyecto</a></li>
+<li><a href="#-uso-de-la-aplicaci%C3%B3n">🚀 Uso de la Aplicación</a></li>
+<li><a href="#-contribuci%C3%B3n">🤝 Contribución</a></li>
+<li><a href="#-licencia">📜 Licencia</a></li>
+<li><a href="#-autor">🧑‍💻 Autor</a></li>
+</ul>
+<h2 id="-características-principales">✨ Características Principales</h2>
+<ul>
+<li>🔐 <strong>Sistema de Autenticación Multi-Rol con Gestión de Sesiones</strong>: Soporte para usuarios regulares y administradores con persistencia de sesión.</li>
+<li>🖥️ <strong>Interfaz MDI Moderna</strong>: Menú lateral expandible/colapsable con navegación fluida entre formularios.</li>
+<li>📚 <strong>Gestión Completa de Catálogo</strong>: Agregar, editar y eliminar libros del inventario con validaciones avanzadas.</li>
+<li>👥 <strong>Administración de Usuarios</strong>: Registro y gestión de miembros con selección automática y validaciones.</li>
+<li>📋 <strong>Control Avanzado de Préstamos</strong>: Sistema completo con tickets, alertas de vencimiento y códigos de colores.</li>
+<li>🔍 <strong>Modo Visitante Mejorado</strong>: Navegación del catálogo sin necesidad de registro con interfaz diferenciada.</li>
+<li>📊 <strong>Panel Administrativo Avanzado</strong>: Dashboard con selección automática de registros y gestión contextual.</li>
+<li>🎨 <strong>Interfaz Profesional</strong>: Diseño moderno con DataGridViews estilizados y recursos visuales integrados.</li>
+<li>⚡ <strong>Gestión Global de Configuración</strong>: Sistema centralizado de configuración y cadenas de conexión.</li>
+<li>🚀 <strong>Navegación Inteligente</strong>: Detección automática de sesiones activas y redirección inteligente.</li>
+</ul>
+<h2 id="-capturas-de-pantalla">📸 Capturas de Pantalla</h2>
+<p>Aquí algunas vistas de la aplicación:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Inicio de Sesión</th>
+          <th>Panel de Administrador</th>
+          <th>Catálogo de Libros (Usuario)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><figure>
+  <img
+    src="./Capturas/BibliotecaLoginUsuarioNormal.png"
+    alt="Inicio de Sesión"
+    class="img-fluid"
+  /></figure>
+</td>
+          <td><figure>
+  <img
+    src="./Capturas/BibiotecaPanelAdministrador.png"
+    alt="Panel de Administrador"
+    class="img-fluid"
+  /></figure>
+</td>
+          <td><figure>
+  <img
+    src="./Capturas/BibliotecaListaLibrosUsuario.png"
+    alt="Catálogo de Libros"
+    class="img-fluid"
+  /></figure>
+</td>
+      </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+      <tr>
+          <th>Vista de Préstamos</th>
+          <th>Realizar un Préstamo</th>
+          <th>Catálogo (Invitado)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><figure>
+  <img
+    src="./Capturas/BibliotecaPrestamosDeUsuario.png"
+    alt="Vista de Préstamos"
+    class="img-fluid"
+  /></figure>
+</td>
+          <td><figure>
+  <img
+    src="./Capturas/BibliotecaPrestarLibro.png"
+    alt="Realizar un Préstamo"
+    class="img-fluid"
+  /></figure>
+</td>
+          <td><figure>
+  <img
+    src="./Capturas/BibliotecaVistaLibrosInvitado.png"
+    alt="Catálogo Invitado"
+    class="img-fluid"
+  /></figure>
+</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-tecnologías-utilizadas">🛠️ Tecnologías Utilizadas</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Componente</th>
+          <th>Tecnología</th>
+          <th>Versión</th>
+          <th>Características</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Lenguaje</strong></td>
+          <td>C#</td>
+          <td>7.0+</td>
+          <td>POO, Eventos, Delegates</td>
+      </tr>
+      <tr>
+          <td><strong>Framework</strong></td>
+          <td>.NET Framework</td>
+          <td>4.6.2 / 4.8</td>
+          <td>WinForms, ADO.NET</td>
+      </tr>
+      <tr>
+          <td><strong>Interfaz de Usuario</strong></td>
+          <td>Windows Forms</td>
+          <td>-</td>
+          <td><strong>MDI Interface</strong>, Timers, Custom Controls</td>
+      </tr>
+      <tr>
+          <td><strong>Base de Datos</strong></td>
+          <td>Microsoft SQL Server</td>
+          <td>2019+</td>
+          <td>Stored Procedures, Parámetros SQL</td>
+      </tr>
+      <tr>
+          <td><strong>ORM/Acceso a Datos</strong></td>
+          <td>ADO.NET</td>
+          <td>-</td>
+          <td>SqlConnection, SqlCommand, SqlDataAdapter</td>
+      </tr>
+      <tr>
+          <td><strong>Arquitectura</strong></td>
+          <td>MDI (Multiple Document Interface)</td>
+          <td>-</td>
+          <td><strong>Navegación Fluida, Gestión de Sesiones</strong></td>
+      </tr>
+      <tr>
+          <td><strong>Gestión de Estado</strong></td>
+          <td>Sistema de Configuración Global</td>
+          <td>-</td>
+          <td><strong>Persistencia de Sesiones, Cadenas Centralizadas</strong></td>
+      </tr>
+      <tr>
+          <td><strong>IDE Recomendado</strong></td>
+          <td>Visual Studio</td>
+          <td>2019+</td>
+          <td>IntelliSense, Designer, Debugging</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-requisitos-del-sistema">💻 Requisitos del Sistema</h2>
+<h3 id="requisitos-mínimos">Requisitos Mínimos</h3>
+<ul>
+<li><strong>SO</strong>: Windows 10 (64-bit) o superior</li>
+<li><strong>RAM</strong>: 4 GB mínimo (8 GB recomendado)</li>
+<li><strong>Espacio</strong>: 500 MB disponible</li>
+<li><strong>.NET Framework</strong>: 4.6.2 o superior</li>
+<li><strong>SQL Server</strong>: LocalDB, Express, o Standard</li>
+</ul>
+<h3 id="requisitos-de-desarrollo">Requisitos de Desarrollo</h3>
+<ul>
+<li><strong>Visual Studio</strong>: 2019 o superior</li>
+<li><strong>SQL Server Management Studio</strong> (SSMS)</li>
+<li><strong>Git</strong> para control de versiones</li>
+</ul>
+<h2 id="-instalación-y-configuración">🚀 Instalación y Configuración</h2>
+<h3 id="1-clonar-el-repositorio">1. Clonar el Repositorio</h3>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">POWERSHELL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="nb">tu-usuario</span><span class="p">/</span><span class="n">BibliotecaFrom</span><span class="p">.</span><span class="py">git</span> <span class="c"># Reemplaza tu-usuario con tu nombre de usuario de GitHub</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">BibliotecaFrom</span></span></span></code></pre></div>
+  </div><script>
+      function copyToClipboard(button) {
+        const codeBlock = button.closest('.code-block').querySelector('code');
+        if (codeBlock) {
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
+          }).catch(err => {
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
+          });
+        }
+      }
+    </script><h3 id="2-configurar-base-de-datos">2. Configurar Base de Datos</h3>
+<ol>
+<li>
+<p>Abre SQL Server Management Studio (SSMS).</p>
+</li>
+<li>
+<p>Conéctate a tu instancia de SQL Server.</p>
+</li>
+<li>
+<p>Ejecuta los siguientes scripts SQL en el orden indicado. Puedes encontrarlos en la carpeta <code>SQL QUERYS BibliotecaForm/</code>:</p>
+<ul>
+<li><code>Creacion de BibliotecaFrom.sql</code> (para crear la base de datos y las tablas).</li>
+<li><code>Datos de las tablas BibliotecaForm.sql</code> (para poblar las tablas con datos iniciales).</li>
+<li><code>Procedimientos Almacenado BibliotecaFrom.sql</code> (para crear los procedimientos almacenados necesarios).</li>
+</ul>
+<p><strong>Ejemplo de cómo ejecutar un script en SSMS:</strong></p>
+<ul>
+<li>Abre el archivo <code>.sql</code> con SSMS (Archivo &gt; Abrir &gt; Archivo).</li>
+<li>Asegúrate de que la base de datos correcta esté seleccionada en el desplegable de bases de datos disponibles (debería ser <code>BibliotecaFrom</code> después de ejecutar el primer script, o <code>master</code> para el primer script).</li>
+<li>Haz clic en el botón &ldquo;Ejecutar&rdquo; (o presiona F5).</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-configurar-cadena-de-conexión">3. Configurar Cadena de Conexión</h3>
+<p>Edita el archivo <code>Program.cs</code> (aproximadamente en la línea 14) para apuntar a tu servidor de SQL Server.</p>
+<p>Modifica la variable <code>CadenaConexion</code> dentro de la clase <code>Configuracion</code>:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">Configuracion</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Ejemplo: Si SQL Server está en la misma máquina y usas autenticación de Windows:</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">CadenaConexion</span> <span class="p">=</span> <span class="s">&#34;Server=NOMBRE_DE_TU_SERVIDOR;Database=BibliotecaFrom;Trusted_Connection=True;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Ejemplo: Si SQL Server Express está en la misma máquina:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// public static string CadenaConexion = &#34;Server=.\\SQLEXPRESS;Database=BibliotecaFrom;Trusted_Connection=True;&#34;;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Sistema de gestión de sesiones globales</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">IdUsuarioActual</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">IdAdministradorActual</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><p><strong>Nota:</strong> Reemplaza <code>NOMBRE_DE_TU_SERVIDOR</code> con el nombre de tu instancia de SQL Server. Si usas SQL Server Express, comúnmente es <code>.\\SQLEXPRESS</code> o <code>(localdb)\\MSSQLLocalDB</code>.</p>
+<h3 id="4-compilar-y-ejecutar">4. Compilar y Ejecutar</h3>
+<ol>
+<li>Abre el archivo <code>BibliotecaFrom.sln</code> con Visual Studio.</li>
+<li>Asegúrate de que el proyecto <code>BibliotecaFrom</code> esté configurado como proyecto de inicio.</li>
+<li>Presiona <code>Ctrl + F5</code> o haz clic en el botón &ldquo;Iniciar&rdquo; (el triángulo verde) para compilar y ejecutar la aplicación.</li>
+</ol>
+<p>Alternativamente, desde la línea de comandos (PowerShell o CMD) en la raíz del proyecto:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">POWERSHELL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">msbuild</span> <span class="n">BibliotecaFrom</span><span class="p">.</span><span class="py">sln</span> <span class="p">/</span><span class="n">t:Rebuild</span> <span class="p">/</span><span class="n">p:Configuration</span><span class="p">=</span><span class="n">Release</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Luego puedes encontrar el ejecutable en: bin\\Release\\BibliotecaFrom.exe</span>
+</span></span><span class="line"><span class="cl"><span class="c"># o para Debug:</span>
+</span></span><span class="line"><span class="cl"><span class="n">msbuild</span> <span class="n">BibliotecaFrom</span><span class="p">.</span><span class="py">sln</span> <span class="p">/</span><span class="n">t:Rebuild</span> <span class="p">/</span><span class="n">p:Configuration</span><span class="p">=</span><span class="n">Debug</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Luego puedes encontrar el ejecutable en: bin\\Debug\\BibliotecaFrom.exe</span></span></span></code></pre></div>
+  </div><h2 id="-arquitectura-del-sistema">🏗️ Arquitectura del Sistema</h2>
+<p>BibliotecaForm implementa una <strong>arquitectura MDI (Multiple Document Interface)</strong> moderna con gestión avanzada de sesiones y navegación fluida para garantizar la separación de responsabilidades y facilitar el mantenimiento:</p>
+<h3 id="diagrama-de-flujo-de-la-aplicación">Diagrama de Flujo de la Aplicación</h3>
+<pre class="mermaid">
+    graph TD
+    A[🚀 Inicio de la Aplicación] --&gt; B{🏠 FrmMenuPrincipal MDI}
+    B -- 👤 Usuario --&gt; C{🔍 Sesión Activa?}
+    B -- 👨‍💼 Administrador --&gt; D{🔍 Sesión Admin Activa?}
+    B -- &#34;👁️ Libros (Visitante)&#34; --&gt; E[&#34;📖 FrmLibros (Modo Visitante)&#34;]
+    
+    C -- &#34;✅ Sí&#34; --&gt; F[&#34;📚 FrmLibros (Modo Usuario)&#34;]
+    C -- &#34;❌ No&#34; --&gt; G[🔑 FrmUsuario]
+    D -- &#34;✅ Sí&#34; --&gt; H[⚙️ FrmAdministrarBiblioteca]
+    D -- &#34;❌ No&#34; --&gt; I[🔐 FrmAdministrador]
+    
+    G -- &#34;✅ Login Exitoso&#34; --&gt; J[💾 Guardar Sesión] --&gt; F
+    G -- &#34;📝 Registrarse&#34; --&gt; K[📋 FrmRegistrarse]
+    I -- &#34;✅ Login Admin&#34; --&gt; L[💾 Guardar Sesión Admin] --&gt; H
+    I -- &#34;📝 Registrarse&#34; --&gt; K
+    
+    F -- &#34;📤 Prestar Libro&#34; --&gt; M[📋 FrmPrestar]
+    F -- &#34;📊 Ver Préstamos&#34; --&gt; N[📜 FrmVerprestamos]
+    H -- &#34;➕ Agregar Libro&#34; --&gt; O[📚 FrmAgregarLibro]
+    H -- &#34;👥 Ver Usuarios&#34; --&gt; P[&#34;👤 Panel Usuarios con Selección&#34;]
+    H -- &#34;📖 Ver Libros&#34; --&gt; Q[&#34;📚 Panel Libros con Gestión&#34;]
+    H -- &#34;📋 Ver Préstamos&#34; --&gt; R[&#34;📊 Panel Préstamos con Estados&#34;]
+    
+    M -- &#34;🎫 Ticket Generado&#34; --&gt; F
+    N -- &#34;🔴 Alertas Vencimiento&#34; --&gt; F
+    P -- &#34;🗑️ Eliminar (Click-to-Select)&#34; --&gt; H
+    Q -- &#34;🗑️ Eliminar con Validación&#34; --&gt; H
+    R -- &#34;🗑️ Gestión con Códigos Color&#34; --&gt; H
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style H fill:#fff3e0
+    style F fill:#e8f5e8
+    style J fill:#c8e6c9
+    style L fill:#c8e6c9
+  </pre>
+  <h3 id="arquitectura-de-capas-con-gestión-de-estado">Arquitectura de Capas con Gestión de Estado</h3>
+<pre class="mermaid">
+    graph TB
+    subgraph &#34;🎨 Capa de Presentación MDI&#34;
+        MDI[Contenedor MDI Principal]
+        MenuLateral[Menú Lateral Expandible]
+        Forms[Formularios Hijos Sin Bordes]
+        Timers[Timers de Animación]
+    end
+    
+    subgraph &#34;🔄 Capa de Gestión de Estado&#34;
+        ConfigGlobal[Configuración Global]
+        SesionUsuario[Gestión de Sesiones]
+        NavegacionMDI[Navegación MDI]
+    end
+    
+    subgraph &#34;⚡ Capa de Lógica de Negocio&#34;
+        Auth[Autenticación Avanzada]
+        Validation[Validaciones con Alertas]
+        Business[Reglas de Negocio]
+        FormateoUI[Formateo DataGridView]
+    end
+    
+    subgraph &#34;💾 Capa de Acceso a Datos&#34;
+        ADO[ADO.NET con Parámetros]
+        Stored[Procedimientos Almacenados]
+        ConexionGlobal[Cadena Conexión Centralizada]
+    end
+    
+    subgraph &#34;🗄️ Capa de Datos&#34;
+        SQLServer[(SQL Server)]
+    end
+    
+    MDI --&gt; ConfigGlobal
+    MenuLateral --&gt; SesionUsuario
+    Forms --&gt; NavegacionMDI
+    Timers --&gt; MenuLateral
+    
+    ConfigGlobal --&gt; Auth
+    SesionUsuario --&gt; Validation
+    NavegacionMDI --&gt; Business
+    FormateoUI --&gt; Forms
+    
+    Auth --&gt; ConexionGlobal
+    Validation --&gt; ADO
+    Business --&gt; Stored
+    ConexionGlobal --&gt; SQLServer
+    ADO --&gt; SQLServer
+    Stored --&gt; SQLServer
+  </pre>
+  <h2 id="-módulos-y-funcionalidades">🔧 Módulos y Funcionalidades</h2>
+<h3 id="-1-menú-principal-mdi-frmmenuprincipal">🏠 1. Menú Principal MDI (<code>FrmMenuPrincipal</code>)</h3>
+<p><strong>Centro de control con interfaz MDI moderna</strong></p>
+<img src="./Capturas/BibliotecaInicio.png" alt="Menú Principal" width="600">
+<p><strong>Características Principales:</strong></p>
+<ul>
+<li>🚪 <strong>Acceso Multi-Rol con Gestión de Sesiones</strong>: Detección automática de sesiones activas y redirección inteligente</li>
+<li>👁️ <strong>Modo Visitante Diferenciado</strong>: Exploración del catálogo sin autenticación con interfaz específica</li>
+<li>🖥️ <strong>Interfaz MDI Profesional</strong>: Contenedor principal que gestiona todos los formularios hijos</li>
+<li>📱 <strong>Menú Lateral Expandible</strong>: Panel lateral con animación suave controlada por timers</li>
+<li>🎮 <strong>Controles de Ventana</strong>: Minimizar, maximizar, restaurar y cerrar con funcionalidad nativa</li>
+<li>🖱️ <strong>Arrastrar y Soltar</strong>: Funcionalidad para mover la ventana arrastrando desde el header</li>
+<li>🖼️ <strong>Panel Central Dinámico</strong>: Imagen de inicio que se oculta automáticamente al abrir formularios</li>
+<li>❌ <strong>Gestión Inteligente</strong>: Cierre automático de formularios MDI activos para navegación limpia</li>
+</ul>
+<p><strong>Funcionalidades Avanzadas:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Gestión automática de sesiones</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">btnUsuario_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">Configuracion</span><span class="p">.</span><span class="n">IdUsuarioActual</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Sesión activa - ir directamente al catálogo</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FrmLibros</span> <span class="n">libros</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FrmLibros</span><span class="p">(</span><span class="n">Configuracion</span><span class="p">.</span><span class="n">IdUsuarioActual</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">AbrirFormulario</span><span class="p">(</span><span class="n">libros</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Sin sesión - mostrar login</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FrmUsuario</span> <span class="n">usuario</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FrmUsuario</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">AbrirFormulario</span><span class="p">(</span><span class="n">usuario</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Animación del menú lateral</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">BtnCambiarTamanoMenu_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">panelMenu</span><span class="p">.</span><span class="n">Width</span> <span class="p">&gt;</span> <span class="m">60</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">timerCerrar</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span> <span class="c1">// Colapsar menú</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Ocultar texto, solo iconos</span>
+</span></span><span class="line"><span class="cl">        <span class="n">btnUsuario</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">btnLibros</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">timerAbrir</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span> <span class="c1">// Expandir menú</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Restaurar texto completo</span>
+</span></span><span class="line"><span class="cl">        <span class="n">btnUsuario</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;Usuario&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">btnLibros</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;Libros&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-2-autenticación-de-usuario-con-gestión-de-sesiones-frmusuario">🔑 2. Autenticación de Usuario con Gestión de Sesiones (<code>FrmUsuario</code>)</h3>
+<p><strong>Sistema de login avanzado para usuarios regulares</strong></p>
+<img src="./Capturas/BibliotecaLoginUsuarioNormal.png" alt="Login Usuario" width="400">
+<p><strong>Funcionalidades Mejoradas:</strong></p>
+<ul>
+<li>✅ <strong>Autenticación Segura con Persistencia</strong>: Validación contra base de datos con gestión de sesión global</li>
+<li>🔐 <strong>Protección de Contraseña</strong>: Campo con enmascaramiento automático y validaciones</li>
+<li>🚀 <strong>Redirección Inteligente</strong>: Acceso directo al catálogo tras login exitoso con estado preservado</li>
+<li>📝 <strong>Registro Rápido</strong>: Enlace directo al formulario de registro integrado en MDI</li>
+<li>🔙 <strong>Navegación MDI</strong>: Integración completa con el sistema de navegación principal</li>
+<li>💾 <strong>Gestión de Estado Global</strong>: Almacenamiento del ID de usuario en configuración global</li>
+</ul>
+<p><strong>Flujo de Autenticación Mejorado:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">btnIngresar_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="n">consulta</span> <span class="p">=</span> <span class="s">&#34;SELECT ID_Usuario FROM Usuario WHERE usuario = @usuario AND Contraseña = @contraseña&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="p">(</span><span class="n">SqlConnection</span> <span class="n">conexion</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">cadenaConexion</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SqlCommand</span> <span class="n">comando</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="n">consulta</span><span class="p">,</span> <span class="n">conexion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@usuario&#34;</span><span class="p">,</span> <span class="n">txtUsuario</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@contraseña&#34;</span><span class="p">,</span> <span class="n">txtContraseña</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="kt">object</span> <span class="n">resultado</span> <span class="p">=</span> <span class="n">comando</span><span class="p">.</span><span class="n">ExecuteScalar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">resultado</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">idUsuario</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">resultado</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Guardar sesión globalmente</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Configuracion</span><span class="p">.</span><span class="n">IdUsuarioActual</span> <span class="p">=</span> <span class="n">idUsuario</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// Navegación MDI</span>
+</span></span><span class="line"><span class="cl">            <span class="n">FrmLibros</span> <span class="n">libros</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FrmLibros</span><span class="p">(</span><span class="n">idUsuario</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">FrmMenuPrincipal</span> <span class="n">principal</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">MdiParent</span> <span class="k">as</span> <span class="n">FrmMenuPrincipal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">principal</span><span class="p">?.</span><span class="n">AbrirFormulario</span><span class="p">(</span><span class="n">libros</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-3-autenticación-de-administrador-con-sesión-persistente-frmadministrador">🔐 3. Autenticación de Administrador con Sesión Persistente (<code>FrmAdministrador</code>)</h3>
+<p><strong>Acceso privilegiado con gestión avanzada de sesiones</strong></p>
+<img src="./Capturas/BibiotecaPanelAdministrador.png" alt="Login Admin" width="400">
+<p><strong>Características Especiales:</strong></p>
+<ul>
+<li>👨‍💼 <strong>Verificación de Privilegios Avanzada</strong>: Validación del campo <code>Administrador</code> con seguridad reforzada</li>
+<li>🛡️ <strong>Seguridad Multi-Capa</strong>: Autenticación con validación de roles específicos</li>
+<li>⚙️ <strong>Acceso Total con Persistencia</strong>: Redirección al panel de administración con sesión global</li>
+<li>🔧 <strong>Gestión Avanzada</strong>: Permisos para todas las operaciones CRUD con validaciones</li>
+<li>🔄 <strong>Sesión Persistente Inteligente</strong>: La sesión del administrador se mantiene hasta cierre explícito</li>
+<li>📝 <strong>Registro de Administradores</strong>: Acceso al formulario de registro con código secreto</li>
+</ul>
+<p><strong>Autenticación de Administrador:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">btnIngresar_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="n">consulta</span> <span class="p">=</span> <span class="s">&#34;SELECT COUNT(*) FROM Usuario WHERE usuario = @usuario AND Contraseña = @contraseña AND Administrador = 1&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="p">(</span><span class="n">SqlConnection</span> <span class="n">conexion</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">Configuracion</span><span class="p">.</span><span class="n">CadenaConexion</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SqlCommand</span> <span class="n">comando</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="n">consulta</span><span class="p">,</span> <span class="n">conexion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@usuario&#34;</span><span class="p">,</span> <span class="n">txtUsuario</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@contraseña&#34;</span><span class="p">,</span> <span class="n">txtContraseña</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">cantidad</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">comando</span><span class="p">.</span><span class="n">ExecuteScalar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">cantidad</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Guardar sesión de administrador</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Configuracion</span><span class="p">.</span><span class="n">IdAdministradorActual</span> <span class="p">=</span> <span class="m">1</span><span class="p">;</span> <span class="c1">// Marcar sesión activa</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// Abrir panel de administración</span>
+</span></span><span class="line"><span class="cl">            <span class="n">FrmAdministrarBiblioteca</span> <span class="n">adm</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FrmAdministrarBiblioteca</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">FrmMenuPrincipal</span> <span class="n">principal</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">MdiParent</span> <span class="k">as</span> <span class="n">FrmMenuPrincipal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">principal</span><span class="p">?.</span><span class="n">AbrirFormulario</span><span class="p">(</span><span class="n">adm</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-4-registro-de-usuario-frmregistrarse">📝 4. Registro de Usuario (<code>FrmRegistrarse</code>)</h3>
+<p><strong>Sistema de registro con validaciones</strong></p>
+<img src="./Capturas/BibliotecaPrestarLibro.png" alt="Registro" width="400">
+<p><strong>Campos del Formulario:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Requerido</th>
+          <th>Validación</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Nombre Completo</td>
+          <td>Text</td>
+          <td>✅</td>
+          <td>Mínimo 3 caracteres</td>
+      </tr>
+      <tr>
+          <td>Dirección</td>
+          <td>Text</td>
+          <td>✅</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Teléfono</td>
+          <td>Text</td>
+          <td>✅</td>
+          <td>Formato numérico</td>
+      </tr>
+      <tr>
+          <td>Correo</td>
+          <td>Email</td>
+          <td>✅</td>
+          <td>Formato email válido</td>
+      </tr>
+      <tr>
+          <td>Usuario</td>
+          <td>Text</td>
+          <td>✅</td>
+          <td>Único en BD</td>
+      </tr>
+      <tr>
+          <td>Contraseña</td>
+          <td>Password</td>
+          <td>✅</td>
+          <td>Mínimo 6 caracteres</td>
+      </tr>
+      <tr>
+          <td>Es Administrador</td>
+          <td>Checkbox</td>
+          <td>❌</td>
+          <td>Código secreto requerido</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Funcionalidades:</strong></p>
+<ul>
+<li>🔍 <strong>Validación en Tiempo Real</strong>: Verificación de campos durante escritura</li>
+<li>🔐 <strong>Código Secreto</strong>: Sistema de elevación de privilegios para administradores</li>
+<li>💾 <strong>Persistencia Inmediata</strong>: Guardado automático en base de datos</li>
+<li>⚠️ <strong>Manejo de Errores</strong>: Mensajes descriptivos para el usuario</li>
+</ul>
+<hr>
+<h3 id="-5-catálogo-de-libros-mejorado-frmlibros">📚 5. Catálogo de Libros Mejorado (<code>FrmLibros</code>)</h3>
+<p><strong>Núcleo del sistema con interfaz profesional</strong></p>
+<img src="./Capturas/BibliotecaListaLibrosUsuario.png" alt="Catálogo" width="600">
+<p><strong>Modos de Funcionamiento Avanzados:</strong></p>
+<h4 id="-modo-visitante">👁️ Modo Visitante</h4>
+<ul>
+<li>🔍 <strong>Solo Lectura Optimizada</strong>: Visualización completa del catálogo con interfaz limpia</li>
+<li>📖 <strong>Información Detallada</strong>: Todos los datos de los libros con formateo profesional</li>
+<li>🚫 <strong>Restricciones Visuales</strong>: Elementos de préstamo ocultos automáticamente</li>
+</ul>
+<h4 id="-modo-usuario-autenticado">👤 Modo Usuario Autenticado</h4>
+<ul>
+<li>📤 <strong>Préstamos con Validación</strong>: Solicitud de préstamos con verificaciones automáticas</li>
+<li>📊 <strong>Historial Personal Avanzado</strong>: Acceso a préstamos activos con alertas de vencimiento</li>
+<li>🔄 <strong>Gestión Completa</strong>: Préstamos y devoluciones con sistema de tickets</li>
+</ul>
+<p><strong>Mejoras de Interfaz:</strong></p>
+<ul>
+<li>🎨 <strong>DataGridView Estilizado</strong>: Colores corporativos y formateo profesional</li>
+<li>🟢🔴 <strong>Indicadores Visuales</strong>: Estados de disponibilidad con código de colores</li>
+<li>📱 <strong>Responsive Design</strong>: Columnas que se adaptan automáticamente</li>
+<li>🖱️ <strong>Selección Intuitiva</strong>: Click para seleccionar libros con feedback visual</li>
+</ul>
+<p><strong>Configuración Visual Avanzada:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ConfigurarDataGridView</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Estilo profesional</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">BorderStyle</span> <span class="p">=</span> <span class="n">BorderStyle</span><span class="p">.</span><span class="n">None</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">AlternatingRowsDefaultCellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">238</span><span class="p">,</span> <span class="m">239</span><span class="p">,</span> <span class="m">249</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">DefaultCellStyle</span><span class="p">.</span><span class="n">SelectionBackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">56</span><span class="p">,</span> <span class="m">205</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">DefaultCellStyle</span><span class="p">.</span><span class="n">SelectionForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">WhiteSmoke</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Header estilizado</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">ColumnHeadersDefaultCellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">18</span><span class="p">,</span> <span class="m">26</span><span class="p">,</span> <span class="m">54</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">ColumnHeadersDefaultCellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">White</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">ColumnHeadersDefaultCellStyle</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Font</span><span class="p">(</span><span class="s">&#34;Arial Rounded MT Bold&#34;</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Configuración de columnas optimizada</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dgvMostrar</span><span class="p">.</span><span class="n">Columns</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="s">&#34;tituloLibro&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">Columns</span><span class="p">[</span><span class="s">&#34;tituloLibro&#34;</span><span class="p">].</span><span class="n">HeaderText</span> <span class="p">=</span> <span class="s">&#34;Libro&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dgvMostrar</span><span class="p">.</span><span class="n">Columns</span><span class="p">[</span><span class="s">&#34;tituloLibro&#34;</span><span class="p">].</span><span class="n">FillWeight</span> <span class="p">=</span> <span class="m">25</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Formateo con código de colores para disponibilidad</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">dgvMostrar_CellFormatting</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">DataGridViewCellFormattingEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dgvMostrar</span><span class="p">.</span><span class="n">Columns</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">ColumnIndex</span><span class="p">].</span><span class="n">Name</span> <span class="p">==</span> <span class="s">&#34;disponible&#34;</span> <span class="p">&amp;&amp;</span> <span class="n">e</span><span class="p">.</span><span class="n">Value</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">bool</span> <span class="n">disponible</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToBoolean</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">disponible</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">Green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Font</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">FontStyle</span><span class="p">.</span><span class="n">Bold</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="s">&#34;Sí&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Font</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">FontStyle</span><span class="p">.</span><span class="n">Bold</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="s">&#34;No&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-6-gestión-de-préstamos-frmprestar">📋 6. Gestión de Préstamos (<code>FrmPrestar</code>)</h3>
+<p><strong>Sistema inteligente de tickets para gestión de préstamos</strong></p>
+<img src="./Capturas/BibliotecaPrestarLibro.png" alt="Préstamos" width="500">
+<p><strong>Funcionalidades Avanzadas:</strong></p>
+<ul>
+<li>🎫 <strong>Sistema de Tickets Inteligente</strong>: Generación automática de comprobantes únicos para cada préstamo</li>
+<li>🔄 <strong>Registro Automático</strong>: Guardado directo en tabla <code>Prestamo</code> con validaciones completas</li>
+<li>📊 <strong>Control de Disponibilidad</strong>: Verificación en tiempo real de la disponibilidad de libros</li>
+<li>🎯 <strong>Seguimiento de Estados</strong>: Monitoreo activo de préstamos con códigos de color visuales</li>
+<li>⏰ <strong>Alertas de Vencimiento</strong>: Sistema de notificaciones para préstamos próximos a vencer</li>
+<li>✅ <strong>Validación Automática</strong>: Verificación integral de usuarios y disponibilidad de libros</li>
+<li>🖱️ <strong>Interfaz Intuitiva</strong>: Selección automática de registros y feedback visual inmediato</li>
+</ul>
+<p><strong>Flujo de Préstamo Mejorado:</strong></p>
+<ol>
+<li>📖 <strong>Selección Inteligente</strong>: Libro seleccionado desde el catálogo con validación automática</li>
+<li>👤 <strong>Usuario Automático</strong>: Identificación del usuario logueado desde sesión global</li>
+<li>📅 <strong>Configuración de Fechas</strong>: Fecha de préstamo automática y devolución calculada</li>
+<li>🔍 <strong>Validaciones Múltiples</strong>: Verificación de disponibilidad, usuario activo y límites</li>
+<li>💾 <strong>Registro Completo</strong>: Guardado en tabla <code>Prestamo</code> con transacciones seguras</li>
+<li>🎫 <strong>Ticket Generado</strong>: Comprobante único con código de seguimiento</li>
+<li>🔄 <strong>Actualización Automática</strong>: Refresh del catálogo con nuevo estado de disponibilidad</li>
+</ol>
+<p><strong>Validaciones Avanzadas:</strong></p>
+<ul>
+<li>✅ <strong>Disponibilidad del Libro</strong>: Verificación en tiempo real del estado</li>
+<li>✅ <strong>Usuario Activo</strong>: Validación de sesión y permisos activos</li>
+<li>✅ <strong>Fechas Válidas</strong>: Control de rangos (devolución &gt; préstamo)</li>
+<li>✅ <strong>Límite de Préstamos</strong>: Control por usuario según políticas</li>
+<li>✅ <strong>Integridad de Datos</strong>: Validación de IDs y referencias de base de datos</li>
+<li>✅ <strong>Transacciones Seguras</strong>: Rollback automático en caso de errores</li>
+</ul>
+<p><strong>Implementación del Sistema de Tickets:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">btnPrestar_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Validación de disponibilidad en tiempo real</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">string</span> <span class="n">consultaDisponibilidad</span> <span class="p">=</span> <span class="s">&#34;SELECT COUNT(*) FROM Prestamo WHERE ID_Libro = @idLibro AND fecha_devolucion &gt;= GETDATE()&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Registro del préstamo con transacción</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">string</span> <span class="n">insertPrestamo</span> <span class="p">=</span> <span class="s">&#34;INSERT INTO Prestamo (ID_Usuario, ID_Libro, fecha_prestamo, fecha_devolucion) VALUES (@idUsuario, @idLibro, @fechaPrestamo, @fechaDevolucion)&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">using</span> <span class="p">(</span><span class="n">SqlConnection</span> <span class="n">conexion</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">Configuracion</span><span class="p">.</span><span class="n">CadenaConexion</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">conexion</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">using</span> <span class="p">(</span><span class="n">SqlTransaction</span> <span class="n">transaccion</span> <span class="p">=</span> <span class="n">conexion</span><span class="p">.</span><span class="n">BeginTransaction</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// Ejecutar préstamo con validaciones</span>
+</span></span><span class="line"><span class="cl">                <span class="n">SqlCommand</span> <span class="n">comando</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="n">insertPrestamo</span><span class="p">,</span> <span class="n">conexion</span><span class="p">,</span> <span class="n">transaccion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@idUsuario&#34;</span><span class="p">,</span> <span class="n">Configuracion</span><span class="p">.</span><span class="n">IdUsuarioActual</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@idLibro&#34;</span><span class="p">,</span> <span class="n">idLibroSeleccionado</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@fechaPrestamo&#34;</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@fechaDevolucion&#34;</span><span class="p">,</span> <span class="n">dtpDevolucion</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="kt">int</span> <span class="n">resultado</span> <span class="p">=</span> <span class="n">comando</span><span class="p">.</span><span class="n">ExecuteNonQuery</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">resultado</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">transaccion</span><span class="p">.</span><span class="n">Commit</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">// Generar ticket único</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">GenerarTicketPrestamo</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">&#34;✅ Préstamo registrado exitosamente. Ticket generado.&#34;</span><span class="p">,</span> <span class="s">&#34;Préstamo Exitoso&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">$&#34;❌ Error al procesar préstamo: {ex.Message}&#34;</span><span class="p">,</span> <span class="s">&#34;Error&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-7-historial-de-préstamos-frmverprestamos">📜 7. Historial de Préstamos (<code>FrmVerprestamos</code>)</h3>
+<p><strong>Panel avanzado de préstamos con alertas de vencimiento</strong></p>
+<img src="./Capturas/BibliotecaPrestamosDeUsuario.png" alt="Ver Préstamos" width="600">
+<p><strong>Funcionalidades Mejoradas:</strong></p>
+<ul>
+<li>🔴 <strong>Alertas de Vencimiento</strong>: Sistema inteligente que detecta y resalta préstamos próximos a vencer</li>
+<li>📊 <strong>DataGridView Estilizado</strong>: Presentación profesional con códigos de colores para estados</li>
+<li>🔄 <strong>Actualización Automática</strong>: Refresh dinámico del estado de préstamos</li>
+<li>📅 <strong>Formateo Inteligente de Fechas</strong>: Presentación clara de fechas de préstamo y devolución</li>
+<li>🎯 <strong>Selección Automática</strong>: Click-to-select para gestión rápida de préstamos</li>
+<li>⚡ <strong>Carga Optimizada</strong>: Consultas eficientes con JOIN para datos completos</li>
+</ul>
+<p><strong>Información Detallada Mostrada:</strong></p>
+<ul>
+<li>📚 <strong>Detalles Completos del Libro</strong>: Título, autor, año de publicación con formateo</li>
+<li>📅 <strong>Gestión de Fechas</strong>: Préstamo y devolución con alertas visuales</li>
+<li>🆔 <strong>Referencias Únicas</strong>: IDs de préstamo y libro para trazabilidad</li>
+<li>⏰ <strong>Estados Dinámicos</strong>: Vigente, próximo a vencer, vencido con colores</li>
+<li>🔢 <strong>Códigos de Seguimiento</strong>: Sistema de tickets para control administrativo</li>
+</ul>
+<p><strong>Acciones Avanzadas Disponibles:</strong></p>
+<ul>
+<li>❌ <strong>Cancelar Préstamo Inteligente</strong>: Devolución anticipada con validaciones automáticas</li>
+<li>🔍 <strong>Ver Detalles Expandidos</strong>: Modal con información completa del préstamo y usuario</li>
+<li>🔄 <strong>Renovar con Validación</strong>: Extensión automática si no hay reservas pendientes</li>
+<li>📊 <strong>Exportar Historial</strong>: Generación de reportes de préstamos del usuario</li>
+<li>🔔 <strong>Configurar Alertas</strong>: Personalización de notificaciones de vencimiento</li>
+</ul>
+<p><strong>Sistema de Alertas Visuales:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">dgvPrestamos_CellFormatting</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">DataGridViewCellFormattingEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">dgvPrestamos</span><span class="p">.</span><span class="n">Columns</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">ColumnIndex</span><span class="p">].</span><span class="n">Name</span> <span class="p">==</span> <span class="s">&#34;fecha_devolucion&#34;</span> <span class="p">&amp;&amp;</span> <span class="n">e</span><span class="p">.</span><span class="n">Value</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DateTime</span> <span class="n">fechaDevolucion</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DateTime</span> <span class="n">hoy</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Date</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TimeSpan</span> <span class="n">diferencia</span> <span class="p">=</span> <span class="n">fechaDevolucion</span><span class="p">.</span><span class="n">Date</span> <span class="p">-</span> <span class="n">hoy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Sistema de códigos de colores</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">diferencia</span><span class="p">.</span><span class="n">Days</span> <span class="p">&lt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Vencido - Rojo</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">235</span><span class="p">,</span> <span class="m">235</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">DarkRed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Font</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">FontStyle</span><span class="p">.</span><span class="n">Bold</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">diferencia</span><span class="p">.</span><span class="n">Days</span> <span class="p">&lt;=</span> <span class="m">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Próximo a vencer - Amarillo</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">248</span><span class="p">,</span> <span class="m">220</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">DarkOrange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Font</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">FontStyle</span><span class="p">.</span><span class="n">Bold</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// Vigente - Verde</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">235</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">235</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">DarkGreen</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Formato de fecha legible</span>
+</span></span><span class="line"><span class="cl">        <span class="n">e</span><span class="p">.</span><span class="n">Value</span> <span class="p">=</span> <span class="n">fechaDevolucion</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s">&#34;dd/MM/yyyy&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">e</span><span class="p">.</span><span class="n">FormattingApplied</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><p><strong>Consulta Optimizada con JOIN:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">consulta</span> <span class="p">=</span> <span class="s">@&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    SELECT 
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.ID_Prestamo,
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.ID_Libro,
+</span></span></span><span class="line"><span class="cl"><span class="s">        l.tituloLibro,
+</span></span></span><span class="line"><span class="cl"><span class="s">        l.autor,
+</span></span></span><span class="line"><span class="cl"><span class="s">        l.año_publicacion,
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.fecha_prestamo,
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.fecha_devolucion,
+</span></span></span><span class="line"><span class="cl"><span class="s">        CASE 
+</span></span></span><span class="line"><span class="cl"><span class="s">            WHEN p.fecha_devolucion &lt; GETDATE() THEN &#39;Vencido&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">            WHEN DATEDIFF(day, GETDATE(), p.fecha_devolucion) &lt;= 2 THEN &#39;Próximo a Vencer&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">            ELSE &#39;Vigente&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">        END AS Estado
+</span></span></span><span class="line"><span class="cl"><span class="s">    FROM Prestamo p
+</span></span></span><span class="line"><span class="cl"><span class="s">    INNER JOIN Libro l ON p.ID_Libro = l.id_libro
+</span></span></span><span class="line"><span class="cl"><span class="s">    WHERE p.ID_Usuario = @idUsuario
+</span></span></span><span class="line"><span class="cl"><span class="s">    ORDER BY p.fecha_devolucion ASC&#34;</span><span class="p">;</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-8-panel-de-administración-frmadministrarbiblioteca">⚙️ 8. Panel de Administración (<code>FrmAdministrarBiblioteca</code>)</h3>
+<p><strong>Centro de control administrativo con selección automática y gestión contextual</strong></p>
+<img src="./Capturas/BibiotecaPanelAdministrador.png" alt="Admin Panel" width="700">
+<p><strong>Funcionalidades Globales del Panel:</strong></p>
+<ul>
+<li>🎯 <strong>Selección Automática</strong>: Sistema de click-to-select en todos los DataGridViews para gestión rápida</li>
+<li>🔄 <strong>Actualización Dinámica</strong>: Refresh automático de datos tras operaciones CRUD</li>
+<li>📊 <strong>DataGridViews Estilizados</strong>: Presentación profesional con colores corporativos</li>
+<li>🗑️ <strong>Eliminación Contextual</strong>: Botones que se activan/desactivan según la selección</li>
+<li>⚡ <strong>Carga Optimizada</strong>: Consultas eficientes con joins para datos relacionados</li>
+<li>🎨 <strong>Interfaz Unificada</strong>: Consistencia visual en todas las pestañas de gestión</li>
+</ul>
+<p><strong>Pestañas de Gestión Avanzada:</strong></p>
+<h4 id="-gestión-de-usuarios-con-selección-inteligente">👥 Gestión de Usuarios con Selección Inteligente</h4>
+<ul>
+<li>📊 <strong>Vista Tabular Completa</strong>: Lista de usuarios con información detallada y formateo</li>
+<li>🎯 <strong>Selección Automática</strong>: Click en fila para seleccionar usuario automáticamente</li>
+<li>🗑️ <strong>Eliminación Inteligente</strong>: Botón que se activa solo al seleccionar usuario válido</li>
+<li>📝 <strong>Información Expandida</strong>: Mostrar nombre completo, dirección, teléfono, correo y rol</li>
+<li>🔍 <strong>Búsqueda Contextual</strong>: Filtros dinámicos por tipo de usuario (admin/regular)</li>
+<li>⚠️ <strong>Validaciones Avanzadas</strong>: Verificar préstamos activos antes de eliminar usuarios</li>
+</ul>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Selección automática en DataGridView de usuarios</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">dgvUsuarios_CellClick</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">DataGridViewCellEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">RowIndex</span> <span class="p">&gt;=</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DataGridViewRow</span> <span class="n">fila</span> <span class="p">=</span> <span class="n">dgvUsuarios</span><span class="p">.</span><span class="n">Rows</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">RowIndex</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">idUsuarioSeleccionado</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">fila</span><span class="p">.</span><span class="n">Cells</span><span class="p">[</span><span class="s">&#34;ID_Usuario&#34;</span><span class="p">].</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Activar botón de eliminación</span>
+</span></span><span class="line"><span class="cl">        <span class="n">btnEliminarUsuario</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">btnEliminarUsuario</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">$&#34;Eliminar Usuario (ID: {idUsuarioSeleccionado})&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Mostrar información detallada</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lblUsuarioSeleccionado</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">$&#34;Seleccionado: {fila.Cells[&#34;</span><span class="n">nombreCompleto</span><span class="s">&#34;].Value}&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><h4 id="-gestión-de-libros-con-control-de-inventario">📚 Gestión de Libros con Control de Inventario</h4>
+<ul>
+<li>📖 <strong>Inventario Inteligente</strong>: Vista completa con estados de disponibilidad automáticos</li>
+<li>➕ <strong>Agregar Nuevos</strong>: Integración directa con FrmAgregarLibro desde botón contextual</li>
+<li>✏️ <strong>Edición en Contexto</strong>: Modificación de información con selección previa</li>
+<li>🗑️ <strong>Eliminación con Validación</strong>: Verificación automática de préstamos activos antes de borrar</li>
+<li>🔍 <strong>Estados Visuales</strong>: Indicadores de disponibilidad con códigos de color</li>
+<li>📊 <strong>Métricas de Uso</strong>: Contadores de préstamos activos por libro</li>
+</ul>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Validación antes de eliminar libro</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">btnEliminarLibro_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">idLibroSeleccionado</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Verificar préstamos activos</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">string</span> <span class="n">consultaValidacion</span> <span class="p">=</span> <span class="s">&#34;SELECT COUNT(*) FROM Prestamo WHERE ID_Libro = @idLibro AND fecha_devolucion &gt;= GETDATE()&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">using</span> <span class="p">(</span><span class="n">SqlConnection</span> <span class="n">conexion</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">Configuracion</span><span class="p">.</span><span class="n">CadenaConexion</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">SqlCommand</span> <span class="n">comando</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="n">consultaValidacion</span><span class="p">,</span> <span class="n">conexion</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">comando</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@idLibro&#34;</span><span class="p">,</span> <span class="n">idLibroSeleccionado</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">prestamosActivos</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">comando</span><span class="p">.</span><span class="n">ExecuteScalar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">prestamosActivos</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">MessageBox</span><span class="p">.</span><span class="n">Show</span><span class="p">(</span><span class="s">$&#34;❌ No se puede eliminar. El libro tiene {prestamosActivos} préstamo(s) activo(s).&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                              <span class="s">&#34;Validación&#34;</span><span class="p">,</span> <span class="n">MessageBoxButtons</span><span class="p">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">MessageBoxIcon</span><span class="p">.</span><span class="n">Warning</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// Proceder con eliminación si está libre</span>
+</span></span><span class="line"><span class="cl">            <span class="n">EliminarLibroSeguro</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><h4 id="-gestión-de-préstamos-con-estados-avanzados">📊 Gestión de Préstamos con Estados Avanzados</h4>
+<ul>
+<li>📋 <strong>Vista General Completa</strong>: Todos los préstamos con información de usuarios y libros</li>
+<li>⏰ <strong>Estados Dinámicos</strong>: Vigente, próximo a vencer, vencido con alertas visuales</li>
+<li>🔄 <strong>Acciones Contextuales</strong>: Forzar devolución, extender plazos según selección</li>
+<li>📈 <strong>Dashboard de Estadísticas</strong>: Métricas en tiempo real de uso de la biblioteca</li>
+<li>🔴 <strong>Alertas Automáticas</strong>: Notificaciones visuales para préstamos problemáticos</li>
+<li>📊 <strong>Reportes Integrados</strong>: Generación de informes de gestión</li>
+</ul>
+<p><strong>Sistema de Estados Visuales:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">ConfigurarDataGridViewPrestamos</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Estilo profesional para préstamos</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvPrestamos</span><span class="p">.</span><span class="n">BorderStyle</span> <span class="p">=</span> <span class="n">BorderStyle</span><span class="p">.</span><span class="n">None</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvPrestamos</span><span class="p">.</span><span class="n">AlternatingRowsDefaultCellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">240</span><span class="p">,</span> <span class="m">248</span><span class="p">,</span> <span class="m">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Formateo de fechas con estados</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dgvPrestamos</span><span class="p">.</span><span class="n">CellFormatting</span> <span class="p">+=</span> <span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">ColumnIndex</span> <span class="p">==</span> <span class="n">dgvPrestamos</span><span class="p">.</span><span class="n">Columns</span><span class="p">[</span><span class="s">&#34;fecha_devolucion&#34;</span><span class="p">].</span><span class="n">Index</span> <span class="p">&amp;&amp;</span> <span class="n">e</span><span class="p">.</span><span class="n">Value</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DateTime</span> <span class="n">fechaDevolucion</span> <span class="p">=</span> <span class="n">Convert</span><span class="p">.</span><span class="n">ToDateTime</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DateTime</span> <span class="n">hoy</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Date</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">fechaDevolucion</span> <span class="p">&lt;</span> <span class="n">hoy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// Vencido - Fondo rojo</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">230</span><span class="p">,</span> <span class="m">230</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">DarkRed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">fechaDevolucion</span> <span class="p">-</span> <span class="n">hoy</span><span class="p">).</span><span class="n">Days</span> <span class="p">&lt;=</span> <span class="m">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// Próximo a vencer - Fondo amarillo</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">BackColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">FromArgb</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">e</span><span class="p">.</span><span class="n">CellStyle</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">DarkOrange</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><p><strong>Consulta Integrada para Panel Administrativo:</strong></p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">consultaCompleta</span> <span class="p">=</span> <span class="s">@&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    SELECT 
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.ID_Prestamo,
+</span></span></span><span class="line"><span class="cl"><span class="s">        u.nombreCompleto AS Usuario,
+</span></span></span><span class="line"><span class="cl"><span class="s">        l.tituloLibro AS Libro,
+</span></span></span><span class="line"><span class="cl"><span class="s">        l.autor AS Autor,
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.fecha_prestamo,
+</span></span></span><span class="line"><span class="cl"><span class="s">        p.fecha_devolucion,
+</span></span></span><span class="line"><span class="cl"><span class="s">        CASE 
+</span></span></span><span class="line"><span class="cl"><span class="s">            WHEN p.fecha_devolucion &lt; GETDATE() THEN &#39;Vencido&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">            WHEN DATEDIFF(day, GETDATE(), p.fecha_devolucion) &lt;= 3 THEN &#39;Por Vencer&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">            ELSE &#39;Vigente&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">        END AS Estado,
+</span></span></span><span class="line"><span class="cl"><span class="s">        DATEDIFF(day, GETDATE(), p.fecha_devolucion) AS DiasRestantes
+</span></span></span><span class="line"><span class="cl"><span class="s">    FROM Prestamo p
+</span></span></span><span class="line"><span class="cl"><span class="s">    INNER JOIN Usuario u ON p.ID_Usuario = u.ID_Usuario
+</span></span></span><span class="line"><span class="cl"><span class="s">    INNER JOIN Libro l ON p.ID_Libro = l.id_libro
+</span></span></span><span class="line"><span class="cl"><span class="s">    ORDER BY p.fecha_devolucion ASC&#34;</span><span class="p">;</span></span></span></code></pre></div>
+  </div><hr>
+<h3 id="-9-agregar-libro-frmagregarlibro">➕ 9. Agregar Libro (<code>FrmAgregarLibro</code>)</h3>
+<p><strong>Expansión del catálogo</strong></p>
+<img src="./Capturas/BibliotecaPrestarLibro.png" alt="Agregar Libro" width="500">
+<p><strong>Formulario de Libro:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>📖 Título</td>
+          <td>TextBox</td>
+          <td>Nombre del libro</td>
+      </tr>
+      <tr>
+          <td>✍️ Autor</td>
+          <td>TextBox</td>
+          <td>Autor(es) del libro</td>
+      </tr>
+      <tr>
+          <td>📅 Año</td>
+          <td>NumericUpDown</td>
+          <td>Año de publicación</td>
+      </tr>
+      <tr>
+          <td>📄 Contenido</td>
+          <td>RichTextBox</td>
+          <td>Descripción/resumen</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Validaciones:</strong></p>
+<ul>
+<li>✅ <strong>Título Único</strong>: No duplicados en el catálogo</li>
+<li>✅ <strong>Año Válido</strong>: Rango temporal lógico</li>
+<li>✅ <strong>Campos Obligatorios</strong>: Todos los campos requeridos</li>
+<li>✅ <strong>Formato</strong>: Validación de tipos de datos</li>
+</ul>
+<h2 id="-base-de-datos">🗄️ Base de Datos</h2>
+<h3 id="diagrama-entidad-relación-erd">Diagrama Entidad-Relación (ERD)</h3>
+<pre class="mermaid">
+    erDiagram
+    Usuario {
+        int ID_Usuario PK &#34;Identificador único del usuario&#34;
+        varchar nombreCompleto &#34;Nombre completo del usuario&#34;
+        varchar direccion &#34;Dirección del usuario&#34;
+        varchar telefono &#34;Número de teléfono&#34;
+        varchar Correo &#34;Correo electrónico&#34;
+        varchar usuario &#34;Nombre de usuario único&#34;
+        varchar Contraseña &#34;Contraseña encriptada&#34;
+        int Administrador &#34;Flag: 1=Admin, 0=Usuario&#34;
+    }
+
+    Libro {
+        int id_libro PK &#34;Identificador único del libro&#34;
+        varchar tituloLibro &#34;Título del libro&#34;
+        varchar autor &#34;Autor(es) del libro&#34;
+        varchar año_publicacion &#34;Año de publicación&#34;
+        text contenido &#34;Descripción o resumen&#34;
+    }
+
+    Prestamo {
+        int ID_Prestamo PK &#34;Identificador único del préstamo&#34;
+        int ID_Usuario FK &#34;Referencia al usuario&#34;
+        int ID_Libro FK &#34;Referencia al libro&#34;
+        date fecha_prestamo &#34;Fecha de inicio del préstamo&#34;
+        date fecha_devolucion &#34;Fecha límite de devolución&#34;
+    }
+
+    Usuario ||--o{ Prestamo : &#34;realiza&#34;
+    Libro ||--o{ Prestamo : &#34;es_prestado_en&#34;
+  </pre>
+  <h3 id="scripts-de-base-de-datos">Scripts de Base de Datos</h3>
+<p>El proyecto incluye scripts SQL organizados en la carpeta <code>SQL QUERYS BibliotecaForm/</code>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Script</th>
+          <th>Propósito</th>
+          <th>Orden de Ejecución</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Creacion de BibliotecaFrom.sql</code></td>
+          <td>🏗️ Estructura de BD</td>
+          <td>1️⃣</td>
+      </tr>
+      <tr>
+          <td><code>Datos de las tablas BibliotecaForm.sql</code></td>
+          <td>📊 Datos iniciales</td>
+          <td>2️⃣</td>
+      </tr>
+      <tr>
+          <td><code>Procedimientos Almacenado BibliotecaFrom.sql</code></td>
+          <td>⚙️ Stored Procedures</td>
+          <td>3️⃣</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="estructura-detallada-de-tablas">Estructura Detallada de Tablas</h3>
+<h4 id="-tabla-usuario">👤 Tabla Usuario</h4>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">SQL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Usuario</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ID_Usuario</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">nombreCompleto</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">direccion</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">telefono</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Correo</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">usuario</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Contraseña</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Administrador</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">Administrador</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div>
+  </div><h4 id="-tabla-libro">📚 Tabla Libro</h4>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">SQL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Libro</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id_libro</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">tituloLibro</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">autor</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">año_publicacion</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">contenido</span><span class="w"> </span><span class="nb">text</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div>
+  </div><h4 id="-tabla-prestamo">📋 Tabla Prestamo</h4>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">SQL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Prestamo</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ID_Prestamo</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ID_Usuario</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ID_Libro</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">fecha_prestamo</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">GETDATE</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">fecha_devolucion</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ID_Usuario</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Usuario</span><span class="p">(</span><span class="n">ID_Usuario</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">ID_Libro</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">Libro</span><span class="p">(</span><span class="n">id_libro</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">fecha_devolucion</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">fecha_prestamo</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div>
+  </div><h3 id="configuración-de-conexión">Configuración de Conexión</h3>
+<p>La cadena de conexión se configura en <code>Program.cs</code>:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">Configuracion</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Configuración para SQL Server local</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">CadenaConexion</span> <span class="p">=</span> <span class="s">&#34;Server=localhost\\SERVERDEV;Database=BibliotecaFrom;Trusted_Connection=True;&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// Alternativas de configuración:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// SQL Server Express LocalDB</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// &#34;Server=(localdb)\\MSSQLLocalDB;Database=BibliotecaFrom;Trusted_Connection=True;&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// SQL Server con autenticación</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// &#34;Server=servidor;Database=BibliotecaFrom;User Id=usuario;Password=contraseña;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+  </div><h2 id="-estructura-del-proyecto">📁 Estructura del Proyecto</h2>
+<h3 id="estructura-principal">Estructura Principal</h3>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">TEXT</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">BibliotecaFrom/
+</span></span><span class="line"><span class="cl">├── 📄 BibliotecaFrom.sln          # Archivo de solución de Visual Studio
+</span></span><span class="line"><span class="cl">├── 📄 BibliotecaFrom.csproj       # Archivo de proyecto C#
+</span></span><span class="line"><span class="cl">├── 📄 App.config                  # Configuración de la aplicación
+</span></span><span class="line"><span class="cl">├── 📄 Program.cs                  # Punto de entrada de la aplicación
+</span></span><span class="line"><span class="cl">├── 📄 README.md                   # Documentación del proyecto
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── 🖼️ Formularios Windows Forms/
+</span></span><span class="line"><span class="cl">│   ├── FrmMenuPrincipal.*         # Menú principal de la aplicación
+</span></span><span class="line"><span class="cl">│   ├── FrmUsuario.*               # Autenticación de usuarios
+</span></span><span class="line"><span class="cl">│   ├── FrmAdministrador.*         # Autenticación de administradores
+</span></span><span class="line"><span class="cl">│   ├── FrmRegistrarse.*           # Registro de nuevos usuarios
+</span></span><span class="line"><span class="cl">│   ├── FrmLibros.*                # Catálogo y gestión de libros
+</span></span><span class="line"><span class="cl">│   ├── FrmPrestar.*               # Sistema de préstamos
+</span></span><span class="line"><span class="cl">│   ├── FrmVerprestamos.*          # Historial de préstamos del usuario
+</span></span><span class="line"><span class="cl">│   ├── FrmAdministrarBiblioteca.* # Panel de administración
+</span></span><span class="line"><span class="cl">│   └── FrmAgregarLibro.*          # Formulario para agregar libros
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── 🗄️ SQL QUERYS BibliotecaForm/
+</span></span><span class="line"><span class="cl">│   ├── Creacion de BibliotecaFrom.sql           # Script de creación de BD
+</span></span><span class="line"><span class="cl">│   ├── Datos de las tablas BibliotecaForm.sql   # Datos iniciales
+</span></span><span class="line"><span class="cl">│   └── Procedimientos Almacenado BibliotecaFrom.sql # Stored Procedures
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── 🎨 Resources/                   # Recursos gráficos
+</span></span><span class="line"><span class="cl">│   ├── 1BNS.png                   # Logo principal
+</span></span><span class="line"><span class="cl">│   ├── admin_person_user_man_2839.png
+</span></span><span class="line"><span class="cl">│   ├── agregar libros.jpg
+</span></span><span class="line"><span class="cl">│   ├── prestamos.jpg
+</span></span><span class="line"><span class="cl">│   ├── regis.png
+</span></span><span class="line"><span class="cl">│   └── registrarse.jpg
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└── ⚙️ Properties/                  # Propiedades del proyecto
+</span></span><span class="line"><span class="cl">    ├── AssemblyInfo.cs            # Información del ensamblado
+</span></span><span class="line"><span class="cl">    ├── Resources.Designer.cs      # Recursos embebidos
+</span></span><span class="line"><span class="cl">    ├── Resources.resx
+</span></span><span class="line"><span class="cl">    ├── Settings.Designer.cs       # Configuraciones
+</span></span><span class="line"><span class="cl">    └── Settings.settings</span></span></code></pre></div>
+  </div><h3 id="descripción-de-archivos-clave">Descripción de Archivos Clave</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Archivo/Carpeta</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Program.cs</code></td>
+          <td><strong>Punto de entrada</strong>: Configuración inicial y lanzamiento de la aplicación</td>
+      </tr>
+      <tr>
+          <td><code>Frm*.cs</code></td>
+          <td><strong>Formularios</strong>: Lógica de negocio de cada ventana</td>
+      </tr>
+      <tr>
+          <td><code>Frm*.Designer.cs</code></td>
+          <td><strong>Diseño UI</strong>: Código generado automáticamente para la interfaz</td>
+      </tr>
+      <tr>
+          <td><code>Frm*.resx</code></td>
+          <td><strong>Recursos</strong>: Imágenes, textos y configuraciones específicas del formulario</td>
+      </tr>
+      <tr>
+          <td><code>SQL QUERYS BibliotecaForm/</code></td>
+          <td><strong>Scripts de BD</strong>: Todos los scripts necesarios para configurar la base de datos</td>
+      </tr>
+      <tr>
+          <td><code>Resources/</code></td>
+          <td><strong>Recursos Gráficos</strong>: Imágenes e iconos utilizados en la interfaz</td>
+      </tr>
+      <tr>
+          <td><code>App.config</code></td>
+          <td><strong>Configuración</strong>: Cadenas de conexión y configuraciones de la aplicación</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-uso-de-la-aplicación">🚀 Uso de la Aplicación</h2>
+<h3 id="-modo-visitante-sin-registro">👁️ <strong>Modo Visitante (Sin registro)</strong></h3>
+<ol>
+<li><strong>Ejecutar la aplicación</strong> → <code>BibliotecaFrom.exe</code></li>
+<li><strong>Seleccionar</strong> → <code>Ver Libros</code></li>
+<li><strong>Explorar</strong> el catálogo completo de libros disponibles</li>
+<li><strong>Visualizar</strong> información detallada de cada libro</li>
+</ol>
+<h3 id="-modo-usuario-regular">👤 <strong>Modo Usuario Regular</strong></h3>
+<h4 id="-registro-de-nuevo-usuario">📝 Registro de Nuevo Usuario</h4>
+<ol>
+<li><strong>Menú Principal</strong> → <code>Usuario</code> → <code>Registrarse</code></li>
+<li><strong>Completar formulario</strong>:
+<ul>
+<li>Nombre completo</li>
+<li>Dirección</li>
+<li>Teléfono</li>
+<li>Correo electrónico</li>
+<li>Nombre de usuario (único)</li>
+<li>Contraseña (mínimo 6 caracteres)</li>
+</ul>
+</li>
+<li><strong>Confirmar registro</strong></li>
+</ol>
+<h4 id="-iniciar-sesión">🔑 Iniciar Sesión</h4>
+<ol>
+<li><strong>Menú Principal</strong> → <code>Usuario</code></li>
+<li><strong>Ingresar credenciales</strong> (usuario y contraseña)</li>
+<li><strong>Acceder al catálogo</strong> con funcionalidades completas</li>
+</ol>
+<h4 id="-gestionar-préstamos">📚 Gestionar Préstamos</h4>
+<ol>
+<li><strong>Seleccionar libro</strong> del catálogo</li>
+<li><strong>Solicitar préstamo</strong> → <code>Prestar Libro</code></li>
+<li><strong>Configurar fechas</strong> de préstamo y devolución</li>
+<li><strong>Confirmar préstamo</strong> y recibir ticket</li>
+<li><strong>Ver préstamos activos</strong> → <code>Ver Préstamos</code></li>
+<li><strong>Cancelar préstamo</strong> si es necesario</li>
+</ol>
+<h3 id="-modo-administrador">👨‍💼 <strong>Modo Administrador</strong></h3>
+<h4 id="-acceso-administrativo">🔐 Acceso Administrativo</h4>
+<ol>
+<li><strong>Menú Principal</strong> → <code>Administrador</code></li>
+<li><strong>Ingresar credenciales</strong> de administrador</li>
+<li><strong>Acceder al panel</strong> de administración</li>
+</ol>
+<h4 id="-panel-de-administración">⚙️ Panel de Administración</h4>
+<ul>
+<li>
+<p><strong>👥 Gestión de Usuarios</strong>:</p>
+<ul>
+<li>Visualizar todos los usuarios registrados</li>
+<li>Eliminar usuarios</li>
+<li>Modificar información de usuarios</li>
+</ul>
+</li>
+<li>
+<p><strong>📚 Gestión de Libros</strong>:</p>
+<ul>
+<li>Ver inventario completo</li>
+<li>Agregar nuevos libros al catálogo</li>
+<li>Eliminar libros (validando préstamos activos)</li>
+<li>Editar información de libros existentes</li>
+</ul>
+</li>
+<li>
+<p><strong>📊 Gestión de Préstamos</strong>:</p>
+<ul>
+<li>Monitorear todos los préstamos del sistema</li>
+<li>Ver estados: activos, vencidos, completados</li>
+<li>Forzar devoluciones</li>
+<li>Generar reportes de uso</li>
+</ul>
+</li>
+</ul>
+<h4 id="-agregar-nuevo-libro">➕ Agregar Nuevo Libro</h4>
+<ol>
+<li><strong>Panel de Admin</strong> → <code>Agregar Libro</code></li>
+<li><strong>Completar información</strong>:
+<ul>
+<li>Título del libro</li>
+<li>Autor(es)</li>
+<li>Año de publicación</li>
+<li>Descripción/contenido</li>
+</ul>
+</li>
+<li><strong>Validar y guardar</strong> en el catálogo</li>
+</ol>
+<h2 id="-guía-de-desarrollo">🛠️ Guía de Desarrollo</h2>
+<h3 id="configuración-del-entorno">Configuración del Entorno</h3>
+<h4 id="prerrequisitos">Prerrequisitos</h4>
+<ul>
+<li><strong>Visual Studio 2019+</strong> con workload &ldquo;.NET desktop development&rdquo;</li>
+<li><strong>SQL Server 2019+</strong> (Express, Standard, o LocalDB)</li>
+<li><strong>SQL Server Management Studio</strong> (SSMS)</li>
+</ul>
+<h4 id="configuración-inicial">Configuración Inicial</h4>
+<ol>
+<li>
+<p><strong>Clonar repositorio</strong>:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">POWERSHELL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="p">&lt;</span><span class="nb">repository-url</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">BibliotecaFrom</span></span></span></code></pre></div>
+  </div></li>
+<li>
+<p><strong>Configurar Base de Datos</strong>:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">SQL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- En SSMS, ejecutar en orden:
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 1. SQL QUERYS BibliotecaForm\Creacion de BibliotecaFrom.sql
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 2. SQL QUERYS BibliotecaForm\Datos de las tablas BibliotecaForm.sql
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 3. SQL QUERYS BibliotecaForm\Procedimientos Almacenado BibliotecaFrom.sql</span></span></span></code></pre></div>
+  </div></li>
+<li>
+<p><strong>Configurar cadena de conexión</strong> en <code>Program.cs</code>:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">CSHARP</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">CadenaConexion</span> <span class="p">=</span> <span class="s">&#34;Server=TU_SERVIDOR;Database=BibliotecaFrom;Trusted_Connection=True;&#34;</span><span class="p">;</span></span></span></code></pre></div>
+  </div></li>
+<li>
+<p><strong>Compilar y ejecutar</strong>:</p>
+<div class="code-block">
+    <div class="code-block__header">
+      <span class="code-block__lang">POWERSHELL</span>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># Desde Visual Studio: F5 o Ctrl+F5</span>
+</span></span><span class="line"><span class="cl"><span class="c"># O desde línea de comandos:</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">build</span>
+</span></span><span class="line"><span class="cl"><span class="n">dotnet</span> <span class="n">run</span></span></span></code></pre></div>
+  </div></li>
+</ol>
+<h3 id="arquitectura-de-código">Arquitectura de Código</h3>
+<h4 id="patrón-de-diseño">Patrón de Diseño</h4>
+<p>El proyecto sigue una <strong>arquitectura de capas</strong> simple pero efectiva:</p>
+<pre class="mermaid">
+    graph TB
+    subgraph &#34;🎨 Presentación (UI Layer)&#34;
+        Forms[&#34;Windows Forms&lt;br/&gt;- FrmMenuPrincipal&lt;br/&gt;- FrmUsuario&lt;br/&gt;- FrmAdministrador&lt;br/&gt;- etc.&#34;]
+    end
+    
+    subgraph &#34;⚡ Lógica de Negocio (Business Layer)&#34;
+        Validation[&#34;Validaciones&lt;br/&gt;- Autenticación&lt;br/&gt;- Reglas de Préstamo&lt;br/&gt;- Validación de Datos&#34;]
+        Business[&#34;Procesos de Negocio&lt;br/&gt;- Gestión de Préstamos&lt;br/&gt;- Control de Usuarios&lt;br/&gt;- Gestión de Catálogo&#34;]
+    end
+    
+    subgraph &#34;💾 Acceso a Datos (Data Layer)&#34;
+        DataAccess[&#34;ADO.NET&lt;br/&gt;- SqlConnection&lt;br/&gt;- SqlCommand&lt;br/&gt;- SqlDataAdapter&#34;]
+        StoredProcs[&#34;Stored Procedures&lt;br/&gt;- Consultas Optimizadas&lt;br/&gt;- Operaciones CRUD&#34;]
+    end
+    
+    subgraph &#34;🗄️ Base de Datos (Data Storage)&#34;
+        Database[&#34;SQL Server&lt;br/&gt;- Tabla Usuario&lt;br/&gt;- Tabla Libro&lt;br/&gt;- Tabla Prestamo&#34;]
+    end
+    
+    Forms --&gt; Validation
+    Forms --&gt; Business
+    Validation --&gt; DataAccess
+    Business --&gt; DataAccess
+    DataAccess --&gt; StoredProcs
+    StoredProcs --&gt; Database
+    DataAccess --&gt; Database
+  </pre>
+  <h4 id="convenciones-de-código">Convenciones de Código</h4>
+<ul>
+<li><strong>Formularios</strong>: Prefijo <code>Frm</code> (ej: <code>FrmMenuPrincipal</code>)</li>
+<li><strong>Variables</strong>: camelCase para variables locales</li>
+<li><strong>Métodos</strong>: PascalCase para métodos públicos</li>
+<li><strong>Constantes</strong>: UPPER_CASE para constantes</li>
+<li><strong>Controles UI</strong>: Prefijo según tipo (btn, txt, dgv, etc.)</li>
+</ul>
+<h3 id="extensión-del-sistema">Extensión del Sistema</h3>
+<h4 id="agregar-nuevo-formulario">Agregar Nuevo Formulario</h4>
+<ol>
+<li><strong>Crear formulario</strong>: Right-click proyecto → Add → Windows Form</li>
+<li><strong>Diseñar interfaz</strong> usando el Designer de Visual Studio</li>
+<li><strong>Implementar lógica</strong> en el archivo <code>.cs</code></li>
+<li><strong>Conectar navegación</strong> desde otros formularios</li>
+</ol>
+<h4 id="agregar-nueva-funcionalidad-de-bd">Agregar Nueva Funcionalidad de BD</h4>
+<ol>
+<li><strong>Modificar esquema</strong> de base de datos si es necesario</li>
+<li><strong>Crear/Modificar stored procedures</strong></li>
+<li><strong>Actualizar capa de acceso a datos</strong></li>
+<li><strong>Implementar lógica de negocio</strong></li>
+<li><strong>Crear/Modificar formularios UI</strong></li>
+</ol>
+<h2 id="-contribución">🤝 Contribución</h2>
+<p>Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:</p>
+<ol>
+<li>Haz un Fork del repositorio.</li>
+<li>Crea una nueva rama (<code>git checkout -b feature/nueva-funcionalidad</code>).</li>
+<li>Realiza tus cambios y haz commit (<code>git commit -am 'Añadir nueva funcionalidad'</code>).</li>
+<li>Sube tus cambios a la rama (<code>git push origin feature/nueva-funcionalidad</code>).</li>
+<li>Abre un Pull Request.</li>
+</ol>
+<h2 id="-licencia">📜 Licencia</h2>
+<p>Este proyecto está bajo la Licencia MIT. Consulta el archivo <a href="LICENSE">LICENSE</a> para más detalles.</p>
+<h2 id="-autor">🧑‍💻 Autor</h2>
+<p>Desarrollado con ❤️ por <strong>J0SE-ESC0BAR</strong>.</p>
+<p>Puedes encontrarme en:</p>
+<ul>
+<li>GitHub: <a href="https://github.com/J0SE-ESC0BAR">J0SE-ESC0BAR</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/in/jose-alfonso-escobar-mejia-15133620b/">https://www.linkedin.com/in/jose-alfonso-escobar-mejia-15133620b/</a></li>
+<li>Correo: <a href="mailto:jose@jaem.dev">jose@jaem.dev</a></li>
+<li>Correo: <a href="mailto:josealfonsoescobarmejia@gmail.com">josealfonsoescobarmejia@gmail.com</a></li>
+<li>Portafolio: <a href="https://jaem.dev/projects">https://jaem.dev/projects</a></li>
+<li>Sitio Web: <a href="https://jaem.dev/">https://jaem.dev/</a></li>
+</ul>
+
+
+      </div>
+    </main>
+  
+  
+    
+<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
+  
+  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
+
+<div class="me-5">
+<span>Redes sociales:</span>
+</div>
+
+
+<div class="box-icons">
+  
+<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-twitter" aria-hidden="true"></i>
+</a>
+
+<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-github" aria-hidden="true"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
+<i class="bi-linkedin" aria-hidden="true"></i>
+</a>
+
+</div>
+
+</section>
+
+
+
+  
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      
+      <div class="row mt-3">
+        
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          
+          <h3 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-light"></i>JAEM
+          </h3>
+          <p>
+            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">
+            Legal
+          </h6>
+          <p>
+            <a href="#!" class="text-light">Terms and conditions</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#!" class="text-light">Terms of use</a>
+          </p>
+        </div>
+        
+
+        
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
+          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    Copyright &copy; <time datetime="2025-06-07 22:42:33.3037182 -0600 CST m=&#43;113.297655301">2025</time> - Diseño Web realizado por 
+  </div>
+  
+</footer>
+
+
+  
+  
+  
+  
+    <script src="http://localhost:1313/js/scripts.js"></script>
+  
+  
+  
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  
+</body>
+
+
+
+
+
+</html>

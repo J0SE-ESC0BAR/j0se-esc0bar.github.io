@@ -20,6 +20,8 @@
   
     <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
   
+    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+  
     <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
   
     <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
@@ -221,8 +223,7 @@
     
   </nav>
 </header>
-  
-  
+    
   
     
     
@@ -247,201 +248,132 @@
 <h3 id="reiniciar-un-servicio">Reiniciar un Servicio</h3>
 <p>Existen dos métodos principales:</p>
 <h4 id="cmd">CMD:</h4>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">net stop NombreDelServicio
+</span></span><span class="line"><span class="cl">net start NombreDelServicio</span></span></code></pre></div>
+  </div><script>
       function copyToClipboard(button) {
         const codeBlock = button.closest('.code-block').querySelector('code');
         if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
           }).catch(err => {
-            console.error('Failed to copy text: ', err);
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
           });
         }
       }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">net stop NombreDelServicio
-net start NombreDelServicio</code>
-    </pre>
-  </div>
-</div><h4 id="powershell">PowerShell:</h4>
-<div class="highlight">
-  <div class="code-block">
+    </script><h4 id="powershell">PowerShell:</h4>
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">POWERSHELL</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-powershell hljs" data-lang="powershell">Restart-Service -Name NombreDelServicio</code>
-    </pre>
-  </div>
-</div><h3 id="gestión-de-procesos-y-rendimiento">Gestión de Procesos y Rendimiento</h3>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Restart-Service</span> <span class="n">-Name</span> <span class="n">NombreDelServicio</span></span></span></code></pre></div>
+  </div><h3 id="gestión-de-procesos-y-rendimiento">Gestión de Procesos y Rendimiento</h3>
 <ul>
 <li><strong>Listar procesos:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">tasklist</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">tasklist</span></span></code></pre></div>
+  </div></li>
 <li><strong>Finalizar procesos con alto consumo de CPU:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">taskkill /PID &lt;Número_PID&gt; /F</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">taskkill /PID <span class="p">&lt;</span>Número_PID<span class="p">&gt;</span> /F</span></span></code></pre></div>
+  </div></li>
 <li><strong>Ver conexiones de red:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">netstat -an</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">netstat -an</span></span></code></pre></div>
+  </div></li>
 <li><strong>Información de red:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">ipconfig /all</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">ipconfig /all</span></span></code></pre></div>
+  </div></li>
 </ul>
 <h3 id="otros-comandos-útiles">Otros Comandos Útiles</h3>
 <ul>
 <li><strong>Información del sistema:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">systeminfo</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">systeminfo</span></span></code></pre></div>
+  </div></li>
 <li><strong>Apagar o reiniciar el sistema:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">CMD</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-cmd hljs" data-lang="cmd">shutdown /r /t 0</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">shutdown /r /t 0</span></span></code></pre></div>
+  </div></li>
 </ul>
 <hr>
 <h2 id="-linux">🔹 Linux</h2>
@@ -449,290 +381,169 @@ net start NombreDelServicio</code>
 <ul>
 <li>
 <p><strong>Visualizar procesos en tiempo real:</strong></p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">top</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">top</span></span></code></pre></div>
+  </div></li>
 <li>
 <p><strong>Alternativa con interfaz mejorada (requiere instalación):</strong></p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">htop</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">htop</span></span></code></pre></div>
+  </div></li>
 <li>
 <p><strong>Listar procesos en ejecución:</strong></p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">ps aux</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ps aux</span></span></code></pre></div>
+  </div></li>
 </ul>
 <h3 id="gestión-de-servicios">Gestión de Servicios</h3>
 <ul>
 <li><strong>Con <code>systemctl</code> (para sistemas modernos):</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">sudo systemctl restart nombre_del_servicio</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart nombre_del_servicio</span></span></code></pre></div>
+  </div></li>
 <li><strong>Con <code>service</code> (sistemas más antiguos):</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">sudo service nombre_del_servicio restart</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo service nombre_del_servicio restart</span></span></code></pre></div>
+  </div></li>
 </ul>
 <h3 id="configuración-de-red">Configuración de Red</h3>
 <ul>
 <li>
 <p><strong>Ver configuración de interfaces:</strong></p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">ip addr show</code>
-    </pre>
-  </div>
-</div><p>(Alternativa en sistemas más antiguos: <code>ifconfig</code>)</p>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ip addr show</span></span></code></pre></div>
+  </div><p>(Alternativa en sistemas más antiguos: <code>ifconfig</code>)</p>
 </li>
 <li>
 <p><strong>Configurar IP estática en Netplan (Ubuntu moderno):</strong></p>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">YAML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-yaml hljs" data-lang="yaml">network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    enp3s0:
-      addresses: [192.168.1.100/24]
-      gateway4: 192.168.1.1
-      nameservers:
-        addresses: [8.8.8.8, 8.8.4.4]</code>
-    </pre>
-  </div>
-</div><p>Aplicar cambios con:</p>
-<div class="highlight">
-  <div class="code-block">
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">network</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">renderer</span><span class="p">:</span><span class="w"> </span><span class="l">networkd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enp3s0</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">192.168.1.100</span><span class="l">/24]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">gateway4</span><span class="p">:</span><span class="w"> </span><span class="m">192.168.1.1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">8.8.8.8</span><span class="p">,</span><span class="w"> </span><span class="m">8.8.4.4</span><span class="p">]</span></span></span></code></pre></div>
+  </div><p>Aplicar cambios con:</p>
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">sudo netplan apply</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo netplan apply</span></span></code></pre></div>
+  </div></li>
 </ul>
 <h3 id="otros-comandos-importantes">Otros Comandos Importantes</h3>
 <ul>
 <li><strong>Ver uso de disco:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">df -h</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">df -h</span></span></code></pre></div>
+  </div></li>
 <li><strong>Mostrar estadísticas del sistema:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">vmstat 5</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vmstat <span class="m">5</span></span></span></code></pre></div>
+  </div></li>
 <li><strong>Uso del espacio en disco por directorios:</strong>
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-bash hljs" data-lang="bash">du -sh /ruta/del/directorio</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">du -sh /ruta/del/directorio</span></span></code></pre></div>
+  </div></li>
 </ul>
 <hr>
 <ul>
@@ -856,7 +667,7 @@ net start NombreDelServicio</code>
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-01 23:17:25.4638752 -0600 CST m=&#43;0.464650801">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-07 23:20:49.6184349 -0600 CST m=&#43;0.816953601">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -871,9 +682,11 @@ net start NombreDelServicio</code>
   
   
   
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
 </body>
 
 

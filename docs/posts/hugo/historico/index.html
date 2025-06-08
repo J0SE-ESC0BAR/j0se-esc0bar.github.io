@@ -20,6 +20,8 @@
   
     <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
   
+    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+  
     <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
   
     <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
@@ -46,7 +48,7 @@
     <meta property="og:title" content="Historico Sección “Posts”">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jaem.dev/posts/hugo/historico/">
-    <meta property="og:image" content="https://jaem.dev/images/no-img.png">
+    <meta property="og:image" content="https://jaem.dev/images/HistoricoHugoPost.png">
     <meta property="og:description" content="Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.">
     
     
@@ -221,8 +223,7 @@
     
   </nav>
 </header>
-  
-  
+    
   
     
     
@@ -236,7 +237,7 @@
       <p>Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.</p>
     </div>
     <div class="col-md-6 intro-image">
-      <img class="img-fluid" src="https://jaem.dev/images/no-img.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Historico Sección “Posts”' />
+      <img class="img-fluid" src="https://jaem.dev/images/HistoricoHugoPost.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Historico Sección “Posts”' />
     </div>
   </div>
   </div>
@@ -255,77 +256,63 @@
 <p><strong>Identificar el Contenido a Mostrar</strong>:</p>
 <ul>
 <li><strong>Categorías (<code>$categories</code>)</strong>: Se obtienen todas las subsecciones directas de la página actual (que es <code>/posts/</code>). En Hugo, <code>.Sections</code> en una página de sección lista sus subsecciones inmediatas.
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">GO-HTML-TEMPLATE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">$categories</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Sections</span><span class="w"> </span><span class="cp">}}</span></span></span></code></pre></div>
+  </div><script>
       function copyToClipboard(button) {
         const codeBlock = button.closest('.code-block').querySelector('code');
         if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
+          const textToCopy = codeBlock.textContent || codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalContent = button.innerHTML;
+            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            button.style.color = '#10b981';
+            setTimeout(() => {
+              button.innerHTML = originalContent;
+              button.style.color = '';
+            }, 2000);
           }).catch(err => {
-            console.error('Failed to copy text: ', err);
+            console.error('Error al copiar el código: ', err);
+            alert('No se pudo copiar el código');
           });
         }
       }
-    </script>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $categories := .Sections }}</code>
-    </pre>
-  </div>
-</div></li>
+    </script></li>
 <li><strong>Artículos Sin Categoría (<code>$uncategorizedArticles</code>)</strong>: Se buscan todas las páginas regulares (<code>.RegularPages</code>) que pertenecen directamente a la sección &ldquo;posts&rdquo; (es decir, no están en sub-subsecciones).
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">GO-HTML-TEMPLATE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $uncategorizedArticles := where .RegularPages &#34;Section&#34; &#34;posts&#34; }}</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">$uncategorizedArticles</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">where</span><span class="w"> </span><span class="na">.RegularPages</span><span class="w"> </span><span class="s">&#34;Section&#34;</span><span class="w"> </span><span class="s">&#34;posts&#34;</span><span class="w"> </span><span class="cp">}}</span></span></span></code></pre></div>
+  </div></li>
 <li><strong>Combinar Listas (<code>$allItems</code>)</strong>: Las categorías y los artículos sin categoría se unen en una sola lista.
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">GO-HTML-TEMPLATE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $allItems := $categories | union $uncategorizedArticles }}</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">$allItems</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">$categories</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">union</span><span class="w"> </span><span class="nx">$uncategorizedArticles</span><span class="w"> </span><span class="cp">}}</span></span></span></code></pre></div>
+  </div></li>
 </ul>
 </li>
 <li>
@@ -335,38 +322,27 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
 <li>Se crea una nueva lista (<code>$itemsWithDates</code>) donde cada elemento es un diccionario que contiene el ítem original (<code>item</code>) y su <code>effectiveDate</code>.</li>
 <li><strong>Para Artículos</strong>: <code>effectiveDate</code> es simplemente la fecha de publicación del artículo (<code>.Date</code>).</li>
 <li><strong>Para Categorías</strong>: <code>effectiveDate</code> se determina por la fecha del artículo más reciente publicado <em>dentro</em> de esa categoría. Si una categoría no tiene artículos, se usa su propia fecha (<code>.Date</code> del <code>_index.md</code> de la categoría).
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">GO-HTML-TEMPLATE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ range $allItems }}
-  {{ $effectiveDate := .Date }}
-  {{ if .IsSection }}
-    {{ if .Pages }}
-      {{ $latestPage := index (sort .Pages &#34;Date&#34; &#34;desc&#34;) 0 }}
-      {{ $effectiveDate = $latestPage.Date }}
-    {{ end }}
-  {{ end }}
-  {{/* ... se añade a $itemsWithDates ... */}}
-{{ end }}</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">$allItems</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="w"> </span><span class="nx">$effectiveDate</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Date</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="na">.IsSection</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="na">.Pages</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="w"> </span><span class="nx">$latestPage</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">index</span><span class="w"> </span><span class="o">(</span><span class="nx">sort</span><span class="w"> </span><span class="na">.Pages</span><span class="w"> </span><span class="s">&#34;Date&#34;</span><span class="w"> </span><span class="s">&#34;desc&#34;</span><span class="o">)</span><span class="w"> </span><span class="nx">0</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">      <span class="cp">{{</span><span class="w"> </span><span class="nx">$effectiveDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$latestPage</span><span class="na">.Date</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">{{/* ... se añade a $itemsWithDates ... */}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="cp">}}</span></span></span></code></pre></div>
+  </div></li>
 <li>La lista <code>$itemsWithDates</code> se ordena por <code>effectiveDate</code> en orden descendente (más reciente primero).</li>
 <li>Finalmente, se extraen los ítems ordenados de nuevo a la variable <code>$allItems</code>.</li>
 </ul>
@@ -376,30 +352,19 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
 <ul>
 <li>La lista final y ordenada <code>$allItems</code> se pasa al sistema de paginación de Hugo.</li>
 <li>Luego, se llama al partial <a href="layouts/partials/posts_grid_list.html:1"><code>layouts/partials/posts_grid_list.html</code></a> para mostrar los ítems de la página actual.
-<div class="highlight">
-  <div class="code-block">
+<div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">GO-HTML-TEMPLATE</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)">Copy</button>
-    <script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-            alert('Code copied to clipboard!');
-          }).catch(err => {
-            console.error('Failed to copy text: ', err);
-          });
-        }
-      }
-    </script>
+      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+      </button>
     </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-go-html-template hljs" data-lang="go-html-template">{{ $paginator := .Paginate $allItems }}
-{{ partial &#34;posts_grid_list.html&#34; (dict &#34;Pages&#34; $paginator.Pages &#34;Context&#34; . &#34;ViewContainerClass&#34; &#34;my-3&#34;) }}</code>
-    </pre>
-  </div>
-</div></li>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">$paginator</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Paginate</span><span class="w"> </span><span class="nx">$allItems</span><span class="w"> </span><span class="cp">}}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">partial</span><span class="w"> </span><span class="s">&#34;posts_grid_list.html&#34;</span><span class="w"> </span><span class="o">(</span><span class="nx">dict</span><span class="w"> </span><span class="s">&#34;Pages&#34;</span><span class="w"> </span><span class="nx">$paginator</span><span class="na">.Pages</span><span class="w"> </span><span class="s">&#34;Context&#34;</span><span class="w"> </span><span class="na">.</span><span class="w"> </span><span class="s">&#34;ViewContainerClass&#34;</span><span class="w"> </span><span class="s">&#34;my-3&#34;</span><span class="o">)</span><span class="w"> </span><span class="cp">}}</span></span></span></code></pre></div>
+  </div></li>
 </ul>
 </li>
 </ul>
@@ -451,9 +416,9 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
       <div class="row justify-content-center">
         <div class="col-12 col-md-4 text-center mb-3">
           
-            <a href="https://jaem.dev/posts/hugo/codigo-blocks-guide/" class="btn btn-outline-primary btn-lg w-100">
+            <a href="https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/" class="btn btn-outline-primary btn-lg w-100">
               <i class="bi bi-arrow-left"></i> Post Anterior
-              <small class="d-block text-light">Guía de Bloques de Código …</small>
+              <small class="d-block text-light">Integración y Uso de Diagramas …</small>
             </a>
           
         </div>
@@ -560,7 +525,7 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-01 23:17:25.3194362 -0600 CST m=&#43;0.320211801">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-07 23:20:49.3299192 -0600 CST m=&#43;0.528437901">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -575,9 +540,11 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
   
   
   
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  
+  
+  
 </body>
 
 
