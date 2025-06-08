@@ -20,14 +20,9 @@ theme = "hugo-jaem-theme"
 # Carpeta donde se guardará el sitio generado por Hugo
 publishDir = "docs"
 
-# Ajustes de Pygments / Chroma
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-pygmentsUseClasses = true
-
 # Paginación
 [pagination]
-  pagerSize = 7
+  pagerSize = 8
 
 [menu]
   [[menu.main]]
@@ -53,11 +48,20 @@ pygmentsUseClasses = true
 # Configuración para resaltado de código (Chroma)
 [markup]
   [markup.highlight]
+    anchorLineNos = false
     codeFences = true
     guessSyntax = true
-    lineNumbersInTable = false
-    style = "dracula"  # Puedes cambiar a otro tema si lo deseas
-    noClasses = false  # Usar clases CSS en lugar de estilos inline
+    hl_Lines = ""
+    hl_inline = false
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    noHl = false
+    style = "dracula"
+    tabWidth = 4
+    wrapperClass = "highlight"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true  # Permitir HTML raw en markdown
@@ -79,10 +83,10 @@ pygmentsUseClasses = true
   # Post destacado en la página de inicio
   featuredPost = "posts/Dotnet/WindowsForms/"  # Ruta relativa al post destacado
   showFeaturedPost = true  # true para mostrar, false para ocultar
-
   # Hojas de estilo adicionales (Bootstrap y highlight.js)
   css = [
     "/css/chroma-syntax.css", # Estilos para el resaltado de sintaxis de Chroma
+    "/css/code-blocks.css",   # Estilos personalizados para bloques de código
     "/css/NewStyles.css",
     
     "/css/variables.css",
