@@ -11,3 +11,5 @@ Esta es la versión anterior de mi sitio web personal. Fue desarrollada utilizan
 Puedes visitar la versión antigua aquí: [https://jaem.dev/old/](https://jaem.dev/old/)
 
 Aunque la tecnología y el diseño han evolucionado en la versión actual, esta página representa una etapa importante en mi aprendizaje y desarrollo como desarrollador web.
+<img src="/images/old-website-thumbnail.png" alt="Captura de pantalla de la versión antigua de mi sitio web" style="max-width: 100%; height: auto;">
+

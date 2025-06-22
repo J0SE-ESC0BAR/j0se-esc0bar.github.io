@@ -3,7 +3,7 @@ title: "Sistema de Gestión Bibliotecaria - BibliotecaForm"
 date: 2025-06-07
 draft: false
 description: "Un sistema completo de gestión bibliotecaria desarrollado en C# con Windows Forms, con interfaz MDI moderna y gestión avanzada de sesiones."
-image: "/images/Capturas/BibliotecaInicio.png" # Actualizado para mostrar una imagen principal
+image: "/Capturas/BibliotecaInicio.png"
 tags: ["C#", "Windows Forms", "Biblioteca", "MDI", "Gestión de Proyectos", "Sistema de Sesiones", "SQL Server"] # Tag añadido
 viewimg: true
 ---
