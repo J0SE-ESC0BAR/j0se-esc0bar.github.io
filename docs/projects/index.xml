@@ -20,7 +20,7 @@
       <link>https://jaem.dev/projects/website-jaem/</link>
       <pubDate>Sat, 01 Jun 2024 10:00:00 -0600</pubDate>
       <guid>https://jaem.dev/projects/website-jaem/</guid>
-      <description>&lt;p&gt;Esta es la versión anterior de mi sitio web personal. Fue desarrollada utilizando el generador de sitios estáticos Hugo y sirvió como mi presencia en línea antes de la versión actual.&lt;/p&gt;&#xA;&lt;p&gt;Puedes visitar la versión antigua aquí: &lt;a href=&#34;https://jaem.dev/old/&#34;&gt;https://jaem.dev/old/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Aunque la tecnología y el diseño han evolucionado en la versión actual, esta página representa una etapa importante en mi aprendizaje y desarrollo como desarrollador web.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Esta es la versión anterior de mi sitio web personal. Fue desarrollada utilizando el generador de sitios estáticos Hugo y sirvió como mi presencia en línea antes de la versión actual.&lt;/p&gt;&#xA;&lt;p&gt;Puedes visitar la versión antigua aquí: &lt;a href=&#34;https://jaem.dev/old/&#34;&gt;https://jaem.dev/old/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Aunque la tecnología y el diseño han evolucionado en la versión actual, esta página representa una etapa importante en mi aprendizaje y desarrollo como desarrollador web.&#xA;&lt;img src=&#34;https://jaem.dev/images/old-website-thumbnail.png&#34; alt=&#34;Captura de pantalla de la versión antigua de mi sitio web&#34; style=&#34;max-width: 100%; height: auto;&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Generador de códigos QR con Python conectado a MongoDB</title>
