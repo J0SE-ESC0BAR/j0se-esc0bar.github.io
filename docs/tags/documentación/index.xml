@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentación on JAEM</title>
-    <link>https://jaem.dev/tags/documentaci%C3%B3n/</link>
+    <link>//localhost:1313/tags/documentaci%C3%B3n/</link>
     <description>Recent content in Documentación on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jaem.dev/tags/documentaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/tags/documentaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integración y Uso de Diagramas Mermaid en Hugo</title>
-      <link>https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/</link>
+      <link>//localhost:1313/posts/hugo/diagramas-mermaid-hugo/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/</guid>
+      <guid>//localhost:1313/posts/hugo/diagramas-mermaid-hugo/</guid>
       <description>&lt;h1 id=&#34;-integración-y-uso-de-diagramas-mermaid-en-hugo&#34;&gt;🎨 Integración y Uso de Diagramas Mermaid en Hugo&lt;/h1&gt;&#xA;&lt;p&gt;Los diagramas Mermaid te permiten crear una amplia variedad de visualizaciones complejas (diagramas de flujo, secuencia, Gantt, etc.) directamente desde texto, de manera similar a Markdown. En este sitio, el soporte para Mermaid ya está configurado y listo para que lo uses en tus posts.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-cómo-usar-mermaid&#34;&gt;🚀 Cómo Usar Mermaid&lt;/h2&gt;&#xA;&lt;p&gt;Para crear un diagrama Mermaid en cualquier post, simplemente usa un bloque de código estándar de Markdown con el lenguaje especificado como &lt;code&gt;mermaid&lt;/code&gt;:&lt;/p&gt;</description>
     </item>
   </channel>

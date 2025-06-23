@@ -1,9 +1,14 @@
 {{- $alt := .Text | default .Title -}}
-<figure>
+{{- $src := .Destination | safeURL -}}
+<figure class="lightbox-figure">
   <img
-    src="{{ .Destination | safeURL }}"
+    src="{{ $src }}"
     alt="{{ $alt }}"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="{{ $src }}"
+    data-lightbox-alt="{{ $alt }}"
+    {{- if .Title }}data-lightbox-caption="{{ .Title }}"{{ end }}
+    style="cursor: pointer;"
   />
   {{- if .Title -}}
     <figcaption>{{ .Title }}</figcaption>

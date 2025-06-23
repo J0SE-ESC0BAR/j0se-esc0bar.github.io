@@ -240,7 +240,7 @@ graph TB
 ### 🏠 1. Menú Principal MDI (`FrmMenuPrincipal`)
 **Centro de control con interfaz MDI moderna**
 
-<img src="/Capturas/BibliotecaInicio.png" alt="Menú Principal" width="600">
+![Menú Principal](/Capturas/BibliotecaInicio.png)
 
 **Características Principales:**
 - 🚪 **Acceso Multi-Rol con Gestión de Sesiones**: Detección automática de sesiones activas y redirección inteligente
@@ -296,7 +296,7 @@ private void BtnCambiarTamanoMenu_Click(object sender, EventArgs e)
 ### 🔑 2. Autenticación de Usuario con Gestión de Sesiones (`FrmUsuario`)
 **Sistema de login avanzado para usuarios regulares**
 
-<img src="/Capturas/BibliotecaLoginUsuarioNormal.png" alt="Login Usuario" width="400">
+![Login Usuario](/Capturas/BibliotecaLoginUsuarioNormal.png)
 
 **Funcionalidades Mejoradas:**
 - ✅ **Autenticación Segura con Persistencia**: Validación contra base de datos con gestión de sesión global
@@ -339,7 +339,7 @@ private void btnIngresar_Click(object sender, EventArgs e)
 ### 🔐 3. Autenticación de Administrador con Sesión Persistente (`FrmAdministrador`)
 **Acceso privilegiado con gestión avanzada de sesiones**
 
-<img src="/Capturas/BibiotecaPanelAdministrador.png" alt="Login Admin" width="400">
+![Login Admin](/Capturas/BibiotecaPanelAdministrador.png)
 
 **Características Especiales:**
 - 👨‍💼 **Verificación de Privilegios Avanzada**: Validación del campo `Administrador` con seguridad reforzada
@@ -381,7 +381,7 @@ private void btnIngresar_Click(object sender, EventArgs e)
 ### 📝 4. Registro de Usuario (`FrmRegistrarse`)
 **Sistema de registro con validaciones**
 
-<img src="/Capturas/BibliotecaRegistrarse.png" alt="Registro" width="400">
+![Registro Usuario](/Capturas/BibliotecaRegistrarse.png)
 
 **Campos del Formulario:**
 | Campo | Tipo | Requerido | Validación |
@@ -405,7 +405,7 @@ private void btnIngresar_Click(object sender, EventArgs e)
 ### 📚 5. Catálogo de Libros Mejorado (`FrmLibros`)
 **Núcleo del sistema con interfaz profesional**
 
-<img src="/Capturas/BibliotecaListaLibrosUsuario.png" alt="Catálogo" width="600">
+![Catálogo de Libros](/Capturas/BibliotecaVistaLibrosInvitado.png)
 
 **Modos de Funcionamiento Avanzados:**
 
@@ -475,7 +475,7 @@ private void dgvMostrar_CellFormatting(object sender, DataGridViewCellFormatting
 ### 📋 6. Gestión de Préstamos (`FrmPrestar`)
 **Sistema inteligente de tickets para gestión de préstamos**
 
-<img src="/Capturas/BibliotecaPrestarLibro.png" alt="Préstamos" width="500">
+![Préstamos](/Capturas/BibliotecaPrestarLibro.png)
 
 **Funcionalidades Avanzadas:**
 - 🎫 **Sistema de Tickets Inteligente**: Generación automática de comprobantes únicos para cada préstamo
@@ -550,7 +550,7 @@ private void btnPrestar_Click(object sender, EventArgs e)
 ### 📜 7. Historial de Préstamos (`FrmVerprestamos`)
 **Panel avanzado de préstamos con alertas de vencimiento**
 
-<img src="/Capturas/BibliotecaPrestamosDeUsuario.png" alt="Ver Préstamos" width="600">
+![Historial de Préstamos](/Capturas/BibliotecaPrestamosDeUsuario.png)
 
 **Funcionalidades Mejoradas:**
 - 🔴 **Alertas de Vencimiento**: Sistema inteligente que detecta y resalta préstamos próximos a vencer
@@ -640,7 +640,7 @@ string consulta = @"
 ### ⚙️ 8. Panel de Administración (`FrmAdministrarBiblioteca`)
 **Centro de control administrativo con selección automática y gestión contextual**
 
-<img src="/Capturas/BibiotecaPanelAdministrador.png" alt="Admin Panel" width="700">
+![Panel de Administración](/Capturas/BibiotecaPanelAdministrador.png)
 
 **Funcionalidades Globales del Panel:**
 - 🎯 **Selección Automática**: Sistema de click-to-select en todos los DataGridViews para gestión rápida
@@ -784,8 +784,7 @@ string consultaCompleta = @"
 
 ### ➕ 9. Agregar Libro (`FrmAgregarLibro`)
 **Expansión del catálogo**
-
-<img src="/Capturas/BibliotecaPrestarLibro.png" alt="Agregar Libro" width="500">
+![Agregar Libro](/Capturas/BibliotecaPrestarLibro.png)
 
 **Formulario de Libro:**
 | Campo | Tipo | Descripción |

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Historico Sección “Posts”</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  <link rel="icon" href="//localhost:1313/favicon.ico">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -18,25 +18,27 @@
   
   
   
-    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+    <link rel="stylesheet" href="../../../css/chroma-syntax.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+    <link rel="stylesheet" href="../../../css/code-blocks.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+    <link rel="stylesheet" href="../../../css/NewStyles.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+    <link rel="stylesheet" href="../../../css/variables.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+    <link rel="stylesheet" href="../../../css/base.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+    <link rel="stylesheet" href="../../../css/header.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+    <link rel="stylesheet" href="../../../css/components.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+  
+    <link rel="stylesheet" href="../../../css/lightbox.css">
   
 
   
@@ -47,8 +49,8 @@
     
     <meta property="og:title" content="Historico Sección “Posts”">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaem.dev/posts/hugo/historico/">
-    <meta property="og:image" content="https://jaem.dev/images/HistoricoHugoPost.png">
+    <meta property="og:url" content="//localhost:1313/posts/hugo/historico/">
+    <meta property="og:image" content="//localhost:1313/images/HistoricoHugoPost.png">
     <meta property="og:description" content="Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.">
     
     
@@ -116,7 +118,7 @@
 <header class='header'>
   <nav class="nav">
     
-    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+    <a class="header-logo" href="//localhost:1313/">JAEM</a>
 
     
     <button class="nav-toggle" aria-label="Abrir menú">
@@ -143,7 +145,7 @@
         
         <li class="menu-item-proyectos">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/projects/"
+             href="../../../projects/"
              
              >
             Proyectos
@@ -166,7 +168,7 @@
         
         <li class="menu-item-posts">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/posts/"
+             href="../../../posts/"
              
              >
             Posts
@@ -212,7 +214,7 @@
         
         <li class="menu-item-acerca">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/about/"
+             href="../../../about/"
              
              >
             Acerca
@@ -237,7 +239,7 @@
       <p>Este documento proporciona un resumen de la estructura y lógica de la sección de posts en el sitio Hugo.</p>
     </div>
     <div class="col-md-6 intro-image">
-      <img class="img-fluid" src="https://jaem.dev/images/HistoricoHugoPost.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Historico Sección “Posts”' />
+      <img class="img-fluid" src="../../../images/HistoricoHugoPost.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Historico Sección “Posts”' />
     </div>
   </div>
   </div>
@@ -267,26 +269,7 @@
       </button>
     </div>
     <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="w"> </span><span class="nx">$categories</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="na">.Sections</span><span class="w"> </span><span class="cp">}}</span></span></span></code></pre></div>
-  </div><script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          const textToCopy = codeBlock.textContent || codeBlock.innerText;
-          navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalContent = button.innerHTML;
-            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
-            button.style.color = '#10b981';
-            setTimeout(() => {
-              button.innerHTML = originalContent;
-              button.style.color = '';
-            }, 2000);
-          }).catch(err => {
-            console.error('Error al copiar el código: ', err);
-            alert('No se pudo copiar el código');
-          });
-        }
-      }
-    </script></li>
+  </div></li>
 <li><strong>Artículos Sin Categoría (<code>$uncategorizedArticles</code>)</strong>: Se buscan todas las páginas regulares (<code>.RegularPages</code>) que pertenecen directamente a la sección &ldquo;posts&rdquo; (es decir, no están en sub-subsecciones).
 <div class="code-block">
     <div class="code-block__header">
@@ -416,7 +399,7 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
       <div class="row justify-content-center">
         <div class="col-12 col-md-4 text-center mb-3">
           
-            <a href="https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/" class="btn btn-outline-primary btn-lg w-100">
+            <a href="//localhost:1313/posts/hugo/diagramas-mermaid-hugo/" class="btn btn-outline-primary btn-lg w-100">
               <i class="bi bi-arrow-left"></i> Post Anterior
               <small class="d-block text-light">Integración y Uso de Diagramas …</small>
             </a>
@@ -424,7 +407,7 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
         </div>
         
         <div class="col-12 col-md-4 text-center mb-3">
-          <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+          <a href="../../../posts/" class="btn btn-outline-secondary btn-lg w-100">
             <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
           </a>
         </div>
@@ -432,7 +415,7 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
         <div class="col-12 col-md-4 text-center mb-3">
           
             
-            <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+            <a href="../../../posts/" class="btn btn-outline-secondary btn-lg w-100">
               Ver todos los Posts <i class="bi bi-grid-3x3-gap"></i>
             </a>
           
@@ -525,7 +508,7 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-22 13:46:22.8410627 -0600 CST m=&#43;0.347524201">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-22 18:55:53.9476445 -0600 CST m=&#43;762.495846501">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -535,7 +518,9 @@ Para asegurar un orden cronológico correcto donde las categorías reflejen la &
   
   
   
-    <script src="https://jaem.dev/js/scripts.js"></script>
+    <script src="//localhost:1313/js/scripts.js"></script>
+  
+    <script src="//localhost:1313/js/lightbox.js"></script>
   
   
   

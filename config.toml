@@ -1,16 +1,16 @@
 # URL base para tu sitio (GitHub Pages)
 
 #Desarrollo
-#baseURL = "/"
-# Ajustes de URLs
-#canonifyURLs = true
-#relativeURLs = true
-
-# Producción
-baseURL = "https://jaem.dev/"
+baseURL = "/"
 # Ajustes de URLs
 canonifyURLs = true
-relativeURLs = false
+relativeURLs = true
+
+# Producción
+#baseURL = "https://jaem.dev/"
+# Ajustes de URLs
+#canonifyURLs = true
+#relativeURLs = false
 
 # Idioma, título y tema
 languageCode = "es"
@@ -82,8 +82,7 @@ publishDir = "docs"
   defaultContentOrder = "-date"
   # Post destacado en la página de inicio
   featuredPost = "posts/Dotnet/WindowsForms/"  # Ruta relativa al post destacado
-  showFeaturedPost = true  # true para mostrar, false para ocultar
-  # Hojas de estilo adicionales (Bootstrap y highlight.js)
+  showFeaturedPost = true  # true para mostrar, false para ocultar  # Hojas de estilo adicionales (Bootstrap y highlight.js)
   css = [
     "/css/chroma-syntax.css", # Estilos para el resaltado de sintaxis de Chroma
     "/css/code-blocks.css",   # Estilos personalizados para bloques de código
@@ -95,8 +94,10 @@ publishDir = "docs"
     "/css/components.css",
     "/css/footer.css",
     "/css/utilities.css",
-    "/css/responsive.css"
+    "/css/responsive.css",
+    "/css/lightbox.css"       # Estilos para el lightbox personalizado
   ]
   js = [
-    "/js/scripts.js"
+    "/js/scripts.js",
+    "/js/lightbox.js"         # JavaScript para el lightbox personalizado
   ]

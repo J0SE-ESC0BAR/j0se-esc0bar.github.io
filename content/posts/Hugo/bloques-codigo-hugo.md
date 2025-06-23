@@ -66,22 +66,16 @@ def create_mermaid_diagram():
 ```
 ````
 
-### 2. Shortcode Personalizado `codeblock`
-
-Para un control más explícito o si prefieres usar shortcodes, puedes utilizar `{{</* codeblock */>}}`:
-
-```markdown
-{{</* codeblock lang="go" */>}}
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("¡Hola desde Go!")
-}
-{{</* /codeblock */>}}
+```python {linenos=true, hl_lines=[2,"4-6"]}
+def create_mermaid_diagram():
+    diagram_type = "flowchart TD"
+    nodes = ["A[Start]", "B[Process]", "C[End]"]
+    connections = [
+        "A --> B",
+        "B --> C"
+    ]
+    return f"{diagram_type}\\n" + "\\n".join(nodes + connections)
 ```
-Este shortcode también soporta atributos como `linenos`, `hl_lines`, etc., pasados como parámetros del shortcode. (Nota: la implementación actual se enfoca en el render hook de Markdown, verificar si el shortcode `codeblock.html` los procesa de igual manera o si necesita ajustes).
 
 ## 📝 Ejemplos por Lenguaje
 
@@ -243,22 +237,6 @@ func main() {
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
-Ejemplo de shortcode (si se usa):
-{{< codeblock lang="go" >}}
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("¡Hola desde Go!")
-    
-    // Ejemplo de slice
-    numbers := []int{1, 2, 3, 4, 5}
-    for i, num := range numbers {
-        fmt.Printf("Índice %d: %d\n", i, num)
-    }
-}
-{{< /codeblock >}}
 
 
 ### Bash

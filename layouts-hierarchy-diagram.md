@@ -49,7 +49,7 @@ graph TB
     
     markup_dir --> render_codeblock[render-codeblock.html<br/>💻 Code Block Renderer<br/>🎨 Syntax: Chroma highlighting<br/>🔧 Features: Copy button, Language detection<br/>📋 Input: .Type, .Inner<br/>🎯 Output: Styled &lt;pre&gt;&lt;code&gt;]:::markup
     
-    markup_dir --> render_image[render-image.html<br/>🖼️ Image Renderer<br/>🔧 Features: Responsive, Alt text, Captions<br/>📋 Input: .Destination, .Text, .Title<br/>🎯 Output: &lt;figure&gt;&lt;img&gt;&lt;figcaption&gt;]:::markup
+    markup_dir --> render_image[render-image.html<br/>🖼️ Image Renderer<br/>🔧 Features: Responsive, Alt text, Captions, Lightbox<br/>📋 Input: .Destination, .Text, .Title<br/>🎯 Output: &lt;figure&gt;&lt;img class="lightbox-trigger"&gt;&lt;figcaption&gt;<br/>⚡ Lightbox: Click to open, zoom, navigate, responsive]:::markup
     
     %% 🧩 DIRECTORIO PARTIALS - COMPONENTES REUTILIZABLES
     layouts --> partials_dir[📁 partials/<br/>🧩 Reusable Components<br/>🔄 Shared Template Logic<br/>📦 Modular Architecture]:::directory
@@ -173,13 +173,13 @@ graph TB
     
     baseof -.->|CDN| bootstrap_icons[🎨 Bootstrap Icons 1.13.1<br/>📦 cdn.jsdelivr.net<br/>🔧 Icon Font: bi-*]:::external
     
-    baseof -.->|Local| custom_css[🎨 CSS Personalizados<br/>📄 Files: variables.css, base.css, header.css<br/>📄 Files: components.css, footer.css, utilities.css<br/>📄 Files: responsive.css, chroma-syntax.css<br/>🎯 Custom styling system]:::external
+    baseof -.->|Local| custom_css[🎨 CSS Personalizados<br/>📄 Files: variables.css, base.css, header.css<br/>📄 Files: components.css, footer.css, utilities.css<br/>📄 Files: responsive.css, chroma-syntax.css, lightbox.css<br/>🎯 Custom styling system + Lightbox styles]:::external
     
     baseof -.->|CDN| jquery[⚙️ jQuery 3.7.1 Slim<br/>📦 code.jquery.com<br/>🔧 DOM manipulation<br/>🎯 Integrity: SHA256 verified]:::external
     
     baseof -.->|CDN| bootstrap_js[⚙️ Bootstrap 5.3.6 JS Bundle<br/>📦 cdn.jsdelivr.net<br/>🔧 Components: Modals, Dropdowns, Carousel<br/>🎯 Includes Popper.js]:::external
     
-    baseof -.->|Local| custom_js[⚙️ JS Personalizados<br/>📄 /js/scripts.js<br/>🔧 Features: Grid/List toggle, Menu control<br/>💾 LocalStorage: View preferences]:::external
+    baseof -.->|Local| custom_js[⚙️ JS Personalizados<br/>📄 /js/scripts.js, /js/lightbox.js<br/>🔧 Features: Grid/List toggle, Menu control, Lightbox<br/>💾 LocalStorage: View preferences<br/>🖼️ Lightbox: Zoom, navigation, keyboard shortcuts]:::external
     
     %% 🎨 RENDERIZADORES Y PROCESADORES
     render_codeblock -.->|Chroma| chroma_css[🎨 Chroma Syntax Highlighting<br/>📋 Style: dracula theme<br/>🔧 Features: Code fences, Line numbers<br/>⚙️ Config: markup.highlight]:::external
@@ -296,6 +296,16 @@ graph TB
 - **Propósito**: Renderiza bloques de código con sintaxis highlighting
 - **Funcionalidades**: Botón de copiar, soporte para múltiples lenguajes
 
+#### `_default/_markup/render-image.html`
+- **Propósito**: Renderiza automáticamente todas las imágenes de Markdown con lightbox
+- **Funcionalidades**: 
+  - Imágenes responsivas con Bootstrap
+  - Lightbox personalizado con zoom y navegación
+  - Soporte para captions y alt text
+  - Click para abrir en modo lightbox
+- **Clases CSS**: `lightbox-trigger`, `lightbox-figure`
+- **Atributos de datos**: `data-lightbox-src`, `data-lightbox-alt`, `data-lightbox-caption`
+
 #### `shortcodes/codeblock.html`
 - **Propósito**: Shortcode personalizado para bloques de código
 - **Parámetros**: `lang`, `title`
@@ -305,5 +315,19 @@ graph TB
 1. **Jerarquía de herencia**: Todos los layouts heredan de `baseof.html`
 2. **Importación de partials**: Uso de `{{ partial "nombre.html" . }}`
 3. **Dependencias de datos**: Acceso a `Site.Data` y `Site.Params`
-4. **CSS/JS externos**: Bootstrap, jQuery, y archivos personalizados
+4. **CSS/JS externos**: Bootstrap, jQuery, y archivos personalizados (incluyendo lightbox)
 5. **Configuración**: Parámetros desde `config.toml`
+6. **Lightbox**: Sistema de visualización de imágenes con zoom, navegación y controles por teclado
+
+### **Sistema de Lightbox Personalizado**
+- **Archivos**: `/css/lightbox.css`, `/js/lightbox.js`
+- **Funcionalidades**:
+  - Apertura automática al hacer clic en cualquier imagen
+  - Navegación entre imágenes (anterior/siguiente)
+  - Controles de zoom (ampliar/reducir/restablecer)
+  - Soporte para arrastrar imagen cuando está ampliada
+  - Controles por teclado (flechas, +/-, Esc, 0)
+  - Contador de imágenes
+  - Captions opcionales
+  - Diseño responsive para móviles
+- **Activación**: Automática para todas las imágenes procesadas por `render-image.html`

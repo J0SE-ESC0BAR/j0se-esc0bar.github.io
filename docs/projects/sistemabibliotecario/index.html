@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Sistema de Gestión Bibliotecaria - BibliotecaForm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  <link rel="icon" href="//localhost:1313/favicon.ico">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -18,25 +18,27 @@
   
   
   
-    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+    <link rel="stylesheet" href="../../css/chroma-syntax.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+    <link rel="stylesheet" href="../../css/code-blocks.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+    <link rel="stylesheet" href="../../css/NewStyles.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+    <link rel="stylesheet" href="../../css/variables.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+    <link rel="stylesheet" href="../../css/base.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+    <link rel="stylesheet" href="../../css/header.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+    <link rel="stylesheet" href="../../css/components.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+    <link rel="stylesheet" href="../../css/footer.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+    <link rel="stylesheet" href="../../css/utilities.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+  
+    <link rel="stylesheet" href="../../css/lightbox.css">
   
 
   
@@ -47,8 +49,8 @@
     
     <meta property="og:title" content="Sistema de Gestión Bibliotecaria - BibliotecaForm">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaem.dev/projects/sistemabibliotecario/">
-    <meta property="og:image" content="https://jaem.dev/Capturas/BibliotecaInicio.png">
+    <meta property="og:url" content="//localhost:1313/projects/sistemabibliotecario/">
+    <meta property="og:image" content="//localhost:1313/Capturas/BibliotecaInicio.png">
     <meta property="og:description" content="Un sistema completo de gestión bibliotecaria desarrollado en C# con Windows Forms, con interfaz MDI moderna y gestión avanzada de sesiones.">
     
     
@@ -116,7 +118,7 @@
 <header class='header'>
   <nav class="nav">
     
-    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+    <a class="header-logo" href="//localhost:1313/">JAEM</a>
 
     
     <button class="nav-toggle" aria-label="Abrir menú">
@@ -143,7 +145,7 @@
         
         <li class="menu-item-proyectos">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/projects/"
+             href="../../projects/"
              
              >
             Proyectos
@@ -166,7 +168,7 @@
         
         <li class="menu-item-posts">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/posts/"
+             href="../../posts/"
              
              >
             Posts
@@ -212,7 +214,7 @@
         
         <li class="menu-item-acerca">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/about/"
+             href="../../about/"
              
              >
             Acerca
@@ -236,32 +238,44 @@
       <p>Un sistema completo de gestión bibliotecaria desarrollado en C# con Windows Forms, con interfaz MDI moderna y gestión avanzada de sesiones.</p>
     </div>
   </div>
-      <p><a href="https://dotnet.microsoft.com/download/dotnet-framework"><figure>
+      <p><a href="https://dotnet.microsoft.com/download/dotnet-framework"><figure class="lightbox-figure">
   <img
     src="https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg"
     alt=".NET Framework"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg"
+    data-lightbox-alt=".NET Framework"
+    style="cursor: pointer;"
   /></figure>
 </a>
-<a href="https://www.microsoft.com/sql-server"><figure>
+<a href="https://www.microsoft.com/sql-server"><figure class="lightbox-figure">
   <img
     src="https://img.shields.io/badge/SQL%20Server-2019&#43;-red.svg"
     alt="SQL Server"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="https://img.shields.io/badge/SQL%20Server-2019&#43;-red.svg"
+    data-lightbox-alt="SQL Server"
+    style="cursor: pointer;"
   /></figure>
 </a>
-<a href="https://docs.microsoft.com/dotnet/desktop/winforms/"><figure>
+<a href="https://docs.microsoft.com/dotnet/desktop/winforms/"><figure class="lightbox-figure">
   <img
     src="https://img.shields.io/badge/UI-Windows%20Forms-green.svg"
     alt="Windows Forms"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="https://img.shields.io/badge/UI-Windows%20Forms-green.svg"
+    data-lightbox-alt="Windows Forms"
+    style="cursor: pointer;"
   /></figure>
 </a>
-<a href="LICENSE"><figure>
+<a href="LICENSE"><figure class="lightbox-figure">
   <img
     src="https://img.shields.io/badge/license-MIT-blue.svg"
     alt="License"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="https://img.shields.io/badge/license-MIT-blue.svg"
+    data-lightbox-alt="License"
+    style="cursor: pointer;"
   /></figure>
 </a></p>
 <p><strong>BibliotecaForm</strong> es un sistema de gestión de bibliotecas robusto y fácil de usar, desarrollado en C# con Windows Forms. Ofrece una interfaz MDI moderna y funcionalidades completas para la administración de libros, usuarios y préstamos, ideal para pequeñas y medianas bibliotecas.</p>
@@ -307,25 +321,34 @@
   </thead>
   <tbody>
       <tr>
-          <td><figure>
+          <td><figure class="lightbox-figure">
   <img
-    src="https://jaem.dev/Capturas/BibliotecaLoginUsuarioNormal.png"
+    src="../../Capturas/BibliotecaLoginUsuarioNormal.png"
     alt="Inicio de Sesión"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaLoginUsuarioNormal.png"
+    data-lightbox-alt="Inicio de Sesión"
+    style="cursor: pointer;"
   /></figure>
 </td>
-          <td><figure>
+          <td><figure class="lightbox-figure">
   <img
-    src="https://jaem.dev/Capturas/BibiotecaPanelAdministrador.png"
+    src="../../Capturas/BibiotecaPanelAdministrador.png"
     alt="Panel de Administrador"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibiotecaPanelAdministrador.png"
+    data-lightbox-alt="Panel de Administrador"
+    style="cursor: pointer;"
   /></figure>
 </td>
-          <td><figure>
+          <td><figure class="lightbox-figure">
   <img
-    src="https://jaem.dev/Capturas/BibliotecaListaLibrosUsuario.png"
+    src="../../Capturas/BibliotecaListaLibrosUsuario.png"
     alt="Catálogo de Libros"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaListaLibrosUsuario.png"
+    data-lightbox-alt="Catálogo de Libros"
+    style="cursor: pointer;"
   /></figure>
 </td>
       </tr>
@@ -341,25 +364,34 @@
   </thead>
   <tbody>
       <tr>
-          <td><figure>
+          <td><figure class="lightbox-figure">
   <img
-    src="https://jaem.dev/Capturas/BibliotecaPrestamosDeUsuario.png"
+    src="../../Capturas/BibliotecaPrestamosDeUsuario.png"
     alt="Vista de Préstamos"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaPrestamosDeUsuario.png"
+    data-lightbox-alt="Vista de Préstamos"
+    style="cursor: pointer;"
   /></figure>
 </td>
-          <td><figure>
+          <td><figure class="lightbox-figure">
   <img
-    src="https://jaem.dev/Capturas/BibliotecaPrestarLibro.png"
+    src="../../Capturas/BibliotecaPrestarLibro.png"
     alt="Realizar un Préstamo"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaPrestarLibro.png"
+    data-lightbox-alt="Realizar un Préstamo"
+    style="cursor: pointer;"
   /></figure>
 </td>
-          <td><figure>
+          <td><figure class="lightbox-figure">
   <img
-    src="https://jaem.dev/Capturas/BibliotecaVistaLibrosInvitado.png"
+    src="../../Capturas/BibliotecaVistaLibrosInvitado.png"
     alt="Catálogo Invitado"
-    class="img-fluid"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaVistaLibrosInvitado.png"
+    data-lightbox-alt="Catálogo Invitado"
+    style="cursor: pointer;"
   /></figure>
 </td>
       </tr>
@@ -637,7 +669,16 @@
   <h2 id="-módulos-y-funcionalidades">🔧 Módulos y Funcionalidades</h2>
 <h3 id="-1-menú-principal-mdi-frmmenuprincipal">🏠 1. Menú Principal MDI (<code>FrmMenuPrincipal</code>)</h3>
 <p><strong>Centro de control con interfaz MDI moderna</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaInicio.png" alt="Menú Principal" width="600">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaInicio.png"
+    alt="Menú Principal"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaInicio.png"
+    data-lightbox-alt="Menú Principal"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Características Principales:</strong></p>
 <ul>
 <li>🚪 <strong>Acceso Multi-Rol con Gestión de Sesiones</strong>: Detección automática de sesiones activas y redirección inteligente</li>
@@ -698,7 +739,16 @@
   </div><hr>
 <h3 id="-2-autenticación-de-usuario-con-gestión-de-sesiones-frmusuario">🔑 2. Autenticación de Usuario con Gestión de Sesiones (<code>FrmUsuario</code>)</h3>
 <p><strong>Sistema de login avanzado para usuarios regulares</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaLoginUsuarioNormal.png" alt="Login Usuario" width="400">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaLoginUsuarioNormal.png"
+    alt="Login Usuario"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaLoginUsuarioNormal.png"
+    data-lightbox-alt="Login Usuario"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Funcionalidades Mejoradas:</strong></p>
 <ul>
 <li>✅ <strong>Autenticación Segura con Persistencia</strong>: Validación contra base de datos con gestión de sesión global</li>
@@ -746,7 +796,16 @@
   </div><hr>
 <h3 id="-3-autenticación-de-administrador-con-sesión-persistente-frmadministrador">🔐 3. Autenticación de Administrador con Sesión Persistente (<code>FrmAdministrador</code>)</h3>
 <p><strong>Acceso privilegiado con gestión avanzada de sesiones</strong></p>
-<img src="https://jaem.dev/Capturas/BibiotecaPanelAdministrador.png" alt="Login Admin" width="400">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibiotecaPanelAdministrador.png"
+    alt="Login Admin"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibiotecaPanelAdministrador.png"
+    data-lightbox-alt="Login Admin"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Características Especiales:</strong></p>
 <ul>
 <li>👨‍💼 <strong>Verificación de Privilegios Avanzada</strong>: Validación del campo <code>Administrador</code> con seguridad reforzada</li>
@@ -793,7 +852,16 @@
   </div><hr>
 <h3 id="-4-registro-de-usuario-frmregistrarse">📝 4. Registro de Usuario (<code>FrmRegistrarse</code>)</h3>
 <p><strong>Sistema de registro con validaciones</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaRegistrarse.png" alt="Registro" width="400">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaRegistrarse.png"
+    alt="Registro Usuario"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaRegistrarse.png"
+    data-lightbox-alt="Registro Usuario"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Campos del Formulario:</strong></p>
 <table>
   <thead>
@@ -859,7 +927,16 @@
 <hr>
 <h3 id="-5-catálogo-de-libros-mejorado-frmlibros">📚 5. Catálogo de Libros Mejorado (<code>FrmLibros</code>)</h3>
 <p><strong>Núcleo del sistema con interfaz profesional</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaListaLibrosUsuario.png" alt="Catálogo" width="600">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaVistaLibrosInvitado.png"
+    alt="Catálogo de Libros"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaVistaLibrosInvitado.png"
+    data-lightbox-alt="Catálogo de Libros"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Modos de Funcionamiento Avanzados:</strong></p>
 <h4 id="-modo-visitante">👁️ Modo Visitante</h4>
 <ul>
@@ -935,7 +1012,16 @@
   </div><hr>
 <h3 id="-6-gestión-de-préstamos-frmprestar">📋 6. Gestión de Préstamos (<code>FrmPrestar</code>)</h3>
 <p><strong>Sistema inteligente de tickets para gestión de préstamos</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaPrestarLibro.png" alt="Préstamos" width="500">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaPrestarLibro.png"
+    alt="Préstamos"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaPrestarLibro.png"
+    data-lightbox-alt="Préstamos"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Funcionalidades Avanzadas:</strong></p>
 <ul>
 <li>🎫 <strong>Sistema de Tickets Inteligente</strong>: Generación automática de comprobantes únicos para cada préstamo</li>
@@ -1017,7 +1103,16 @@
   </div><hr>
 <h3 id="-7-historial-de-préstamos-frmverprestamos">📜 7. Historial de Préstamos (<code>FrmVerprestamos</code>)</h3>
 <p><strong>Panel avanzado de préstamos con alertas de vencimiento</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaPrestamosDeUsuario.png" alt="Ver Préstamos" width="600">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaPrestamosDeUsuario.png"
+    alt="Historial de Préstamos"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaPrestamosDeUsuario.png"
+    data-lightbox-alt="Historial de Préstamos"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Funcionalidades Mejoradas:</strong></p>
 <ul>
 <li>🔴 <strong>Alertas de Vencimiento</strong>: Sistema inteligente que detecta y resalta préstamos próximos a vencer</li>
@@ -1121,7 +1216,16 @@
   </div><hr>
 <h3 id="-8-panel-de-administración-frmadministrarbiblioteca">⚙️ 8. Panel de Administración (<code>FrmAdministrarBiblioteca</code>)</h3>
 <p><strong>Centro de control administrativo con selección automática y gestión contextual</strong></p>
-<img src="https://jaem.dev/Capturas/BibiotecaPanelAdministrador.png" alt="Admin Panel" width="700">
+<p><figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibiotecaPanelAdministrador.png"
+    alt="Panel de Administración"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibiotecaPanelAdministrador.png"
+    data-lightbox-alt="Panel de Administración"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Funcionalidades Globales del Panel:</strong></p>
 <ul>
 <li>🎯 <strong>Selección Automática</strong>: Sistema de click-to-select en todos los DataGridViews para gestión rápida</li>
@@ -1293,8 +1397,17 @@
 </span></span></span><span class="line"><span class="cl"><span class="s">    ORDER BY p.fecha_devolucion ASC&#34;</span><span class="p">;</span></span></span></code></pre></div>
   </div><hr>
 <h3 id="-9-agregar-libro-frmagregarlibro">➕ 9. Agregar Libro (<code>FrmAgregarLibro</code>)</h3>
-<p><strong>Expansión del catálogo</strong></p>
-<img src="https://jaem.dev/Capturas/BibliotecaPrestarLibro.png" alt="Agregar Libro" width="500">
+<p><strong>Expansión del catálogo</strong>
+<figure class="lightbox-figure">
+  <img
+    src="../../Capturas/BibliotecaPrestarLibro.png"
+    alt="Agregar Libro"
+    class="img-fluid lightbox-trigger"
+    data-lightbox-src="../../Capturas/BibliotecaPrestarLibro.png"
+    data-lightbox-alt="Agregar Libro"
+    style="cursor: pointer;"
+  /></figure>
+</p>
 <p><strong>Formulario de Libro:</strong></p>
 <table>
   <thead>
@@ -1895,7 +2008,7 @@
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-22 13:46:23.0936873 -0600 CST m=&#43;0.600148801">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-22 18:56:36.5643165 -0600 CST m=&#43;805.112518501">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -1905,7 +2018,9 @@
   
   
   
-    <script src="https://jaem.dev/js/scripts.js"></script>
+    <script src="//localhost:1313/js/scripts.js"></script>
+  
+    <script src="//localhost:1313/js/lightbox.js"></script>
   
   
   

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   
-  <link rel="icon" href="https://jaem.dev/favicon.ico">
+  <link rel="icon" href="//localhost:1313/favicon.ico">
   
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -18,25 +18,27 @@
   
   
   
-    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
+    <link rel="stylesheet" href="../../../css/chroma-syntax.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
+    <link rel="stylesheet" href="../../../css/code-blocks.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
+    <link rel="stylesheet" href="../../../css/NewStyles.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
+    <link rel="stylesheet" href="../../../css/variables.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
+    <link rel="stylesheet" href="../../../css/base.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
+    <link rel="stylesheet" href="../../../css/header.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
+    <link rel="stylesheet" href="../../../css/components.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
   
-    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+  
+    <link rel="stylesheet" href="../../../css/lightbox.css">
   
 
   
@@ -47,8 +49,8 @@
     
     <meta property="og:title" content="Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaem.dev/posts/hugo/bloques-codigo-hugo/">
-    <meta property="og:image" content="https://jaem.dev/images/HugoBloquesCodigo.png">
+    <meta property="og:url" content="//localhost:1313/posts/hugo/bloques-codigo-hugo/">
+    <meta property="og:image" content="//localhost:1313/images/HugoBloquesCodigo.png">
     <meta property="og:description" content="Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.">
     
     
@@ -116,7 +118,7 @@
 <header class='header'>
   <nav class="nav">
     
-    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
+    <a class="header-logo" href="//localhost:1313/">JAEM</a>
 
     
     <button class="nav-toggle" aria-label="Abrir menú">
@@ -143,7 +145,7 @@
         
         <li class="menu-item-proyectos">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/projects/"
+             href="../../../projects/"
              
              >
             Proyectos
@@ -166,7 +168,7 @@
         
         <li class="menu-item-posts">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/posts/"
+             href="../../../posts/"
              
              >
             Posts
@@ -212,7 +214,7 @@
         
         <li class="menu-item-acerca">
           <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/about/"
+             href="../../../about/"
              
              >
             Acerca
@@ -237,7 +239,7 @@
       <p>Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.</p>
     </div>
     <div class="col-md-6 intro-image">
-      <img class="img-fluid" src="https://jaem.dev/images/HugoBloquesCodigo.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas' />
+      <img class="img-fluid" src="../../../images/HugoBloquesCodigo.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas' />
     </div>
   </div>
   </div>
@@ -276,26 +278,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="nx">saludar</span><span class="p">(</span><span class="s1">&#39;Mundo&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div>
-  </div><script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          const textToCopy = codeBlock.textContent || codeBlock.innerText;
-          navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalContent = button.innerHTML;
-            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
-            button.style.color = '#10b981';
-            setTimeout(() => {
-              button.innerHTML = originalContent;
-              button.style.color = '';
-            }, 2000);
-          }).catch(err => {
-            console.error('Error al copiar el código: ', err);
-            alert('No se pudo copiar el código');
-          });
-        }
-      }
-    </script><p>Esto generará automáticamente un bloque de código con el header indicando &ldquo;javascript&rdquo; y un botón para copiar el contenido.</p>
+  </div><p>Esto generará automáticamente un bloque de código con el header indicando &ldquo;javascript&rdquo; y un botón para copiar el contenido.</p>
 <p><strong>Atributos Adicionales:</strong>
 Puedes añadir opciones directamente después del lenguaje, entre llaves <code>{}</code>:</p>
 <ul>
@@ -325,11 +308,9 @@ Puedes añadir opciones directamente después del lenguaje, entre llaves <code>{
 </span></span></span><span class="line"><span class="cl"><span class="sb">    ]
 </span></span></span><span class="line"><span class="cl"><span class="sb">    return f&#34;{diagram_type}\\n&#34; + &#34;\\n&#34;.join(nodes + connections)
 </span></span></span><span class="line"><span class="cl"><span class="sb">`</span>``</span></span></code></pre></div>
-  </div><h3 id="2-shortcode-personalizado-codeblock">2. Shortcode Personalizado <code>codeblock</code></h3>
-<p>Para un control más explícito o si prefieres usar shortcodes, puedes utilizar <code>{{&lt; codeblock &gt;}}</code>:</p>
-<div class="code-block">
+  </div><div class="code-block">
     <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
+      <span class="code-block__lang">PYTHON</span>
       <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -337,17 +318,15 @@ Puedes añadir opciones directamente después del lenguaje, entre llaves <code>{
         </svg>
       </button>
     </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">codeblock</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;go&#34;</span> <span class="p">&gt;</span>}}
-</span></span><span class="line"><span class="cl">package main
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">import &#34;fmt&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">func main() {
-</span></span><span class="line"><span class="cl">    fmt.Println(&#34;¡Hola desde Go!&#34;)
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">codeblock</span> <span class="p">&gt;</span>}}</span></span></code></pre></div>
-  </div><p>Este shortcode también soporta atributos como <code>linenos</code>, <code>hl_lines</code>, etc., pasados como parámetros del shortcode. (Nota: la implementación actual se enfoca en el render hook de Markdown, verificar si el shortcode <code>codeblock.html</code> los procesa de igual manera o si necesita ajustes).</p>
-<h2 id="-ejemplos-por-lenguaje">📝 Ejemplos por Lenguaje</h2>
+    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_mermaid_diagram</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">diagram_type</span> <span class="o">=</span> <span class="s2">&#34;flowchart TD&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;A[Start]&#34;</span><span class="p">,</span> <span class="s2">&#34;B[Process]&#34;</span><span class="p">,</span> <span class="s2">&#34;C[End]&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">connections</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;A --&gt; B&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;B --&gt; C&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">diagram_type</span><span class="si">}</span><span class="se">\\</span><span class="s2">n&#34;</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\\</span><span class="s2">n&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nodes</span> <span class="o">+</span> <span class="n">connections</span><span class="p">)</span></span></span></code></pre></div>
+  </div><h2 id="-ejemplos-por-lenguaje">📝 Ejemplos por Lenguaje</h2>
 <p>Aquí tienes una variedad de ejemplos para demostrar las capacidades del resaltado:</p>
 <h3 id="javascript">JavaScript</h3>
 <p>Con números de línea y resaltado:</p>
@@ -571,33 +550,7 @@ Puedes añadir opciones directamente después del lenguaje, entre llaves <code>{
 </span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Servidor escuchando en el puerto 8080&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><p>Ejemplo de shortcode (si se usa):
-<div class="highlight">
-  <div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">GO</span>
-      <button class="code-block__copybtn">Copy</button>
-    </div>
-    <pre tabindex="0" class="chroma">
-      <code class="language-go hljs" data-lang="go">
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("¡Hola desde Go!")
-    
-    // Ejemplo de slice
-    numbers := []int{1, 2, 3, 4, 5}
-    for i, num := range numbers {
-        fmt.Printf("Índice %d: %d\n", i, num)
-    }
-}
-</code>
-    </pre>
-  </div>
-</div></p>
-<h3 id="bash">Bash</h3>
+  </div><h3 id="bash">Bash</h3>
 <div class="code-block">
     <div class="code-block__header">
       <span class="code-block__lang">BASH</span>
@@ -822,7 +775,7 @@ func main() {
           
             
             
-              <a href="https://jaem.dev/posts/hugo/" class="btn btn-outline-secondary btn-lg w-100">
+              <a href="../../../posts/hugo/" class="btn btn-outline-secondary btn-lg w-100">
                 <i class="bi bi-arrow-left"></i> Volver a Artículos sobre Hugo
               </a>
             
@@ -830,14 +783,14 @@ func main() {
         </div>
         
         <div class="col-12 col-md-4 text-center mb-3">
-          <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
+          <a href="../../../posts/" class="btn btn-outline-secondary btn-lg w-100">
             <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
           </a>
         </div>
         
         <div class="col-12 col-md-4 text-center mb-3">
           
-            <a href="https://jaem.dev/posts/hugo/guia-inicio-hugo/" class="btn btn-outline-primary btn-lg w-100">
+            <a href="//localhost:1313/posts/hugo/guia-inicio-hugo/" class="btn btn-outline-primary btn-lg w-100">
               Post Siguiente <i class="bi bi-arrow-right"></i>
               <small class="d-block text-light">Guía de Inicio y Uso Básico de …</small>
             </a>
@@ -931,7 +884,7 @@ func main() {
 
   
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-22 13:46:22.8955803 -0600 CST m=&#43;0.402041801">2025</time> - Diseño Web realizado por 
+    Copyright &copy; <time datetime="2025-06-22 18:55:53.9526461 -0600 CST m=&#43;762.500848101">2025</time> - Diseño Web realizado por 
   </div>
   
 </footer>
@@ -941,7 +894,9 @@ func main() {
   
   
   
-    <script src="https://jaem.dev/js/scripts.js"></script>
+    <script src="//localhost:1313/js/scripts.js"></script>
+  
+    <script src="//localhost:1313/js/lightbox.js"></script>
   
   
   
