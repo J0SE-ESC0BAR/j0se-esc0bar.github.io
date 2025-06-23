@@ -1,0 +1,46 @@
+{{/*
+  Render Hook para tablas, versión moderna (Hugo 0.134.0+) y con Bootstrap 5.
+  - Usa .THead y .TBody para compatibilidad con versiones recientes de Hugo.
+  - Usa .Alignment para aplicar clases de alineación de Bootstrap.
+*/}}
+<div class="table-responsive rounded shadow-sm mb-4">
+  <table class="table table-bordered mb-0">
+    {{- /* Construye el encabezado solo si existe */ -}}
+    {{- if .THead }}
+    <thead>
+      {{- range .THead }}
+      <tr>
+        {{- range . }}
+        <th class="
+          {{- if eq .Alignment "center" }}text-center{{ end -}}
+          {{- if eq .Alignment "right" }}text-end{{ end -}}
+          {{- if eq .Alignment "left" }}text-start{{ end -}}
+        ">
+          {{ .Text | safeHTML }}
+        </th>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </thead>
+    {{- end }}
+
+    {{- /* Construye el cuerpo de la tabla */ -}}
+    {{- if .TBody }}
+    <tbody>
+      {{- range .TBody }}
+      <tr>
+        {{- range . }}
+        <td class="
+          {{- if eq .Alignment "center" }}text-center{{ end -}}
+          {{- if eq .Alignment "right" }}text-end{{ end -}}
+          {{- if eq .Alignment "left" }}text-start{{ end -}}
+        ">
+          {{ .Text | safeHTML }}
+        </td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+    {{- end }}
+  </table>
+</div>
