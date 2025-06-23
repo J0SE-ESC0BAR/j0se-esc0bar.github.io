@@ -2,60 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Proyectos on JAEM</title>
-    <link>http://localhost:1313/projects/</link>
+    <link>https://jaem.dev/projects/</link>
     <description>Recent content in Proyectos on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jaem.dev/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sistema de Gestión Bibliotecaria - BibliotecaForm</title>
-      <link>http://localhost:1313/projects/sistemabibliotecario/</link>
+      <link>https://jaem.dev/projects/sistemabibliotecario/</link>
       <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/sistemabibliotecario/</guid>
+      <guid>https://jaem.dev/projects/sistemabibliotecario/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dotnet.microsoft.com/download/dotnet-framework&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg&#34; alt=&#34;.NET Framework&#34;&gt;&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.microsoft.com/sql-server&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/SQL%20Server-2019+-red.svg&#34; alt=&#34;SQL Server&#34;&gt;&lt;/a&gt;&#xA;&lt;a href=&#34;https://docs.microsoft.com/dotnet/desktop/winforms/&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/UI-Windows%20Forms-green.svg&#34; alt=&#34;Windows Forms&#34;&gt;&lt;/a&gt;&#xA;&lt;a href=&#34;LICENSE&#34;&gt;&lt;img src=&#34;https://img.shields.io/badge/license-MIT-blue.svg&#34; alt=&#34;License&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;BibliotecaForm&lt;/strong&gt; es un sistema de gestión de bibliotecas robusto y fácil de usar, desarrollado en C# con Windows Forms. Ofrece una interfaz MDI moderna y funcionalidades completas para la administración de libros, usuarios y préstamos, ideal para pequeñas y medianas bibliotecas.&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto nació de la necesidad de contar con una herramienta eficiente y visualmente atractiva para la gestión bibliotecaria, enfocándose en la experiencia del usuario y la solidez funcional.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mi Página Web</title>
-      <link>http://localhost:1313/projects/website-jaem/</link>
+      <link>https://jaem.dev/projects/website-jaem/</link>
       <pubDate>Sat, 01 Jun 2024 10:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/projects/website-jaem/</guid>
-      <description>&lt;p&gt;Esta es la versión anterior de mi sitio web personal. Fue desarrollada utilizando el generador de sitios estáticos Hugo y sirvió como mi presencia en línea antes de la versión actual.&lt;/p&gt;&#xA;&lt;p&gt;Puedes visitar la versión antigua aquí: &lt;a href=&#34;https://jaem.dev/old/&#34;&gt;https://jaem.dev/old/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Aunque la tecnología y el diseño han evolucionado en la versión actual, esta página representa una etapa importante en mi aprendizaje y desarrollo como desarrollador web.&#xA;&lt;a href=&#34;https://jaem.dev/old/&#34;&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/old-website-thumbnail.png&#34;&#xD;&#xA;    alt=&#34;Captura de pantalla de la versión antigua de mi sitio web&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/old-website-thumbnail.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Captura de pantalla de la versión antigua de mi sitio web&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://jaem.dev/projects/website-jaem/</guid>
+      <description>&lt;p&gt;Esta es la versión anterior de mi sitio web personal. Fue desarrollada utilizando el generador de sitios estáticos Hugo y sirvió como mi presencia en línea antes de la versión actual.&lt;/p&gt;&#xA;&lt;p&gt;Puedes visitar la versión antigua aquí: &lt;a href=&#34;https://jaem.dev/old/&#34;&gt;https://jaem.dev/old/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Aunque la tecnología y el diseño han evolucionado en la versión actual, esta página representa una etapa importante en mi aprendizaje y desarrollo como desarrollador web.&#xA;&lt;a href=&#34;https://jaem.dev/old/&#34;&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/old-website-thumbnail.png&#34;&#xD;&#xA;    alt=&#34;Captura de pantalla de la versión antigua de mi sitio web&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/old-website-thumbnail.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Captura de pantalla de la versión antigua de mi sitio web&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Generador de códigos QR con Python conectado a MongoDB</title>
-      <link>http://localhost:1313/projects/generador_qr_mongodb/</link>
+      <link>https://jaem.dev/projects/generador_qr_mongodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/generador_qr_mongodb/</guid>
-      <description>&lt;p&gt;Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos.&lt;/p&gt;&#xA;&lt;p&gt;Puedes encontrar todo el código en mi repositorio de GitHub:&#xA;&lt;a href=&#34;https://github.com/J0SE-ESC0BAR/Qr_Generator&#34;&gt;https://github.com/J0SE-ESC0BAR/Qr_Generator&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/Open_Qr.png&#34;&#xD;&#xA;    alt=&#34;Generador de QR&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/Open_Qr.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Generador de QR&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+      <guid>https://jaem.dev/projects/generador_qr_mongodb/</guid>
+      <description>&lt;p&gt;Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos.&lt;/p&gt;&#xA;&lt;p&gt;Puedes encontrar todo el código en mi repositorio de GitHub:&#xA;&lt;a href=&#34;https://github.com/J0SE-ESC0BAR/Qr_Generator&#34;&gt;https://github.com/J0SE-ESC0BAR/Qr_Generator&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/Open_Qr.png&#34;&#xD;&#xA;    alt=&#34;Generador de QR&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/Open_Qr.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Generador de QR&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Juego en Scratch</title>
-      <link>http://localhost:1313/projects/juego_scratch/</link>
+      <link>https://jaem.dev/projects/juego_scratch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/juego_scratch/</guid>
-      <description>&lt;p&gt;Para los aficionados a los juegos, aquí tienes un juego que creé en Scratch.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver el juego en acción en YouTube: &lt;a href=&#34;https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAEM&#34;&gt;https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAEM&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/Terraria_OtherWold.png&#34;&#xD;&#xA;    alt=&#34;Juego de terraria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/Terraria_OtherWold.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Juego de terraria&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Si estás interesado en probar este proyecto, aquí tienes un enlace de descarga:&#xA;&lt;a href=&#34;https://mega.nz/#!D9dURSZA!jiNh93sZMcUd1ur3vFB_kAtJJmiMBzr0mSi6E6mSmx4&#34;&gt;https://mega.nz/#!D9dURSZA!jiNh93sZMcUd1ur3vFB_kAtJJmiMBzr0mSi6E6mSmx4&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://jaem.dev/projects/juego_scratch/</guid>
+      <description>&lt;p&gt;Para los aficionados a los juegos, aquí tienes un juego que creé en Scratch.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver el juego en acción en YouTube: &lt;a href=&#34;https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAEM&#34;&gt;https://www.youtube.com/watch?v=eA62TGHADvg&amp;amp;t=16s&amp;amp;ab_channel=JAEM&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/Terraria_OtherWold.png&#34;&#xD;&#xA;    alt=&#34;Juego de terraria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/Terraria_OtherWold.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Juego de terraria&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;Si estás interesado en probar este proyecto, aquí tienes un enlace de descarga:&#xA;&lt;a href=&#34;https://mega.nz/#!D9dURSZA!jiNh93sZMcUd1ur3vFB_kAtJJmiMBzr0mSi6E6mSmx4&#34;&gt;https://mega.nz/#!D9dURSZA!jiNh93sZMcUd1ur3vFB_kAtJJmiMBzr0mSi6E6mSmx4&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mis proyectos</title>
-      <link>http://localhost:1313/projects/proyectos/</link>
+      <link>https://jaem.dev/projects/proyectos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/proyectos/</guid>
+      <guid>https://jaem.dev/projects/proyectos/</guid>
       <description>&lt;h3 id=&#34;hola&#34;&gt;¡Hola!&lt;/h3&gt;&#xA;&lt;p&gt;Hoy, quiero compartir los emocionantes proyectos en los que he estado trabajando. La tecnología sigue avanzando, y con ella, las habilidades y herramientas.&lt;/p&gt;&#xA;&lt;p&gt;Aquí tienes un resumen de algunos de mis proyectos. Haz clic en cada uno para ver más detalles:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./generador_qr_mongodb.md&#34;&gt;Generador de códigos QR con Python conectado a MongoDB&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./parroquia_santa_catarina_web.md&#34;&gt;Página web Parroquia Santa Catarina&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./pasteleria_web.md&#34;&gt;Página web Pastelería&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./juego_scratch.md&#34;&gt;Juego en Scratch&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Programas realizados en la universidad: He trabajado en varios programas usando Java, C#, etc. Estaré subiendo estos a GitHub próximamente.&lt;br&gt;&#xA;Cada uno de estos proyectos ha sido una oportunidad para aprender, crecer y conectarme con otros. Si alguna pregunta puedes comunicarte con migo atrabez de una de las redes sociales o correo electronico.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Página web Parroquia Santa Catarina</title>
-      <link>http://localhost:1313/projects/parroquia_santa_catarina_web/</link>
+      <link>https://jaem.dev/projects/parroquia_santa_catarina_web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/parroquia_santa_catarina_web/</guid>
-      <description>&lt;p&gt;Un sitio web que desarrollé para la Parroquia Santa Catarina.&lt;/p&gt;&#xA;&lt;p&gt;Visita el sitio web para verlo en acción: &lt;a href=&#34;https://parroquiasantacatarinaapopa.github.io/&#34;&gt;https://parroquiasantacatarinaapopa.github.io/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/capturamovil.png&#34;&#xD;&#xA;    alt=&#34;App movil&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/capturamovil.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;App movil&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+      <guid>https://jaem.dev/projects/parroquia_santa_catarina_web/</guid>
+      <description>&lt;p&gt;Un sitio web que desarrollé para la Parroquia Santa Catarina.&lt;/p&gt;&#xA;&lt;p&gt;Visita el sitio web para verlo en acción: &lt;a href=&#34;https://parroquiasantacatarinaapopa.github.io/&#34;&gt;https://parroquiasantacatarinaapopa.github.io/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/capturamovil.png&#34;&#xD;&#xA;    alt=&#34;App movil&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/capturamovil.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;App movil&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Página web Pastelería</title>
-      <link>http://localhost:1313/projects/pasteleria_web/</link>
+      <link>https://jaem.dev/projects/pasteleria_web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/pasteleria_web/</guid>
-      <description>&lt;p&gt;Un proyecto en el que diseñé una página web durante un curso de full stack. El host solo estuvo disponible por un año.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver una demostración aquí: &lt;a href=&#34;http://launchfrontend.000webhostapp.com/&#34;&gt;http://launchfrontend.000webhostapp.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/web_pasteleria.png&#34;&#xD;&#xA;    alt=&#34;Pasteleria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/web_pasteleria.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Pasteleria&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+      <guid>https://jaem.dev/projects/pasteleria_web/</guid>
+      <description>&lt;p&gt;Un proyecto en el que diseñé una página web durante un curso de full stack. El host solo estuvo disponible por un año.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver una demostración aquí: &lt;a href=&#34;http://launchfrontend.000webhostapp.com/&#34;&gt;http://launchfrontend.000webhostapp.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/web_pasteleria.png&#34;&#xD;&#xA;    alt=&#34;Pasteleria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/web_pasteleria.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Pasteleria&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

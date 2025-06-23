@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Códigos QR on JAEM</title>
-    <link>http://localhost:1313/tags/c%C3%B3digos-qr/</link>
+    <link>https://jaem.dev/tags/c%C3%B3digos-qr/</link>
     <description>Recent content in Códigos QR on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="http://localhost:1313/tags/c%C3%B3digos-qr/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jaem.dev/tags/c%C3%B3digos-qr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Generador de códigos QR con Python conectado a MongoDB</title>
-      <link>http://localhost:1313/projects/generador_qr_mongodb/</link>
+      <link>https://jaem.dev/projects/generador_qr_mongodb/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/generador_qr_mongodb/</guid>
-      <description>&lt;p&gt;Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos.&lt;/p&gt;&#xA;&lt;p&gt;Puedes encontrar todo el código en mi repositorio de GitHub:&#xA;&lt;a href=&#34;https://github.com/J0SE-ESC0BAR/Qr_Generator&#34;&gt;https://github.com/J0SE-ESC0BAR/Qr_Generator&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/Open_Qr.png&#34;&#xD;&#xA;    alt=&#34;Generador de QR&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/Open_Qr.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Generador de QR&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+      <guid>https://jaem.dev/projects/generador_qr_mongodb/</guid>
+      <description>&lt;p&gt;Este es un proyecto fascinante en el que utilicé Python para generar códigos QR y los conecté con MongoDB para la gestión de datos.&lt;/p&gt;&#xA;&lt;p&gt;Puedes encontrar todo el código en mi repositorio de GitHub:&#xA;&lt;a href=&#34;https://github.com/J0SE-ESC0BAR/Qr_Generator&#34;&gt;https://github.com/J0SE-ESC0BAR/Qr_Generator&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/Open_Qr.png&#34;&#xD;&#xA;    alt=&#34;Generador de QR&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/Open_Qr.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Generador de QR&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
