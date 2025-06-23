@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sitio Parroquial on JAEM</title>
-    <link>https://jaem.dev/tags/sitio-parroquial/</link>
+    <link>http://localhost:1313/tags/sitio-parroquial/</link>
     <description>Recent content in Sitio Parroquial on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="https://jaem.dev/tags/sitio-parroquial/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sitio-parroquial/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Página web Parroquia Santa Catarina</title>
-      <link>https://jaem.dev/projects/parroquia_santa_catarina_web/</link>
+      <link>http://localhost:1313/projects/parroquia_santa_catarina_web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/projects/parroquia_santa_catarina_web/</guid>
-      <description>&lt;p&gt;Un sitio web que desarrollé para la Parroquia Santa Catarina.&lt;/p&gt;&#xA;&lt;p&gt;Visita el sitio web para verlo en acción: &lt;a href=&#34;https://parroquiasantacatarinaapopa.github.io/&#34;&gt;https://parroquiasantacatarinaapopa.github.io/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/capturamovil.png&#34;&#xD;&#xA;    alt=&#34;App movil&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/capturamovil.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;App movil&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/projects/parroquia_santa_catarina_web/</guid>
+      <description>&lt;p&gt;Un sitio web que desarrollé para la Parroquia Santa Catarina.&lt;/p&gt;&#xA;&lt;p&gt;Visita el sitio web para verlo en acción: &lt;a href=&#34;https://parroquiasantacatarinaapopa.github.io/&#34;&gt;https://parroquiasantacatarinaapopa.github.io/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/capturamovil.png&#34;&#xD;&#xA;    alt=&#34;App movil&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/capturamovil.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;App movil&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diseño Web on JAEM</title>
-    <link>https://jaem.dev/tags/dise%C3%B1o-web/</link>
+    <link>http://localhost:1313/tags/dise%C3%B1o-web/</link>
     <description>Recent content in Diseño Web on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <atom:link href="https://jaem.dev/tags/dise%C3%B1o-web/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dise%C3%B1o-web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Página web Pastelería</title>
-      <link>https://jaem.dev/projects/pasteleria_web/</link>
+      <link>http://localhost:1313/projects/pasteleria_web/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/projects/pasteleria_web/</guid>
-      <description>&lt;p&gt;Un proyecto en el que diseñé una página web durante un curso de full stack. El host solo estuvo disponible por un año.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver una demostración aquí: &lt;a href=&#34;http://launchfrontend.000webhostapp.com/&#34;&gt;http://launchfrontend.000webhostapp.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.dev/images/web_pasteleria.png&#34;&#xD;&#xA;    alt=&#34;Pasteleria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.dev/images/web_pasteleria.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Pasteleria&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/projects/pasteleria_web/</guid>
+      <description>&lt;p&gt;Un proyecto en el que diseñé una página web durante un curso de full stack. El host solo estuvo disponible por un año.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver una demostración aquí: &lt;a href=&#34;http://launchfrontend.000webhostapp.com/&#34;&gt;http://launchfrontend.000webhostapp.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;http://localhost:1313/images/web_pasteleria.png&#34;&#xD;&#xA;    alt=&#34;Pasteleria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;http://localhost:1313/images/web_pasteleria.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Pasteleria&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

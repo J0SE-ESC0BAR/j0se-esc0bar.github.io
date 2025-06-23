@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Inglés on JAEM</title>
-    <link>https://jaem.dev/posts/ingles/</link>
+    <link>http://localhost:1313/posts/ingles/</link>
     <description>Recent content in Inglés on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://jaem.dev/posts/ingles/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/ingles/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
