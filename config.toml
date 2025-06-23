@@ -1,16 +1,16 @@
 # URL base para tu sitio (GitHub Pages)
 
 #Desarrollo
-baseURL = "/"
-# Ajustes de URLs
-canonifyURLs = true
-relativeURLs = true
-
-# Producción
-#baseURL = "https://jaem.dev/"
+#baseURL = "/"
 # Ajustes de URLs
 #canonifyURLs = true
-#relativeURLs = false
+#relativeURLs = true
+
+# Producción
+baseURL = "https://jaem.dev/"
+# Ajustes de URLs
+canonifyURLs = true
+relativeURLs = false
 
 # Idioma, título y tema
 languageCode = "es"
@@ -64,7 +64,9 @@ publishDir = "docs"
     wrapperClass = "highlight"
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true  # Permitir HTML raw en markdown
+      unsafe = true
+  [markup.goldmark.parser.attribute]
+    block = true
 
 [params]
   # Nombre y redes
