@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows Forms on JAEM</title>
-    <link>//localhost:1313/tags/windows-forms/</link>
+    <link>https://jaem.dev/tags/windows-forms/</link>
     <description>Recent content in Windows Forms on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/windows-forms/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jaem.dev/tags/windows-forms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sistema de Gestión Bibliotecaria - BibliotecaForm</title>
-      <link>//localhost:1313/projects/sistemabibliotecario/</link>
+      <link>https://jaem.dev/projects/sistemabibliotecario/</link>
       <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/projects/sistemabibliotecario/</guid>
+      <guid>https://jaem.dev/projects/sistemabibliotecario/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dotnet.microsoft.com/download/dotnet-framework&#34;&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg&#34;&#xD;&#xA;    alt=&#34;.NET Framework&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg&#34;&#xD;&#xA;    data-lightbox-alt=&#34;.NET Framework&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/a&gt;&#xA;&lt;a href=&#34;https://www.microsoft.com/sql-server&#34;&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://img.shields.io/badge/SQL%20Server-2019&amp;#43;-red.svg&#34;&#xD;&#xA;    alt=&#34;SQL Server&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://img.shields.io/badge/SQL%20Server-2019&amp;#43;-red.svg&#34;&#xD;&#xA;    data-lightbox-alt=&#34;SQL Server&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/a&gt;&#xA;&lt;a href=&#34;https://docs.microsoft.com/dotnet/desktop/winforms/&#34;&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://img.shields.io/badge/UI-Windows%20Forms-green.svg&#34;&#xD;&#xA;    alt=&#34;Windows Forms&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://img.shields.io/badge/UI-Windows%20Forms-green.svg&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Windows Forms&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/a&gt;&#xA;&lt;a href=&#34;LICENSE&#34;&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://img.shields.io/badge/license-MIT-blue.svg&#34;&#xD;&#xA;    alt=&#34;License&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://img.shields.io/badge/license-MIT-blue.svg&#34;&#xD;&#xA;    data-lightbox-alt=&#34;License&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  /&gt;&lt;/figure&gt;&#xD;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;BibliotecaForm&lt;/strong&gt; es un sistema de gestión de bibliotecas robusto y fácil de usar, desarrollado en C# con Windows Forms. Ofrece una interfaz MDI moderna y funcionalidades completas para la administración de libros, usuarios y préstamos, ideal para pequeñas y medianas bibliotecas.&lt;/p&gt;&#xA;&lt;p&gt;Este proyecto nació de la necesidad de contar con una herramienta eficiente y visualmente atractiva para la gestión bibliotecaria, enfocándose en la experiencia del usuario y la solidez funcional.&lt;/p&gt;</description>
     </item>
   </channel>

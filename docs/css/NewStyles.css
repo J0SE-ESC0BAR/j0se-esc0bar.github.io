@@ -117,6 +117,88 @@ body.new-index-styles {
   }
 }
 
+/* ===== ESTILOS PARA TABLAS ===== */
+.table-responsive {
+  background: var(--acrylic-bg-color);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table {
+  margin-bottom: 0;
+  color: var(--card-text-color);
+  background: transparent;
+  table-layout: fixed;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.table thead th {
+  background: rgba(0, 162, 232, 0.2);
+  color: var(--card-text-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--highlight-color);
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: auto;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.table thead th:last-child {
+  border-right: none;
+}
+
+.table tbody td {
+  background: transparent;
+  color: var(--card-text-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+  width: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.table tbody td:last-child {
+  border-right: none;
+}
+
+/* Estilos para badges y etiquetas dentro de tablas */
+.table .badge {
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
+  border-radius: 0.375rem;
+}
+
+/* Estilos para enlaces dentro de tablas */
+.table a {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+.table a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 /* Responsive adjustments for 404 page */
 @media (max-width: 768px) {
   .error-code {
@@ -144,6 +226,21 @@ body.new-index-styles {
   .quick-links .list-group-item {
     margin: 0.25rem 0;
   }
+  
+  .table-responsive {
+    border-radius: 8px;
+    margin: 0 0.5rem 1rem 0.5rem;
+  }
+  
+  .table thead th,
+  .table tbody td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .table thead th {
+    font-size: 0.75rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -163,5 +260,20 @@ body.new-index-styles {
   .mid-wrapper {
     padding: 0rem 1rem;
     padding-top: 3rem;
+  }
+
+  .table-responsive {
+    margin: 0 0.25rem 1rem 0.25rem;
+  }
+  
+  .table thead th,
+  .table tbody td {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.75rem;
+  }
+  
+  .table thead th {
+    font-size: 0.7rem;
+    letter-spacing: 0.3px;
   }
 }
