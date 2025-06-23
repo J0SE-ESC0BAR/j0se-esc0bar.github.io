@@ -105,29 +105,12 @@ class CustomLightbox {
     this.zoomInBtn.addEventListener('click', () => this.zoomIn());
     this.zoomOutBtn.addEventListener('click', () => this.zoomOut());
     this.resetBtn.addEventListener('click', () => this.resetZoom());
-      // Cerrar al hacer clic en overlay
+    
+    // Cerrar al hacer clic en overlay
     this.overlay.addEventListener('click', (e) => {
       if (e.target === this.overlay) {
         this.closeLightbox();
       }
-    });
-    
-    // Prevenir scroll en el overlay (móviles)
-    this.overlay.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-    }, { passive: false });
-    
-    // Prevenir zoom por pellizco en móviles (en el overlay)
-    this.overlay.addEventListener('gesturestart', (e) => {
-      e.preventDefault();
-    });
-    
-    this.overlay.addEventListener('gesturechange', (e) => {
-      e.preventDefault();
-    });
-    
-    this.overlay.addEventListener('gestureend', (e) => {
-      e.preventDefault();
     });
     
     // Eventos de teclado
@@ -177,7 +160,8 @@ class CustomLightbox {
       }
     });
   }
-    openLightbox(clickedImg) {
+  
+  openLightbox(clickedImg) {
     this.collectImages(); // Actualizar lista de imágenes
     
     // Encontrar índice de la imagen clickeada
@@ -189,23 +173,12 @@ class CustomLightbox {
     
     this.showImage();
     this.overlay.classList.add('active');
-    
-    // Prevenir scroll en móviles y desktop
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Prevenir scroll
   }
   
   closeLightbox() {
     this.overlay.classList.remove('active');
-    
-    // Restaurar scroll
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.documentElement.style.overflow = '';
-    
+    document.body.style.overflow = ''; // Restaurar scroll
     this.resetZoom();
   }
   

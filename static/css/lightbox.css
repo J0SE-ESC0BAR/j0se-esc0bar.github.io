@@ -25,14 +25,13 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
-  z-index: 99999;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  overflow: auto;
 }
 
 .lightbox-overlay.active {
@@ -50,7 +49,6 @@
   align-items: center;
   transform: scale(0.8);
   transition: transform 0.3s ease;
-  box-sizing: border-box;
 }
 
 .lightbox-overlay.active .lightbox-container {
@@ -213,120 +211,51 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .lightbox-overlay {
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  
   .lightbox-container {
-    max-width: 100vw;
-    max-height: 100vh;
-    padding: 0 10px;
-    box-sizing: border-box;
+    max-width: 95vw;
+    max-height: 95vh;
   }
   
   .lightbox-image {
-    max-height: 60vh;
-    max-width: 100%;
-    object-fit: contain;
+    max-height: 70vh;
   }
   
   .lightbox-close-btn {
-    top: -35px;
-    right: 0;
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
+    top: -40px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
   }
   
   .lightbox-zoom-controls {
-    bottom: -45px;
+    bottom: -50px;
     right: 0;
-    gap: 5px;
+    gap: 6px;
   }
   
   .lightbox-zoom-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 0.8rem;
-  }
-  
-  .lightbox-nav-area {
-    width: 40%;
-  }
-  
-  .lightbox-nav-icon {
-    font-size: 2rem;
-  }
-  
-  .lightbox-counter {
-    bottom: -45px;
-    font-size: 0.75rem;
-    padding: 5px 10px;
-  }
-  
-  .lightbox-caption {
-    font-size: 0.75rem;
-    margin-top: 0.5rem;
-    padding: 0 10px;
-    text-align: center;
-  }
-}
-
-/* Para dispositivos muy pequeños */
-@media (max-width: 480px) {
-  .lightbox-overlay {
-    padding: 5px;
-  }
-  
-  .lightbox-container {
-    max-width: 100vw;
-    max-height: 100vh;
-    padding: 0 5px;
-  }
-  
-  .lightbox-image {
-    max-height: 55vh;
-    max-width: 95vw;
-  }
-  
-  .lightbox-close-btn {
-    top: -30px;
-    right: 0;
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
     font-size: 0.9rem;
   }
   
-  .lightbox-zoom-controls {
-    bottom: -40px;
-    right: 0;
-    gap: 4px;
-  }
-  
-  .lightbox-zoom-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 0.7rem;
-  }
-  
   .lightbox-nav-area {
-    width: 45%;
+    width: 35%;
   }
   
   .lightbox-nav-icon {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   
   .lightbox-counter {
-    bottom: -40px;
-    font-size: 0.7rem;
-    padding: 4px 8px;
+    bottom: -50px;
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
   
   .lightbox-caption {
-    font-size: 0.7rem;
-    margin-top: 0.3rem;
-    padding: 0 5px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
   }
 }
