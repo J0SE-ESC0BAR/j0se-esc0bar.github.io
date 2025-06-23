@@ -6,7 +6,7 @@
 {{ if and $context.Site.Params.showFeaturedPost $context.Site.Params.featuredPost }}
   {{ $featuredPost := $context.Site.GetPage $context.Site.Params.featuredPost }}
   {{ if $featuredPost }}
-      <h2>Destacado 📌</h2>      {{/* Contenedor especial para el post destacado con clases únicas */}}
+      <h2>Post Destacado 📌</h2>      {{/* Contenedor especial para el post destacado con clases únicas */}}
       <div class="featured-post-container">
         {{/* Vista Lista - visible en pantallas > 576px */}}
         <div id="featuredListView" class="py-4 flex-column gap-3">
