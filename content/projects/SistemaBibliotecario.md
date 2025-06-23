@@ -7,11 +7,11 @@ image: "/Capturas/BibliotecaInicio.png"
 tags: ["C#", "Windows Forms", "Biblioteca", "MDI", "Gestión de Proyectos", "Sistema de Sesiones", "SQL Server"] # Tag añadido
 viewimg: true
 ---
+<a href="https://dotnet.microsoft.com/download/dotnet-framework"><img src="https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg" alt=".NET Framework"></a>
+<a href="https://www.microsoft.com/sql-server"><img src="https://img.shields.io/badge/SQL%20Server-2019+-red.svg" alt="SQL Server"></a>
+<a href="https://docs.microsoft.com/dotnet/desktop/winforms/"><img src="https://img.shields.io/badge/UI-Windows%20Forms-green.svg" alt="Windows Forms"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
 
-[![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg)](https://dotnet.microsoft.com/download/dotnet-framework)
-[![SQL Server](https://img.shields.io/badge/SQL%20Server-2019+-red.svg)](https://www.microsoft.com/sql-server)
-[![Windows Forms](https://img.shields.io/badge/UI-Windows%20Forms-green.svg)](https://docs.microsoft.com/dotnet/desktop/winforms/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **BibliotecaForm** es un sistema de gestión de bibliotecas robusto y fácil de usar, desarrollado en C# con Windows Forms. Ofrece una interfaz MDI moderna y funcionalidades completas para la administración de libros, usuarios y préstamos, ideal para pequeñas y medianas bibliotecas.
 
