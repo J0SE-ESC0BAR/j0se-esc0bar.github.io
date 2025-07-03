@@ -199,6 +199,24 @@ body.new-index-styles {
   text-decoration: underline;
 }
 
+/* ===== ESTILOS PARA LA SECCIÓN DE INTRODUCCIÓN ===== */
+.intro-section {
+}
+
+.intro-content {
+}
+
+.intro-text {
+  font-family: var(--font-family-paragraph);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--card-text-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  text-align: left;
+}
+
 /* Responsive adjustments for 404 page */
 @media (max-width: 768px) {
   .error-code {
@@ -275,5 +293,15 @@ body.new-index-styles {
   .table thead th {
     font-size: 0.7rem;
     letter-spacing: 0.3px;
+  }
+  
+  /* Responsive adjustments para la introducción */
+  .intro-content {
+    padding: 1.5rem 1.5rem;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
 }

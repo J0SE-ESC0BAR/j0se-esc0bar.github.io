@@ -38,28 +38,24 @@
       {{ range .Site.Menus.main.ByWeight.Reverse }}
         {{ $menuURL := .URL | relLangURL }}
         {{ $pageURL := $currentPage.RelPermalink }}
-        
-        {{ $isActive := false }}
-        {{ $isSectionActive := false }}
-        
-        {{ if eq $menuURL $pageURL }}
-          {{ $isActive = true }}
-        {{ else if (hasPrefix $pageURL (print $menuURL "/")) }}
-          {{ $isSectionActive = true }}
-        {{ else if eq $menuURL "/" }}
-          {{ $isActive = eq $pageURL "/" }}
+
+        {{ $isCurrent := false }}
+        {{ if eq $menuURL "/" }}
+            {{ if $currentPage.IsHome }}
+                {{ $isCurrent = true }}
+            {{ end }}
+        {{ else }}
+            {{ if hasPrefix $pageURL $menuURL }}
+                {{ $isCurrent = true }}
+            {{ end }}
         {{ end }}
-        
-        <!-- Usar también HasMenuCurrent para capturar páginas hijas -->
-        {{ $isActive = or $isActive (or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .)) }}
-        {{ $isSectionActive = or $isSectionActive ($currentPage.HasMenuCurrent "main" .) }}
         
         {{ $isDisabled := .Params.disabled | default false }}
         
-        <li class="menu-item-{{ if .Identifier }}{{ .Identifier }}{{ else }}{{ .Name | urlize }}{{ end }}{{ if or $isActive $isSectionActive }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}">
-          <a class="nav-menu-link nav-link{{ if or $isActive $isSectionActive }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}"
-             href="{{ if not $isDisabled }}{{ $menuURL }}{{ else }}#{{ end }}"
-             {{ if or $isActive $isSectionActive }}aria-current="page"{{ end }}
+        <li class="menu-item-{{ if .Identifier }}{{ .Identifier }}{{ else }}{{ .Name | urlize }}{{ end }}{{ if $isCurrent }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}">
+          <a class="nav-menu-link nav-link{{ if $isCurrent }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}"
+             {{ if not $isDisabled }}href="{{ $menuURL }}"{{ end }}
+             {{ if $isCurrent }}aria-current="page"{{ end }}
              {{ if $isDisabled }}tabindex="-1" aria-disabled="true"{{ end }}>
             {{ .Name }}
           </a>

@@ -18,8 +18,15 @@
   {{ $allItems := $subSections | union $directArticles }}
 
   {{/* Diseño especial para la página principal de Posts */}}
-    <div class="intro px-4">
-      <div class="fila">
+    <div class="intro">
+      <div>
+        {{ $fallbackImage := "/images/no-img.png" | relURL }}
+        <div class="col-md-6 intro intro-image">
+            <img class="img-fluid" 
+            src="{{ .Params.image | relURL }}" 
+            onerror="this.onerror=null; this.src='{{ $fallbackImage }}';" 
+            alt="Imagen de {{ .Title }}" />
+      </div>
     <div class="col-md-6 intro-content">
       <div class="posts-header">
           <h1 class="posts-title mb-1">{{ .Title }}</h1>
@@ -31,19 +38,12 @@
             {{ end }}
           {{ if gt (len .Pages) 0 }}
           <p class="posts-meta mb-0">
-            <span>{{ len .Pages }}</span> posts
+            <span class="badge bg-primary">{{ len .Pages }} posts</span>
           </p>
           {{ end }}
         </div>
-      <p>{{ .Description }}</p>
     </div>
-    {{ $fallbackImage := "/images/no-img.png" | relURL }}
-    <div class="col-md-6 intro intro-image">
-      <img class="img-fluid" 
-           src="{{ .Params.image | relURL }}" 
-           onerror="this.onerror=null; this.src='{{ $fallbackImage }}';" 
-           alt="Imagen de {{ .Title }}" />
-    </div>
+    
   </div>
     </div>
     <div class="">

@@ -4,7 +4,7 @@
   <div class="fila">
     <div class="col-md-6 intro-image">
       
-      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='{{ "/images/no-img.png" | relURL }}';" alt="Imagen de {{ .Title }}" />
+      <img class="img-fluid" src="{{ .Params.image | relURL }}" onerror="this.onerror=null; this.src='/images/no-img.png';" alt="Imagen de {{ .Title }}">
     </div>
     <div class="col-md-6 intro-content">
       <h1>{{ .Title }}</h1>

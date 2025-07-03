@@ -60,7 +60,7 @@
   z-index: 2;
 }
 .intro {
-    margin: 0 auto;
+    margin: 0 0;
     flex-wrap: wrap;
 }
 .intro-content  h1{
@@ -191,7 +191,7 @@
   }
 
   .intro-image {
-    margin: 0 auto;
+    margin: auto;
   }
 
   .toggle-container {

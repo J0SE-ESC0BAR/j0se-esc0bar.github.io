@@ -6,7 +6,11 @@
 {{ end }}
 
 {{ define "main" }}
-  <h4>{{.Description}}</h4>
+  <div class="intro-section mb-4">
+    <div class="intro-content">
+      <p class="intro-text">{{ .Description }}</p>
+    </div>
+  </div>
 
 
 {{/* Post destacado usando partial con título incluido */}}
