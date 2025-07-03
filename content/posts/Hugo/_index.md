@@ -1,10 +1,10 @@
 ---
-title: "Artículos sobre Hugo"
+title: "Hugo"
 date: 2025-06-05
 description: "Colección de guías y tutoriales sobre el generador de sitios estáticos Hugo, desde lo básico hasta funciones avanzadas."
 image: "images/Hugo_logo.png"
 draft: false
-viewimg: true
+viewimg: false
 ---
 
 Explora nuestras guías detalladas sobre Hugo. Aprende a configurar tu sitio, dominar los bloques de código, integrar diagramas Mermaid y mucho más.
