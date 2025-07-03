@@ -1,934 +1,248 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-  <link rel="icon" href="https://jaem.dev/favicon.ico">
-  
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  
-  
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/chroma-syntax.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/code-blocks.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/NewStyles.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/variables.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/base.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/header.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/components.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/footer.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/utilities.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/responsive.css">
-  
-    <link rel="stylesheet" href="https://jaem.dev/css/lightbox.css">
-  
-
-  
-  
-    
-    <meta name="description" content="Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.">
-    
-    
-    <meta property="og:title" content="Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jaem.dev/posts/hugo/bloques-codigo-hugo/">
-    <meta property="og:image" content="https://jaem.dev/images/HugoBloquesCodigo.png">
-    <meta property="og:description" content="Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.">
-    
-    
-    <meta name="twitter:card" content="summary">
-    
-      <meta name="twitter:site" content="@JAEM_Developer">
-      <meta name="twitter:creator" content="@JAEM_Developer">
-    
-  
-  
-  
-  <script>
-     
-    document.documentElement.classList.add('preload');
-    
-    (function() {
-      const pref = localStorage.getItem('vistaPreferida') || 'list';  
-      
-      
-      if (pref === 'grid') {
-        document.documentElement.classList.add('grid-view');
-        document.documentElement.classList.remove('list-view');
-        document.body.classList.add('grid-view');
-        document.body.classList.remove('list-view');
-      } else {
-        document.documentElement.classList.add('list-view');
-        document.documentElement.classList.remove('grid-view');
-        document.body.classList.add('list-view');
-        document.body.classList.remove('grid-view');
-      }
-    })();
-  </script>
-</head>
-
-
-
-
-<body class="d-flex flex-column min-vh-100 post single">
-  
-  
-  <script>
-  (function () {
-    if (!window.matchMedia("(max-width: 768px)").matches) return;
-    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
-  
-    document.addEventListener("DOMContentLoaded", () => {
-      const menu = document.querySelector(".nav-menu");
-      if (!menu) return;
-  
-       
-      menu.classList.add("nav-menu_visible", "no-transition");
-      void menu.offsetHeight;                 
-      menu.classList.remove("no-transition"); 
-  
-       
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {         
-          menu.classList.remove("nav-menu_visible");
-          localStorage.removeItem('menuShouldCloseOnLoad');
-        });
-      });
-    });
-  })();
-  </script>
-<header class='header'>
-  <nav class="nav">
-    
-    <a class="header-logo" href="https://jaem.dev/">JAEM</a>
-
-    
-    <button class="nav-toggle" aria-label="Abrir menú">
-      <i class="bi bi-list"></i>
-    </button>
-
-    <ul class="nav-menu">
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="menu-item-proyectos">
-          <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/projects/"
-             
-             >
-            Proyectos
-          </a>
-        </li>
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="menu-item-posts">
-          <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/posts/"
-             
-             >
-            Posts
-          </a>
-        </li>
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="menu-item-servicios disabled">
-          <a class="nav-menu-link nav-link disabled"
-             href="#"
-             
-             tabindex="-1" aria-disabled="true">
-            Servicios
-          </a>
-        </li>
-      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <li class="menu-item-acerca">
-          <a class="nav-menu-link nav-link"
-             href="https://jaem.dev/about/"
-             
-             >
-            Acerca
-          </a>
-        </li>
-      
-    </ul>
-    
-  </nav>
-</header>
-    
-  
-    
-    
-    <main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0">
-      <div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white">
-        
-<div class="intro">
-  <div class="fila">
-    <div class="col-md-6 intro-content">
-      <h1>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</h1>
-      <p>Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.</p>
-    </div>
-    <div class="col-md-6 intro-image">
-      <img class="img-fluid" src="https://jaem.dev/images/HugoBloquesCodigo.png" onerror="this.onerror=null; this.src='\/images\/no-img.png';" alt='Imagen de Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas' />
-    </div>
-  </div>
-  </div>
-    <div class="py-4">
-      <h1 id="-dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas">🎨 Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</h1>
-<p>Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.</p>
-<h2 id="-características-implementadas">🚀 Características Implementadas</h2>
-<p>Este sitio cuenta con un sistema de bloques de código robusto que incluye:</p>
-<ul>
-<li>✅ <strong>Syntax highlighting nativo de Hugo</strong> con Chroma.</li>
-<li>✅ <strong>Soporte para más de 250 lenguajes</strong> de programación.</li>
-<li>✅ <strong>Botón de &ldquo;Copiar&rdquo;</strong> en cada bloque de código para facilitar la reutilización.</li>
-<li>✅ <strong>Header automático</strong> que muestra el lenguaje del bloque de código.</li>
-<li>✅ <strong>Configuración flexible</strong> mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).</li>
-<li>✅ <strong>Tema Dracula</strong> optimizado para una excelente legibilidad.</li>
-<li>✅ <strong>Diseño responsive</strong> que se adapta a cualquier tamaño de pantalla.</li>
-<li>✅ <strong>Estilos modernos</strong> con efectos hover y transiciones suaves.</li>
-</ul>
-<h2 id="-uso-de-bloques-de-código">📋 Uso de Bloques de Código</h2>
-<p>Tienes dos maneras principales de insertar bloques de código en tus posts:</p>
-<h3 id="1-bloques-de-código-markdown-recomendado">1. Bloques de Código Markdown (Recomendado)</h3>
-<p>La forma más sencilla es utilizar la sintaxis estándar de Markdown con triples comillas invertidas (```), especificando el lenguaje:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="s">```javascript
-</span></span></span><span class="line"><span class="cl"><span class="s"></span><span class="kd">function</span> <span class="nx">saludar</span><span class="p">(</span><span class="nx">nombre</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`¡Hola, </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="nx">saludar</span><span class="p">(</span><span class="s1">&#39;Mundo&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="s">```</span></span></span></code></pre></div>
-  </div><script>
-      function copyToClipboard(button) {
-        const codeBlock = button.closest('.code-block').querySelector('code');
-        if (codeBlock) {
-          const textToCopy = codeBlock.textContent || codeBlock.innerText;
-          navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalContent = button.innerHTML;
-            button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
-            button.style.color = '#10b981';
-            setTimeout(() => {
-              button.innerHTML = originalContent;
-              button.style.color = '';
-            }, 2000);
-          }).catch(err => {
-            console.error('Error al copiar el código: ', err);
-            alert('No se pudo copiar el código');
-          });
-        }
-      }
-    </script><p>Esto generará automáticamente un bloque de código con el header indicando &ldquo;javascript&rdquo; y un botón para copiar el contenido.</p>
-<p><strong>Atributos Adicionales:</strong>
-Puedes añadir opciones directamente después del lenguaje, entre llaves <code>{}</code>:</p>
-<ul>
-<li><code>linenos=true</code>: Muestra números de línea. También puedes usar <code>linenos=table</code> o <code>linenos=inline</code>.</li>
-<li><code>hl_lines=[&quot;3&quot;, &quot;5-7&quot;]</code>: Resalta líneas específicas (línea 3, y el rango de la 5 a la 7).</li>
-<li><code>lineNoStart=10</code>: Comienza la numeración de líneas desde 10.</li>
-<li><code>style=nombre_estilo_chroma</code>: Aplica un estilo de Chroma específico (ej. <code>vs</code>, <code>github</code>).</li>
-</ul>
-<p>Ejemplo con atributos:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">MARKDOWN</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">``<span class="sb">`python {linenos=true, hl_lines=[2,&#34;4-6&#34;]}
-</span></span></span><span class="line"><span class="cl"><span class="sb">def create_mermaid_diagram():
-</span></span></span><span class="line"><span class="cl"><span class="sb">    diagram_type = &#34;flowchart TD&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sb">    nodes = [&#34;A[Start]&#34;, &#34;B[Process]&#34;, &#34;C[End]&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="sb">    connections = [
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &#34;A --&gt; B&#34;,
-</span></span></span><span class="line"><span class="cl"><span class="sb">        &#34;B --&gt; C&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sb">    ]
-</span></span></span><span class="line"><span class="cl"><span class="sb">    return f&#34;{diagram_type}\\n&#34; + &#34;\\n&#34;.join(nodes + connections)
-</span></span></span><span class="line"><span class="cl"><span class="sb">`</span>``</span></span></code></pre></div>
-  </div><div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">PYTHON</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">create_mermaid_diagram</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="n">diagram_type</span> <span class="o">=</span> <span class="s2">&#34;flowchart TD&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;A[Start]&#34;</span><span class="p">,</span> <span class="s2">&#34;B[Process]&#34;</span><span class="p">,</span> <span class="s2">&#34;C[End]&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="n">connections</span> <span class="o">=</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;A --&gt; B&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s2">&#34;B --&gt; C&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">diagram_type</span><span class="si">}</span><span class="se">\\</span><span class="s2">n&#34;</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\\</span><span class="s2">n&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nodes</span> <span class="o">+</span> <span class="n">connections</span><span class="p">)</span></span></span></code></pre></div>
-  </div><h2 id="-ejemplos-por-lenguaje">📝 Ejemplos por Lenguaje</h2>
-<p>Aquí tienes una variedad de ejemplos para demostrar las capacidades del resaltado:</p>
-<h3 id="javascript">JavaScript</h3>
-<p>Con números de línea y resaltado:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">JAVASCRIPT</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// Función para validar email
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">validateEmail</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">regex</span> <span class="o">=</span> <span class="sr">/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">regex</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">email</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">userEmail</span> <span class="o">=</span> <span class="s2">&#34;usuario@ejemplo.com&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">validateEmail</span><span class="p">(</span><span class="nx">userEmail</span><span class="p">));</span> <span class="c1">// true
-</span></span></span></code></pre></div>
-  </div><p>Función para copiar al portapapeles:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">JAVASCRIPT</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">copyToClipboard</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">codeBlock</span> <span class="o">=</span> <span class="nx">button</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;.code-block&#39;</span><span class="p">).</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">codeBlock</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">textToCopy</span> <span class="o">=</span> <span class="nx">codeBlock</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">||</span> <span class="nx">codeBlock</span><span class="p">.</span><span class="nx">innerText</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">navigator</span><span class="p">.</span><span class="nx">clipboard</span><span class="p">.</span><span class="nx">writeText</span><span class="p">(</span><span class="nx">textToCopy</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Código copiado exitosamente&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="p">});</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><h3 id="python">Python</h3>
-<p>Con números de línea en formato tabla y resaltado de líneas:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">PYTHON</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ApiClient</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">endpoint</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Uso del cliente</span>
-</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">ApiClient</span><span class="p">(</span><span class="s2">&#34;https://api.ejemplo.com&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="s2">&#34;users&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></span></span></code></pre></div>
-  </div><p>Cálculo de Fibonacci:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">PYTHON</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Calcula el n-ésimo número de Fibonacci&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n</span>
-</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Ejemplo de uso</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;F(</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">) = </span><span class="si">{</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
-  </div><h3 id="sql">SQL</h3>
-<p>Con números de línea en formato inline:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">SQL</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- Crear tabla de usuarios
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Usuario</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ID_Usuario</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">IDENTITY</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">NombreCompleto</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Contraseña</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="c1">-- Considerar hashing
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">Administrador</span><span class="w"> </span><span class="nb">BIT</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">FechaCreacion</span><span class="w"> </span><span class="n">DATETIME</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">GETDATE</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- Insertar datos de ejemplo
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Usuario</span><span class="w"> </span><span class="p">(</span><span class="n">NombreCompleto</span><span class="p">,</span><span class="w"> </span><span class="n">Email</span><span class="p">,</span><span class="w"> </span><span class="n">Contraseña</span><span class="p">,</span><span class="w"> </span><span class="n">Administrador</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> 
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;José Escobar&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;jose@ejemplo.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hashedpassword123&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;María García&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;maria@ejemplo.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hashedpassword456&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></span></span></code></pre></div>
-  </div><p>Otro ejemplo de SQL:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">SQL</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">usuarios2</span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">ID</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Nombre</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Apellido</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Telefono</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="mi">01</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s1">&#39;Pedro&#39;</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s1">&#39;Arias&#39;</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s1">&#39;809-123-1345&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div>
-  </div><h3 id="html">HTML</h3>
-<p>Con resaltado de líneas y numeración comenzando en 10:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">HTML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;es&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mi Página<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/main.css&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Título Principal<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">main</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Contenido de la página.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></div>
-  </div><h3 id="css">CSS</h3>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">CSS</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* Estilos para botones modernos */</span>
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">btn-modern</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">135</span><span class="kt">deg</span><span class="p">,</span> <span class="mh">#667eea</span> <span class="mi">0</span><span class="kt">%</span><span class="p">,</span> <span class="mh">#764ba2</span> <span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="mi">600</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="kc">all</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">4</span><span class="kt">px</span> <span class="mi">15</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">btn-modern</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transform</span><span class="p">:</span> <span class="nb">translateY</span><span class="p">(</span><span class="mi">-2</span><span class="kt">px</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">8</span><span class="kt">px</span> <span class="mi">25</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><h3 id="go">Go</h3>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">GO</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="s">&#34;fmt&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="s">&#34;log&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="s">&#34;net/http&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">http</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="s">&#34;¡Hola desde el servidor Go!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="p">})</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Servidor escuchando en el puerto 8080&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;:8080&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><h3 id="bash">Bash</h3>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">BASH</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Comandos útiles de Git</span>
-</span></span><span class="line"><span class="cl">git status
-</span></span><span class="line"><span class="cl">git add .
-</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Mensaje del commit&#34;</span>
-</span></span><span class="line"><span class="cl">git push origin main
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Crear una nueva rama y moverse a ella</span>
-</span></span><span class="line"><span class="cl">git checkout -b nueva-funcionalidad
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Listar archivos en el directorio actual</span>
-</span></span><span class="line"><span class="cl">ls -la</span></span></code></pre></div>
-  </div><h3 id="json">JSON</h3>
-<p>Con resaltado de líneas:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">JSON</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;mi-proyecto-hugo&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;1.0.0&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Un proyecto de ejemplo con Hugo&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;hugo server&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;hugo --minify&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;author&#34;</span><span class="p">:</span> <span class="s2">&#34;Tu Nombre&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><p>Otro ejemplo JSON:</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">JSON</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;test&#34;</span><span class="p">:</span> <span class="s2">&#34;copy functionality&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;active&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;features&#34;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;syntax highlighting&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;copy button&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;mermaid support&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><h3 id="yaml">YAML</h3>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">YAML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Configuración de Hugo</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://jaem.dev/&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;es&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;JAEM - Blog de José Escobar&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;hugo-jaem-theme&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Necesario para que funcionen algunos render hooks</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c"># true para usar estilos en línea, false para usar clases CSS</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">guessSyntax</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c"># Puedes activarlo globalmente aquí</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dracula&#34;</span><span class="w"> </span><span class="c"># Estilo de Chroma por defecto</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;José Escobar&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Blog sobre desarrollo, tecnología y más.&#34;</span></span></span></code></pre></div>
-  </div><h2 id="-configuración-de-hugo">🔧 Configuración de Hugo</h2>
-<p>Para asegurar que el resaltado de sintaxis funcione correctamente, verifica tu archivo de configuración de Hugo (<code>config.toml</code> o <code>hugo.yaml</code>).</p>
-<p><strong>Para <code>config.toml</code>:</strong></p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">TOML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">highlight</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">noClasses</span> <span class="p">=</span> <span class="kc">false</span> <span class="c"># Importante para usar CSS externo para el tema</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">codeFences</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">guessSyntax</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">lineNos</span> <span class="p">=</span> <span class="kc">false</span> <span class="c"># Opciones: false, true, &#34;table&#34;, &#34;inline&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># style = &#34;dracula&#34; # Puedes definir un estilo global aquí</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">goldmark</span><span class="p">.</span><span class="nx">renderer</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">unsafe</span> <span class="p">=</span> <span class="kc">true</span> <span class="c"># Necesario para algunos render hooks HTML</span></span></span></code></pre></div>
-  </div><p><strong>Para <code>hugo.yaml</code>:</strong></p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">YAML</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">markup</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">guessSyntax</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># style: dracula</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span></span></span></code></pre></div>
-  </div><h2 id="-personalización">🎨 Personalización</h2>
-<h3 id="variables-css">Variables CSS</h3>
-<p>Puedes personalizar algunos aspectos visuales de los bloques de código a través de variables CSS definidas en tu archivo de estilos (ej. <code>assets/scss/_variables.scss</code> o <code>static/css/variables.css</code>):</p>
-<div class="code-block">
-    <div class="code-block__header">
-      <span class="code-block__lang">CSS</span>
-      <button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* Ejemplo de variables (ajusta según tu estructura) */</span>
-</span></span><span class="line"><span class="cl"><span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--code-bg-color</span><span class="p">:</span> <span class="mh">#282a36</span><span class="p">;</span>              <span class="c">/* Fondo del código (Dracula) */</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--code-text-color</span><span class="p">:</span> <span class="mh">#f8f8f2</span><span class="p">;</span>            <span class="c">/* Color del texto (Dracula) */</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--code-header-bg-color</span><span class="p">:</span> <span class="mh">#1e1f29</span><span class="p">;</span>       <span class="c">/* Fondo del header del bloque */</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--code-header-text-color</span><span class="p">:</span> <span class="mh">#bd93f9</span><span class="p">;</span>     <span class="c">/* Color del texto del header (Dracula Purple) */</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--code-border-color</span><span class="p">:</span> <span class="mh">#44475a</span><span class="p">;</span>          <span class="c">/* Color del borde (Dracula Selection) */</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--button-copy-color</span><span class="p">:</span> <span class="mh">#8be9fd</span><span class="p">;</span>          <span class="c">/* Color del icono copiar (Dracula Cyan) */</span>
-</span></span><span class="line"><span class="cl">  <span class="nv">--button-copy-hover-color</span><span class="p">:</span> <span class="mh">#50fa7b</span><span class="p">;</span>    <span class="c">/* Color al pasar el ratón (Dracula Green) */</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
-  </div><p>(Los nombres de las variables y su ubicación pueden variar según el tema).</p>
-<h3 id="estilos-css-personalizados">Estilos CSS Personalizados</h3>
-<p>Los estilos específicos para los bloques de código, el header y el botón de copiar se encuentran generalmente en un archivo CSS dedicado (ej. <code>static/css/code-blocks.css</code> o <code>assets/scss/components/_code-blocks.scss</code>). Puedes modificar estos estilos para adaptarlos a tus preferencias.</p>
-<h2 id="-archivos-clave-del-sistema-ejemplo-de-implementación">📁 Archivos Clave del Sistema (Ejemplo de Implementación)</h2>
-<p>Una implementación típica de estas características involucra:</p>
-<ul>
-<li><strong>Render Hook</strong>: <code>layouts/_default/_markup/render-codeblock.html</code>. Este archivo intercepta los bloques de código Markdown (```) y los envuelve con el HTML necesario para el header, el botón de copiar y aplica las clases para el estilo.</li>
-<li><strong>Shortcode (Opcional)</strong>: <code>layouts/shortcodes/codeblock.html</code>. Si se ofrece un shortcode personalizado.</li>
-<li><strong>JavaScript</strong>: Un archivo JS (ej. <code>assets/js/scripts.js</code> o <code>static/js/main.js</code>) que contiene la lógica para:
-<ul>
-<li>Funcionalidad del botón de copiar (copiar al portapapeles y cambiar el ícono/texto del botón).</li>
-</ul>
-</li>
-<li><strong>CSS</strong>:
-<ul>
-<li>Estilos para los bloques de código, header, botón (<code>code-blocks.css</code>).</li>
-<li>Tema de resaltado de sintaxis de Chroma (ej. <code>chroma-syntax.css</code>, generado por Hugo o personalizado).</li>
-<li>Variables de color (<code>variables.css</code>).</li>
-</ul>
-</li>
-</ul>
-<h2 id="-lenguajes-soportados">🌐 Lenguajes Soportados</h2>
-<p>Chroma, el resaltador de sintaxis de Hugo, soporta una vasta cantidad de lenguajes. Algunos de los más comunes incluyen:</p>
-<ul>
-<li><strong>Web</strong>: <code>html</code>, <code>css</code>, <code>javascript</code>, <code>typescript</code>, <code>jsx</code>, <code>tsx</code>, <code>json</code>, <code>xml</code>, <code>svg</code></li>
-<li><strong>Backend</strong>: <code>python</code>, <code>java</code>, <code>csharp</code> (o <code>c#</code>), <code>go</code>, <code>php</code>, <code>ruby</code>, <code>rust</code>, <code>kotlin</code>, <code>scala</code>, <code>swift</code></li>
-<li><strong>Bases de datos</strong>: <code>sql</code>, <code>plsql</code>, <code>mysql</code>, <code>postgresql</code>, <code>sqlite</code></li>
-<li><strong>DevOps &amp; Shell</strong>: <code>bash</code> (o <code>sh</code>), <code>powershell</code> (o <code>ps1</code>), <code>dockerfile</code> (o <code>docker</code>), <code>yaml</code>, <code>toml</code>, <code>ini</code></li>
-<li><strong>Otros</strong>: <code>markdown</code> (o <code>md</code>), <code>c</code>, <code>cpp</code> (o <code>c++</code>), <code>objective-c</code>, <code>perl</code>, <code>lua</code>, <code>r</code>, <code>matlab</code>, <code>latex</code> (o <code>tex</code>)</li>
-</ul>
-<p>Si un lenguaje no es reconocido o el resaltado no es el esperado, asegúrate de estar usando el alias correcto para ese lenguaje.</p>
-<h2 id="-solución-de-problemas">🛠️ Solución de Problemas</h2>
-<ul>
-<li><strong>El botón de copiar no funciona</strong>:
-<ul>
-<li>Verifica que el script de JavaScript que maneja la copia esté cargándose correctamente en la página.</li>
-<li>Revisa la consola del navegador en busca de errores de JavaScript.</li>
-<li>Asegúrate de que el HTML del bloque de código y el botón tengan las clases o IDs que el script espera.</li>
-</ul>
-</li>
-<li><strong>El resaltado de sintaxis no aparece o es incorrecto</strong>:
-<ul>
-<li>Confirma que <code>noClasses</code> esté en <code>false</code> en tu configuración de Hugo si usas una hoja de estilos CSS externa para Chroma.</li>
-<li>Verifica que el lenguaje especificado en el bloque de código (ej. ```javascript) sea uno soportado por Chroma y que estés usando el alias correcto.</li>
-<li>Asegúrate de que los estilos CSS para Chroma se estén cargando. Hugo puede generar esto automáticamente o puedes proporcionar tu propio archivo CSS de tema Chroma.</li>
-</ul>
-</li>
-<li><strong>Los estilos no se ven como se espera</strong>:
-<ul>
-<li>Inspecciona los elementos con las herramientas de desarrollo del navegador para ver qué estilos CSS se están aplicando y si hay conflictos.</li>
-<li>Limpia la caché de tu navegador.</li>
-</ul>
-</li>
-</ul>
-<p>¡Con esta guía, estás listo para crear posts con bloques de código impresionantes, funcionales y fáciles de usar en tu sitio Hugo! 🎉</p>
-
-    </div>
-    
-    <div class="py-4">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-4 text-center mb-3">
-          
-            
-            
-              <a href="https://jaem.dev/posts/hugo/" class="btn btn-outline-secondary btn-lg w-100">
-                <i class="bi bi-arrow-left"></i> Volver a Artículos sobre Hugo
-              </a>
-            
-          
-        </div>
-        
-        <div class="col-12 col-md-4 text-center mb-3">
-          <a href="https://jaem.dev/posts/" class="btn btn-outline-secondary btn-lg w-100">
-            <i class="bi bi-grid-3x3-gap"></i> Todos los Posts
-          </a>
-        </div>
-        
-        <div class="col-12 col-md-4 text-center mb-3">
-          
-            <a href="https://jaem.dev/posts/hugo/guia-inicio-hugo/" class="btn btn-outline-primary btn-lg w-100">
-              Post Siguiente <i class="bi bi-arrow-right"></i>
-              <small class="d-block text-light">Guía de Inicio y Uso Básico de …</small>
-            </a>
-          
-        </div>
-      </div>
-    </div>
-
-      </div>
-    </main>
-  
-  
-    
-<footer class="text-center text-lg-start bg-white text-light bg-opacity-10">
-  
-  <section  class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10">
-
-<div class="me-5">
-<span>Redes sociales:</span>
-</div>
-
-
-<div class="box-icons">
-  
-<a href="https://twitter.com/J0SE_ESC0BAR" title="twitter" target="_blank" rel="noopener noreferrer" class="text-white me-4">
-<i class="bi-twitter" aria-hidden="true"></i>
-</a>
-
-<a href="https://github.com/J0SE-ESC0BAR" title="github" target="_blank" rel="noopener noreferrer" class="text-white me-4">
-<i class="bi-github" aria-hidden="true"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/" title="linkedin" target="_blank" rel="noopener noreferrer" class="text-white me-4">
-<i class="bi-linkedin" aria-hidden="true"></i>
-</a>
-
-</div>
-
-</section>
-
-
-
-  
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      
-      <div class="row mt-3">
-        
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          
-          <h3 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3 text-light"></i>JAEM
-          </h3>
-          <p>
-            Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.
-          </p>
-        </div>
-        
-
-        
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          
-          <h6 class="text-uppercase fw-bold mb-4">
-            Legal
-          </h6>
-          <p>
-            <a href="#!" class="text-light">Terms and conditions</a>
-          </p>
-          <p>
-            <a href="#!" class="text-light">Privacy Policy</a>
-          </p>
-          <p>
-            <a href="#!" class="text-light">Terms of use</a>
-          </p>
-        </div>
-        
-
-        
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          
-          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-          <p class="text-break"><i class="fas fa-envelope me-3 text-light "></i>josealfonsoescobarmejia@gmail.com</p>
-          <p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p>
-        </div>
-        
-      </div>
-      
-    </div>
-  </section>
-  
-
-  
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="2025-06-22 23:32:37.1526571 -0600 CST m=&#43;0.616862701">2025</time> - Diseño Web realizado por 
-  </div>
-  
-</footer>
-
-
-  
-  
-  
-  
-    <script src="https://jaem.dev/js/scripts.js"></script>
-  
-    <script src="https://jaem.dev/js/lightbox.js"></script>
-  
-  
-  
-  
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-  
-  
-  
-</body>
-
-
-
-
-
-</html>
+<!doctype html><html lang=es><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=https://jaem.dev/favicon.ico><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT crossorigin=anonymous><link rel=stylesheet href=https://jaem.dev/css/chroma-syntax.css><link rel=stylesheet href=https://jaem.dev/css/code-blocks.css><link rel=stylesheet href=https://jaem.dev/css/NewStyles.css><link rel=stylesheet href=https://jaem.dev/css/variables.css><link rel=stylesheet href=https://jaem.dev/css/base.css><link rel=stylesheet href=https://jaem.dev/css/header.css><link rel=stylesheet href=https://jaem.dev/css/components.css><link rel=stylesheet href=https://jaem.dev/css/footer.css><link rel=stylesheet href=https://jaem.dev/css/utilities.css><link rel=stylesheet href=https://jaem.dev/css/responsive.css><link rel=stylesheet href=https://jaem.dev/css/lightbox.css><meta name=description content="Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración."><meta property="og:title" content="Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas"><meta property="og:type" content="website"><meta property="og:url" content="https://jaem.dev/posts/hugo/bloques-codigo-hugo/"><meta property="og:image" content="https://jaem.dev/images/HugoBloquesCodigo.png"><meta property="og:description" content="Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración."><meta name=twitter:card content="summary"><meta name=twitter:site content="@JAEM_Developer"><meta name=twitter:creator content="@JAEM_Developer"><script>document.documentElement.classList.add("preload"),function(){const e=localStorage.getItem("vistaPreferida")||"list";e==="grid"?(document.documentElement.classList.add("grid-view"),document.documentElement.classList.remove("list-view"),document.body.classList.add("grid-view"),document.body.classList.remove("list-view")):(document.documentElement.classList.add("list-view"),document.documentElement.classList.remove("grid-view"),document.body.classList.add("list-view"),document.body.classList.remove("grid-view"))}()</script></head><body class="d-flex flex-column min-vh-100 post single"><script>(function(){if(!window.matchMedia("(max-width: 768px)").matches)return;if(localStorage.getItem("menuShouldCloseOnLoad")!=="true")return;document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".nav-menu");if(!e)return;e.classList.add("nav-menu_visible","no-transition"),void e.offsetHeight,e.classList.remove("no-transition"),requestAnimationFrame(()=>{requestAnimationFrame(()=>{e.classList.remove("nav-menu_visible"),localStorage.removeItem("menuShouldCloseOnLoad")})})})})()</script><header class=header><nav class=nav><a class=header-logo href=https://jaem.dev/>JAEM</a>
+<button class=nav-toggle aria-label="Abrir menú">
+<i class="bi bi-list"></i></button><ul class=nav-menu><li class=menu-item-proyectos><a class="nav-menu-link nav-link" href=https://jaem.dev/projects/>Proyectos</a></li><li class="menu-item-posts active"><a class="nav-menu-link nav-link active" href=https://jaem.dev/posts/ aria-current=page>Posts</a></li><li class="menu-item-servicios disabled"><a class="nav-menu-link nav-link disabled" tabindex=-1 aria-disabled=true>Servicios</a></li><li class=menu-item-acerca><a class="nav-menu-link nav-link" href=https://jaem.dev/about/>Acerca</a></li></ul></nav></header><main class="d-flex flex-fill justify-content-center align-items-stretch m-0 p-0"><div class="mid-wrapper d-flex flex-column flex-fill shadow w-100 text-white"><div class=intro><div class=fila><div class="col-md-6 intro-content"><h1>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</h1><p>Una guía completa para utilizar y personalizar el resaltado de sintaxis y los bloques de código en Hugo, incluyendo ejemplos y configuración.</p></div><div class="col-md-6 intro-image"><img class=img-fluid src=https://jaem.dev/images/HugoBloquesCodigo.png onerror='this.onerror=null,this.src="https://jaem.dev/images/no-img.png"' alt='Imagen de Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas'></div></div></div><div class=py-4><h1 id=-dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas>🎨 Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</h1><p>Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.</p><h2 id=-características-implementadas>🚀 Características Implementadas</h2><p>Este sitio cuenta con un sistema de bloques de código robusto que incluye:</p><ul><li>✅ <strong>Syntax highlighting nativo de Hugo</strong> con Chroma.</li><li>✅ <strong>Soporte para más de 250 lenguajes</strong> de programación.</li><li>✅ <strong>Botón de &ldquo;Copiar&rdquo;</strong> en cada bloque de código para facilitar la reutilización.</li><li>✅ <strong>Header automático</strong> que muestra el lenguaje del bloque de código.</li><li>✅ <strong>Configuración flexible</strong> mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).</li><li>✅ <strong>Tema Dracula</strong> optimizado para una excelente legibilidad.</li><li>✅ <strong>Diseño responsive</strong> que se adapta a cualquier tamaño de pantalla.</li><li>✅ <strong>Estilos modernos</strong> con efectos hover y transiciones suaves.</li></ul><h2 id=-uso-de-bloques-de-código>📋 Uso de Bloques de Código</h2><p>Tienes dos maneras principales de insertar bloques de código en tus posts:</p><h3 id=1-bloques-de-código-markdown-recomendado>1. Bloques de Código Markdown (Recomendado)</h3><p>La forma más sencilla es utilizar la sintaxis estándar de Markdown con triples comillas invertidas (```), especificando el lenguaje:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>MARKDOWN</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=line><span class=cl><span class=s>```javascript
+</span></span></span><span class=line><span class=cl><span class=s></span><span class=kd>function</span> <span class=nx>saludar</span><span class=p>(</span><span class=nx>nombre</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`¡Hola, </span><span class=si>${</span><span class=nx>nombre</span><span class=si>}</span><span class=sb>!`</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>saludar</span><span class=p>(</span><span class=s1>&#39;Mundo&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=s>```</span></span></span></code></pre></div></div><script>function copyToClipboard(e){const t=e.closest(".code-block").querySelector("code");if(t){const n=t.textContent||t.innerText;navigator.clipboard.writeText(n).then(()=>{const t=e.innerHTML;e.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>',e.style.color="#10b981",setTimeout(()=>{e.innerHTML=t,e.style.color=""},2e3)}).catch(e=>{console.error("Error al copiar el código: ",e),alert("No se pudo copiar el código")})}}</script><p>Esto generará automáticamente un bloque de código con el header indicando &ldquo;javascript&rdquo; y un botón para copiar el contenido.</p><p><strong>Atributos Adicionales:</strong>
+Puedes añadir opciones directamente después del lenguaje, entre llaves <code>{}</code>:</p><ul><li><code>linenos=true</code>: Muestra números de línea. También puedes usar <code>linenos=table</code> o <code>linenos=inline</code>.</li><li><code>hl_lines=["3", "5-7"]</code>: Resalta líneas específicas (línea 3, y el rango de la 5 a la 7).</li><li><code>lineNoStart=10</code>: Comienza la numeración de líneas desde 10.</li><li><code>style=nombre_estilo_chroma</code>: Aplica un estilo de Chroma específico (ej. <code>vs</code>, <code>github</code>).</li></ul><p>Ejemplo con atributos:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>MARKDOWN</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=line><span class=cl>``<span class=sb>`python {linenos=true, hl_lines=[2,&#34;4-6&#34;]}
+</span></span></span><span class=line><span class=cl><span class=sb>def create_mermaid_diagram():
+</span></span></span><span class=line><span class=cl><span class=sb>    diagram_type = &#34;flowchart TD&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>    nodes = [&#34;A[Start]&#34;, &#34;B[Process]&#34;, &#34;C[End]&#34;]
+</span></span></span><span class=line><span class=cl><span class=sb>    connections = [
+</span></span></span><span class=line><span class=cl><span class=sb>        &#34;A --&gt; B&#34;,
+</span></span></span><span class=line><span class=cl><span class=sb>        &#34;B --&gt; C&#34;
+</span></span></span><span class=line><span class=cl><span class=sb>    ]
+</span></span></span><span class=line><span class=cl><span class=sb>    return f&#34;{diagram_type}\\n&#34; + &#34;\\n&#34;.join(nodes + connections)
+</span></span></span><span class=line><span class=cl><span class=sb>`</span>``</span></span></code></pre></div></div><div class=code-block><div class=code-block__header><span class=code-block__lang>PYTHON</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>create_mermaid_diagram</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>diagram_type</span> <span class=o>=</span> <span class=s2>&#34;flowchart TD&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=n>nodes</span> <span class=o>=</span> <span class=p>[</span><span class=s2>&#34;A[Start]&#34;</span><span class=p>,</span> <span class=s2>&#34;B[Process]&#34;</span><span class=p>,</span> <span class=s2>&#34;C[End]&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=n>connections</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;A --&gt; B&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=s2>&#34;B --&gt; C&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=sa>f</span><span class=s2>&#34;</span><span class=si>{</span><span class=n>diagram_type</span><span class=si>}</span><span class=se>\\</span><span class=s2>n&#34;</span> <span class=o>+</span> <span class=s2>&#34;</span><span class=se>\\</span><span class=s2>n&#34;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>nodes</span> <span class=o>+</span> <span class=n>connections</span><span class=p>)</span></span></span></code></pre></div></div><h2 id=-ejemplos-por-lenguaje>📝 Ejemplos por Lenguaje</h2><p>Aquí tienes una variedad de ejemplos para demostrar las capacidades del resaltado:</p><h3 id=javascript>JavaScript</h3><p>Con números de línea y resaltado:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>JAVASCRIPT</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=c1>// Función para validar email
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>function</span> <span class=nx>validateEmail</span><span class=p>(</span><span class=nx>email</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>regex</span> <span class=o>=</span> <span class=sr>/^[^\s@]+@[^\s@]+\.[^\s@]+$/</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nx>regex</span><span class=p>.</span><span class=nx>test</span><span class=p>(</span><span class=nx>email</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>userEmail</span> <span class=o>=</span> <span class=s2>&#34;usuario@ejemplo.com&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>validateEmail</span><span class=p>(</span><span class=nx>userEmail</span><span class=p>));</span> <span class=c1>// true
+</span></span></span></code></pre></div></div><p>Función para copiar al portapapeles:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>JAVASCRIPT</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kd>function</span> <span class=nx>copyToClipboard</span><span class=p>(</span><span class=nx>button</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>codeBlock</span> <span class=o>=</span> <span class=nx>button</span><span class=p>.</span><span class=nx>closest</span><span class=p>(</span><span class=s1>&#39;.code-block&#39;</span><span class=p>).</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;code&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>codeBlock</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>textToCopy</span> <span class=o>=</span> <span class=nx>codeBlock</span><span class=p>.</span><span class=nx>textContent</span> <span class=o>||</span> <span class=nx>codeBlock</span><span class=p>.</span><span class=nx>innerText</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>navigator</span><span class=p>.</span><span class=nx>clipboard</span><span class=p>.</span><span class=nx>writeText</span><span class=p>(</span><span class=nx>textToCopy</span><span class=p>).</span><span class=nx>then</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Código copiado exitosamente&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>});</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><h3 id=python>Python</h3><p>Con números de línea en formato tabla y resaltado de líneas:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>PYTHON</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>requests</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>datetime</span> <span class=kn>import</span> <span class=n>datetime</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>ApiClient</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>base_url</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=bp>self</span><span class=o>.</span><span class=n>base_url</span> <span class=o>=</span> <span class=n>base_url</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=k>def</span> <span class=nf>get_data</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>endpoint</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>response</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;</span><span class=si>{</span><span class=bp>self</span><span class=o>.</span><span class=n>base_url</span><span class=si>}</span><span class=s2>/</span><span class=si>{</span><span class=n>endpoint</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>response</span><span class=o>.</span><span class=n>json</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Uso del cliente</span>
+</span></span><span class=line><span class=cl><span class=n>client</span> <span class=o>=</span> <span class=n>ApiClient</span><span class=p>(</span><span class=s2>&#34;https://api.ejemplo.com&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>data</span> <span class=o>=</span> <span class=n>client</span><span class=o>.</span><span class=n>get_data</span><span class=p>(</span><span class=s2>&#34;users&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>print</span><span class=p>(</span><span class=n>data</span><span class=p>)</span></span></span></code></pre></div></div><p>Cálculo de Fibonacci:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>PYTHON</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=k>def</span> <span class=nf>fibonacci</span><span class=p>(</span><span class=n>n</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;&#34;&#34;Calcula el n-ésimo número de Fibonacci&#34;&#34;&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=n>n</span> <span class=o>&lt;=</span> <span class=mi>1</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>n</span>
+</span></span><span class=line><span class=cl>    <span class=k>else</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=n>fibonacci</span><span class=p>(</span><span class=n>n</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=o>+</span> <span class=n>fibonacci</span><span class=p>(</span><span class=n>n</span><span class=o>-</span><span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Ejemplo de uso</span>
+</span></span><span class=line><span class=cl><span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=mi>10</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=sa>f</span><span class=s2>&#34;F(</span><span class=si>{</span><span class=n>i</span><span class=si>}</span><span class=s2>) = </span><span class=si>{</span><span class=n>fibonacci</span><span class=p>(</span><span class=n>i</span><span class=p>)</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>)</span></span></span></code></pre></div></div><h3 id=sql>SQL</h3><p>Con números de línea en formato inline:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>SQL</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-sql data-lang=sql><span class=line><span class=cl><span class=c1>-- Crear tabla de usuarios
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>CREATE</span><span class=w> </span><span class=k>TABLE</span><span class=w> </span><span class=n>Usuario</span><span class=w> </span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>ID_Usuario</span><span class=w> </span><span class=nb>INT</span><span class=w> </span><span class=k>IDENTITY</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>)</span><span class=w> </span><span class=k>PRIMARY</span><span class=w> </span><span class=k>KEY</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>NombreCompleto</span><span class=w> </span><span class=nb>VARCHAR</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=k>NULL</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Email</span><span class=w> </span><span class=nb>VARCHAR</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span><span class=w> </span><span class=k>UNIQUE</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=k>NULL</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Contraseña</span><span class=w> </span><span class=nb>VARCHAR</span><span class=p>(</span><span class=mi>255</span><span class=p>)</span><span class=w> </span><span class=k>NOT</span><span class=w> </span><span class=k>NULL</span><span class=p>,</span><span class=w> </span><span class=c1>-- Considerar hashing
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=w>    </span><span class=n>Administrador</span><span class=w> </span><span class=nb>BIT</span><span class=w> </span><span class=k>DEFAULT</span><span class=w> </span><span class=mi>0</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>FechaCreacion</span><span class=w> </span><span class=n>DATETIME</span><span class=w> </span><span class=k>DEFAULT</span><span class=w> </span><span class=n>GETDATE</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>-- Insertar datos de ejemplo
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>INSERT</span><span class=w> </span><span class=k>INTO</span><span class=w> </span><span class=n>Usuario</span><span class=w> </span><span class=p>(</span><span class=n>NombreCompleto</span><span class=p>,</span><span class=w> </span><span class=n>Email</span><span class=p>,</span><span class=w> </span><span class=n>Contraseña</span><span class=p>,</span><span class=w> </span><span class=n>Administrador</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>VALUES</span><span class=w> 
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>(</span><span class=s1>&#39;José Escobar&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;jose@ejemplo.com&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;hashedpassword123&#39;</span><span class=p>,</span><span class=w> </span><span class=mi>1</span><span class=p>),</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>(</span><span class=s1>&#39;María García&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;maria@ejemplo.com&#39;</span><span class=p>,</span><span class=w> </span><span class=s1>&#39;hashedpassword456&#39;</span><span class=p>,</span><span class=w> </span><span class=mi>0</span><span class=p>);</span></span></span></code></pre></div></div><p>Otro ejemplo de SQL:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>SQL</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-sql data-lang=sql><span class=line><span class=cl><span class=k>INSERT</span><span class=w> </span><span class=k>INTO</span><span class=w> </span><span class=n>usuarios2</span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>ID</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>Nombre</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>Apellido</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>Telefono</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>VALUES</span><span class=w> </span><span class=p>(</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=mi>01</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=s1>&#39;Pedro&#39;</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=s1>&#39;Arias&#39;</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=s1>&#39;809-123-1345&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>);</span></span></span></code></pre></div></div><h3 id=html>HTML</h3><p>Con resaltado de líneas y numeración comenzando en 10:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>HTML</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=cp>&lt;!DOCTYPE html&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;es&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Mi Página<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>&#34;stylesheet&#34;</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/css/main.css&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>header</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>h1</span><span class=p>&gt;</span>Título Principal<span class=p>&lt;/</span><span class=nt>h1</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>header</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>main</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;container&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Contenido de la página.<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>main</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span></span></span></code></pre></div></div><h3 id=css>CSS</h3><div class=code-block><div class=code-block__header><span class=code-block__lang>CSS</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Estilos para botones modernos */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-modern</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>background</span><span class=p>:</span> <span class=nb>linear-gradient</span><span class=p>(</span><span class=mi>135</span><span class=kt>deg</span><span class=p>,</span> <span class=mh>#667eea</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=mh>#764ba2</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>border</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>border-radius</span><span class=p>:</span> <span class=mi>8</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>color</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>padding</span><span class=p>:</span> <span class=mi>12</span><span class=kt>px</span> <span class=mi>24</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>font-weight</span><span class=p>:</span> <span class=mi>600</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>transition</span><span class=p>:</span> <span class=kc>all</span> <span class=mf>0.3</span><span class=kt>s</span> <span class=kc>ease</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>box-shadow</span><span class=p>:</span> <span class=mi>0</span> <span class=mi>4</span><span class=kt>px</span> <span class=mi>15</span><span class=kt>px</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>btn-modern</span><span class=p>:</span><span class=nd>hover</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>transform</span><span class=p>:</span> <span class=nb>translateY</span><span class=p>(</span><span class=mi>-2</span><span class=kt>px</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=k>box-shadow</span><span class=p>:</span> <span class=mi>0</span> <span class=mi>8</span><span class=kt>px</span> <span class=mi>25</span><span class=kt>px</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mf>0.3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><h3 id=go>Go</h3><div class=code-block><div class=code-block__header><span class=code-block__lang>GO</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;log&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=s>&#34;net/http&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>http</span><span class=p>.</span><span class=nf>HandleFunc</span><span class=p>(</span><span class=s>&#34;/&#34;</span><span class=p>,</span> <span class=kd>func</span><span class=p>(</span><span class=nx>w</span> <span class=nx>http</span><span class=p>.</span><span class=nx>ResponseWriter</span><span class=p>,</span> <span class=nx>r</span> <span class=o>*</span><span class=nx>http</span><span class=p>.</span><span class=nx>Request</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fmt</span><span class=p>.</span><span class=nf>Fprintf</span><span class=p>(</span><span class=nx>w</span><span class=p>,</span> <span class=s>&#34;¡Hola desde el servidor Go!&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Servidor escuchando en el puerto 8080&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>log</span><span class=p>.</span><span class=nf>Fatal</span><span class=p>(</span><span class=nx>http</span><span class=p>.</span><span class=nf>ListenAndServe</span><span class=p>(</span><span class=s>&#34;:8080&#34;</span><span class=p>,</span> <span class=kc>nil</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><h3 id=bash>Bash</h3><div class=code-block><div class=code-block__header><span class=code-block__lang>BASH</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Comandos útiles de Git</span>
+</span></span><span class=line><span class=cl>git status
+</span></span><span class=line><span class=cl>git add .
+</span></span><span class=line><span class=cl>git commit -m <span class=s2>&#34;Mensaje del commit&#34;</span>
+</span></span><span class=line><span class=cl>git push origin main
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Crear una nueva rama y moverse a ella</span>
+</span></span><span class=line><span class=cl>git checkout -b nueva-funcionalidad
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Listar archivos en el directorio actual</span>
+</span></span><span class=line><span class=cl>ls -la</span></span></code></pre></div></div><h3 id=json>JSON</h3><p>Con resaltado de líneas:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>JSON</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=s2>&#34;mi-proyecto-hugo&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;version&#34;</span><span class=p>:</span> <span class=s2>&#34;1.0.0&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;Un proyecto de ejemplo con Hugo&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;scripts&#34;</span><span class=p>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;start&#34;</span><span class=p>:</span> <span class=s2>&#34;hugo server&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&#34;build&#34;</span><span class=p>:</span> <span class=s2>&#34;hugo --minify&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;author&#34;</span><span class=p>:</span> <span class=s2>&#34;Tu Nombre&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><p>Otro ejemplo JSON:</p><div class=code-block><div class=code-block__header><span class=code-block__lang>JSON</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;test&#34;</span><span class=p>:</span> <span class=s2>&#34;copy functionality&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;status&#34;</span><span class=p>:</span> <span class=s2>&#34;active&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nt>&#34;features&#34;</span><span class=p>:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;syntax highlighting&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;copy button&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=s2>&#34;mermaid support&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><h3 id=yaml>YAML</h3><div class=code-block><div class=code-block__header><span class=code-block__lang>YAML</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># Configuración de Hugo</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>baseURL</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://jaem.dev/&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;es&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;JAEM - Blog de José Escobar&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>theme</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;hugo-jaem-theme&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>markup</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>goldmark</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>renderer</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>unsafe</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w> </span><span class=c># Necesario para que funcionen algunos render hooks</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>highlight</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>noClasses</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w> </span><span class=c># true para usar estilos en línea, false para usar clases CSS</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>codeFences</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>guessSyntax</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>lineNos</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w> </span><span class=c># Puedes activarlo globalmente aquí</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>style</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;dracula&#34;</span><span class=w> </span><span class=c># Estilo de Chroma por defecto</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;José Escobar&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Blog sobre desarrollo, tecnología y más.&#34;</span></span></span></code></pre></div></div><h2 id=-configuración-de-hugo>🔧 Configuración de Hugo</h2><p>Para asegurar que el resaltado de sintaxis funcione correctamente, verifica tu archivo de configuración de Hugo (<code>config.toml</code> o <code>hugo.yaml</code>).</p><p><strong>Para <code>config.toml</code>:</strong></p><div class=code-block><div class=code-block__header><span class=code-block__lang>TOML</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-toml data-lang=toml><span class=line><span class=cl><span class=p>[</span><span class=nx>markup</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>markup</span><span class=p>.</span><span class=nx>highlight</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>noClasses</span> <span class=p>=</span> <span class=kc>false</span> <span class=c># Importante para usar CSS externo para el tema</span>
+</span></span><span class=line><span class=cl>    <span class=nx>codeFences</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=nx>guessSyntax</span> <span class=p>=</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>    <span class=nx>lineNos</span> <span class=p>=</span> <span class=kc>false</span> <span class=c># Opciones: false, true, &#34;table&#34;, &#34;inline&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=c># style = &#34;dracula&#34; # Puedes definir un estilo global aquí</span>
+</span></span><span class=line><span class=cl>  <span class=p>[</span><span class=nx>markup</span><span class=p>.</span><span class=nx>goldmark</span><span class=p>.</span><span class=nx>renderer</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=nx>unsafe</span> <span class=p>=</span> <span class=kc>true</span> <span class=c># Necesario para algunos render hooks HTML</span></span></span></code></pre></div></div><p><strong>Para <code>hugo.yaml</code>:</strong></p><div class=code-block><div class=code-block__header><span class=code-block__lang>YAML</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>markup</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>highlight</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>noClasses</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>codeFences</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>guessSyntax</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>lineNos</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c># style: dracula</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>goldmark</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>renderer</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>unsafe</span><span class=p>:</span><span class=w> </span><span class=kc>true</span></span></span></code></pre></div></div><h2 id=-personalización>🎨 Personalización</h2><h3 id=variables-css>Variables CSS</h3><p>Puedes personalizar algunos aspectos visuales de los bloques de código a través de variables CSS definidas en tu archivo de estilos (ej. <code>assets/scss/_variables.scss</code> o <code>static/css/variables.css</code>):</p><div class=code-block><div class=code-block__header><span class=code-block__lang>CSS</span>
+<button class=code-block__copybtn onclick=copyToClipboard(this) title="Copiar código">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Ejemplo de variables (ajusta según tu estructura) */</span>
+</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--code-bg-color</span><span class=p>:</span> <span class=mh>#282a36</span><span class=p>;</span>              <span class=c>/* Fondo del código (Dracula) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--code-text-color</span><span class=p>:</span> <span class=mh>#f8f8f2</span><span class=p>;</span>            <span class=c>/* Color del texto (Dracula) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--code-header-bg-color</span><span class=p>:</span> <span class=mh>#1e1f29</span><span class=p>;</span>       <span class=c>/* Fondo del header del bloque */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--code-header-text-color</span><span class=p>:</span> <span class=mh>#bd93f9</span><span class=p>;</span>     <span class=c>/* Color del texto del header (Dracula Purple) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--code-border-color</span><span class=p>:</span> <span class=mh>#44475a</span><span class=p>;</span>          <span class=c>/* Color del borde (Dracula Selection) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-copy-color</span><span class=p>:</span> <span class=mh>#8be9fd</span><span class=p>;</span>          <span class=c>/* Color del icono copiar (Dracula Cyan) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-copy-hover-color</span><span class=p>:</span> <span class=mh>#50fa7b</span><span class=p>;</span>    <span class=c>/* Color al pasar el ratón (Dracula Green) */</span>
+</span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><p>(Los nombres de las variables y su ubicación pueden variar según el tema).</p><h3 id=estilos-css-personalizados>Estilos CSS Personalizados</h3><p>Los estilos específicos para los bloques de código, el header y el botón de copiar se encuentran generalmente en un archivo CSS dedicado (ej. <code>static/css/code-blocks.css</code> o <code>assets/scss/components/_code-blocks.scss</code>). Puedes modificar estos estilos para adaptarlos a tus preferencias.</p><h2 id=-archivos-clave-del-sistema-ejemplo-de-implementación>📁 Archivos Clave del Sistema (Ejemplo de Implementación)</h2><p>Una implementación típica de estas características involucra:</p><ul><li><strong>Render Hook</strong>: <code>layouts/_default/_markup/render-codeblock.html</code>. Este archivo intercepta los bloques de código Markdown (```) y los envuelve con el HTML necesario para el header, el botón de copiar y aplica las clases para el estilo.</li><li><strong>Shortcode (Opcional)</strong>: <code>layouts/shortcodes/codeblock.html</code>. Si se ofrece un shortcode personalizado.</li><li><strong>JavaScript</strong>: Un archivo JS (ej. <code>assets/js/scripts.js</code> o <code>static/js/main.js</code>) que contiene la lógica para:<ul><li>Funcionalidad del botón de copiar (copiar al portapapeles y cambiar el ícono/texto del botón).</li></ul></li><li><strong>CSS</strong>:<ul><li>Estilos para los bloques de código, header, botón (<code>code-blocks.css</code>).</li><li>Tema de resaltado de sintaxis de Chroma (ej. <code>chroma-syntax.css</code>, generado por Hugo o personalizado).</li><li>Variables de color (<code>variables.css</code>).</li></ul></li></ul><h2 id=-lenguajes-soportados>🌐 Lenguajes Soportados</h2><p>Chroma, el resaltador de sintaxis de Hugo, soporta una vasta cantidad de lenguajes. Algunos de los más comunes incluyen:</p><ul><li><strong>Web</strong>: <code>html</code>, <code>css</code>, <code>javascript</code>, <code>typescript</code>, <code>jsx</code>, <code>tsx</code>, <code>json</code>, <code>xml</code>, <code>svg</code></li><li><strong>Backend</strong>: <code>python</code>, <code>java</code>, <code>csharp</code> (o <code>c#</code>), <code>go</code>, <code>php</code>, <code>ruby</code>, <code>rust</code>, <code>kotlin</code>, <code>scala</code>, <code>swift</code></li><li><strong>Bases de datos</strong>: <code>sql</code>, <code>plsql</code>, <code>mysql</code>, <code>postgresql</code>, <code>sqlite</code></li><li><strong>DevOps & Shell</strong>: <code>bash</code> (o <code>sh</code>), <code>powershell</code> (o <code>ps1</code>), <code>dockerfile</code> (o <code>docker</code>), <code>yaml</code>, <code>toml</code>, <code>ini</code></li><li><strong>Otros</strong>: <code>markdown</code> (o <code>md</code>), <code>c</code>, <code>cpp</code> (o <code>c++</code>), <code>objective-c</code>, <code>perl</code>, <code>lua</code>, <code>r</code>, <code>matlab</code>, <code>latex</code> (o <code>tex</code>)</li></ul><p>Si un lenguaje no es reconocido o el resaltado no es el esperado, asegúrate de estar usando el alias correcto para ese lenguaje.</p><h2 id=-solución-de-problemas>🛠️ Solución de Problemas</h2><ul><li><strong>El botón de copiar no funciona</strong>:<ul><li>Verifica que el script de JavaScript que maneja la copia esté cargándose correctamente en la página.</li><li>Revisa la consola del navegador en busca de errores de JavaScript.</li><li>Asegúrate de que el HTML del bloque de código y el botón tengan las clases o IDs que el script espera.</li></ul></li><li><strong>El resaltado de sintaxis no aparece o es incorrecto</strong>:<ul><li>Confirma que <code>noClasses</code> esté en <code>false</code> en tu configuración de Hugo si usas una hoja de estilos CSS externa para Chroma.</li><li>Verifica que el lenguaje especificado en el bloque de código (ej. ```javascript) sea uno soportado por Chroma y que estés usando el alias correcto.</li><li>Asegúrate de que los estilos CSS para Chroma se estén cargando. Hugo puede generar esto automáticamente o puedes proporcionar tu propio archivo CSS de tema Chroma.</li></ul></li><li><strong>Los estilos no se ven como se espera</strong>:<ul><li>Inspecciona los elementos con las herramientas de desarrollo del navegador para ver qué estilos CSS se están aplicando y si hay conflictos.</li><li>Limpia la caché de tu navegador.</li></ul></li></ul><p>¡Con esta guía, estás listo para crear posts con bloques de código impresionantes, funcionales y fáciles de usar en tu sitio Hugo! 🎉</p></div><div class=py-4><div class="row justify-content-center"><div class="col-12 col-md-4 text-center mb-3"><a href=https://jaem.dev/posts/hugo/ class="btn btn-outline-secondary btn-lg w-100"><i class="bi bi-arrow-left"></i> Volver a Hugo</a></div><div class="col-12 col-md-4 text-center mb-3"><a href=https://jaem.dev/posts/ class="btn btn-outline-secondary btn-lg w-100"><i class="bi bi-grid-3x3-gap"></i> Todos los Posts</a></div><div class="col-12 col-md-4 text-center mb-3"><a href=https://jaem.dev/posts/hugo/guia-inicio-hugo/ class="btn btn-outline-primary btn-lg w-100">Post Siguiente <i class="bi bi-arrow-right"></i>
+<small class="d-block text-light">Guía de Inicio y Uso Básico de …</small></a></div></div></div></div></main><footer class="text-center text-lg-start bg-white text-light bg-opacity-10"><div class="d-flex justify-content-between p-3 text-white bg-light bg-opacity-10"><div class=me-5><span>Redes sociales:</span></div><div class=box-icons><a href=https://twitter.com/J0SE_ESC0BAR title=twitter target=_blank rel="noopener noreferrer" class="text-white me-4"><i class=bi-twitter aria-hidden=true></i>
+</a><a href=https://github.com/J0SE-ESC0BAR title=github target=_blank rel="noopener noreferrer" class="text-white me-4"><i class=bi-github aria-hidden=true></i>
+</a><a href=https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/ title=linkedin target=_blank rel="noopener noreferrer" class="text-white me-4"><i class=bi-linkedin aria-hidden=true></i></a></div></div><section><div class="container text-center text-sm-start mt-5"><div class="row mt-3"><div class="col-sm-4 col-lg-4 col-xl-3 mx-auto mb-4"><h3 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3 text-light"></i>JAEM</h3><p>Esta pagina web fue creada con el fin de compartir mis conocimientos y experiencias y ayudar a las personas para que puedan recordar de forma rapida algun punto específico de algun tema.</p></div><div class="col-sm-4 col-lg-2 col-xl-2 mx-auto mb-4"><h6 class="text-uppercase fw-bold mb-4">Legal</h6><p><a href=#! class=text-light>Terms and conditions</a></p><p><a href=#! class=text-light>Privacy Policy</a></p><p><a href=#! class=text-light>Terms of use</a></p></div><div class="col-sm-4 col-lg-3 col-xl-3 mx-auto mb-sm-0 mb-4"><h6 class="text-uppercase fw-bold mb-4">Contacto</h6><p class=text-break><i class="fas fa-envelope me-3 text-light"></i>josealfonsoescobarmejia@gmail.com</p><p><i class="fas fa-phone me-3 text-light"></i> +503 7678-9687</p></div></div></div></section><div class="text-center p-4" style=background-color:rgba(0,0,0,.025)>Copyright &copy; <time datetime=2025>2025</time> - Diseño Web realizado por</div></footer><script src=https://jaem.dev/js/scripts.js></script><script src=https://jaem.dev/js/lightbox.js></script><script src=https://code.jquery.com/jquery-3.7.1.slim.min.js integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js integrity=sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO crossorigin=anonymous></script></body></html>

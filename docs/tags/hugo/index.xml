@@ -1,33 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Hugo on JAEM</title>
-    <link>https://jaem.dev/tags/hugo/</link>
-    <description>Recent content in Hugo on JAEM</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://jaem.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title>
-      <link>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</guid>
-      <description>&lt;h1 id=&#34;-dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas&#34;&gt;🎨 Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas&lt;/h1&gt;&#xA;&lt;p&gt;Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-características-implementadas&#34;&gt;🚀 Características Implementadas&lt;/h2&gt;&#xA;&lt;p&gt;Este sitio cuenta con un sistema de bloques de código robusto que incluye:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Syntax highlighting nativo de Hugo&lt;/strong&gt; con Chroma.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Soporte para más de 250 lenguajes&lt;/strong&gt; de programación.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Botón de &amp;ldquo;Copiar&amp;rdquo;&lt;/strong&gt; en cada bloque de código para facilitar la reutilización.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Header automático&lt;/strong&gt; que muestra el lenguaje del bloque de código.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Configuración flexible&lt;/strong&gt; mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Tema Dracula&lt;/strong&gt; optimizado para una excelente legibilidad.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Diseño responsive&lt;/strong&gt; que se adapta a cualquier tamaño de pantalla.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Estilos modernos&lt;/strong&gt; con efectos hover y transiciones suaves.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-uso-de-bloques-de-código&#34;&gt;📋 Uso de Bloques de Código&lt;/h2&gt;&#xA;&lt;p&gt;Tienes dos maneras principales de insertar bloques de código en tus posts:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Guía de Inicio y Uso Básico de Hugo</title>
-      <link>https://jaem.dev/posts/hugo/guia-inicio-hugo/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/posts/hugo/guia-inicio-hugo/</guid>
-      <description>&lt;h2 id=&#34;1-crear-un-nuevo-post-en-hugo&#34;&gt;1. Crear un Nuevo Post en Hugo&lt;/h2&gt;&#xA;&lt;p&gt;Para crear un nuevo post, abre la terminal en la ubicación de tu proyecto de Hugo y escribe:&lt;/p&gt;&#xA;&lt;div class=&#34;code-block&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;code-block__header&#34;&gt;&#xD;&#xA;      &lt;span class=&#34;code-block__lang&#34;&gt;BASH&lt;/span&gt;&#xD;&#xA;      &lt;button class=&#34;code-block__copybtn&#34; onclick=&#34;copyToClipboard(this)&#34; title=&#34;Copiar código&#34;&gt;&#xD;&#xA;        &lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xD;&#xA;          &lt;rect x=&#34;9&#34; y=&#34;9&#34; width=&#34;13&#34; height=&#34;13&#34; rx=&#34;2&#34; ry=&#34;2&#34;&gt;&lt;/rect&gt;&#xD;&#xA;          &lt;path d=&#34;M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1&#34;&gt;&lt;/path&gt;&#xD;&#xA;        &lt;/svg&gt;&#xD;&#xA;      &lt;/button&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;    &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new posts/nombre_post.md&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xD;&#xA;  &lt;/div&gt;&lt;script&gt;&#xD;&#xA;      function copyToClipboard(button) {&#xD;&#xA;        const codeBlock = button.closest(&#39;.code-block&#39;).querySelector(&#39;code&#39;);&#xD;&#xA;        if (codeBlock) {&#xD;&#xA;          const textToCopy = codeBlock.textContent || codeBlock.innerText;&#xD;&#xA;          navigator.clipboard.writeText(textToCopy).then(() =&gt; {&#xD;&#xA;            const originalContent = button.innerHTML;&#xD;&#xA;            button.innerHTML = &#39;&lt;svg width=&#34;16&#34; height=&#34;16&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;polyline points=&#34;20,6 9,17 4,12&#34;&gt;&lt;/polyline&gt;&lt;/svg&gt;&#39;;&#xD;&#xA;            button.style.color = &#39;#10b981&#39;;&#xD;&#xA;            setTimeout(() =&gt; {&#xD;&#xA;              button.innerHTML = originalContent;&#xD;&#xA;              button.style.color = &#39;&#39;;&#xD;&#xA;            }, 2000);&#xD;&#xA;          }).catch(err =&gt; {&#xD;&#xA;            console.error(&#39;Error al copiar el código: &#39;, err);&#xD;&#xA;            alert(&#39;No se pudo copiar el código&#39;);&#xD;&#xA;          });&#xD;&#xA;        }&#xD;&#xA;      }&#xD;&#xA;    &lt;/script&gt;&lt;p&gt;Esto generará un archivo Markdown dentro de &lt;code&gt;content/posts/&lt;/code&gt;. Por ejemplo, si deseas crear un post dentro de un directorio específico:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Integración y Uso de Diagramas Mermaid en Hugo</title>
-      <link>https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/</guid>
-      <description>&lt;h1 id=&#34;-integración-y-uso-de-diagramas-mermaid-en-hugo&#34;&gt;🎨 Integración y Uso de Diagramas Mermaid en Hugo&lt;/h1&gt;&#xA;&lt;p&gt;Los diagramas Mermaid te permiten crear una amplia variedad de visualizaciones complejas (diagramas de flujo, secuencia, Gantt, etc.) directamente desde texto, de manera similar a Markdown. En este sitio, el soporte para Mermaid ya está configurado y listo para que lo uses en tus posts.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-cómo-usar-mermaid&#34;&gt;🚀 Cómo Usar Mermaid&lt;/h2&gt;&#xA;&lt;p&gt;Para crear un diagrama Mermaid en cualquier post, simplemente usa un bloque de código estándar de Markdown con el lenguaje especificado como &lt;code&gt;mermaid&lt;/code&gt;:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on JAEM</title><link>https://jaem.dev/tags/hugo/</link><description>Recent content in Hugo on JAEM</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jaem.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title><link>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</link><pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate><guid>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</guid><description>&lt;h1 id="-dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas">🎨 Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas&lt;/h1>
+&lt;p>Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.&lt;/p>
+&lt;h2 id="-características-implementadas">🚀 Características Implementadas&lt;/h2>
+&lt;p>Este sitio cuenta con un sistema de bloques de código robusto que incluye:&lt;/p>
+&lt;ul>
+&lt;li>✅ &lt;strong>Syntax highlighting nativo de Hugo&lt;/strong> con Chroma.&lt;/li>
+&lt;li>✅ &lt;strong>Soporte para más de 250 lenguajes&lt;/strong> de programación.&lt;/li>
+&lt;li>✅ &lt;strong>Botón de &amp;ldquo;Copiar&amp;rdquo;&lt;/strong> en cada bloque de código para facilitar la reutilización.&lt;/li>
+&lt;li>✅ &lt;strong>Header automático&lt;/strong> que muestra el lenguaje del bloque de código.&lt;/li>
+&lt;li>✅ &lt;strong>Configuración flexible&lt;/strong> mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).&lt;/li>
+&lt;li>✅ &lt;strong>Tema Dracula&lt;/strong> optimizado para una excelente legibilidad.&lt;/li>
+&lt;li>✅ &lt;strong>Diseño responsive&lt;/strong> que se adapta a cualquier tamaño de pantalla.&lt;/li>
+&lt;li>✅ &lt;strong>Estilos modernos&lt;/strong> con efectos hover y transiciones suaves.&lt;/li>
+&lt;/ul>
+&lt;h2 id="-uso-de-bloques-de-código">📋 Uso de Bloques de Código&lt;/h2>
+&lt;p>Tienes dos maneras principales de insertar bloques de código en tus posts:&lt;/p></description></item><item><title>Guía de Inicio y Uso Básico de Hugo</title><link>https://jaem.dev/posts/hugo/guia-inicio-hugo/</link><pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate><guid>https://jaem.dev/posts/hugo/guia-inicio-hugo/</guid><description>&lt;h2 id="1-crear-un-nuevo-post-en-hugo">1. Crear un Nuevo Post en Hugo&lt;/h2>
+&lt;p>Para crear un nuevo post, abre la terminal en la ubicación de tu proyecto de Hugo y escribe:&lt;/p>
+&lt;div class="code-block">
+ &lt;div class="code-block__header">
+ &lt;span class="code-block__lang">BASH&lt;/span>
+ &lt;button class="code-block__copybtn" onclick="copyToClipboard(this)" title="Copiar código">
+ &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ &lt;rect x="9" y="9" width="13" height="13" rx="2" ry="2">&lt;/rect>
+ &lt;path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">&lt;/path>
+ &lt;/svg>
+ &lt;/button>
+ &lt;/div>
+ &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new posts/nombre_post.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+ &lt;/div>&lt;script>
+ function copyToClipboard(button) {
+ const codeBlock = button.closest('.code-block').querySelector('code');
+ if (codeBlock) {
+ const textToCopy = codeBlock.textContent || codeBlock.innerText;
+ navigator.clipboard.writeText(textToCopy).then(() => {
+ const originalContent = button.innerHTML;
+ button.innerHTML = '&lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">&lt;polyline points="20,6 9,17 4,12">&lt;/polyline>&lt;/svg>';
+ button.style.color = '#10b981';
+ setTimeout(() => {
+ button.innerHTML = originalContent;
+ button.style.color = '';
+ }, 2000);
+ }).catch(err => {
+ console.error('Error al copiar el código: ', err);
+ alert('No se pudo copiar el código');
+ });
+ }
+ }
+ &lt;/script>&lt;p>Esto generará un archivo Markdown dentro de &lt;code>content/posts/&lt;/code>. Por ejemplo, si deseas crear un post dentro de un directorio específico:&lt;/p></description></item><item><title>Integración y Uso de Diagramas Mermaid en Hugo</title><link>https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/</link><pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate><guid>https://jaem.dev/posts/hugo/diagramas-mermaid-hugo/</guid><description>&lt;h1 id="-integración-y-uso-de-diagramas-mermaid-en-hugo">🎨 Integración y Uso de Diagramas Mermaid en Hugo&lt;/h1>
+&lt;p>Los diagramas Mermaid te permiten crear una amplia variedad de visualizaciones complejas (diagramas de flujo, secuencia, Gantt, etc.) directamente desde texto, de manera similar a Markdown. En este sitio, el soporte para Mermaid ya está configurado y listo para que lo uses en tus posts.&lt;/p>
+&lt;h2 id="-cómo-usar-mermaid">🚀 Cómo Usar Mermaid&lt;/h2>
+&lt;p>Para crear un diagrama Mermaid en cualquier post, simplemente usa un bloque de código estándar de Markdown con el lenguaje especificado como &lt;code>mermaid&lt;/code>:&lt;/p></description></item></channel></rss>
