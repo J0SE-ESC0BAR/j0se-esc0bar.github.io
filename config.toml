@@ -83,7 +83,7 @@ publishDir = "docs"
   # Ordenar por fecha descendente (más nuevo primero)
   defaultContentOrder = "-date"
   # Post destacado en la página de inicio
-  featuredPost = "posts/Dotnet/WindowsForms/"  # Ruta relativa al post destacado
+  featuredPost = "posts/Dotnet/WindowsForms"  # Ruta relativa al post destacado
   showFeaturedPost = true  # true para mostrar, false para ocultar  # Hojas de estilo adicionales (Bootstrap y highlight.js)
   css = [
     "/css/chroma-syntax.css", # Estilos para el resaltado de sintaxis de Chroma

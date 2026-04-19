@@ -146,19 +146,24 @@ class CustomLightbox {
     document.addEventListener('mouseup', () => this.endDrag());
     
     // Eventos táctiles para móviles
-    this.image.addEventListener('touchstart', (e) => this.startDrag(e.touches[0]));
-    document.addEventListener('touchmove', (e) => this.drag(e.touches[0]));
+    this.image.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches[0]) this.startDrag(e.touches[0]);
+    });
+    document.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) this.drag(e.touches[0]);
+    });
     document.addEventListener('touchend', () => this.endDrag());
     
     // Rueda del ratón para zoom
     this.image.addEventListener('wheel', (e) => {
+      if (!this.overlay.classList.contains('active')) return;
       e.preventDefault();
       if (e.deltaY < 0) {
         this.zoomIn();
       } else {
         this.zoomOut();
       }
-    });
+    }, { passive: false });
   }
   
   openLightbox(clickedImg) {
@@ -186,6 +191,9 @@ class CustomLightbox {
     const currentImg = this.images[this.currentIndex];
     if (!currentImg) return;
     
+    this.image.onerror = () => {
+      this.image.src = '/images/no-img.png';
+    };
     this.image.src = currentImg.src;
     this.image.alt = currentImg.alt;
     
@@ -276,12 +284,11 @@ class CustomLightbox {
 
 // Inicializar lightbox cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-  new CustomLightbox();
+  window.lightboxInstance = new CustomLightbox();
 });
 
 // Reinicializar cuando hay cambios dinámicos en el contenido
 document.addEventListener('contentChanged', () => {
-  // Para casos donde se carga contenido dinámicamente
   if (window.lightboxInstance) {
     window.lightboxInstance.collectImages();
   }

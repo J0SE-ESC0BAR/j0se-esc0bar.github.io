@@ -46,7 +46,7 @@
 
               {{ if and .IsSection (gt (len .Pages) 0) }}
               <p class="mb-0 mt-auto">
-                <span class="badge bg-primary">{{ len .Pages }} artículos</span>
+                <span class="badge bg-primary">{{ len .Pages }} {{ if eq (len .Pages) 1 }}artículo{{ else }}artículos{{ end }}</span>
               </p>
               {{ end }}
             </div>
@@ -76,7 +76,7 @@
         </p>
         {{ if and .IsSection (gt (len .Pages) 0) }}
         <p class="mb-0 mt-auto">
-          <span class="badge bg-primary">{{ len .Pages }} artículos</span>
+          <span class="badge bg-primary">{{ len .Pages }} {{ if eq (len .Pages) 1 }}artículo{{ else }}artículos{{ end }}</span>
         </p>
         {{ end }}
       </div>

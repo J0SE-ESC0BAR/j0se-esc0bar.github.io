@@ -18,6 +18,19 @@
   object-fit: cover;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 1.25rem;
+  background-size: 60%;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 /* Summary Cards */
 .summary {
   background: var(--card-bg-color);
@@ -268,7 +281,9 @@ pre code.hljs {
 }
 
 .card-img-top {
-  height: 180px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -284,8 +299,6 @@ pre code.hljs {
 }
 
 /* List Controls */
-.list-controls-container {
-}
 
 .list-controls-container .text-end {
   text-align: right !important;
@@ -325,7 +338,8 @@ body {
 /* Normalización de altura para cards e imágenes */
 #itemsContainer .card-img-top {
     width: 100%;
-    height: 180px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
 
@@ -388,12 +402,6 @@ body {
     }
 }
 
-/* Card body creciendo para empujar el botón al fondo */
-#itemsContainer .card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
 
 /* Estilos anteriores de cards - eliminando height: 100% duplicado */
 .card {
@@ -409,7 +417,7 @@ body {
 
 
 
-body.list-view .grid-item {
+html.list-view .grid-item {
     display: none; /* Oculta los items de grid cuando el body tiene la clase list-view */
 }
 
@@ -455,8 +463,19 @@ body.list-view .grid-item {
     text-overflow: ellipsis;
 }
 
+/* Truncado uniforme de texto en tarjetas */
+.line-clamp,
+.card-text.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Cuando se activa la vista de lista */
-body.list-view .grid-item {
+html.list-view .grid-item {
     display: none !important; /* Forzamos ocultar elementos de cuadrícula */
 }
 
@@ -486,23 +505,20 @@ body.list-view .grid-item {
 */
 
 /* Estilos para la vista de lista usando tarjetas horizontales */
-#listView .card,
-.featured-post-container #featuredListView .card {
+#listView .card {
   background-color: var(--card-bg-color);
   color: var(--card-text-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  animation: slideIn 0.3s ease-in-out; /* Asegurar que la animación también se aplique */
+  animation: slideIn 0.3s ease-in-out;
 }
 
-#listView .card:hover,
-.featured-post-container #featuredListView .card:hover {
+#listView .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 /* Tamaño personalizado para contenedor de imágenes en vista lista */
-#listView .ratio.ratio-16x9,
-.featured-post-container #featuredListView .ratio.ratio-16x9 {
+#listView .ratio.ratio-16x9 {
   flex: 0 0 25rem;
 }
 
@@ -510,51 +526,42 @@ body.list-view .grid-item {
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
 }
 
-
-
-#listView .card-body,
-.featured-post-container #featuredListView .card-body {
+#listView .card-body {
   padding: 1.25rem;
 }
 
-#listView .btn-primary,
-.featured-post-container #featuredListView .btn-primary {
+#listView .btn-primary {
   background-color: var(--highlight-color);
   border-color: var(--highlight-color);
 }
 
 /* Ajustes responsivos para la vista de lista */
-/* Reglas específicas para mantener el layout horizontal en móviles */
 @media (max-width: 768px) and (min-width: 576px) {
-  #listView .card,
-  .featured-post-container #featuredListView .card {
+  #listView .card {
     flex-direction: row !important;
   }
-  
-  #listView .ratio,
-  .featured-post-container #featuredListView .ratio {
+
+  #listView .ratio {
     flex: 0 0 160px !important;
     width: 160px !important;
   }
-  
-  #listView .ratio .rounded-start,
-  .featured-post-container #featuredListView .ratio .rounded-start {
+
+  #listView .ratio .rounded-start {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-  
-  #listView .card-body,
-  .featured-post-container #featuredListView .card-body {
+
+  #listView .card-body {
     padding: 0.75rem;
   }
 }
 
 /* Estilos específicos para #listView y #gridView (control de visibilidad global) */
-body:not(.list-view) #listView {
+html:not(.list-view) #listView {
   display: none !important;
 }
 
-body.list-view #gridView {
+html.list-view #gridView {
   display: none !important;
 }
 
@@ -563,39 +570,40 @@ body.list-view #gridView {
   margin-bottom: 2rem;
 }
 
-/* Por defecto (pantallas > 576px): El post destacado SIEMPRE en vista de lista */
-.featured-post-container #featuredListView {
-  display: flex !important;
-}
-.featured-post-container #featuredGridView {
-  display: none !important;
+.featured-card {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  border-radius: 0.375rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
 }
 
-/* En pantallas ≤ 576px (MÓVIL): El post destacado SIEMPRE en vista de cuadrícula */
+.featured-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.featured-card-img {
+  flex: 0 0 25rem;
+  overflow: hidden;
+}
+
+.featured-card-img img {
+  border-radius: 0.375rem 0 0 0.375rem;
+}
+
+/* En mobile: tarjeta vertical */
 @media (max-width: 576px) {
-  .featured-post-container #featuredListView {
-    display: none !important;
+  .featured-card {
+    flex-direction: column !important;
   }
-  .featured-post-container #featuredGridView {
-    display: block !important;
+  .featured-card-img {
+    flex: none;
+    height: 180px;
+    width: 100%;
   }
-  
-  /* Ajustes específicos para la cuadrícula del destacado en móvil */
-  .featured-post-container #featuredGridView .row {
-    margin: 0;
-  }
-  .featured-post-container #featuredGridView .col {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0;
+  .featured-card-img img {
+    border-radius: 0.375rem 0.375rem 0 0;
   }
 }
 
-/* Hacer invisibles los contenedores según la vista activa */
-body:not(.list-view) #listView {
-  display: none !important;
-}
-
-body.list-view #gridView {
-  display: none !important;
-}

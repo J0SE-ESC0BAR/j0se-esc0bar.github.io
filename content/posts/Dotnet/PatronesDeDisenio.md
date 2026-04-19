@@ -6,7 +6,6 @@ image: images/desainPatternsNet.png
 draft: false
 viewimg: true
 ---
----
 
 ### 1. Patrones Creacionales
 

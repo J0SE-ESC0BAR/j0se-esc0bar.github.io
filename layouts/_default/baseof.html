@@ -41,26 +41,11 @@
     {{ end }}
   {{ end }}
   
-  <!-- Script para evitar el parpadeo de vistas -->
+  <!-- Aplicar preferencia de vista antes del primer render -->
   <script>
-    /* Evitar FOUC: ocultamos mientras decidimos */
-    document.documentElement.classList.add('preload');
-    
     (function() {
-      const pref = localStorage.getItem('vistaPreferida') || 'list';  // 'grid' | 'list'
-      
-      // Aplicamos clases tanto al HTML como al body para máxima compatibilidad
-      if (pref === 'grid') {
-        document.documentElement.classList.add('grid-view');
-        document.documentElement.classList.remove('list-view');
-        document.body.classList.add('grid-view');
-        document.body.classList.remove('list-view');
-      } else {
-        document.documentElement.classList.add('list-view');
-        document.documentElement.classList.remove('grid-view');
-        document.body.classList.add('list-view');
-        document.body.classList.remove('grid-view');
-      }
+      var pref = localStorage.getItem('vistaPreferida') || 'list';
+      document.documentElement.classList.add(pref === 'grid' ? 'grid-view' : 'list-view');
     })();
   </script>
 </head>

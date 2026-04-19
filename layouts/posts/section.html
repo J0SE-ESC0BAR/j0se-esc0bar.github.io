@@ -38,7 +38,7 @@
             {{ end }}
           {{ if gt (len .Pages) 0 }}
           <p class="posts-meta mb-0">
-            <span class="badge bg-primary">{{ len .Pages }} posts</span>
+            <span class="badge bg-primary">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</span>
           </p>
           {{ end }}
         </div>

@@ -47,7 +47,7 @@ el header */}}
 
               {{ if and .IsSection (gt (len .Pages) 0) }}
               <p class="mb-0 mt-auto">
-                <span class="badge bg-primary">{{ len .Pages }} posts</span>
+                <span class="badge bg-primary">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</span>
               </p>
               {{ end }}
             </div>
@@ -76,7 +76,7 @@ el header */}}
         </p>
         {{ if and .IsSection (gt (len .Pages) 0) }}
         <p class="mb-0 mt-auto">
-          <span class="badge bg-primary">{{ len .Pages }} posts</span>
+          <span class="badge bg-primary">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</span>
         </p>
         {{ end }}
       </div>

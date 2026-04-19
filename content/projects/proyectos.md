@@ -1,5 +1,6 @@
 ---
 title: 'Mis proyectos'
+date: 2024-01-01T00:00:00-06:00
 description: "Algunos de los proyectos que e realizado los tengo aquí."
 image: images/Proyectos.png
 draft: false

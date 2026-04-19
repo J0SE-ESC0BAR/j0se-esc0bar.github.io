@@ -1,67 +1,36 @@
-<script>
-  (function () {
-    if (!window.matchMedia("(max-width: 768px)").matches) return;
-    if (localStorage.getItem('menuShouldCloseOnLoad') !== 'true') return;
-  
-    document.addEventListener("DOMContentLoaded", () => {
-      const menu = document.querySelector(".nav-menu");
-      if (!menu) return;
-  
-      /* 1️  Mostrar sin transición */
-      menu.classList.add("nav-menu_visible", "no-transition");
-      void menu.offsetHeight;                 // forzar reflujo
-      menu.classList.remove("no-transition"); // reactivamos la transición
-  
-      /* 2️  En el siguiente frame → quitar visible ⇒ anima cierre */
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {         // segundo frame para asegurar pintado
-          menu.classList.remove("nav-menu_visible");
-          localStorage.removeItem('menuShouldCloseOnLoad');
-        });
-      });
-    });
-  })();
-  </script>
-<header class='header'>
-  <nav class="nav">
-    <!-- 1) Enlace al Home con absLangURL -->
-    <a class="header-logo" href="{{ "/" | absLangURL }}">{{ .Site.Title }}</a>
+<header class="site-header">
+  <nav class="site-nav">
+    <a class="site-logo" href="{{ "/" | absLangURL }}">{{ .Site.Title }}</a>
 
-    <!-- Botón toggle para móvil -->
-    <button class="nav-toggle" aria-label="Abrir menú">
-      <i class="bi bi-list"></i>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
     </button>
 
-    <ul class="nav-menu">
+    <ul class="nav-links">
       {{ $currentPage := . }}
-      
       {{ range .Site.Menus.main.ByWeight.Reverse }}
         {{ $menuURL := .URL | relLangURL }}
         {{ $pageURL := $currentPage.RelPermalink }}
-
         {{ $isCurrent := false }}
         {{ if eq $menuURL "/" }}
-            {{ if $currentPage.IsHome }}
-                {{ $isCurrent = true }}
-            {{ end }}
+          {{ if $currentPage.IsHome }}{{ $isCurrent = true }}{{ end }}
         {{ else }}
-            {{ if hasPrefix $pageURL $menuURL }}
-                {{ $isCurrent = true }}
-            {{ end }}
+          {{ if hasPrefix $pageURL $menuURL }}{{ $isCurrent = true }}{{ end }}
         {{ end }}
-        
         {{ $isDisabled := .Params.disabled | default false }}
-        
-        <li class="menu-item-{{ if .Identifier }}{{ .Identifier }}{{ else }}{{ .Name | urlize }}{{ end }}{{ if $isCurrent }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}">
-          <a class="nav-menu-link nav-link{{ if $isCurrent }} active{{ end }}{{ if $isDisabled }} disabled{{ end }}"
+
+        <li class="nav-item{{ if $isCurrent }} is-active{{ end }}{{ if $isDisabled }} is-disabled{{ end }}">
+          <a class="nav-item__link"
              {{ if not $isDisabled }}href="{{ $menuURL }}"{{ end }}
              {{ if $isCurrent }}aria-current="page"{{ end }}
-             {{ if $isDisabled }}tabindex="-1" aria-disabled="true"{{ end }}>
+             {{ if $isDisabled }}tabindex="-1" aria-disabled="true" title="Próximamente"{{ end }}>
             {{ .Name }}
           </a>
         </li>
       {{ end }}
     </ul>
-    
   </nav>
 </header>
+<div class="sidebar-overlay"></div>

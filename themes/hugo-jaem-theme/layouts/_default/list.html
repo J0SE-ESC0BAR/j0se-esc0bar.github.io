@@ -7,7 +7,7 @@
   </div>
   
   {{ .Content }}
-  {{ range.Pages }}
+  {{ range .Pages }}
     {{ .Render "summary" }}
   {{ end }}
 {{ end }}

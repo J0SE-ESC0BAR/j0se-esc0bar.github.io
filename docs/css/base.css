@@ -13,40 +13,11 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Estilos para evitar el parpadeo entre vistas --------------- */
-.preload #gridView,
-.preload #listView { visibility: hidden !important; }
-
-/* Mostrar según clase puesta en HTML o BODY ------------------- */
-html.grid-view #gridView,
-body.grid-view #gridView { 
-  display: block !important; 
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-html.grid-view #listView,
-body.grid-view #listView { 
-  display: none !important; 
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-html.list-view #listView,
-body.list-view #listView { 
-  display: flex !important; 
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-html.list-view #gridView,
-body.list-view #gridView { 
-  display: none !important; 
-  opacity: 0;
-  transform: translateY(10px);
-}
+/* Mostrar según clase puesta en HTML ------------------- */
+html.grid-view #gridView { display: block !important; }
+html.grid-view #listView { display: none !important; }
+html.list-view #listView { display: flex !important; }
+html.list-view #gridView { display: none !important; }
 
 a {
   overflow-wrap: break-word;

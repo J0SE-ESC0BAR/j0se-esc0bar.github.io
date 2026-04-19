@@ -1,7 +1,8 @@
 ---
 title: 'Página web Pastelería'
+date: 2021-09-01T00:00:00-06:00
 description: "Una página web para una pastelería diseñada durante un curso de full stack en 2021."
-image: /images/web_pasteleria.png
+image: images/web_pasteleria.png
 draft: false
 viewimg: true
 tags: ["Desarrollo Web", "Full Stack", "Diseño Web"]

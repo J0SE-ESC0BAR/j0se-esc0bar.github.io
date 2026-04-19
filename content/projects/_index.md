@@ -5,4 +5,7 @@ image: images/no-img.png
 draft: false
 viewimg: false
 layout: "root"
+aliases:
+  - /proyectos/
+  - /proyectos
 ---

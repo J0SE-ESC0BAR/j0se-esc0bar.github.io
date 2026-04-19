@@ -1,7 +1,8 @@
 {
     "firstSlide": "images/Dino.jpg",
     "firstLabel": "El potencial de la IA",
-    "firstDescription": "Dinosaurio generado por IA",    "secondSlide": "images/JAEM.png",
+    "firstDescription": "Dinosaurio generado por IA",
+    "secondSlide": "images/JAEM.png",
     "secondLabel": "Conectando con el Futuro",
     "secondDescription": "Tecnología, soluciones y tutoriales en un solo lugar.",
 

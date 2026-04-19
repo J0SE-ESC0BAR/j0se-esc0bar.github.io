@@ -103,7 +103,7 @@ ul {
   blockquote p {
     font-size: 20px;
     display: inline;
-    color: var(--color-base-text);
+    color: var(--text-color);
   }
   img {
     margin: 40px 0 40px 0;
@@ -129,7 +129,7 @@ ul {
   }
   code,
   pre {
-    font-family: var(--font-family-monospace);
+    font-family: var(--font-family-mono, 'Consolas', 'Monaco', 'Courier New', monospace);
   }
   .highlight {
     pre {
@@ -138,7 +138,7 @@ ul {
       line-height: 18px;
       padding: 30px;
       overflow: auto;
-      font-family: var(--font-family-monospace);
+      font-family: var(--font-family-mono, 'Consolas', 'Monaco', 'Courier New', monospace);
     }
   }
 }

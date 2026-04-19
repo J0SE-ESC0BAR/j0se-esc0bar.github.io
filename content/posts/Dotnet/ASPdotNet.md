@@ -5,7 +5,6 @@ description: '**ASP.NET** es un framework de desarrollo web creado por Microsoft
 image: images/ASP.NET.png
 draft: false
 ---
----
 
 ### Características Principales de ASP.NET
 

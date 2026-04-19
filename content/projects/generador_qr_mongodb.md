@@ -1,7 +1,8 @@
 ---
 title: 'Generador de códigos QR con Python conectado a MongoDB'
+date: 2023-06-15T00:00:00-06:00
 description: "Un proyecto que utiliza Python para generar códigos QR y MongoDB para la gestión de datos."
-image: /images/Open_Qr.png
+image: images/Open_Qr.png
 draft: false
 viewimg: true
 tags: ["Python", "MongoDB", "Códigos QR"]

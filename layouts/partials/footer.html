@@ -9,7 +9,7 @@
 <!-- Left -->
 <!-- Right -->
 <div class="box-icons">
-  {{ range .Site.Data.social.links }}
+  {{ range hugo.Data.social.links }}
 <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener noreferrer" class="text-white me-4">
 <i class="{{ .icon }}" aria-hidden="true"></i>
 </a>
@@ -70,7 +70,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-    Copyright &copy; <time datetime="{{ now.Format "2006" }}">{{ now.Format "2006" }}</time> - Diseño Web realizado por {{ .Site.Author.name }}
+    Copyright &copy; <time datetime="{{ now.Format "2006" }}">{{ now.Format "2006" }}</time> - Diseño Web realizado por {{ .Site.Params.name }}
   </div>
   <!-- Copyright -->
 </footer>

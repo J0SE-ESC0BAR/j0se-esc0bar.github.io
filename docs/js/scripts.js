@@ -1,34 +1,69 @@
 // ---------------- MENÚ HAMBURGUESA ----------------
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu   = document.querySelector(".nav-menu");
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks   = document.querySelector(".nav-links");
+const overlay    = document.querySelector(".sidebar-overlay");
 
-// A) toggle normal
-if (navToggle && navMenu) {
-  navToggle.addEventListener("click", () => {
-    const abierto = navMenu.classList.toggle("nav-menu_visible");
-    navToggle.setAttribute(
-      "aria-label",
-      abierto ? "Cerrar menú" : "Abrir menú"
-    );
-    // Si lo cerró manualmente, limpiamos el flag
-    if (!abierto) localStorage.removeItem('menuShouldCloseOnLoad');
+function openMenu() {
+  if (!navLinks) return;
+  navLinks.classList.add("is-open");
+  if (menuToggle) {
+    menuToggle.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Cerrar menú");
+  }
+  if (overlay) overlay.classList.add("is-visible");
+  localStorage.setItem("menuOpen", "true");
+}
+
+function closeMenu() {
+  if (!navLinks) return;
+  navLinks.classList.remove("is-open");
+  if (menuToggle) {
+    menuToggle.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Abrir menú");
+  }
+  if (overlay) overlay.classList.remove("is-visible");
+  localStorage.setItem("menuOpen", "false");
+}
+
+if (menuToggle && navLinks) {
+  // A) Al cargar: si estaba abierto, mostrar y animar cierre
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    if (localStorage.getItem("menuOpen") === "true") {
+      navLinks.classList.add("is-open", "no-transition");
+      menuToggle.classList.add("is-open");
+      void navLinks.offsetHeight;
+      navLinks.classList.remove("no-transition");
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          closeMenu();
+        });
+      });
+    }
+  }
+
+  // B) Toggle con el botón hamburguesa
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    navLinks.classList.contains("is-open") ? closeMenu() : openMenu();
   });
 
-  // B) marcar «mantener abierto» cuando pincha un enlace del menú
-  //    (solo en pantallas <= 768 px)
-  document.querySelectorAll(".nav-menu-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        localStorage.setItem("menuShouldCloseOnLoad", "true");
-      }
-    });
+  // C) Cerrar al hacer clic en el overlay
+  if (overlay) {
+    overlay.addEventListener("click", closeMenu);
+  }
+
+  // D) Cerrar al hacer clic fuera del menú
+  document.addEventListener("click", (e) => {
+    if (!window.matchMedia("(max-width: 768px)").matches) return;
+    if (!navLinks.classList.contains("is-open")) return;
+    if (navLinks.contains(e.target) || menuToggle.contains(e.target)) return;
+    closeMenu();
   });
 }
 
-// Código para tu menú (opcional)
 document.addEventListener("DOMContentLoaded", () => {
-  // Quitar la clase preload para mostrar el contenido
-  document.documentElement.classList.remove('preload');
   
   // Manejar bloques de código con estructura predefinida
   document.querySelectorAll(".code-block__copybtn").forEach((btn) => {
@@ -123,11 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-  const e = document.getElementById("list");
-  if (e) {
-    const t = localStorage.getItem("vistaPreferida") || "lista";
-    e.classList.add(t), actualizarTextoBoton(t);
-  }
 });
 
 // Grid/List view toggle for posts and proyectos
@@ -266,10 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cargar preferencia del usuario o usar la vista de lista por defecto
     var preferredView = localStorage.getItem('vistaPreferida') || 'list';
     syncAllViewButtons(preferredView);
-    
-    // Mostrar el contenido al quitar la clase 'preload'
-    document.documentElement.classList.remove('preload');
-    
+
     // Agregar evento de cambio de tamaño de ventana
     window.addEventListener('resize', handleResize);
   });

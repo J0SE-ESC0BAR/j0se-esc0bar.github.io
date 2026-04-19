@@ -1,7 +1,8 @@
 ---
 title: 'Juego en Scratch'
+date: 2019-01-01T00:00:00-06:00
 description: "Un juego creado en Scratch en 2019."
-image: /images/Terraria_OtherWold.png
+image: images/Terraria_OtherWold.png
 draft: false
 viewimg: true
 tags: ["Scratch", "Desarrollo de Juegos"]

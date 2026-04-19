@@ -27,10 +27,16 @@
 .intro-about {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el h1 y p verticalmente DENTRO de esta columna */
-  padding: 0.5rem; /* Espacio opcional dentro de la columna de texto */
-  flex-basis: 70%; /* El texto ocupa el 70% del espacio */
+  justify-content: center;
+  padding: 0.5rem;
+  flex-basis: 70%;
   max-width: 70%;
+}
+
+.intro-about h1,
+.intro-about p {
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .intro .intro-content {
@@ -186,7 +192,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .intro-container {
-    grid-template-columns: 1fr auto;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
