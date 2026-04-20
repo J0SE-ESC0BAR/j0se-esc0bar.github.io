@@ -10,7 +10,7 @@
 
 {{/* Mostrar los posts usando el partial existente */}}
 {{ if gt (len $latestPosts) 0 }}
-  <h2>Últimos posts 🕒</h2>
+  <h2><i class="bi bi-clock-history"></i> Últimos posts</h2>
   {{ partial "posts_grid_list.html" (dict "Pages" $latestPosts "Context" $context "ViewContainerClass" "home-posts-container") }}
 {{ else }}
 <div class="container py-5 text-center">

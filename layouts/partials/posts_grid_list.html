@@ -36,7 +36,7 @@ el header */}}
           <div class="card hover-zoom">
             {{ $fallbackImg := "/images/no-img.png" | relURL }}
             <img src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
-              class="card-img-top object-fit-cover" alt="Imagen de {{ .Title }}" loading="lazy"
+              class="card-img-top object-fit-cover" alt="Imagen de {{ .Title }}" loading="lazy" decoding="async"
               onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ .Title }}</h5>
@@ -65,8 +65,8 @@ el header */}}
       <div class="ratio ratio-16x9">
         {{ $fallbackImg := "/images/no-img.png" | relURL }}
         <img src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
-          class="object-fit-cover rounded-start" alt="Imagen de {{ .Title }}"
-          onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">  
+          class="object-fit-cover rounded-start" alt="Imagen de {{ .Title }}" loading="lazy" decoding="async"
+          onerror="this.onerror=null;this.src='{{ $fallbackImg }}';">
       </div>
       <div class="card-body d-flex flex-column">
         <h5 class="card-title mb-1">{{ .Title }}</h5>

@@ -8,24 +8,24 @@ tags: ["Hugo", "Bloques de Código", "Syntax Highlighting", "Chroma", "Desarroll
 viewimg: true
 ---
 
-# 🎨 Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas
+# Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas
 
 Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.
 
-## 🚀 Características Implementadas
+## Características Implementadas
 
 Este sitio cuenta con un sistema de bloques de código robusto que incluye:
 
-- ✅ **Syntax highlighting nativo de Hugo** con Chroma.
-- ✅ **Soporte para más de 250 lenguajes** de programación.
-- ✅ **Botón de "Copiar"** en cada bloque de código para facilitar la reutilización.
-- ✅ **Header automático** que muestra el lenguaje del bloque de código.
-- ✅ **Configuración flexible** mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).
-- ✅ **Tema Dracula** optimizado para una excelente legibilidad.
-- ✅ **Diseño responsive** que se adapta a cualquier tamaño de pantalla.
-- ✅ **Estilos modernos** con efectos hover y transiciones suaves.
+- **Syntax highlighting nativo de Hugo** con Chroma.
+- **Soporte para más de 250 lenguajes** de programación.
+- **Botón de "Copiar"** en cada bloque de código para facilitar la reutilización.
+- **Header automático** que muestra el lenguaje del bloque de código.
+- **Configuración flexible** mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).
+- **Tema Dracula** optimizado para una excelente legibilidad.
+- **Diseño responsive** que se adapta a cualquier tamaño de pantalla.
+- **Estilos modernos** con efectos hover y transiciones suaves.
 
-## 📋 Uso de Bloques de Código
+## Uso de Bloques de Código
 
 Tienes dos maneras principales de insertar bloques de código en tus posts:
 
@@ -77,7 +77,7 @@ def create_mermaid_diagram():
     return f"{diagram_type}\\n" + "\\n".join(nodes + connections)
 ```
 
-## 📝 Ejemplos por Lenguaje
+## Ejemplos por Lenguaje
 
 Aquí tienes una variedad de ejemplos para demostrar las capacidades del resaltado:
 
@@ -305,7 +305,7 @@ params:
   description: "Blog sobre desarrollo, tecnología y más."
 ```
 
-## 🔧 Configuración de Hugo
+## Configuración de Hugo
 
 Para asegurar que el resaltado de sintaxis funcione correctamente, verifica tu archivo de configuración de Hugo (`config.toml` o `hugo.yaml`).
 
@@ -336,7 +336,7 @@ markup:
       unsafe: true
 ```
 
-## 🎨 Personalización
+## Personalización
 
 ### Variables CSS
 
@@ -360,7 +360,7 @@ Puedes personalizar algunos aspectos visuales de los bloques de código a travé
 
 Los estilos específicos para los bloques de código, el header y el botón de copiar se encuentran generalmente en un archivo CSS dedicado (ej. `static/css/code-blocks.css` o `assets/scss/components/_code-blocks.scss`). Puedes modificar estos estilos para adaptarlos a tus preferencias.
 
-## 📁 Archivos Clave del Sistema (Ejemplo de Implementación)
+## Archivos Clave del Sistema (Ejemplo de Implementación)
 
 Una implementación típica de estas características involucra:
 
@@ -373,7 +373,7 @@ Una implementación típica de estas características involucra:
     - Tema de resaltado de sintaxis de Chroma (ej. `chroma-syntax.css`, generado por Hugo o personalizado).
     - Variables de color (`variables.css`).
 
-## 🌐 Lenguajes Soportados
+## Lenguajes Soportados
 
 Chroma, el resaltador de sintaxis de Hugo, soporta una vasta cantidad de lenguajes. Algunos de los más comunes incluyen:
 
@@ -385,7 +385,7 @@ Chroma, el resaltador de sintaxis de Hugo, soporta una vasta cantidad de lenguaj
 
 Si un lenguaje no es reconocido o el resaltado no es el esperado, asegúrate de estar usando el alias correcto para ese lenguaje.
 
-## 🛠️ Solución de Problemas
+## Solución de Problemas
 
 - **El botón de copiar no funciona**:
     - Verifica que el script de JavaScript que maneja la copia esté cargándose correctamente en la página.
@@ -399,4 +399,4 @@ Si un lenguaje no es reconocido o el resaltado no es el esperado, asegúrate de 
     - Inspecciona los elementos con las herramientas de desarrollo del navegador para ver qué estilos CSS se están aplicando y si hay conflictos.
     - Limpia la caché de tu navegador.
 
-¡Con esta guía, estás listo para crear posts con bloques de código impresionantes, funcionales y fáciles de usar en tu sitio Hugo! 🎉
+¡Con esta guía, estás listo para crear posts con bloques de código impresionantes, funcionales y fáciles de usar en tu sitio Hugo!

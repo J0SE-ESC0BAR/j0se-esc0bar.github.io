@@ -7,7 +7,7 @@ draft: true
 viewimg: true
 ---
 
-Hola! 😊
+Hola!
 
 Para mi la cultura de un profecional del desarrollo de software se basa en lo siguiente:
 

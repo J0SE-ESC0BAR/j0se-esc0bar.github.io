@@ -6,7 +6,7 @@
 {{ if and $context.Site.Params.showFeaturedPost $context.Site.Params.featuredPost }}
   {{ $featuredPost := $context.Site.GetPage $context.Site.Params.featuredPost }}
   {{ if $featuredPost }}
-      <h2>Post Destacado 📌</h2>
+      <h2><i class="bi bi-pin-angle-fill"></i> Post Destacado</h2>
       <div class="featured-post-container">
         <a href="{{ $featuredPost.Permalink }}" class="featured-card card flex-row align-items-stretch text-decoration-none overflow-hidden mb-3">
           <div class="featured-card-img">
@@ -15,6 +15,8 @@
               src="{{ with $featuredPost.Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
               class="object-fit-cover w-100 h-100"
               alt="Imagen de {{ $featuredPost.Title }}"
+              loading="lazy"
+              decoding="async"
               onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
             >
           </div>

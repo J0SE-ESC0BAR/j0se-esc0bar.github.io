@@ -22,9 +22,10 @@
       <div>
         {{ $fallbackImage := "/images/no-img.png" | relURL }}
         <div class="col-md-6 intro intro-image">
-            <img class="img-fluid" 
-            src="{{ .Params.image | relURL }}" 
-            onerror="this.onerror=null; this.src='{{ $fallbackImage }}';" 
+            <img class="img-fluid"
+            src="{{ .Params.image | relURL }}"
+            loading="lazy" decoding="async"
+            onerror="this.onerror=null; this.src='{{ $fallbackImage }}';"
             alt="Imagen de {{ .Title }}" />
       </div>
     <div class="col-md-6 intro-content">

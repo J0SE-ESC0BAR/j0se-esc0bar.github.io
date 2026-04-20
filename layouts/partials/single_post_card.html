@@ -17,6 +17,8 @@
         src="{{ with $post.Params.image }}{{ . | relURL }}{{ else }}{{ $fallbackImg }}{{ end }}"
         class="object-fit-cover rounded-start"
         alt="Imagen de {{ $post.Title }}"
+        loading="lazy"
+        decoding="async"
         onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
       />
     </div>
@@ -45,6 +47,7 @@
         class="card-img-top object-fit-cover"
         alt="Imagen de {{ $post.Title }}"
         loading="lazy"
+        decoding="async"
         onerror="this.onerror=null;this.src='{{ $fallbackImg }}';"
       />
       <div class="card-body d-flex flex-column">

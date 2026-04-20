@@ -8,6 +8,8 @@
     data-lightbox-src="{{ $src }}"
     data-lightbox-alt="{{ $alt }}"
     {{- if .Title }}data-lightbox-caption="{{ .Title }}"{{ end }}
+    loading="lazy"
+    decoding="async"
     style="cursor: pointer;"
   >
   {{- if .Title -}}

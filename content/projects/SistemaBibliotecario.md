@@ -17,36 +17,36 @@ viewimg: true
 
 Este proyecto nació de la necesidad de contar con una herramienta eficiente y visualmente atractiva para la gestión bibliotecaria, enfocándose en la experiencia del usuario y la solidez funcional.
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
-- [✨ Características Principales](#-características-principales)
-- [📸 Capturas de Pantalla](#-capturas-de-pantalla)
-- [🛠️ Tecnologías Utilizadas](#️-tecnologías-utilizadas)
-- [💻 Requisitos del Sistema](#-requisitos-del-sistema)
-- [🚀 Instalación y Configuración](#-instalación-y-configuración)
-- [🏗️ Arquitectura del Sistema](#-arquitectura-del-sistema)
-- [🔧 Módulos y Funcionalidades](#-módulos-y-funcionalidades)
-- [🗄️ Base de Datos](#️-base-de-datos)
-- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
-- [🚀 Uso de la Aplicación](#-uso-de-la-aplicación)
-- [🤝 Contribución](#-contribución)
-- [📜 Licencia](#-licencia)
-- [🧑‍💻 Autor](#-autor)
+- [Características Principales](#características-principales)
+- [Capturas de Pantalla](#capturas-de-pantalla)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Requisitos del Sistema](#requisitos-del-sistema)
+- [Instalación y Configuración](#instalación-y-configuración)
+- [Arquitectura del Sistema](#arquitectura-del-sistema)
+- [Módulos y Funcionalidades](#módulos-y-funcionalidades)
+- [Base de Datos](#base-de-datos)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Uso de la Aplicación](#uso-de-la-aplicación)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+- [Autor](#autor)
 
-## ✨ Características Principales
+## Características Principales
 
-- 🔐 **Sistema de Autenticación Multi-Rol con Gestión de Sesiones**: Soporte para usuarios regulares y administradores con persistencia de sesión.
-- 🖥️ **Interfaz MDI Moderna**: Menú lateral expandible/colapsable con navegación fluida entre formularios.
-- 📚 **Gestión Completa de Catálogo**: Agregar, editar y eliminar libros del inventario con validaciones avanzadas.
-- 👥 **Administración de Usuarios**: Registro y gestión de miembros con selección automática y validaciones.
-- 📋 **Control Avanzado de Préstamos**: Sistema completo con tickets, alertas de vencimiento y códigos de colores.
-- 🔍 **Modo Visitante Mejorado**: Navegación del catálogo sin necesidad de registro con interfaz diferenciada.
-- 📊 **Panel Administrativo Avanzado**: Dashboard con selección automática de registros y gestión contextual.
-- 🎨 **Interfaz Profesional**: Diseño moderno con DataGridViews estilizados y recursos visuales integrados.
-- ⚡ **Gestión Global de Configuración**: Sistema centralizado de configuración y cadenas de conexión.
-- 🚀 **Navegación Inteligente**: Detección automática de sesiones activas y redirección inteligente.
+- **Sistema de Autenticación Multi-Rol con Gestión de Sesiones**: Soporte para usuarios regulares y administradores con persistencia de sesión.
+- **Interfaz MDI Moderna**: Menú lateral expandible/colapsable con navegación fluida entre formularios.
+- **Gestión Completa de Catálogo**: Agregar, editar y eliminar libros del inventario con validaciones avanzadas.
+- **Administración de Usuarios**: Registro y gestión de miembros con selección automática y validaciones.
+- **Control Avanzado de Préstamos**: Sistema completo con tickets, alertas de vencimiento y códigos de colores.
+- **Modo Visitante Mejorado**: Navegación del catálogo sin necesidad de registro con interfaz diferenciada.
+- **Panel Administrativo Avanzado**: Dashboard con selección automática de registros y gestión contextual.
+- **Interfaz Profesional**: Diseño moderno con DataGridViews estilizados y recursos visuales integrados.
+- **Gestión Global de Configuración**: Sistema centralizado de configuración y cadenas de conexión.
+- **Navegación Inteligente**: Detección automática de sesiones activas y redirección inteligente.
 
-## 📸 Capturas de Pantalla
+## Capturas de Pantalla
 
 Aquí algunas vistas de la aplicación:
 
@@ -58,7 +58,7 @@ Aquí algunas vistas de la aplicación:
 |---|---|---|
 | ![Vista de Préstamos](/Capturas/BibliotecaPrestamosDeUsuario.png) | ![Realizar un Préstamo](/Capturas/BibliotecaPrestarLibro.png) | ![Catálogo Invitado](/Capturas/BibliotecaVistaLibrosInvitado.png) |
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 | Componente | Tecnología | Versión | Características |
 |------------|------------|---------|-----------------|
@@ -71,7 +71,7 @@ Aquí algunas vistas de la aplicación:
 | **Gestión de Estado** | Sistema de Configuración Global | - | **Persistencia de Sesiones, Cadenas Centralizadas** |
 | **IDE Recomendado** | Visual Studio | 2019+ | IntelliSense, Designer, Debugging |
 
-## 💻 Requisitos del Sistema
+## Requisitos del Sistema
 
 ### Requisitos Mínimos
 - **SO**: Windows 10 (64-bit) o superior
@@ -85,7 +85,7 @@ Aquí algunas vistas de la aplicación:
 - **SQL Server Management Studio** (SSMS)
 - **Git** para control de versiones
 
-## 🚀 Instalación y Configuración
+## Instalación y Configuración
 
 ### 1. Clonar el Repositorio
 ```powershell
@@ -139,7 +139,7 @@ msbuild BibliotecaFrom.sln /t:Rebuild /p:Configuration=Debug
 # Luego puedes encontrar el ejecutable en: bin\\Debug\\BibliotecaFrom.exe
 ```
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 BibliotecaForm implementa una **arquitectura MDI (Multiple Document Interface)** moderna con gestión avanzada de sesiones y navegación fluida para garantizar la separación de responsabilidades y facilitar el mantenimiento:
 
@@ -147,33 +147,33 @@ BibliotecaForm implementa una **arquitectura MDI (Multiple Document Interface)**
 
 ```mermaid
 graph TD
-    A[🚀 Inicio de la Aplicación] --> B{🏠 FrmMenuPrincipal MDI}
-    B -- 👤 Usuario --> C{🔍 Sesión Activa?}
-    B -- 👨‍💼 Administrador --> D{🔍 Sesión Admin Activa?}
-    B -- "👁️ Libros (Visitante)" --> E["📖 FrmLibros (Modo Visitante)"]
-    
-    C -- "✅ Sí" --> F["📚 FrmLibros (Modo Usuario)"]
-    C -- "❌ No" --> G[🔑 FrmUsuario]
-    D -- "✅ Sí" --> H[⚙️ FrmAdministrarBiblioteca]
-    D -- "❌ No" --> I[🔐 FrmAdministrador]
-    
-    G -- "✅ Login Exitoso" --> J[💾 Guardar Sesión] --> F
-    G -- "📝 Registrarse" --> K[📋 FrmRegistrarse]
-    I -- "✅ Login Admin" --> L[💾 Guardar Sesión Admin] --> H
-    I -- "📝 Registrarse" --> K
-    
-    F -- "📤 Prestar Libro" --> M[📋 FrmPrestar]
-    F -- "📊 Ver Préstamos" --> N[📜 FrmVerprestamos]
-    H -- "➕ Agregar Libro" --> O[📚 FrmAgregarLibro]
-    H -- "👥 Ver Usuarios" --> P["👤 Panel Usuarios con Selección"]
-    H -- "📖 Ver Libros" --> Q["📚 Panel Libros con Gestión"]
-    H -- "📋 Ver Préstamos" --> R["📊 Panel Préstamos con Estados"]
-    
-    M -- "🎫 Ticket Generado" --> F
-    N -- "🔴 Alertas Vencimiento" --> F
-    P -- "🗑️ Eliminar (Click-to-Select)" --> H
-    Q -- "🗑️ Eliminar con Validación" --> H
-    R -- "🗑️ Gestión con Códigos Color" --> H
+    A[Inicio de la Aplicación] --> B{FrmMenuPrincipal MDI}
+    B -- Usuario --> C{Sesión Activa?}
+    B -- Administrador --> D{Sesión Admin Activa?}
+    B -- "Libros (Visitante)" --> E["FrmLibros (Modo Visitante)"]
+
+    C -- "Sí" --> F["FrmLibros (Modo Usuario)"]
+    C -- "No" --> G[FrmUsuario]
+    D -- "Sí" --> H[FrmAdministrarBiblioteca]
+    D -- "No" --> I[FrmAdministrador]
+
+    G -- "Login Exitoso" --> J[Guardar Sesión] --> F
+    G -- "Registrarse" --> K[FrmRegistrarse]
+    I -- "Login Admin" --> L[Guardar Sesión Admin] --> H
+    I -- "Registrarse" --> K
+
+    F -- "Prestar Libro" --> M[FrmPrestar]
+    F -- "Ver Préstamos" --> N[FrmVerprestamos]
+    H -- "Agregar Libro" --> O[FrmAgregarLibro]
+    H -- "Ver Usuarios" --> P["Panel Usuarios con Selección"]
+    H -- "Ver Libros" --> Q["Panel Libros con Gestión"]
+    H -- "Ver Préstamos" --> R["Panel Préstamos con Estados"]
+
+    M -- "Ticket Generado" --> F
+    N -- "Alertas Vencimiento" --> F
+    P -- "Eliminar (Click-to-Select)" --> H
+    Q -- "Eliminar con Validación" --> H
+    R -- "Gestión con Códigos Color" --> H
     
     style A fill:#e1f5fe
     style B fill:#f3e5f5
@@ -187,33 +187,33 @@ graph TD
 
 ```mermaid
 graph TB
-    subgraph "🎨 Capa de Presentación MDI"
+    subgraph "Capa de Presentación MDI"
         MDI[Contenedor MDI Principal]
         MenuLateral[Menú Lateral Expandible]
         Forms[Formularios Hijos Sin Bordes]
         Timers[Timers de Animación]
     end
     
-    subgraph "🔄 Capa de Gestión de Estado"
+    subgraph "Capa de Gestión de Estado"
         ConfigGlobal[Configuración Global]
         SesionUsuario[Gestión de Sesiones]
         NavegacionMDI[Navegación MDI]
     end
     
-    subgraph "⚡ Capa de Lógica de Negocio"
+    subgraph "Capa de Lógica de Negocio"
         Auth[Autenticación Avanzada]
         Validation[Validaciones con Alertas]
         Business[Reglas de Negocio]
         FormateoUI[Formateo DataGridView]
     end
     
-    subgraph "💾 Capa de Acceso a Datos"
+    subgraph "Capa de Acceso a Datos"
         ADO[ADO.NET con Parámetros]
         Stored[Procedimientos Almacenados]
         ConexionGlobal[Cadena Conexión Centralizada]
     end
     
-    subgraph "🗄️ Capa de Datos"
+    subgraph "Capa de Datos"
         SQLServer[(SQL Server)]
     end
     
@@ -235,22 +235,22 @@ graph TB
     Stored --> SQLServer
 ```
 
-## 🔧 Módulos y Funcionalidades
+## Módulos y Funcionalidades
 
-### 🏠 1. Menú Principal MDI (`FrmMenuPrincipal`)
+### 1. Menú Principal MDI (`FrmMenuPrincipal`)
 **Centro de control con interfaz MDI moderna**
 
 ![Menú Principal](/Capturas/BibliotecaInicio.png)
 
 **Características Principales:**
-- 🚪 **Acceso Multi-Rol con Gestión de Sesiones**: Detección automática de sesiones activas y redirección inteligente
-- 👁️ **Modo Visitante Diferenciado**: Exploración del catálogo sin autenticación con interfaz específica
-- 🖥️ **Interfaz MDI Profesional**: Contenedor principal que gestiona todos los formularios hijos
-- 📱 **Menú Lateral Expandible**: Panel lateral con animación suave controlada por timers
-- 🎮 **Controles de Ventana**: Minimizar, maximizar, restaurar y cerrar con funcionalidad nativa
-- 🖱️ **Arrastrar y Soltar**: Funcionalidad para mover la ventana arrastrando desde el header
-- 🖼️ **Panel Central Dinámico**: Imagen de inicio que se oculta automáticamente al abrir formularios
-- ❌ **Gestión Inteligente**: Cierre automático de formularios MDI activos para navegación limpia
+- **Acceso Multi-Rol con Gestión de Sesiones**: Detección automática de sesiones activas y redirección inteligente
+- **Modo Visitante Diferenciado**: Exploración del catálogo sin autenticación con interfaz específica
+- **Interfaz MDI Profesional**: Contenedor principal que gestiona todos los formularios hijos
+- **Menú Lateral Expandible**: Panel lateral con animación suave controlada por timers
+- **Controles de Ventana**: Minimizar, maximizar, restaurar y cerrar con funcionalidad nativa
+- **Arrastrar y Soltar**: Funcionalidad para mover la ventana arrastrando desde el header
+- **Panel Central Dinámico**: Imagen de inicio que se oculta automáticamente al abrir formularios
+- **Gestión Inteligente**: Cierre automático de formularios MDI activos para navegación limpia
 
 **Funcionalidades Avanzadas:**
 ```csharp
@@ -293,18 +293,18 @@ private void BtnCambiarTamanoMenu_Click(object sender, EventArgs e)
 
 ---
 
-### 🔑 2. Autenticación de Usuario con Gestión de Sesiones (`FrmUsuario`)
+### 2. Autenticación de Usuario con Gestión de Sesiones (`FrmUsuario`)
 **Sistema de login avanzado para usuarios regulares**
 
 ![Login Usuario](/Capturas/BibliotecaLoginUsuarioNormal.png)
 
 **Funcionalidades Mejoradas:**
-- ✅ **Autenticación Segura con Persistencia**: Validación contra base de datos con gestión de sesión global
-- 🔐 **Protección de Contraseña**: Campo con enmascaramiento automático y validaciones
-- 🚀 **Redirección Inteligente**: Acceso directo al catálogo tras login exitoso con estado preservado
-- 📝 **Registro Rápido**: Enlace directo al formulario de registro integrado en MDI
-- 🔙 **Navegación MDI**: Integración completa con el sistema de navegación principal
-- 💾 **Gestión de Estado Global**: Almacenamiento del ID de usuario en configuración global
+- **Autenticación Segura con Persistencia**: Validación contra base de datos con gestión de sesión global
+- **Protección de Contraseña**: Campo con enmascaramiento automático y validaciones
+- **Redirección Inteligente**: Acceso directo al catálogo tras login exitoso con estado preservado
+- **Registro Rápido**: Enlace directo al formulario de registro integrado en MDI
+- **Navegación MDI**: Integración completa con el sistema de navegación principal
+- **Gestión de Estado Global**: Almacenamiento del ID de usuario en configuración global
 
 **Flujo de Autenticación Mejorado:**
 ```csharp
@@ -336,18 +336,18 @@ private void btnIngresar_Click(object sender, EventArgs e)
 
 ---
 
-### 🔐 3. Autenticación de Administrador con Sesión Persistente (`FrmAdministrador`)
+### 3. Autenticación de Administrador con Sesión Persistente (`FrmAdministrador`)
 **Acceso privilegiado con gestión avanzada de sesiones**
 
 ![Login Admin](/Capturas/BibiotecaPanelAdministrador.png)
 
 **Características Especiales:**
-- 👨‍💼 **Verificación de Privilegios Avanzada**: Validación del campo `Administrador` con seguridad reforzada
-- 🛡️ **Seguridad Multi-Capa**: Autenticación con validación de roles específicos
-- ⚙️ **Acceso Total con Persistencia**: Redirección al panel de administración con sesión global
-- 🔧 **Gestión Avanzada**: Permisos para todas las operaciones CRUD con validaciones
-- 🔄 **Sesión Persistente Inteligente**: La sesión del administrador se mantiene hasta cierre explícito
-- 📝 **Registro de Administradores**: Acceso al formulario de registro con código secreto
+- **Verificación de Privilegios Avanzada**: Validación del campo `Administrador` con seguridad reforzada
+- **Seguridad Multi-Capa**: Autenticación con validación de roles específicos
+- **Acceso Total con Persistencia**: Redirección al panel de administración con sesión global
+- **Gestión Avanzada**: Permisos para todas las operaciones CRUD con validaciones
+- **Sesión Persistente Inteligente**: La sesión del administrador se mantiene hasta cierre explícito
+- **Registro de Administradores**: Acceso al formulario de registro con código secreto
 
 **Autenticación de Administrador:**
 ```csharp
@@ -378,7 +378,7 @@ private void btnIngresar_Click(object sender, EventArgs e)
 
 ---
 
-### 📝 4. Registro de Usuario (`FrmRegistrarse`)
+### 4. Registro de Usuario (`FrmRegistrarse`)
 **Sistema de registro con validaciones**
 
 ![Registro Usuario](/Capturas/BibliotecaRegistrarse.png)
@@ -386,44 +386,44 @@ private void btnIngresar_Click(object sender, EventArgs e)
 **Campos del Formulario:**
 | Campo | Tipo | Requerido | Validación |
 |-------|------|-----------|------------|
-| Nombre Completo | Text | ✅ | Mínimo 3 caracteres |
-| Dirección | Text | ✅ | - |
-| Teléfono | Text | ✅ | Formato numérico |
-| Correo | Email | ✅ | Formato email válido |
-| Usuario | Text | ✅ | Único en BD |
-| Contraseña | Password | ✅ | Mínimo 6 caracteres |
-| Es Administrador | Checkbox | ❌ | Código secreto requerido |
+| Nombre Completo | Text | Si | Mínimo 3 caracteres |
+| Dirección | Text | Si | - |
+| Teléfono | Text | Si | Formato numérico |
+| Correo | Email | Si | Formato email válido |
+| Usuario | Text | Si | Único en BD |
+| Contraseña | Password | Si | Mínimo 6 caracteres |
+| Es Administrador | Checkbox | No | Código secreto requerido |
 
 **Funcionalidades:**
-- 🔍 **Validación en Tiempo Real**: Verificación de campos durante escritura
-- 🔐 **Código Secreto**: Sistema de elevación de privilegios para administradores
-- 💾 **Persistencia Inmediata**: Guardado automático en base de datos
-- ⚠️ **Manejo de Errores**: Mensajes descriptivos para el usuario
+- **Validación en Tiempo Real**: Verificación de campos durante escritura
+- **Código Secreto**: Sistema de elevación de privilegios para administradores
+- **Persistencia Inmediata**: Guardado automático en base de datos
+- **Manejo de Errores**: Mensajes descriptivos para el usuario
 
 ---
 
-### 📚 5. Catálogo de Libros Mejorado (`FrmLibros`)
+### 5. Catálogo de Libros Mejorado (`FrmLibros`)
 **Núcleo del sistema con interfaz profesional**
 
 ![Catálogo de Libros](/Capturas/BibliotecaVistaLibrosInvitado.png)
 
 **Modos de Funcionamiento Avanzados:**
 
-#### 👁️ Modo Visitante
-- 🔍 **Solo Lectura Optimizada**: Visualización completa del catálogo con interfaz limpia
-- 📖 **Información Detallada**: Todos los datos de los libros con formateo profesional
-- 🚫 **Restricciones Visuales**: Elementos de préstamo ocultos automáticamente
+#### Modo Visitante
+- **Solo Lectura Optimizada**: Visualización completa del catálogo con interfaz limpia
+- **Información Detallada**: Todos los datos de los libros con formateo profesional
+- **Restricciones Visuales**: Elementos de préstamo ocultos automáticamente
 
-#### 👤 Modo Usuario Autenticado
-- 📤 **Préstamos con Validación**: Solicitud de préstamos con verificaciones automáticas
-- 📊 **Historial Personal Avanzado**: Acceso a préstamos activos con alertas de vencimiento
-- 🔄 **Gestión Completa**: Préstamos y devoluciones con sistema de tickets
+#### Modo Usuario Autenticado
+- **Préstamos con Validación**: Solicitud de préstamos con verificaciones automáticas
+- **Historial Personal Avanzado**: Acceso a préstamos activos con alertas de vencimiento
+- **Gestión Completa**: Préstamos y devoluciones con sistema de tickets
 
 **Mejoras de Interfaz:**
-- 🎨 **DataGridView Estilizado**: Colores corporativos y formateo profesional
-- 🟢🔴 **Indicadores Visuales**: Estados de disponibilidad con código de colores
-- 📱 **Responsive Design**: Columnas que se adaptan automáticamente
-- 🖱️ **Selección Intuitiva**: Click para seleccionar libros con feedback visual
+- **DataGridView Estilizado**: Colores corporativos y formateo profesional
+- **Indicadores Visuales**: Estados de disponibilidad con código de colores
+- **Responsive Design**: Columnas que se adaptan automáticamente
+- **Selección Intuitiva**: Click para seleccionar libros con feedback visual
 
 **Configuración Visual Avanzada:**
 ```csharp
@@ -472,36 +472,36 @@ private void dgvMostrar_CellFormatting(object sender, DataGridViewCellFormatting
 
 ---
 
-### 📋 6. Gestión de Préstamos (`FrmPrestar`)
+### 6. Gestión de Préstamos (`FrmPrestar`)
 **Sistema inteligente de tickets para gestión de préstamos**
 
 ![Préstamos](/Capturas/BibliotecaPrestarLibro.png)
 
 **Funcionalidades Avanzadas:**
-- 🎫 **Sistema de Tickets Inteligente**: Generación automática de comprobantes únicos para cada préstamo
-- 🔄 **Registro Automático**: Guardado directo en tabla `Prestamo` con validaciones completas
-- 📊 **Control de Disponibilidad**: Verificación en tiempo real de la disponibilidad de libros
-- 🎯 **Seguimiento de Estados**: Monitoreo activo de préstamos con códigos de color visuales
-- ⏰ **Alertas de Vencimiento**: Sistema de notificaciones para préstamos próximos a vencer
-- ✅ **Validación Automática**: Verificación integral de usuarios y disponibilidad de libros
-- 🖱️ **Interfaz Intuitiva**: Selección automática de registros y feedback visual inmediato
+- **Sistema de Tickets Inteligente**: Generación automática de comprobantes únicos para cada préstamo
+- **Registro Automático**: Guardado directo en tabla `Prestamo` con validaciones completas
+- **Control de Disponibilidad**: Verificación en tiempo real de la disponibilidad de libros
+- **Seguimiento de Estados**: Monitoreo activo de préstamos con códigos de color visuales
+- **Alertas de Vencimiento**: Sistema de notificaciones para préstamos próximos a vencer
+- **Validación Automática**: Verificación integral de usuarios y disponibilidad de libros
+- **Interfaz Intuitiva**: Selección automática de registros y feedback visual inmediato
 
 **Flujo de Préstamo Mejorado:**
-1. 📖 **Selección Inteligente**: Libro seleccionado desde el catálogo con validación automática
-2. 👤 **Usuario Automático**: Identificación del usuario logueado desde sesión global
-3. 📅 **Configuración de Fechas**: Fecha de préstamo automática y devolución calculada
-4. 🔍 **Validaciones Múltiples**: Verificación de disponibilidad, usuario activo y límites
-5. 💾 **Registro Completo**: Guardado en tabla `Prestamo` con transacciones seguras
-6. 🎫 **Ticket Generado**: Comprobante único con código de seguimiento
-7. 🔄 **Actualización Automática**: Refresh del catálogo con nuevo estado de disponibilidad
+1. **Selección Inteligente**: Libro seleccionado desde el catálogo con validación automática
+2. **Usuario Automático**: Identificación del usuario logueado desde sesión global
+3. **Configuración de Fechas**: Fecha de préstamo automática y devolución calculada
+4. **Validaciones Múltiples**: Verificación de disponibilidad, usuario activo y límites
+5. **Registro Completo**: Guardado en tabla `Prestamo` con transacciones seguras
+6. **Ticket Generado**: Comprobante único con código de seguimiento
+7. **Actualización Automática**: Refresh del catálogo con nuevo estado de disponibilidad
 
 **Validaciones Avanzadas:**
-- ✅ **Disponibilidad del Libro**: Verificación en tiempo real del estado
-- ✅ **Usuario Activo**: Validación de sesión y permisos activos
-- ✅ **Fechas Válidas**: Control de rangos (devolución > préstamo)
-- ✅ **Límite de Préstamos**: Control por usuario según políticas
-- ✅ **Integridad de Datos**: Validación de IDs y referencias de base de datos
-- ✅ **Transacciones Seguras**: Rollback automático en caso de errores
+- **Disponibilidad del Libro**: Verificación en tiempo real del estado
+- **Usuario Activo**: Validación de sesión y permisos activos
+- **Fechas Válidas**: Control de rangos (devolución > préstamo)
+- **Límite de Préstamos**: Control por usuario según políticas
+- **Integridad de Datos**: Validación de IDs y referencias de base de datos
+- **Transacciones Seguras**: Rollback automático en caso de errores
 
 **Implementación del Sistema de Tickets:**
 ```csharp
@@ -533,46 +533,46 @@ private void btnPrestar_Click(object sender, EventArgs e)
                     transaccion.Commit();
                     // Generar ticket único
                     GenerarTicketPrestamo();
-                    MessageBox.Show("✅ Préstamo registrado exitosamente. Ticket generado.", "Préstamo Exitoso");
+                    MessageBox.Show("Préstamo registrado exitosamente. Ticket generado.", "Préstamo Exitoso");
                 }
             }
         }
     }
     catch (Exception ex)
     {
-        MessageBox.Show($"❌ Error al procesar préstamo: {ex.Message}", "Error");
+        MessageBox.Show($"Error al procesar préstamo: {ex.Message}", "Error");
     }
 }
 ```
 
 ---
 
-### 📜 7. Historial de Préstamos (`FrmVerprestamos`)
+### 7. Historial de Préstamos (`FrmVerprestamos`)
 **Panel avanzado de préstamos con alertas de vencimiento**
 
 ![Historial de Préstamos](/Capturas/BibliotecaPrestamosDeUsuario.png)
 
 **Funcionalidades Mejoradas:**
-- 🔴 **Alertas de Vencimiento**: Sistema inteligente que detecta y resalta préstamos próximos a vencer
-- 📊 **DataGridView Estilizado**: Presentación profesional con códigos de colores para estados
-- 🔄 **Actualización Automática**: Refresh dinámico del estado de préstamos
-- 📅 **Formateo Inteligente de Fechas**: Presentación clara de fechas de préstamo y devolución
-- 🎯 **Selección Automática**: Click-to-select para gestión rápida de préstamos
-- ⚡ **Carga Optimizada**: Consultas eficientes con JOIN para datos completos
+- **Alertas de Vencimiento**: Sistema inteligente que detecta y resalta préstamos próximos a vencer
+- **DataGridView Estilizado**: Presentación profesional con códigos de colores para estados
+- **Actualización Automática**: Refresh dinámico del estado de préstamos
+- **Formateo Inteligente de Fechas**: Presentación clara de fechas de préstamo y devolución
+- **Selección Automática**: Click-to-select para gestión rápida de préstamos
+- **Carga Optimizada**: Consultas eficientes con JOIN para datos completos
 
 **Información Detallada Mostrada:**
-- 📚 **Detalles Completos del Libro**: Título, autor, año de publicación con formateo
-- 📅 **Gestión de Fechas**: Préstamo y devolución con alertas visuales
-- 🆔 **Referencias Únicas**: IDs de préstamo y libro para trazabilidad
-- ⏰ **Estados Dinámicos**: Vigente, próximo a vencer, vencido con colores
-- 🔢 **Códigos de Seguimiento**: Sistema de tickets para control administrativo
+- **Detalles Completos del Libro**: Título, autor, año de publicación con formateo
+- **Gestión de Fechas**: Préstamo y devolución con alertas visuales
+- **Referencias Únicas**: IDs de préstamo y libro para trazabilidad
+- **Estados Dinámicos**: Vigente, próximo a vencer, vencido con colores
+- **Códigos de Seguimiento**: Sistema de tickets para control administrativo
 
 **Acciones Avanzadas Disponibles:**
-- ❌ **Cancelar Préstamo Inteligente**: Devolución anticipada con validaciones automáticas
-- 🔍 **Ver Detalles Expandidos**: Modal con información completa del préstamo y usuario
-- 🔄 **Renovar con Validación**: Extensión automática si no hay reservas pendientes
-- 📊 **Exportar Historial**: Generación de reportes de préstamos del usuario
-- 🔔 **Configurar Alertas**: Personalización de notificaciones de vencimiento
+- **Cancelar Préstamo Inteligente**: Devolución anticipada con validaciones automáticas
+- **Ver Detalles Expandidos**: Modal con información completa del préstamo y usuario
+- **Renovar con Validación**: Extensión automática si no hay reservas pendientes
+- **Exportar Historial**: Generación de reportes de préstamos del usuario
+- **Configurar Alertas**: Personalización de notificaciones de vencimiento
 
 **Sistema de Alertas Visuales:**
 ```csharp
@@ -637,28 +637,28 @@ string consulta = @"
 
 ---
 
-### ⚙️ 8. Panel de Administración (`FrmAdministrarBiblioteca`)
+### 8. Panel de Administración (`FrmAdministrarBiblioteca`)
 **Centro de control administrativo con selección automática y gestión contextual**
 
 ![Panel de Administración](/Capturas/BibiotecaPanelAdministrador.png)
 
 **Funcionalidades Globales del Panel:**
-- 🎯 **Selección Automática**: Sistema de click-to-select en todos los DataGridViews para gestión rápida
-- 🔄 **Actualización Dinámica**: Refresh automático de datos tras operaciones CRUD
-- 📊 **DataGridViews Estilizados**: Presentación profesional con colores corporativos
-- 🗑️ **Eliminación Contextual**: Botones que se activan/desactivan según la selección
-- ⚡ **Carga Optimizada**: Consultas eficientes con joins para datos relacionados
-- 🎨 **Interfaz Unificada**: Consistencia visual en todas las pestañas de gestión
+- **Selección Automática**: Sistema de click-to-select en todos los DataGridViews para gestión rápida
+- **Actualización Dinámica**: Refresh automático de datos tras operaciones CRUD
+- **DataGridViews Estilizados**: Presentación profesional con colores corporativos
+- **Eliminación Contextual**: Botones que se activan/desactivan según la selección
+- **Carga Optimizada**: Consultas eficientes con joins para datos relacionados
+- **Interfaz Unificada**: Consistencia visual en todas las pestañas de gestión
 
 **Pestañas de Gestión Avanzada:**
 
-#### 👥 Gestión de Usuarios con Selección Inteligente
-- 📊 **Vista Tabular Completa**: Lista de usuarios con información detallada y formateo
-- 🎯 **Selección Automática**: Click en fila para seleccionar usuario automáticamente
-- 🗑️ **Eliminación Inteligente**: Botón que se activa solo al seleccionar usuario válido
-- 📝 **Información Expandida**: Mostrar nombre completo, dirección, teléfono, correo y rol
-- 🔍 **Búsqueda Contextual**: Filtros dinámicos por tipo de usuario (admin/regular)
-- ⚠️ **Validaciones Avanzadas**: Verificar préstamos activos antes de eliminar usuarios
+#### Gestión de Usuarios con Selección Inteligente
+- **Vista Tabular Completa**: Lista de usuarios con información detallada y formateo
+- **Selección Automática**: Click en fila para seleccionar usuario automáticamente
+- **Eliminación Inteligente**: Botón que se activa solo al seleccionar usuario válido
+- **Información Expandida**: Mostrar nombre completo, dirección, teléfono, correo y rol
+- **Búsqueda Contextual**: Filtros dinámicos por tipo de usuario (admin/regular)
+- **Validaciones Avanzadas**: Verificar préstamos activos antes de eliminar usuarios
 
 ```csharp
 // Selección automática en DataGridView de usuarios
@@ -679,13 +679,13 @@ private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
 }
 ```
 
-#### 📚 Gestión de Libros con Control de Inventario
-- 📖 **Inventario Inteligente**: Vista completa con estados de disponibilidad automáticos
-- ➕ **Agregar Nuevos**: Integración directa con FrmAgregarLibro desde botón contextual
-- ✏️ **Edición en Contexto**: Modificación de información con selección previa
-- 🗑️ **Eliminación con Validación**: Verificación automática de préstamos activos antes de borrar
-- 🔍 **Estados Visuales**: Indicadores de disponibilidad con códigos de color
-- 📊 **Métricas de Uso**: Contadores de préstamos activos por libro
+#### Gestión de Libros con Control de Inventario
+- **Inventario Inteligente**: Vista completa con estados de disponibilidad automáticos
+- **Agregar Nuevos**: Integración directa con FrmAgregarLibro desde botón contextual
+- **Edición en Contexto**: Modificación de información con selección previa
+- **Eliminación con Validación**: Verificación automática de préstamos activos antes de borrar
+- **Estados Visuales**: Indicadores de disponibilidad con códigos de color
+- **Métricas de Uso**: Contadores de préstamos activos por libro
 
 ```csharp
 // Validación antes de eliminar libro
@@ -705,7 +705,7 @@ private void btnEliminarLibro_Click(object sender, EventArgs e)
             
             if (prestamosActivos > 0)
             {
-                MessageBox.Show($"❌ No se puede eliminar. El libro tiene {prestamosActivos} préstamo(s) activo(s).", 
+                MessageBox.Show($"No se puede eliminar. El libro tiene {prestamosActivos} préstamo(s) activo(s).",
                               "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -717,13 +717,13 @@ private void btnEliminarLibro_Click(object sender, EventArgs e)
 }
 ```
 
-#### 📊 Gestión de Préstamos con Estados Avanzados
-- 📋 **Vista General Completa**: Todos los préstamos con información de usuarios y libros
-- ⏰ **Estados Dinámicos**: Vigente, próximo a vencer, vencido con alertas visuales
-- 🔄 **Acciones Contextuales**: Forzar devolución, extender plazos según selección
-- 📈 **Dashboard de Estadísticas**: Métricas en tiempo real de uso de la biblioteca
-- 🔴 **Alertas Automáticas**: Notificaciones visuales para préstamos problemáticos
-- 📊 **Reportes Integrados**: Generación de informes de gestión
+#### Gestión de Préstamos con Estados Avanzados
+- **Vista General Completa**: Todos los préstamos con información de usuarios y libros
+- **Estados Dinámicos**: Vigente, próximo a vencer, vencido con alertas visuales
+- **Acciones Contextuales**: Forzar devolución, extender plazos según selección
+- **Dashboard de Estadísticas**: Métricas en tiempo real de uso de la biblioteca
+- **Alertas Automáticas**: Notificaciones visuales para préstamos problemáticos
+- **Reportes Integrados**: Generación de informes de gestión
 
 **Sistema de Estados Visuales:**
 ```csharp
@@ -782,25 +782,25 @@ string consultaCompleta = @"
 
 ---
 
-### ➕ 9. Agregar Libro (`FrmAgregarLibro`)
+### 9. Agregar Libro (`FrmAgregarLibro`)
 **Expansión del catálogo**
 ![Agregar Libro](/Capturas/BibliotecaPrestarLibro.png)
 
 **Formulario de Libro:**
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
-| 📖 Título | TextBox | Nombre del libro |
-| ✍️ Autor | TextBox | Autor(es) del libro |
-| 📅 Año | NumericUpDown | Año de publicación |
-| 📄 Contenido | RichTextBox | Descripción/resumen |
+| Título | TextBox | Nombre del libro |
+| Autor | TextBox | Autor(es) del libro |
+| Año | NumericUpDown | Año de publicación |
+| Contenido | RichTextBox | Descripción/resumen |
 
 **Validaciones:**
-- ✅ **Título Único**: No duplicados en el catálogo
-- ✅ **Año Válido**: Rango temporal lógico
-- ✅ **Campos Obligatorios**: Todos los campos requeridos
-- ✅ **Formato**: Validación de tipos de datos
+- **Título Único**: No duplicados en el catálogo
+- **Año Válido**: Rango temporal lógico
+- **Campos Obligatorios**: Todos los campos requeridos
+- **Formato**: Validación de tipos de datos
 
-## 🗄️ Base de Datos
+## Base de Datos
 
 ### Diagrama Entidad-Relación (ERD)
 
@@ -843,13 +843,13 @@ El proyecto incluye scripts SQL organizados en la carpeta `SQL QUERYS Biblioteca
 
 | Script | Propósito | Orden de Ejecución |
 |--------|-----------|-------------------|
-| `Creacion de BibliotecaFrom.sql` | 🏗️ Estructura de BD | 1️⃣ |
-| `Datos de las tablas BibliotecaForm.sql` | 📊 Datos iniciales | 2️⃣ |
-| `Procedimientos Almacenado BibliotecaFrom.sql` | ⚙️ Stored Procedures | 3️⃣ |
+| `Creacion de BibliotecaFrom.sql` | Estructura de BD | 1 |
+| `Datos de las tablas BibliotecaForm.sql` | Datos iniciales | 2 |
+| `Procedimientos Almacenado BibliotecaFrom.sql` | Stored Procedures | 3 |
 
 ### Estructura Detallada de Tablas
 
-#### 👤 Tabla Usuario
+#### Tabla Usuario
 ```sql
 CREATE TABLE Usuario (
     ID_Usuario int IDENTITY(1,1) PRIMARY KEY,
@@ -863,7 +863,7 @@ CREATE TABLE Usuario (
 );
 ```
 
-#### 📚 Tabla Libro
+#### Tabla Libro
 ```sql
 CREATE TABLE Libro (
     id_libro int IDENTITY(1,1) PRIMARY KEY,
@@ -874,7 +874,7 @@ CREATE TABLE Libro (
 );
 ```
 
-#### 📋 Tabla Prestamo
+#### Tabla Prestamo
 ```sql
 CREATE TABLE Prestamo (
     ID_Prestamo int IDENTITY(1,1) PRIMARY KEY,
@@ -907,18 +907,18 @@ public static class Configuracion
 }
 ```
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ### Estructura Principal
 ```
 BibliotecaFrom/
-├── 📄 BibliotecaFrom.sln          # Archivo de solución de Visual Studio
-├── 📄 BibliotecaFrom.csproj       # Archivo de proyecto C#
-├── 📄 App.config                  # Configuración de la aplicación
-├── 📄 Program.cs                  # Punto de entrada de la aplicación
-├── 📄 README.md                   # Documentación del proyecto
+├── BibliotecaFrom.sln              # Archivo de solución de Visual Studio
+├── BibliotecaFrom.csproj           # Archivo de proyecto C#
+├── App.config                      # Configuración de la aplicación
+├── Program.cs                      # Punto de entrada de la aplicación
+├── README.md                       # Documentación del proyecto
 │
-├── 🖼️ Formularios Windows Forms/
+├── Formularios Windows Forms/
 │   ├── FrmMenuPrincipal.*         # Menú principal de la aplicación
 │   ├── FrmUsuario.*               # Autenticación de usuarios
 │   ├── FrmAdministrador.*         # Autenticación de administradores
@@ -929,12 +929,12 @@ BibliotecaFrom/
 │   ├── FrmAdministrarBiblioteca.* # Panel de administración
 │   └── FrmAgregarLibro.*          # Formulario para agregar libros
 │
-├── 🗄️ SQL QUERYS BibliotecaForm/
+├── SQL QUERYS BibliotecaForm/
 │   ├── Creacion de BibliotecaFrom.sql           # Script de creación de BD
 │   ├── Datos de las tablas BibliotecaForm.sql   # Datos iniciales
 │   └── Procedimientos Almacenado BibliotecaFrom.sql # Stored Procedures
 │
-├── 🎨 Resources/                   # Recursos gráficos
+├── Resources/                       # Recursos gráficos
 │   ├── 1BNS.png                   # Logo principal
 │   ├── admin_person_user_man_2839.png
 │   ├── agregar libros.jpg
@@ -942,7 +942,7 @@ BibliotecaFrom/
 │   ├── regis.png
 │   └── registrarse.jpg
 │
-└── ⚙️ Properties/                  # Propiedades del proyecto
+└── Properties/                      # Propiedades del proyecto
     ├── AssemblyInfo.cs            # Información del ensamblado
     ├── Resources.Designer.cs      # Recursos embebidos
     ├── Resources.resx
@@ -962,18 +962,18 @@ BibliotecaFrom/
 | `Resources/` | **Recursos Gráficos**: Imágenes e iconos utilizados en la interfaz |
 | `App.config` | **Configuración**: Cadenas de conexión y configuraciones de la aplicación |
 
-## 🚀 Uso de la Aplicación
+## Uso de la Aplicación
 
-### 👁️ **Modo Visitante (Sin registro)**
+### **Modo Visitante (Sin registro)**
 
 1. **Ejecutar la aplicación** → `BibliotecaFrom.exe`
 2. **Seleccionar** → `Ver Libros`
 3. **Explorar** el catálogo completo de libros disponibles
 4. **Visualizar** información detallada de cada libro
 
-### 👤 **Modo Usuario Regular**
+### **Modo Usuario Regular**
 
-#### 📝 Registro de Nuevo Usuario
+#### Registro de Nuevo Usuario
 1. **Menú Principal** → `Usuario` → `Registrarse`
 2. **Completar formulario**:
    - Nombre completo
@@ -984,12 +984,12 @@ BibliotecaFrom/
    - Contraseña (mínimo 6 caracteres)
 3. **Confirmar registro**
 
-#### 🔑 Iniciar Sesión
+#### Iniciar Sesión
 1. **Menú Principal** → `Usuario`
 2. **Ingresar credenciales** (usuario y contraseña)
 3. **Acceder al catálogo** con funcionalidades completas
 
-#### 📚 Gestionar Préstamos
+#### Gestionar Préstamos
 1. **Seleccionar libro** del catálogo
 2. **Solicitar préstamo** → `Prestar Libro`
 3. **Configurar fechas** de préstamo y devolución
@@ -997,32 +997,32 @@ BibliotecaFrom/
 5. **Ver préstamos activos** → `Ver Préstamos`
 6. **Cancelar préstamo** si es necesario
 
-### 👨‍💼 **Modo Administrador**
+### **Modo Administrador**
 
-#### 🔐 Acceso Administrativo
+#### Acceso Administrativo
 1. **Menú Principal** → `Administrador`
 2. **Ingresar credenciales** de administrador
 3. **Acceder al panel** de administración
 
-#### ⚙️ Panel de Administración
-- **👥 Gestión de Usuarios**:
+#### Panel de Administración
+- **Gestión de Usuarios**:
   - Visualizar todos los usuarios registrados
   - Eliminar usuarios
   - Modificar información de usuarios
 
-- **📚 Gestión de Libros**:
+- **Gestión de Libros**:
   - Ver inventario completo
   - Agregar nuevos libros al catálogo
   - Eliminar libros (validando préstamos activos)
   - Editar información de libros existentes
 
-- **📊 Gestión de Préstamos**:
+- **Gestión de Préstamos**:
   - Monitorear todos los préstamos del sistema
   - Ver estados: activos, vencidos, completados
   - Forzar devoluciones
   - Generar reportes de uso
 
-#### ➕ Agregar Nuevo Libro
+#### Agregar Nuevo Libro
 1. **Panel de Admin** → `Agregar Libro`
 2. **Completar información**:
    - Título del libro
@@ -1031,7 +1031,7 @@ BibliotecaFrom/
    - Descripción/contenido
 3. **Validar y guardar** en el catálogo
 
-## 🛠️ Guía de Desarrollo
+## Guía de Desarrollo
 
 ### Configuración del Entorno
 
@@ -1075,21 +1075,21 @@ El proyecto sigue una **arquitectura de capas** simple pero efectiva:
 
 ```mermaid
 graph TB
-    subgraph "🎨 Presentación (UI Layer)"
+    subgraph "Presentación (UI Layer)"
         Forms["Windows Forms<br/>- FrmMenuPrincipal<br/>- FrmUsuario<br/>- FrmAdministrador<br/>- etc."]
     end
     
-    subgraph "⚡ Lógica de Negocio (Business Layer)"
+    subgraph "Lógica de Negocio (Business Layer)"
         Validation["Validaciones<br/>- Autenticación<br/>- Reglas de Préstamo<br/>- Validación de Datos"]
         Business["Procesos de Negocio<br/>- Gestión de Préstamos<br/>- Control de Usuarios<br/>- Gestión de Catálogo"]
     end
     
-    subgraph "💾 Acceso a Datos (Data Layer)"
+    subgraph "Acceso a Datos (Data Layer)"
         DataAccess["ADO.NET<br/>- SqlConnection<br/>- SqlCommand<br/>- SqlDataAdapter"]
         StoredProcs["Stored Procedures<br/>- Consultas Optimizadas<br/>- Operaciones CRUD"]
     end
     
-    subgraph "🗄️ Base de Datos (Data Storage)"
+    subgraph "Base de Datos (Data Storage)"
         Database["SQL Server<br/>- Tabla Usuario<br/>- Tabla Libro<br/>- Tabla Prestamo"]
     end
     
@@ -1125,7 +1125,7 @@ graph TB
 4. **Implementar lógica de negocio**
 5. **Crear/Modificar formularios UI**
 
-## 🤝 Contribución
+## Contribución
 
 Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 1.  Haz un Fork del repositorio.
@@ -1134,13 +1134,13 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 4.  Sube tus cambios a la rama (`git push origin feature/nueva-funcionalidad`).
 5.  Abre un Pull Request.
 
-## 📜 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-## 🧑‍💻 Autor
+## Autor
 
-Desarrollado con ❤️ por **J0SE-ESC0BAR**.
+Desarrollado por **J0SE-ESC0BAR**.
 
 Puedes encontrarme en:
 *   GitHub: [J0SE-ESC0BAR](https://github.com/J0SE-ESC0BAR)

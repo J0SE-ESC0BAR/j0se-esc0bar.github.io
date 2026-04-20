@@ -1,19 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Chroma on JAEM</title>
-    <link>http://localhost:1313/tags/chroma/</link>
-    <description>Recent content in Chroma on JAEM</description>
-    <generator>Hugo</generator>
-    <language>es</language>
-    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/chroma/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title>
-      <link>http://localhost:1313/posts/hugo/bloques-codigo-hugo/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/hugo/bloques-codigo-hugo/</guid>
-      <description>&lt;h1 id=&#34;-dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas&#34;&gt;🎨 Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas&lt;/h1&gt;&#xA;&lt;p&gt;Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-características-implementadas&#34;&gt;🚀 Características Implementadas&lt;/h2&gt;&#xA;&lt;p&gt;Este sitio cuenta con un sistema de bloques de código robusto que incluye:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Syntax highlighting nativo de Hugo&lt;/strong&gt; con Chroma.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Soporte para más de 250 lenguajes&lt;/strong&gt; de programación.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Botón de &amp;ldquo;Copiar&amp;rdquo;&lt;/strong&gt; en cada bloque de código para facilitar la reutilización.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Header automático&lt;/strong&gt; que muestra el lenguaje del bloque de código.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Configuración flexible&lt;/strong&gt; mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Tema Dracula&lt;/strong&gt; optimizado para una excelente legibilidad.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Diseño responsive&lt;/strong&gt; que se adapta a cualquier tamaño de pantalla.&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Estilos modernos&lt;/strong&gt; con efectos hover y transiciones suaves.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-uso-de-bloques-de-código&#34;&gt;📋 Uso de Bloques de Código&lt;/h2&gt;&#xA;&lt;p&gt;Tienes dos maneras principales de insertar bloques de código en tus posts:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chroma on JAEM</title><link>https://jaem.dev/tags/chroma/</link><description>Recent content in Chroma on JAEM</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jaem.dev/tags/chroma/index.xml" rel="self" type="application/rss+xml"/><item><title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title><link>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</link><pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate><guid>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</guid><description>&lt;h1 id="dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas"&gt;Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas&lt;/h1&gt;
+&lt;p&gt;Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.&lt;/p&gt;
+&lt;h2 id="características-implementadas"&gt;Características Implementadas&lt;/h2&gt;
+&lt;p&gt;Este sitio cuenta con un sistema de bloques de código robusto que incluye:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Syntax highlighting nativo de Hugo&lt;/strong&gt; con Chroma.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Soporte para más de 250 lenguajes&lt;/strong&gt; de programación.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Botón de &amp;ldquo;Copiar&amp;rdquo;&lt;/strong&gt; en cada bloque de código para facilitar la reutilización.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Header automático&lt;/strong&gt; que muestra el lenguaje del bloque de código.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Configuración flexible&lt;/strong&gt; mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tema Dracula&lt;/strong&gt; optimizado para una excelente legibilidad.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Diseño responsive&lt;/strong&gt; que se adapta a cualquier tamaño de pantalla.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Estilos modernos&lt;/strong&gt; con efectos hover y transiciones suaves.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="uso-de-bloques-de-código"&gt;Uso de Bloques de Código&lt;/h2&gt;
+&lt;p&gt;Tienes dos maneras principales de insertar bloques de código en tus posts:&lt;/p&gt;</description></item></channel></rss>

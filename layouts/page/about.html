@@ -1,18 +1,163 @@
-{{ define "header_css" }}{{ end }}
 {{ define "body_classes" }}page about{{ end }}
 
 {{ define "main" }}
-<div class="intro">
-  <div class="fila">
-    
-    <div class="col-md-6 intro-about">
-      <h1>{{ .Title }}</h1>
-      <p>{{ .Description }}</p>
-    </div>
-    <div class="col-md-6 about-img">
-      <img src="{{ .Params.image | relURL }}" class="img-fluid" alt="{{ .Title }}">
+
+<!-- Hero -->
+<section class="about-hero">
+  <div class="about-hero__photo">
+    <img src="{{ .Params.image | relURL }}" alt="{{ .Params.name }}" loading="lazy" decoding="async">
+  </div>
+  <div class="about-hero__info">
+    <h1 class="about-hero__name">{{ .Params.name }}</h1>
+    <p class="about-hero__role">{{ .Params.role }}</p>
+    <p class="about-hero__tagline">{{ .Params.tagline }}</p>
+    <div class="about-hero__links">
+      {{ with .Params.contact }}
+        <a href="mailto:{{ .email }}" class="about-btn"><i class="bi bi-envelope-fill"></i> Email</a>
+        <a href="{{ .linkedin }}" target="_blank" rel="noopener" class="about-btn about-btn--outline"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a href="{{ .github }}" target="_blank" rel="noopener" class="about-btn about-btn--outline"><i class="bi bi-github"></i> GitHub</a>
+      {{ end }}
     </div>
   </div>
-</div>
-{{ .Content }}
+</section>
+
+<!-- Bio -->
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-person-fill"></i> Sobre Mí</h2>
+  <div class="about-card">
+    {{ .Params.bio | markdownify }}
+  </div>
+</section>
+
+<!-- Experience -->
+{{ with .Params.experience }}
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-briefcase-fill"></i> Experiencia</h2>
+  <div class="about-timeline">
+    {{ range . }}
+    <div class="about-timeline__item">
+      <div class="about-timeline__icon"><i class="bi {{ .icon }}"></i></div>
+      <div class="about-timeline__content">
+        <h3 class="about-timeline__role">{{ .title }}</h3>
+        <p class="about-timeline__company">{{ .company }}{{ with .location }} | {{ . }}{{ end }} <span class="about-timeline__period">{{ .period }}</span></p>
+        <p class="about-timeline__desc">{{ .description }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Education -->
+{{ with .Params.education }}
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-mortarboard-fill"></i> Educación</h2>
+  <div class="about-timeline">
+    {{ range . }}
+    <div class="about-timeline__item">
+      <div class="about-timeline__icon"><i class="bi {{ .icon }}"></i></div>
+      <div class="about-timeline__content">
+        <h3 class="about-timeline__role">{{ .degree }}</h3>
+        <p class="about-timeline__company">{{ .institution }} <span class="about-timeline__period">{{ .period }}</span></p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Skills -->
+{{ with .Params.skills }}
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-code-slash"></i> Habilidades Técnicas</h2>
+  <div class="about-skills">
+    {{ range . }}
+    <div class="about-skills__group">
+      <h3 class="about-skills__category">{{ .category }}</h3>
+      <div class="about-skills__tags">
+        {{ range .items }}
+        <span class="about-skill-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Certifications -->
+{{ with .Params.certifications }}
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-award-fill"></i> Certificaciones</h2>
+  <div class="about-certs">
+    {{ range . }}
+    <div class="about-cert-card">
+      <i class="bi {{ .icon }} about-cert-card__icon"></i>
+      <div>
+        <p class="about-cert-card__name">{{ .name }}</p>
+        <p class="about-cert-card__issuer">{{ .issuer }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Languages -->
+{{ with .Params.languages }}
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-translate"></i> Idiomas</h2>
+  <div class="about-certs">
+    {{ range . }}
+    <div class="about-cert-card">
+      <i class="bi bi-globe2 about-cert-card__icon"></i>
+      <div>
+        <p class="about-cert-card__name">{{ .name }}</p>
+        <p class="about-cert-card__issuer">{{ .level }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Strengths -->
+{{ with .Params.strengths }}
+<section class="about-section">
+  <h2 class="about-section__title"><i class="bi bi-star-fill"></i> Fortalezas</h2>
+  <div class="about-strengths">
+    {{ range . }}
+    <div class="about-strength">
+      <i class="bi {{ .icon }}"></i>
+      <span>{{ .text }}</span>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- Contact CTA -->
+<section class="about-section about-contact">
+  <h2 class="about-section__title"><i class="bi bi-chat-dots-fill"></i> Contacto</h2>
+  <div class="about-card about-contact__card">
+    <p>Estoy abierto a nuevas oportunidades, pueden contactarme.</p>
+    <div class="about-contact__links">
+      {{ with .Params.contact }}
+      <a href="mailto:{{ .email }}" class="about-contact__item">
+        <i class="bi bi-envelope-fill"></i> {{ .email }}
+      </a>
+      <a href="{{ .linkedin }}" target="_blank" rel="noopener" class="about-contact__item">
+        <i class="bi bi-linkedin"></i> LinkedIn
+      </a>
+      <a href="{{ .github }}" target="_blank" rel="noopener" class="about-contact__item">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+      <a href="{{ .portfolio }}" class="about-contact__item">
+        <i class="bi bi-folder2-open"></i> Portafolio
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
 {{ end }}

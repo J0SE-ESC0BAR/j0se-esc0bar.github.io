@@ -97,7 +97,8 @@ publishDir = "docs"
     "/css/footer.css",
     "/css/utilities.css",
     "/css/responsive.css",
-    "/css/lightbox.css"       # Estilos para el lightbox personalizado
+    "/css/lightbox.css",      # Estilos para el lightbox personalizado
+    "/css/about.css"
   ]
   js = [
     "/js/scripts.js",

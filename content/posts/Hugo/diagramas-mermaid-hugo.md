@@ -8,11 +8,11 @@ tags: ["Hugo", "Mermaid", "Diagramas", "Documentación"]
 viewimg: true
 ---
 
-# 🎨 Integración y Uso de Diagramas Mermaid en Hugo
+# Integración y Uso de Diagramas Mermaid en Hugo
 
 Los diagramas Mermaid te permiten crear una amplia variedad de visualizaciones complejas (diagramas de flujo, secuencia, Gantt, etc.) directamente desde texto, de manera similar a Markdown. En este sitio, el soporte para Mermaid ya está configurado y listo para que lo uses en tus posts.
 
-## 🚀 Cómo Usar Mermaid
+## Cómo Usar Mermaid
 
 Para crear un diagrama Mermaid en cualquier post, simplemente usa un bloque de código estándar de Markdown con el lenguaje especificado como `mermaid`:
 
@@ -29,7 +29,7 @@ graph TD
 
 Hugo y el script de Mermaid se encargarán de renderizar este bloque de texto como un diagrama SVG interactivo.
 
-## 📊 Tipos de Diagramas Disponibles (Ejemplos)
+## Tipos de Diagramas Disponibles (Ejemplos)
 
 Mermaid soporta una gran cantidad de tipos de diagramas. Aquí algunos ejemplos:
 
@@ -194,7 +194,7 @@ stateDiagram-v2
 ```
 Para muchos más tipos de diagramas (Pie, Git, User Journey, Mindmap, etc.), consulta la [documentación oficial de Mermaid](https://mermaid.js.org/syntax/examples.html).
 
-## 🎨 Personalización y Estilos
+## Personalización y Estilos
 
 Mermaid permite cierta personalización directamente en el código del diagrama, como definir estilos para nodos específicos:
 
@@ -210,7 +210,7 @@ graph TD
 ```
 También puedes usar directivas de tema o inicialización para aplicar configuraciones globales si el script de carga lo permite.
 
-## 🔧 Configuración Técnica (Cómo está implementado en este sitio)
+## Configuración Técnica (Cómo está implementado en este sitio)
 
 El soporte para Mermaid en este sitio Hugo se ha implementado mediante:
 
@@ -240,7 +240,7 @@ El soporte para Mermaid en este sitio Hugo se ha implementado mediante:
     ```
     Esto utiliza la versión ESM de Mermaid desde un CDN (jsDelivr es una opción popular).
 
-## 💡 Consejos y Mejores Prácticas
+## Consejos y Mejores Prácticas
 
 1.  **Mantén los Diagramas Simples**: Evita crear diagramas excesivamente complejos que se vuelvan difíciles de leer y entender en una pantalla.
 2.  **Usa Etiquetas Descriptivas**: Nombres claros y concisos para nodos, actores y conexiones mejoran la comprensión.
@@ -249,7 +249,7 @@ El soporte para Mermaid en este sitio Hugo se ha implementado mediante:
 5.  **Revisa la Sintaxis**: Mermaid tiene su propia sintaxis. Consulta la documentación oficial si algo no se renderiza como esperas.
 6.  **Prueba en Diferentes Navegadores/Dispositivos**: Asegúrate de que tus diagramas se vean bien en los principales navegadores y en dispositivos móviles.
 
-## 🔗 Enlaces Útiles
+## Enlaces Útiles
 
 -   [**Documentación Oficial de Mermaid**](https://mermaid.js.org/): La fuente principal para sintaxis, tipos de diagramas y configuración.
 -   [**Editor en Línea de Mermaid (Live Editor)**](https://mermaid.live/): Excelente para probar y crear diagramas rápidamente.
