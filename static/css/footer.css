@@ -5,7 +5,6 @@
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(0, 162, 232, 0.25);
   color: var(--text-color);
-  margin-top: 3rem;
 }
 
 .footer-brand {

@@ -95,7 +95,7 @@
 }
 
 #carouselExampleCaptions {
-  margin-top: 4rem;
+  margin-top: 3.5rem; /* coincide con la altura del header fijo (.site-header) */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -133,7 +133,7 @@
   }
 
   #carouselExampleCaptions {
-    margin-top: 2.75rem;
+    margin-top: 3rem; /* coincide con la altura del header fijo en móvil */
   }
 
   .carousel-caption > p {
