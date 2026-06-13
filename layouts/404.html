@@ -266,31 +266,6 @@
             performSearch();
         }
     });
-
-    // Easter egg: Konami Code
-    let konamiCode = [];
-    const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
-    
-    document.addEventListener('keydown', function(e) {
-        konamiCode.push(e.keyCode);
-        if (konamiCode.length > 10) {
-            konamiCode.shift();
-        }
-        
-        if (konamiCode.toString() === konamiSequence.toString()) {
-            // Easter egg activado
-            document.querySelector('.error-icon i').className = 'bi bi-emoji-sunglasses';
-            document.querySelector('.error-title').textContent = '¡Código Konami activado! 🎮';
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        }
-    });
 </script>
-
-<!-- Script para confetti (opcional) -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 {{ end }}
 
