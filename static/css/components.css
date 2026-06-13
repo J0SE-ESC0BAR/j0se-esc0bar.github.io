@@ -598,6 +598,8 @@ html.list-view #gridView {
   border-radius: 0.375rem;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,0.6);
+  height: 13.5rem;        /* misma altura que las tarjetas de lista */
+  overflow: hidden;
 }
 
 .featured-card:hover {
@@ -606,18 +608,40 @@ html.list-view #gridView {
 }
 
 .featured-card-img {
-  flex: 0 0 25rem;
+  flex: 0 0 20rem;        /* algo más ancha que las de lista, para destacar */
+  height: auto;           /* se estira a la altura de la tarjeta */
   overflow: hidden;
 }
 
 .featured-card-img img {
   border-radius: 0.375rem 0 0 0.375rem;
+  object-fit: cover;      /* llena el contenedor sin deformarse */
+}
+
+/* Título a una línea y descripción sin estirar, igual que en la vista lista */
+.featured-card .card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.featured-card .card-text {
+  flex: 0 0 auto;
+}
+
+.featured-card .card-body {
+  min-width: 0;
+  overflow: hidden;
 }
 
 /* En mobile: tarjeta vertical */
 @media (max-width: 576px) {
   .featured-card {
     flex-direction: column !important;
+    height: auto; /* anula la altura fija al apilar en columna */
+  }
+  .featured-card .card-title {
+    white-space: normal; /* el título puede usar varias líneas en móvil */
   }
   .featured-card-img {
     flex: none;
