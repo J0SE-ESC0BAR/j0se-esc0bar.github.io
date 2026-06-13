@@ -17,20 +17,8 @@
 .footer-heading {
   color: var(--heading-color);
   font-family: var(--font-family-heading);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   letter-spacing: 0.5px;
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-
-.footer-heading::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 32px;
-  height: 2px;
-  background: var(--highlight-color);
 }
 
 .footer-text {
@@ -74,21 +62,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid var(--button-outline-border-color);
-  color: var(--card-text-color);
-  background: var(--card-bg-color);
-  font-size: 1.1rem;
-  transition: all 0.25s ease;
+  color: var(--text-color);
+  font-size: 1.25rem;
+  transition: color 0.25s ease;
 }
 
 .footer-social a:hover {
-  background: var(--button-active-bg-color);
-  border-color: var(--highlight-color);
-  color: #fff;
-  transform: translateY(-3px);
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 
