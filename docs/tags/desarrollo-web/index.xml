@@ -1,42 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Desarrollo Web on JAEM</title><link>https://jaem.dev/tags/desarrollo-web/</link><description>Recent content in Desarrollo Web on JAEM</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://jaem.dev/tags/desarrollo-web/index.xml" rel="self" type="application/rss+xml"/><item><title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title><link>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</link><pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate><guid>https://jaem.dev/posts/hugo/bloques-codigo-hugo/</guid><description>&lt;h1 id="dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas"&gt;Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas&lt;/h1&gt;
-&lt;p&gt;Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.&lt;/p&gt;
-&lt;h2 id="características-implementadas"&gt;Características Implementadas&lt;/h2&gt;
-&lt;p&gt;Este sitio cuenta con un sistema de bloques de código robusto que incluye:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Syntax highlighting nativo de Hugo&lt;/strong&gt; con Chroma.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Soporte para más de 250 lenguajes&lt;/strong&gt; de programación.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Botón de &amp;ldquo;Copiar&amp;rdquo;&lt;/strong&gt; en cada bloque de código para facilitar la reutilización.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Header automático&lt;/strong&gt; que muestra el lenguaje del bloque de código.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Configuración flexible&lt;/strong&gt; mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tema Dracula&lt;/strong&gt; optimizado para una excelente legibilidad.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Diseño responsive&lt;/strong&gt; que se adapta a cualquier tamaño de pantalla.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Estilos modernos&lt;/strong&gt; con efectos hover y transiciones suaves.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="uso-de-bloques-de-código"&gt;Uso de Bloques de Código&lt;/h2&gt;
-&lt;p&gt;Tienes dos maneras principales de insertar bloques de código en tus posts:&lt;/p&gt;</description></item><item><title>Página web Parroquia Santa Catarina</title><link>https://jaem.dev/projects/parroquia_santa_catarina_web/</link><pubDate>Wed, 01 Jun 2022 00:00:00 -0600</pubDate><guid>https://jaem.dev/projects/parroquia_santa_catarina_web/</guid><description>&lt;p&gt;Un sitio web que desarrollé para la Parroquia Santa Catarina.&lt;/p&gt;
-&lt;p&gt;Visita el sitio web para verlo en acción: &lt;a href="https://parroquiasantacatarinaapopa.github.io/"&gt;https://parroquiasantacatarinaapopa.github.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure class="lightbox-figure"&gt;
- &lt;img
- src="https://jaem.dev/images/capturamovil.png"
- alt="App movil"
- class="img-fluid lightbox-trigger"
- data-lightbox-src="https://jaem.dev/images/capturamovil.png"
- data-lightbox-alt="App movil"
- loading="lazy"
- decoding="async"
- style="cursor: pointer;"
- &gt;&lt;/figure&gt;
-&lt;/p&gt;</description></item><item><title>Página web Pastelería</title><link>https://jaem.dev/projects/pasteleria_web/</link><pubDate>Wed, 01 Sep 2021 00:00:00 -0600</pubDate><guid>https://jaem.dev/projects/pasteleria_web/</guid><description>&lt;p&gt;Un proyecto en el que diseñé una página web durante un curso de full stack. El host solo estuvo disponible por un año.&lt;/p&gt;
-&lt;p&gt;Puedes ver una demostración aquí: &lt;a href="http://launchfrontend.000webhostapp.com/"&gt;http://launchfrontend.000webhostapp.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure class="lightbox-figure"&gt;
- &lt;img
- src="https://jaem.dev/images/web_pasteleria.png"
- alt="Pasteleria"
- class="img-fluid lightbox-trigger"
- data-lightbox-src="https://jaem.dev/images/web_pasteleria.png"
- data-lightbox-alt="Pasteleria"
- loading="lazy"
- decoding="async"
- style="cursor: pointer;"
- &gt;&lt;/figure&gt;
-&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desarrollo Web on JAEM</title>
+    <link>https://jaem.site/tags/desarrollo-web/</link>
+    <description>Recent content in Desarrollo Web on JAEM</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jaem.site/tags/desarrollo-web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas</title>
+      <link>https://jaem.site/posts/hugo/bloques-codigo-hugo/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jaem.site/posts/hugo/bloques-codigo-hugo/</guid>
+      <description>&lt;h1 id=&#34;dominando-los-bloques-de-código-en-hugo-resaltado-y-funciones-avanzadas&#34;&gt;Dominando los Bloques de Código en Hugo: Resaltado y Funciones Avanzadas&lt;/h1&gt;&#xA;&lt;p&gt;Esta guía completa te mostrará cómo utilizar y personalizar el resaltado de sintaxis (syntax highlighting) y los bloques de código mejorados en tu sitio Hugo, aprovechando el poder de Chroma.&lt;/p&gt;&#xA;&lt;h2 id=&#34;características-implementadas&#34;&gt;Características Implementadas&lt;/h2&gt;&#xA;&lt;p&gt;Este sitio cuenta con un sistema de bloques de código robusto que incluye:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Syntax highlighting nativo de Hugo&lt;/strong&gt; con Chroma.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Soporte para más de 250 lenguajes&lt;/strong&gt; de programación.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Botón de &amp;ldquo;Copiar&amp;rdquo;&lt;/strong&gt; en cada bloque de código para facilitar la reutilización.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Header automático&lt;/strong&gt; que muestra el lenguaje del bloque de código.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Configuración flexible&lt;/strong&gt; mediante atributos en los bloques de código (ej. números de línea, resaltado de líneas específicas).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Tema Dracula&lt;/strong&gt; optimizado para una excelente legibilidad.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Diseño responsive&lt;/strong&gt; que se adapta a cualquier tamaño de pantalla.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Estilos modernos&lt;/strong&gt; con efectos hover y transiciones suaves.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;uso-de-bloques-de-código&#34;&gt;Uso de Bloques de Código&lt;/h2&gt;&#xA;&lt;p&gt;Tienes dos maneras principales de insertar bloques de código en tus posts:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Página web Parroquia Santa Catarina</title>
+      <link>https://jaem.site/projects/parroquia_santa_catarina_web/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 -0600</pubDate>
+      <guid>https://jaem.site/projects/parroquia_santa_catarina_web/</guid>
+      <description>&lt;p&gt;Un sitio web que desarrollé para la Parroquia Santa Catarina.&lt;/p&gt;&#xA;&lt;p&gt;Visita el sitio web para verlo en acción: &lt;a href=&#34;https://parroquiasantacatarinaapopa.github.io/&#34;&gt;https://parroquiasantacatarinaapopa.github.io/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.site/images/capturamovil.png&#34;&#xD;&#xA;    alt=&#34;App movil&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.site/images/capturamovil.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;App movil&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    decoding=&#34;async&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  &gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Página web Pastelería</title>
+      <link>https://jaem.site/projects/pasteleria_web/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 -0600</pubDate>
+      <guid>https://jaem.site/projects/pasteleria_web/</guid>
+      <description>&lt;p&gt;Un proyecto en el que diseñé una página web durante un curso de full stack. El host solo estuvo disponible por un año.&lt;/p&gt;&#xA;&lt;p&gt;Puedes ver una demostración aquí: &lt;a href=&#34;http://launchfrontend.000webhostapp.com/&#34;&gt;http://launchfrontend.000webhostapp.com/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;figure class=&#34;lightbox-figure&#34;&gt;&#xD;&#xA;  &lt;img&#xD;&#xA;    src=&#34;https://jaem.site/images/web_pasteleria.png&#34;&#xD;&#xA;    alt=&#34;Pasteleria&#34;&#xD;&#xA;    class=&#34;img-fluid lightbox-trigger&#34;&#xD;&#xA;    data-lightbox-src=&#34;https://jaem.site/images/web_pasteleria.png&#34;&#xD;&#xA;    data-lightbox-alt=&#34;Pasteleria&#34;&#xD;&#xA;    loading=&#34;lazy&#34;&#xD;&#xA;    decoding=&#34;async&#34;&#xD;&#xA;    style=&#34;cursor: pointer;&#34;&#xD;&#xA;  &gt;&lt;/figure&gt;&#xD;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

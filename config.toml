@@ -7,7 +7,7 @@
 #relativeURLs = true
 
 # Producción
-baseURL = "https://jaem.dev/"
+baseURL = "https://jaem.site/"
 # Ajustes de URLs
 canonifyURLs = true
 relativeURLs = false
