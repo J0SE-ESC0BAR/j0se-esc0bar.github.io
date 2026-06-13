@@ -444,6 +444,54 @@ pre code.hljs {
   align-items: flex-end;
 }
 
+/* Migas de pan (breadcrumbs) */
+.breadcrumbs {
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: "›";
+  opacity: 0.45;
+}
+
+.breadcrumbs a {
+  color: var(--text-color);
+  opacity: 0.8;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  opacity: 1;
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--heading-color);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Enlace «Volver» de las páginas de sección — mismo estilo de texto */
 .back-link {
   display: inline-flex;

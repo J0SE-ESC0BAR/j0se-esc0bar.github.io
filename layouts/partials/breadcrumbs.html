@@ -1,0 +1,15 @@
+{{/* Migas de pan: Inicio › sección › subsección › página actual.
+     Usa la jerarquía de Hugo (.Ancestors). No se muestra en el inicio. */}}
+{{ if not .IsHome }}
+<nav class="breadcrumbs" aria-label="Ruta de navegación">
+  <ol>
+    <li><a href="{{ "/" | relLangURL }}">Inicio</a></li>
+    {{ range .Ancestors.Reverse }}
+      {{ if not .IsHome }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    {{ end }}
+    <li aria-current="page">{{ .LinkTitle | truncate 60 }}</li>
+  </ol>
+</nav>
+{{ end }}
