@@ -378,6 +378,55 @@ pre code.hljs {
   color: var(--highlight-color);
 }
 
+/* Navegación al pie del post — solo texto (anterior / siguiente) */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.5rem 0 1rem;
+}
+
+.post-nav__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  max-width: 48%;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post-nav__item i {
+  color: var(--highlight-color);
+}
+
+.post-nav__dir {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.post-nav__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s ease;
+}
+
+.post-nav__item:hover,
+.post-nav__item:hover .post-nav__title {
+  color: var(--link-hover-color);
+}
+
+/* El siguiente se alinea a la derecha */
+.post-nav__next {
+  text-align: right;
+  align-items: flex-end;
+}
+
 body {
     font-family: sans-serif;
 }
