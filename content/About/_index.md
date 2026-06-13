@@ -74,8 +74,8 @@ strengths:
   - text: "Proactividad"
     icon: "bi-rocket-takeoff"
 contact:
-  email: "jose@jaem.dev"
+  email: "josescobar.dev@gmail.com"
   linkedin: "https://www.linkedin.com/in/jos%C3%A9-alfonso-escobar-mej%C3%ADa-15133620b/"
   github: "https://github.com/j0se-esc0bar"
-  portfolio: "https://www.jaem.dev/projects"
+  portfolio: "https://jaem.site/projects"
 ---

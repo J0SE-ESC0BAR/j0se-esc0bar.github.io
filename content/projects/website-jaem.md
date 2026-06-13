@@ -8,7 +8,7 @@ image: "/images/old-website-thumbnail.png" # Opcional: si tienes una imagen para
 
 Esta es la versión anterior de mi sitio web personal. Fue desarrollada utilizando el generador de sitios estáticos Hugo y sirvió como mi presencia en línea antes de la versión actual.
 
-Puedes visitar la versión antigua aquí: [https://jaem.dev/old/](https://jaem.dev/old/)
+Puedes visitar la versión antigua aquí: [https://jaem.site/old/](https://jaem.site/old/)
 
 Aunque la tecnología y el diseño han evolucionado en la versión actual, esta página representa una etapa importante en mi aprendizaje y desarrollo como desarrollador web.
-[![Captura de pantalla de la versión antigua de mi sitio web](/images/old-website-thumbnail.png)](https://jaem.dev/old/)
+[![Captura de pantalla de la versión antigua de mi sitio web](/images/old-website-thumbnail.png)](https://jaem.site/old/)

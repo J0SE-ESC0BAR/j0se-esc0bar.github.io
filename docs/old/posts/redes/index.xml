@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redes on JAEM</title>
-    <link>https://jaem.dev/old/posts/redes/</link>
+    <link>https://jaem.site/old/posts/redes/</link>
     <description>Recent content in Redes on JAEM</description>
     <generator>Hugo</generator>
     <language>es</language>
     <lastBuildDate>Tue, 25 Feb 2025 10:00:00 -0600</lastBuildDate>
-    <atom:link href="https://jaem.dev/old/posts/redes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jaem.site/old/posts/redes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Administración y Resolución de Problemas en Windows y Linux</title>
-      <link>https://jaem.dev/old/posts/redes/redes/</link>
+      <link>https://jaem.site/old/posts/redes/redes/</link>
       <pubDate>Tue, 25 Feb 2025 10:00:00 -0600</pubDate>
-      <guid>https://jaem.dev/old/posts/redes/redes/</guid>
+      <guid>https://jaem.site/old/posts/redes/redes/</guid>
       <description>Administración y Resolución de Problemas en Windows y Linux Esta guía te ayudará a comprender conceptos básicos de administración y troubleshooting en estos sistemas operativos. Aquí aprenderás a manejar procesos, servicios, redes y más.&#xA;🔹 Windows Reiniciar un Servicio Existen dos métodos principales:&#xA;CMD: net stop NombreDelServicio net start NombreDelServicio PowerShell: Restart-Service -Name NombreDelServicio Gestión de Procesos y Rendimiento Listar procesos: tasklist Finalizar procesos con alto consumo de CPU: taskkill /PID &amp;lt;Número_PID&amp;gt; /F Ver conexiones de red: netstat -an Información de red: ipconfig /all Otros Comandos Útiles Información del sistema: systeminfo Apagar o reiniciar el sistema: shutdown /r /t 0 🔹 Linux Monitoreo de Procesos y Recursos Visualizar procesos en tiempo real:</description>
     </item>
   </channel>

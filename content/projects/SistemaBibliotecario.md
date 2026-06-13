@@ -1145,7 +1145,7 @@ Desarrollado por **J0SE-ESC0BAR**.
 Puedes encontrarme en:
 *   GitHub: [J0SE-ESC0BAR](https://github.com/J0SE-ESC0BAR)
 *   LinkedIn: [https://www.linkedin.com/in/jose-alfonso-escobar-mejia-15133620b/](https://www.linkedin.com/in/jose-alfonso-escobar-mejia-15133620b/)
-*   Correo: [jose@jaem.dev](mailto:jose@jaem.dev)
+*   Correo: [josescobar.dev@gmail.com](mailto:josescobar.dev@gmail.com)
 *   Correo: [josealfonsoescobarmejia@gmail.com](mailto:josealfonsoescobarmejia@gmail.com)
-*   Portafolio: [https://jaem.dev/projects](https://jaem.dev/projects)
-*  Sitio Web: [https://jaem.dev/](https://jaem.dev/)
+*   Portafolio: [https://jaem.site/projects](https://jaem.site/projects)
+*  Sitio Web: [https://jaem.site/](https://jaem.site/)
