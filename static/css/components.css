@@ -389,36 +389,53 @@ pre code.hljs {
 .post-nav__item {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.1rem;
   min-width: 0;
   max-width: 48%;
   color: var(--text-color);
   text-decoration: none;
+}
+
+/* Etiqueta principal grande: «← Anterior» / «Siguiente →» */
+.post-nav__dir {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--heading-color);
   transition: color 0.2s ease;
 }
 
-.post-nav__item i {
+.post-nav__dir i {
   color: var(--highlight-color);
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.post-nav__dir {
-  font-size: 0.8rem;
-  opacity: 0.75;
-}
-
+/* Título del post como subtítulo discreto */
 .post-nav__title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--heading-color);
+  font-size: 0.82rem;
+  color: var(--text-color);
+  opacity: 0.65;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color 0.2s ease;
+  max-width: 100%;
 }
 
-.post-nav__item:hover,
-.post-nav__item:hover .post-nav__title {
+/* Hover: resalta y la flecha se desplaza (indica avanzar/retroceder) */
+.post-nav__item:hover .post-nav__dir,
+.post-nav__item:hover .post-nav__dir i {
   color: var(--link-hover-color);
+}
+
+.post-nav__prev:hover .post-nav__dir i {
+  transform: translateX(-4px);
+}
+
+.post-nav__next:hover .post-nav__dir i {
+  transform: translateX(4px);
 }
 
 /* El siguiente se alinea a la derecha */

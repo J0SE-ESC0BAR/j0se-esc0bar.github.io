@@ -20,7 +20,7 @@
       {{/* Izquierda: post anterior (más reciente) o volver a la sección */}}
       {{ if .NextInSection }}
         <a href="{{ .NextInSection.Permalink }}" class="post-nav__item post-nav__prev">
-          <span class="post-nav__dir"><i class="bi bi-arrow-left"></i> Post anterior</span>
+          <span class="post-nav__dir"><i class="bi bi-arrow-left"></i> Anterior</span>
           <span class="post-nav__title">{{ .NextInSection.Title | truncate 40 }}</span>
         </a>
       {{ else if .Parent }}
@@ -38,7 +38,7 @@
       {{/* Derecha: post siguiente (más antiguo) o ver todos */}}
       {{ if .PrevInSection }}
         <a href="{{ .PrevInSection.Permalink }}" class="post-nav__item post-nav__next">
-          <span class="post-nav__dir">Post siguiente <i class="bi bi-arrow-right"></i></span>
+          <span class="post-nav__dir">Siguiente <i class="bi bi-arrow-right"></i></span>
           <span class="post-nav__title">{{ .PrevInSection.Title | truncate 40 }}</span>
         </a>
       {{ else }}
