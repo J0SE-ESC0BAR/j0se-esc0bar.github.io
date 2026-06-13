@@ -510,7 +510,7 @@ html.list-view .grid-item {
   color: var(--card-text-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   animation: slideIn 0.3s ease-in-out;
-  height: 11rem;          /* altura uniforme para todas las tarjetas */
+  height: 13.5rem;        /* altura uniforme con espacio para descripción + badge */
   overflow: hidden;
 }
 
@@ -537,6 +537,19 @@ html.list-view .grid-item {
   padding: 1.25rem;
   min-width: 0;           /* permite recortar el texto en vez de desbordar */
   overflow: hidden;
+}
+
+/* Título a 1 línea para mantener la altura predecible */
+#listView .card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* La descripción no se estira: su alto lo define line-clamp (corta en línea
+   completa con puntos suspensivos, no a media línea) */
+#listView .card-text {
+  flex: 0 0 auto;
 }
 
 #listView .btn-primary {

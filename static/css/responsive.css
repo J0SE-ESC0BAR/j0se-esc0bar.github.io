@@ -160,6 +160,10 @@
     flex-direction: column !important;
     height: auto !important; /* anula la altura fija de escritorio al apilar en columna */
   }
+  /* En móvil el título puede usar varias líneas (hay altura de sobra) */
+  #listView .card-title {
+    white-space: normal;
+  }
   #listView .ratio.ratio-16x9 {
     flex: none !important;
     width: 100% !important;
