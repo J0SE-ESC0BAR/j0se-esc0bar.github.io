@@ -331,12 +331,15 @@ pre code.hljs {
   color: var(--card-text-color);
 }
 
-/* Toggle de vista (Cuadrícula / Lista) */
+/* Toggle de vista (Cuadrícula / Lista) — estilo minimalista */
 .view-toggle .btn,
 .toggle-container .btn {
-  background: var(--card-bg-color);
+  background: transparent;
   color: var(--text-color);
   border: 1px solid var(--button-outline-border-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
   transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -345,12 +348,12 @@ pre code.hljs {
   color: inherit;
 }
 
-/* Hover sobre el botón inactivo */
+/* Hover sobre el botón inactivo: tenue */
 .view-toggle .btn:hover,
 .toggle-container .btn:hover {
-  background: var(--button-outline-hover-bg-color);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--card-text-color);
-  border-color: var(--highlight-color);
+  border-color: var(--button-outline-border-color);
 }
 
 /* Quitar el resplandor azul de Bootstrap al enfocar/presionar */
@@ -361,19 +364,18 @@ pre code.hljs {
   box-shadow: none;
 }
 
-/* Botón activo (vista seleccionada): relleno con el color de acento */
+/* Botón activo (vista seleccionada): tinte suave y texto de acento */
 .view-toggle .btn.active-view,
 .toggle-container .btn.active-view {
-  background: var(--highlight-color);
-  color: #fff;
+  background: rgba(0, 162, 232, 0.15);
+  color: var(--highlight-color);
   border-color: var(--highlight-color);
 }
 
 .view-toggle .btn.active-view:hover,
 .toggle-container .btn.active-view:hover {
-  background: var(--link-hover-color);
-  border-color: var(--link-hover-color);
-  color: #fff;
+  background: rgba(0, 162, 232, 0.22);
+  color: var(--highlight-color);
 }
 
 body {
