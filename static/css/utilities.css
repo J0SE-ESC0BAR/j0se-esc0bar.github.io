@@ -241,6 +241,7 @@
   -webkit-line-clamp: 3;
   line-clamp: 3; /* Propiedad estándar */
   -webkit-box-orient: vertical;
+  overflow: hidden; /* necesario para que line-clamp recorte y muestre los puntos suspensivos */
 }
 
 /* Ajustes responsivos para los botones */

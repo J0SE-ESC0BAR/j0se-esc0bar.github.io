@@ -510,6 +510,8 @@ html.list-view .grid-item {
   color: var(--card-text-color);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   animation: slideIn 0.3s ease-in-out;
+  height: 11rem;          /* altura uniforme para todas las tarjetas */
+  overflow: hidden;
 }
 
 #listView .card:hover {
@@ -517,9 +519,14 @@ html.list-view .grid-item {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
-/* Tamaño personalizado para contenedor de imágenes en vista lista */
+/* Imagen de ancho fijo que llena la altura de la tarjeta sin deformarse */
 #listView .ratio.ratio-16x9 {
-  flex: 0 0 25rem;
+  flex: 0 0 16rem;
+  height: auto;           /* se estira a la altura de la tarjeta */
+}
+
+#listView .ratio.ratio-16x9::before {
+  display: none;          /* anula el alto por aspect-ratio para que llene la tarjeta */
 }
 
 .list-item .card {
@@ -528,6 +535,8 @@ html.list-view .grid-item {
 
 #listView .card-body {
   padding: 1.25rem;
+  min-width: 0;           /* permite recortar el texto en vez de desbordar */
+  overflow: hidden;
 }
 
 #listView .btn-primary {

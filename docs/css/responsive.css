@@ -158,11 +158,15 @@
   /* M3: Tarjetas lista en mobile - imagen arriba, contenido abajo */
   #listView .card.flex-row {
     flex-direction: column !important;
+    height: auto !important; /* anula la altura fija de escritorio al apilar en columna */
   }
   #listView .ratio.ratio-16x9 {
     flex: none !important;
     width: 100% !important;
     height: 180px;
+  }
+  #listView .ratio.ratio-16x9::before {
+    display: none;
   }
   #listView .ratio .rounded-start {
     border-radius: 0.375rem 0.375rem 0 0 !important;
