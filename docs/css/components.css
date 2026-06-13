@@ -331,6 +331,51 @@ pre code.hljs {
   color: var(--card-text-color);
 }
 
+/* Toggle de vista (Cuadrícula / Lista) */
+.view-toggle .btn,
+.toggle-container .btn {
+  background: var(--card-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--button-outline-border-color);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.view-toggle .btn i,
+.toggle-container .btn i {
+  color: inherit;
+}
+
+/* Hover sobre el botón inactivo */
+.view-toggle .btn:hover,
+.toggle-container .btn:hover {
+  background: var(--button-outline-hover-bg-color);
+  color: var(--card-text-color);
+  border-color: var(--highlight-color);
+}
+
+/* Quitar el resplandor azul de Bootstrap al enfocar/presionar */
+.view-toggle .btn:focus,
+.view-toggle .btn:active,
+.toggle-container .btn:focus,
+.toggle-container .btn:active {
+  box-shadow: none;
+}
+
+/* Botón activo (vista seleccionada): relleno con el color de acento */
+.view-toggle .btn.active-view,
+.toggle-container .btn.active-view {
+  background: var(--highlight-color);
+  color: #fff;
+  border-color: var(--highlight-color);
+}
+
+.view-toggle .btn.active-view:hover,
+.toggle-container .btn.active-view:hover {
+  background: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+  color: #fff;
+}
+
 body {
     font-family: sans-serif;
 }
