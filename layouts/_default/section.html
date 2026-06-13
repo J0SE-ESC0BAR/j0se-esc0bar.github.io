@@ -99,23 +99,19 @@
   {{ end }}
 
   {{/* Navegación de sections - Botón para volver a la raíz */}}
-  <div class="py-4">
-    <div class="row">
-      <div class="col-md-4">
-        {{ if eq .Section "posts" }}
-          <a href="{{ "/posts/" | relURL }}" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left"></i> Volver a Posts
-          </a>
-        {{ else if eq .Section "projects" }}
-          <a href="{{ "/projects/" | relURL }}" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left"></i> Volver a Projects
-          </a>
-        {{ else }}
-          <a href="{{ "/" | relURL }}" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left"></i> Volver al Inicio
-          </a>
-        {{ end }}
-      </div>
-    </div>
+  <div class="py-3">
+    {{ if eq .Section "posts" }}
+      <a href="{{ "/posts/" | relURL }}" class="back-link">
+        <i class="bi bi-arrow-left"></i> Volver a Posts
+      </a>
+    {{ else if eq .Section "projects" }}
+      <a href="{{ "/projects/" | relURL }}" class="back-link">
+        <i class="bi bi-arrow-left"></i> Volver a Projects
+      </a>
+    {{ else }}
+      <a href="{{ "/" | relURL }}" class="back-link">
+        <i class="bi bi-arrow-left"></i> Volver al Inicio
+      </a>
+    {{ end }}
   </div>
 {{ end }}

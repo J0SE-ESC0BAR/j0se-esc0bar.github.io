@@ -444,6 +444,34 @@ pre code.hljs {
   align-items: flex-end;
 }
 
+/* Enlace «Volver» de las páginas de sección — mismo estilo de texto */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 1.5rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link i {
+  color: var(--highlight-color);
+  font-size: 1.15rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.back-link:hover,
+.back-link:hover i {
+  color: var(--link-hover-color);
+}
+
+.back-link:hover i {
+  transform: translateX(-4px);
+}
+
 body {
     font-family: sans-serif;
 }
