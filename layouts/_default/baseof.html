@@ -14,6 +14,11 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
+  <!-- Fuentes: Poppins (títulos) + Inter (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
   <!-- Bootstrap icons - Actualizado a la versión 1.11.3 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   
@@ -93,7 +98,29 @@
   {{ if .Store.Get "hasMermaid" }}
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        securityLevel: 'loose',
+        fontFamily: 'Inter, system-ui, sans-serif',
+        themeVariables: {
+          darkMode: true,
+          background: 'transparent',
+          primaryColor: '#0f2e43',
+          primaryTextColor: '#e6f1f7',
+          primaryBorderColor: '#00a2e8',
+          lineColor: '#4ca2ff',
+          secondaryColor: '#13263a',
+          tertiaryColor: '#0a1a2b',
+          mainBkg: '#0f2e43',
+          nodeBorder: '#00a2e8',
+          clusterBkg: 'rgba(0, 162, 232, 0.06)',
+          clusterBorder: 'rgba(0, 162, 232, 0.3)',
+          titleColor: '#d3d3d3',
+          edgeLabelBackground: '#0a1a2b',
+          fontSize: '15px'
+        }
+      });
     </script>
   {{ end }}
 </body>

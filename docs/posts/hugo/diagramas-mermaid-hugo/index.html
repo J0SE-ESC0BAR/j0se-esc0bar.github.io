@@ -15,6 +15,11 @@
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   
   
@@ -45,6 +50,8 @@
     <link rel="stylesheet" href="https://jaem.site/css/lightbox.css">
   
     <link rel="stylesheet" href="https://jaem.site/css/about.css">
+  
+    <link rel="stylesheet" href="https://jaem.site/css/prose.css">
   
 
   
@@ -207,7 +214,7 @@
     </div>
   </div>
   </div>
-    <div class="py-4">
+    <article class="prose py-4">
       <h1 id="integración-y-uso-de-diagramas-mermaid-en-hugo">Integración y Uso de Diagramas Mermaid en Hugo</h1>
 <p>Los diagramas Mermaid te permiten crear una amplia variedad de visualizaciones complejas (diagramas de flujo, secuencia, Gantt, etc.) directamente desde texto, de manera similar a Markdown. En este sitio, el soporte para Mermaid ya está configurado y listo para que lo uses en tus posts.</p>
 <h2 id="cómo-usar-mermaid">Cómo Usar Mermaid</h2>
@@ -473,7 +480,7 @@ En la plantilla base del sitio (generalmente <code>layouts/_default/baseof.html<
 </ul>
 <p>Con Mermaid integrado en Hugo, tienes una herramienta poderosa para enriquecer tu contenido con visualizaciones claras y efectivas.</p>
 
-    </div>
+    </article>
     
     <nav class="post-nav" aria-label="Navegación entre posts">
       
@@ -597,7 +604,29 @@ En la plantilla base del sitio (generalmente <code>layouts/_default/baseof.html<
   
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'base',
+        securityLevel: 'loose',
+        fontFamily: 'Inter, system-ui, sans-serif',
+        themeVariables: {
+          darkMode: true,
+          background: 'transparent',
+          primaryColor: '#0f2e43',
+          primaryTextColor: '#e6f1f7',
+          primaryBorderColor: '#00a2e8',
+          lineColor: '#4ca2ff',
+          secondaryColor: '#13263a',
+          tertiaryColor: '#0a1a2b',
+          mainBkg: '#0f2e43',
+          nodeBorder: '#00a2e8',
+          clusterBkg: 'rgba(0, 162, 232, 0.06)',
+          clusterBorder: 'rgba(0, 162, 232, 0.3)',
+          titleColor: '#d3d3d3',
+          edgeLabelBackground: '#0a1a2b',
+          fontSize: '15px'
+        }
+      });
     </script>
   
 </body>

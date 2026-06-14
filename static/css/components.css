@@ -520,10 +520,6 @@ pre code.hljs {
   transform: translateX(-4px);
 }
 
-body {
-    font-family: sans-serif;
-}
-
 /* Normalización de altura para cards e imágenes */
 #itemsContainer .card-img-top {
     width: 100%;

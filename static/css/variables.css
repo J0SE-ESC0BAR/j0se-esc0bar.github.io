@@ -1,7 +1,11 @@
 :root {
-  --font-family-heading: 'Poppins', sans-serif;
-  --font-family-paragraph: Helvetica, sans-serif;
-  --font-family-mono: monospace;
+  --font-family-heading: 'Poppins', system-ui, sans-serif;
+  --font-family-paragraph: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace;
+
+  /* Ritmo y medidas de lectura */
+  --content-max: 70rem;
+  --space-section: 3rem;
   --base-color: #01020e;
   --base-offset-color: #eaeaea;
   --highlight-color: #00a2e8;

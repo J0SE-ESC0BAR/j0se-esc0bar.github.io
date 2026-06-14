@@ -127,32 +127,27 @@
    Estilos para diagramas Mermaid
    ========================================================================== */
 
-/* Contenedor de Mermaid */
+/* Contenedor de Mermaid — integrado al tema oscuro */
 .mermaid {
   display: flex;
   justify-content: center;
   margin: 2rem 0;
   padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
+  background: transparent;
   overflow-x: auto;
+  /* evita el "flash" del código fuente antes de renderizar */
+  color: transparent;
 }
 
-/* Tema oscuro para Mermaid */
-@media (prefers-color-scheme: dark) {
-  .mermaid {
-    background-color: #2d3748;
-    border-color: #4a5568;
-  }
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Responsive para Mermaid */
 @media (max-width: 768px) {
   .mermaid {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     padding: 0.5rem;
-    font-size: 0.875rem;
   }
 }
 
@@ -160,22 +155,17 @@
    Utilidades adicionales
    ========================================================================== */
 
-/* Para bloques de código en línea (inline code) */
-code:not(.chroma code) {
-  background-color: #f1f3f4;
-  color: #c23621;
-  padding: 0.125rem 0.25rem;
-  border-radius: 3px;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 0.875em;
-}
-
-/* Tema oscuro para código inline */
-@media (prefers-color-scheme: dark) {
-  code:not(.chroma code) {
-    background-color: #44475a;
-    color: #ff79c6;
-  }
+/* Código en línea (inline code) — pill oscuro coherente con el tema */
+:not(pre) > code {
+  background-color: var(--code-bg-color, #282a36);
+  color: #8be9fd;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--code-border-color, #44475a);
+  font-family: var(--font-family-mono);
+  font-size: 0.85em;
+  font-weight: 500;
+  word-break: break-word;
 }
 
 /* Scrollbar personalizada para bloques de código */
