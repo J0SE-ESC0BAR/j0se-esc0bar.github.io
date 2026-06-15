@@ -32,6 +32,7 @@ Este proyecto nació de la necesidad de contar con una herramienta eficiente y v
 - [Contribución](#contribución)
 - [Licencia](#licencia)
 - [Autor](#autor)
+{.toc}
 
 ## Características Principales
 

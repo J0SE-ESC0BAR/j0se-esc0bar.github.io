@@ -85,9 +85,44 @@
 /* Imágenes dentro de la prosa (las figuras se estilizan en lightbox.css) */
 .prose img { border-radius: 8px; }
 
+/* Tabla de contenidos (lista marcada con {.toc}) — tarjeta compacta */
+.prose .toc {
+  list-style: none;
+  margin: 1.5rem 0 2.2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(0, 162, 232, 0.22);
+  border-radius: 10px;
+  background: var(--card-bg-color);
+  columns: 2;
+  column-gap: 2.5rem;
+  font-size: 0.95rem;
+}
+.prose .toc li {
+  margin: 0 0 0.55rem;
+  padding: 0;
+  break-inside: avoid;
+}
+.prose .toc li::marker { content: ""; }
+.prose .toc a {
+  display: inline-block;
+  padding-left: 0.6rem;
+  border-left: 2px solid transparent;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.prose .toc a:hover {
+  color: var(--highlight-color);
+  border-color: var(--highlight-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .prose { font-size: 1rem; line-height: 1.7; }
   .prose h2 { font-size: 1.45rem; }
   .prose h3 { font-size: 1.22rem; }
+}
+
+@media (max-width: 600px) {
+  .prose .toc { columns: 1; }
 }
