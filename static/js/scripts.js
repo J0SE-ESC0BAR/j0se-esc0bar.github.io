@@ -63,102 +63,10 @@ if (menuToggle && navLinks) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  
-  // Manejar bloques de código con estructura predefinida
-  document.querySelectorAll(".code-block__copybtn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const codeBlock = btn.closest(".code-block");
-      const codeElement = codeBlock.querySelector("pre code");
-      
-      if (codeElement) {
-        navigator.clipboard.writeText(codeElement.innerText).then(() => {
-          const originalText = btn.textContent;
-          btn.textContent = "¡Copiado!";
-          btn.style.background = "var(--highlight-color, #007acc)";
-          
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = "";
-          }, 2000);
-        }).catch(() => {
-          btn.textContent = "Error";
-          setTimeout(() => {
-            btn.textContent = "Copy";
-          }, 2000);
-        });
-      }
-    });
-  });
-
-  // Manejar bloques de código sin estructura predefinida (generación automática)
-  document.querySelectorAll("pre code").forEach((codeElement) => {
-    // Solo procesar si no está dentro de un .code-block existente
-    if (!codeElement.closest(".code-block")) {
-      hljs.highlightElement(codeElement);
-      
-      const codeBlock = document.createElement("div");
-      codeBlock.className = "code-block";
-      
-      const preElement = codeElement.parentElement;
-      const highlightContainer = preElement.parentElement;
-      
-      // Crear el contenedor highlight si no existe
-      if (!highlightContainer.classList.contains("highlight")) {
-        const highlight = document.createElement("div");
-        highlight.className = "highlight";
-        highlightContainer.insertBefore(highlight, preElement);
-        highlight.appendChild(codeBlock);
-      } else {
-        highlightContainer.appendChild(codeBlock);
-      }
-      
-      // Crear header
-      const header = document.createElement("div");
-      header.className = "code-block__header";
-      codeBlock.appendChild(header);
-      
-      // Determinar el lenguaje
-      const languageClass = Array.from(codeElement.classList).find(cls => cls.startsWith("language-"));
-      const language = languageClass ?
-        languageClass.replace("language-", "").toUpperCase() :
-        (codeElement.getAttribute("data-lang") || "CODE").toUpperCase();
-      
-      // Crear span del lenguaje
-      const langSpan = document.createElement("span");
-      langSpan.className = "code-block__lang";
-      langSpan.textContent = language;
-      header.appendChild(langSpan);
-      
-      // Crear botón de copiar
-      const copyBtn = document.createElement("button");
-      copyBtn.className = "code-block__copybtn";
-      copyBtn.textContent = "Copy";
-      header.appendChild(copyBtn);
-      
-      // Mover el elemento pre al code-block
-      codeBlock.appendChild(preElement);
-      
-      // Agregar funcionalidad de copiado
-      copyBtn.addEventListener("click", () => {
-        navigator.clipboard.writeText(codeElement.innerText).then(() => {
-          copyBtn.textContent = "¡Copiado!";
-          copyBtn.style.background = "var(--highlight-color, #007acc)";
-          
-          setTimeout(() => {
-            copyBtn.textContent = "Copy";
-            copyBtn.style.background = "";
-          }, 2000);
-        }).catch(() => {
-          copyBtn.textContent = "Error";
-          setTimeout(() => {
-            copyBtn.textContent = "Copy";
-          }, 2000);
-        });
-      });
-    }
-  });
-});
+/* Los bloques de código y su botón de copiar los maneja el render hook
+   layouts/_default/_markup/render-codeblock.html (función copyToClipboard),
+   que conserva el icono SVG. Se eliminó la lógica duplicada que aquí añadía
+   un segundo listener y rompía el botón (lo dejaba vacío o como caja azul). */
 
 // Grid/List view toggle for posts and proyectos
 (function() {
