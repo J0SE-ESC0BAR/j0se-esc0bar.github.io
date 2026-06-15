@@ -34,42 +34,39 @@ class CustomLightbox {
   createLightboxHTML() {
     const lightboxHTML = `
       <div class="lightbox-overlay" id="lightbox-overlay">
-        <div class="lightbox-container">
-          <!-- Botón cerrar arriba a la derecha -->
-          <button class="lightbox-close-btn" id="lightbox-close" title="Cerrar (Esc)">
+        <!-- Barra superior: contador + cerrar -->
+        <div class="lightbox-toolbar">
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+          <button class="lightbox-icon-btn lightbox-close-btn" id="lightbox-close" title="Cerrar (Esc)" aria-label="Cerrar">
             <i class="bi bi-x-lg"></i>
           </button>
-          
-          <!-- Áreas de navegación - cubren los lados de la imagen -->
-          <div class="lightbox-nav-area lightbox-nav-left" id="lightbox-prev" title="Imagen anterior (←)">
-            <i class="bi bi-chevron-left lightbox-nav-icon"></i>
-          </div>
-          
-          <div class="lightbox-nav-area lightbox-nav-right" id="lightbox-next" title="Imagen siguiente (→)">
-            <i class="bi bi-chevron-right lightbox-nav-icon"></i>
-          </div>
-          
-          <!-- Imagen principal -->
-          <img class="lightbox-image" id="lightbox-image" alt="">
-          
-          <!-- Caption -->
-          <div class="lightbox-caption" id="lightbox-caption"></div>
-          
-          <!-- Controles de zoom abajo a la derecha -->
-          <div class="lightbox-zoom-controls">
-            <button class="lightbox-zoom-btn" id="lightbox-zoom-out" title="Alejar (-)">
-              <i class="bi bi-zoom-out"></i>
-            </button>
-            <button class="lightbox-zoom-btn" id="lightbox-zoom-in" title="Acercar (+)">
-              <i class="bi bi-zoom-in"></i>
-            </button>
-            <button class="lightbox-zoom-btn" id="lightbox-reset" title="Restablecer zoom (0)">
-              <i class="bi bi-arrows-fullscreen"></i>
-            </button>
-          </div>
-          
-          <!-- Contador abajo en el centro -->
-          <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
+
+        <!-- Escenario: imagen + navegación -->
+        <div class="lightbox-stage">
+          <button class="lightbox-nav lightbox-nav-left" id="lightbox-prev" title="Anterior (←)" aria-label="Imagen anterior">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+
+          <img class="lightbox-image" id="lightbox-image" alt="" draggable="false">
+
+          <button class="lightbox-nav lightbox-nav-right" id="lightbox-next" title="Siguiente (→)" aria-label="Imagen siguiente">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Pie: caption + controles de zoom -->
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div class="lightbox-zoom-controls">
+          <button class="lightbox-icon-btn" id="lightbox-zoom-out" title="Alejar (-)" aria-label="Alejar">
+            <i class="bi bi-dash-lg"></i>
+          </button>
+          <button class="lightbox-icon-btn" id="lightbox-reset" title="Restablecer (0)" aria-label="Restablecer zoom">
+            <i class="bi bi-arrow-counterclockwise"></i>
+          </button>
+          <button class="lightbox-icon-btn" id="lightbox-zoom-in" title="Acercar (+)" aria-label="Acercar">
+            <i class="bi bi-plus-lg"></i>
+          </button>
         </div>
       </div>
     `;
@@ -106,9 +103,9 @@ class CustomLightbox {
     this.zoomOutBtn.addEventListener('click', () => this.zoomOut());
     this.resetBtn.addEventListener('click', () => this.resetZoom());
     
-    // Cerrar al hacer clic en overlay
+    // Cerrar al hacer clic en el fondo (overlay o área alrededor de la imagen)
     this.overlay.addEventListener('click', (e) => {
-      if (e.target === this.overlay) {
+      if (e.target === this.overlay || e.target.classList.contains('lightbox-stage')) {
         this.closeLightbox();
       }
     });
@@ -246,8 +243,10 @@ class CustomLightbox {
   }
   
   applyZoom() {
-    this.image.style.transform = `scale(${this.zoomLevel}) translate(${this.translateX}px, ${this.translateY}px)`;
-    
+    // translate() antes que scale() -> el desplazamiento es en píxeles de
+    // pantalla (1:1 con el cursor), no multiplicado por el nivel de zoom
+    this.image.style.transform = `translate(${this.translateX}px, ${this.translateY}px) scale(${this.zoomLevel})`;
+
     if (this.zoomLevel > 1) {
       this.image.classList.add('zoomed');
       this.isZoomed = true;
@@ -256,29 +255,32 @@ class CustomLightbox {
       this.isZoomed = false;
     }
   }
-  
+
   startDrag(e) {
     if (!this.isZoomed) return;
-    
+
     this.isDragging = true;
     this.startX = e.clientX - this.translateX;
     this.startY = e.clientY - this.translateY;
-    
-    e.preventDefault();
+    // desactivar la transición mientras se arrastra para que siga al cursor sin retraso
+    this.image.classList.add('dragging');
+
+    if (e.preventDefault) e.preventDefault();
   }
-  
+
   drag(e) {
     if (!this.isDragging || !this.isZoomed) return;
-    
+
     this.translateX = e.clientX - this.startX;
     this.translateY = e.clientY - this.startY;
-    
+
     this.applyZoom();
-    e.preventDefault();
+    if (e.preventDefault) e.preventDefault();
   }
-  
+
   endDrag() {
     this.isDragging = false;
+    this.image.classList.remove('dragging');
   }
 }
 
