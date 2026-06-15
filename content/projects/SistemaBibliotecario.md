@@ -176,12 +176,12 @@ graph TD
     Q -- "Eliminar con Validación" --> H
     R -- "Gestión con Códigos Color" --> H
     
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style H fill:#fff3e0
-    style F fill:#e8f5e8
-    style J fill:#c8e6c9
-    style L fill:#c8e6c9
+    style A fill:#0e3a52,stroke:#00a2e8,color:#e6f1f7
+    style B fill:#1b2f4d,stroke:#4ca2ff,color:#e6f1f7
+    style H fill:#3a2f14,stroke:#e0a93b,color:#f3ead4
+    style F fill:#123a28,stroke:#37c98a,color:#dcf5e8
+    style J fill:#0f3322,stroke:#37c98a,color:#dcf5e8
+    style L fill:#0f3322,stroke:#37c98a,color:#dcf5e8
 ```
 
 ### Arquitectura de Capas con Gestión de Estado
